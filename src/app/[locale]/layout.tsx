@@ -3,7 +3,7 @@ import { Cormorant_Garamond, Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { defaultLocale, isLocale, locales } from "@/lib/i18n";
-import { INSTAGRAM_URL, SITE_NAME, SITE_URL } from "@/lib/site";
+import { CONTACT_PHONE_HREF, INSTAGRAM_URL, SITE_NAME, SITE_URL } from "@/lib/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -115,6 +115,7 @@ export default async function LocaleLayout({
     image: `${SITE_URL}/opengraph-image`,
     jobTitle: locale === "fr" ? "Photographe" : "Photographer",
     address: { "@type": "PostalAddress", addressCountry: "BE" },
+    telephone: CONTACT_PHONE_HREF,
     sameAs: [INSTAGRAM_URL],
   };
 

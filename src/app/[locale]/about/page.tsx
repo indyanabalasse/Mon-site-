@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { getDictionary, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
 import { portfolio } from "@/data/portfolio";
 
-const portraitImage = portfolio["black-and-white"][7];
+const portraitImage = portfolio.portrait[3];
 
 export async function generateMetadata({
   params,

@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { getDictionary, type Locale } from "@/lib/i18n";
-import { CONTACT_EMAIL, INSTAGRAM_HANDLE, INSTAGRAM_URL } from "@/lib/site";
+import {
+  CONTACT_EMAIL,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_HREF,
+  INSTAGRAM_HANDLE,
+  INSTAGRAM_URL,
+} from "@/lib/site";
 import { InstagramIcon } from "@/components/icons";
 
 export default function Footer({ locale }: { locale: Locale }) {
@@ -32,6 +38,12 @@ export default function Footer({ locale }: { locale: Locale }) {
             className="hover:text-foreground transition-colors normal-case tracking-normal"
           >
             {CONTACT_EMAIL}
+          </a>
+          <a
+            href={`tel:${CONTACT_PHONE_HREF}`}
+            className="hover:text-foreground transition-colors normal-case tracking-normal"
+          >
+            {CONTACT_PHONE_DISPLAY}
           </a>
         </div>
       </div>

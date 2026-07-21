@@ -33,8 +33,9 @@ type Dictionary = {
     viewSeries: string;
   };
   categories: {
-    "black-and-white": { title: string; description: string };
-    "electronic-scene": { title: string; description: string };
+    concert: { title: string; description: string };
+    portrait: { title: string; description: string };
+    headshot: { title: string; description: string };
   };
   about: {
     title: string;
@@ -52,6 +53,7 @@ type Dictionary = {
     success: string;
     error: string;
     directly: string;
+    phone: string;
     followInstagram: string;
     followInstagramCta: string;
   };
@@ -87,17 +89,21 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     portfolio: {
       title: "Portfolio",
-      intro: "Deux univers, une même exigence : capturer l'authenticité de l'instant.",
+      intro: "Trois univers, une même exigence : capturer l'authenticité de l'instant.",
       viewSeries: "Voir la série",
     },
     categories: {
-      "black-and-white": {
-        title: "Noir et blanc",
-        description: "Portraits et compositions en noir et blanc, entre contraste et intimité.",
+      concert: {
+        title: "Concert",
+        description: "Scènes, artistes et festivals — immersion dans l'énergie du live.",
       },
-      "electronic-scene": {
-        title: "Scène électronique",
-        description: "Immersion dans la culture électronique — scènes, artistes et festivals.",
+      portrait: {
+        title: "Portrait",
+        description: "Portraits artistiques et conceptuels, entre lumière, matière et émotion.",
+      },
+      headshot: {
+        title: "Headshot",
+        description: "Portraits professionnels épurés, pensés pour révéler une présence.",
       },
     },
     about: {
@@ -121,6 +127,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       success: "Merci ! Votre message a bien été envoyé, je vous réponds rapidement.",
       error: "Une erreur est survenue. Réessayez ou écrivez-moi directement.",
       directly: "Vous pouvez aussi m'écrire directement à",
+      phone: "Ou m'appeler au",
       followInstagram: "En attendant ma réponse, venez voir mes dernières photos sur Instagram @indyanastudio.",
       followInstagramCta: "Suivre @indyanastudio",
     },
@@ -154,17 +161,21 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     portfolio: {
       title: "Portfolio",
-      intro: "Two worlds, one standard: capturing the authenticity of the moment.",
+      intro: "Three worlds, one standard: capturing the authenticity of the moment.",
       viewSeries: "View series",
     },
     categories: {
-      "black-and-white": {
-        title: "Black and white",
-        description: "Portraits and compositions in black and white, between contrast and intimacy.",
+      concert: {
+        title: "Concert",
+        description: "Stages, artists and festivals — immersed in the energy of live music.",
       },
-      "electronic-scene": {
-        title: "Electronic scene",
-        description: "Immersed in electronic culture — stages, artists and festivals.",
+      portrait: {
+        title: "Portrait",
+        description: "Artistic and conceptual portraits, between light, texture and emotion.",
+      },
+      headshot: {
+        title: "Headshot",
+        description: "Clean professional headshots, crafted to reveal a presence.",
       },
     },
     about: {
@@ -188,6 +199,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       success: "Thank you! Your message has been sent, I'll get back to you shortly.",
       error: "Something went wrong. Please try again or email me directly.",
       directly: "You can also email me directly at",
+      phone: "Or call me at",
       followInstagram: "While you wait for my reply, come see my latest photos on Instagram @indyanastudio.",
       followInstagramCta: "Follow @indyanastudio",
     },
