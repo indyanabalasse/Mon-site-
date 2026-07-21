@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { getDictionary, type Locale } from "@/lib/i18n";
+import { CONTACT_EMAIL, INSTAGRAM_HANDLE, INSTAGRAM_URL } from "@/lib/site";
+import { InstagramIcon } from "@/components/icons";
 
 export default function Footer({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
@@ -16,10 +18,20 @@ export default function Footer({ locale }: { locale: Locale }) {
             {dict.nav.contact}
           </Link>
           <a
-            href="mailto:indyana.balasse@gmail.com"
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={dict.nav.instagram}
+            className="flex items-center gap-2 hover:text-foreground transition-colors normal-case tracking-normal"
+          >
+            <InstagramIcon className="h-4 w-4" />
+            {INSTAGRAM_HANDLE}
+          </a>
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
             className="hover:text-foreground transition-colors normal-case tracking-normal"
           >
-            indyana.balasse@gmail.com
+            {CONTACT_EMAIL}
           </a>
         </div>
       </div>

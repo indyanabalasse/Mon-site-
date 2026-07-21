@@ -3,8 +3,11 @@
 import { useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
-import type { Locale } from "@/lib/i18n";
+import { getDictionary, type Locale } from "@/lib/i18n";
+import { INSTAGRAM_URL } from "@/lib/site";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import ThemeToggle from "@/components/ThemeToggle";
+import { InstagramIcon } from "@/components/icons";
 
 function noopSubscribe() {
   return () => {};
@@ -27,6 +30,7 @@ export default function MobileNav({
 }) {
   const [open, setOpen] = useState(false);
   const mounted = useMounted();
+  const dict = getDictionary(locale);
 
   const panel = (
     <div className="fixed inset-0 z-50 flex flex-col bg-background">
@@ -49,8 +53,20 @@ export default function MobileNav({
           </Link>
         ))}
       </nav>
-      <div className="px-8 pb-8">
+      <div className="px-8 pb-8 flex items-center justify-between">
         <LanguageSwitcher locale={locale} />
+        <div className="flex items-center gap-4">
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={dict.nav.instagram}
+            className="text-muted hover:text-foreground transition-colors"
+          >
+            <InstagramIcon className="h-5 w-5" />
+          </a>
+          <ThemeToggle locale={locale} />
+        </div>
       </div>
     </div>
   );

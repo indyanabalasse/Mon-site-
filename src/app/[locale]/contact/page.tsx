@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getDictionary, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
+import { CONTACT_EMAIL } from "@/lib/site";
 import ContactForm from "@/components/ContactForm";
 
 export async function generateMetadata({
@@ -10,7 +11,13 @@ export async function generateMetadata({
   const { locale: rawLocale } = await params;
   const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
   const dict = getDictionary(locale);
-  return { title: dict.contact.title };
+  const path = `/${locale}/contact`;
+  return {
+    title: dict.contact.title,
+    description: dict.contact.intro,
+    alternates: { canonical: path },
+    openGraph: { title: dict.contact.title, description: dict.contact.intro, url: path },
+  };
 }
 
 export default async function ContactPage({
@@ -33,8 +40,8 @@ export default async function ContactPage({
 
       <p className="mt-12 text-center text-sm text-muted">
         {dict.contact.directly}{" "}
-        <a href="mailto:indyana.balasse@gmail.com" className="text-foreground underline underline-offset-4">
-          indyana.balasse@gmail.com
+        <a href={`mailto:${CONTACT_EMAIL}`} className="text-foreground underline underline-offset-4">
+          {CONTACT_EMAIL}
         </a>
       </p>
     </div>

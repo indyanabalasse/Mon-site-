@@ -1,8 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import { defaultLocale, locales } from "@/lib/i18n";
 
+const METADATA_ROUTES = ["/icon", "/apple-icon", "/opengraph-image", "/twitter-image"];
+
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  if (METADATA_ROUTES.some((route) => pathname === route || pathname.startsWith(`${route}.`))) {
+    return NextResponse.next();
+  }
 
   const hasLocale = locales.some(
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)

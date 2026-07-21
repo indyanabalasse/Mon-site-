@@ -2,6 +2,8 @@
 
 import { useState, type FormEvent } from "react";
 import type { Locale } from "@/lib/i18n";
+import { INSTAGRAM_URL } from "@/lib/site";
+import { InstagramIcon } from "@/components/icons";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -18,6 +20,8 @@ export default function ContactForm({
     sending: string;
     success: string;
     error: string;
+    followInstagram: string;
+    followInstagramCta: string;
   };
 }) {
   const [status, setStatus] = useState<Status>("idle");
@@ -49,7 +53,23 @@ export default function ContactForm({
   }
 
   if (status === "success") {
-    return <p className="text-sm leading-relaxed">{labels.success}</p>;
+    return (
+      <div>
+        <p className="text-sm leading-relaxed">{labels.success}</p>
+        <div className="mt-8 border border-border p-6 flex flex-col items-center text-center gap-4">
+          <InstagramIcon className="h-6 w-6" />
+          <p className="text-sm text-muted">{labels.followInstagram}</p>
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block border border-foreground px-6 py-2.5 text-xs uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors"
+          >
+            {labels.followInstagramCta}
+          </a>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -91,7 +111,7 @@ export default function ContactForm({
         />
       </div>
 
-      {status === "error" && <p className="text-sm text-red-700">{labels.error}</p>}
+      {status === "error" && <p className="text-sm text-danger">{labels.error}</p>}
 
       <button
         type="submit"

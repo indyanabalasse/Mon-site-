@@ -12,7 +12,13 @@ export async function generateMetadata({
   const { locale: rawLocale } = await params;
   const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
   const dict = getDictionary(locale);
-  return { title: dict.portfolio.title };
+  const path = `/${locale}/portfolio`;
+  return {
+    title: dict.portfolio.title,
+    description: dict.portfolio.intro,
+    alternates: { canonical: path },
+    openGraph: { title: dict.portfolio.title, description: dict.portfolio.intro, url: path },
+  };
 }
 
 export default async function PortfolioPage({

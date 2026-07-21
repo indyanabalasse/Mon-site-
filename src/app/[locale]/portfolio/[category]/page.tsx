@@ -23,7 +23,14 @@ export async function generateMetadata({
   const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
   const dict = getDictionary(locale);
   if (!isCategory(category)) return {};
-  return { title: dict.categories[category].title };
+  const info = dict.categories[category];
+  const path = `/${locale}/portfolio/${category}`;
+  return {
+    title: info.title,
+    description: info.description,
+    alternates: { canonical: path },
+    openGraph: { title: info.title, description: info.description, url: path },
+  };
 }
 
 export default async function CategoryPage({

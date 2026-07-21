@@ -14,7 +14,14 @@ export async function generateMetadata({
   const { locale: rawLocale } = await params;
   const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
   const dict = getDictionary(locale);
-  return { title: dict.about.title };
+  const description = dict.about.paragraphs[0];
+  const path = `/${locale}/about`;
+  return {
+    title: dict.about.title,
+    description,
+    alternates: { canonical: path },
+    openGraph: { title: dict.about.title, description, url: path },
+  };
 }
 
 export default async function AboutPage({

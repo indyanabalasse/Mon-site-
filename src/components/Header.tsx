@@ -1,7 +1,10 @@
 import Link from "next/link";
 import { getDictionary, type Locale } from "@/lib/i18n";
+import { INSTAGRAM_URL } from "@/lib/site";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import MobileNav from "@/components/MobileNav";
+import ThemeToggle from "@/components/ThemeToggle";
+import { InstagramIcon } from "@/components/icons";
 
 export default function Header({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
@@ -32,6 +35,16 @@ export default function Header({ locale }: { locale: Locale }) {
               {link.label}
             </Link>
           ))}
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={dict.nav.instagram}
+            className="text-muted hover:text-foreground transition-colors"
+          >
+            <InstagramIcon className="h-4 w-4" />
+          </a>
+          <ThemeToggle locale={locale} />
           <LanguageSwitcher locale={locale} />
         </nav>
 

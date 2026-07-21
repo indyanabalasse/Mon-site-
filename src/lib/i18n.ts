@@ -12,12 +12,20 @@ type Dictionary = {
     portfolio: string;
     about: string;
     contact: string;
+    themeToLight: string;
+    themeToDark: string;
+    instagram: string;
   };
   home: {
     tagline: string;
     intro: string[];
     cta: string;
     categoriesTitle: string;
+  };
+  instagramBanner: {
+    title: string;
+    text: string;
+    cta: string;
   };
   portfolio: {
     title: string;
@@ -44,6 +52,8 @@ type Dictionary = {
     success: string;
     error: string;
     directly: string;
+    followInstagram: string;
+    followInstagramCta: string;
   };
   footer: {
     rights: string;
@@ -57,6 +67,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       portfolio: "Portfolio",
       about: "À propos",
       contact: "Contact",
+      themeToLight: "Passer en mode clair",
+      themeToDark: "Passer en mode sombre",
+      instagram: "Instagram de INDYANASTUDIO",
     },
     home: {
       tagline: "La photographie est bien plus qu'une passion, c'est une histoire de famille.",
@@ -66,6 +79,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ],
       cta: "Découvrir le portfolio",
       categoriesTitle: "Séries",
+    },
+    instagramBanner: {
+      title: "Suivez INDYANASTUDIO sur Instagram",
+      text: "Nouvelles photos, coulisses de séances et projets en cours : tout se passe d'abord sur Instagram.",
+      cta: "Suivre @indyanastudio",
     },
     portfolio: {
       title: "Portfolio",
@@ -103,6 +121,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
       success: "Merci ! Votre message a bien été envoyé, je vous réponds rapidement.",
       error: "Une erreur est survenue. Réessayez ou écrivez-moi directement.",
       directly: "Vous pouvez aussi m'écrire directement à",
+      followInstagram: "En attendant ma réponse, venez voir mes dernières photos sur Instagram @indyanastudio.",
+      followInstagramCta: "Suivre @indyanastudio",
     },
     footer: {
       rights: "Tous droits réservés.",
@@ -114,6 +134,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       portfolio: "Portfolio",
       about: "About",
       contact: "Contact",
+      themeToLight: "Switch to light mode",
+      themeToDark: "Switch to dark mode",
+      instagram: "INDYANASTUDIO on Instagram",
     },
     home: {
       tagline: "Photography is more than just a passion — it's a family story.",
@@ -123,6 +146,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ],
       cta: "Explore the portfolio",
       categoriesTitle: "Series",
+    },
+    instagramBanner: {
+      title: "Follow INDYANASTUDIO on Instagram",
+      text: "New photos, behind-the-scenes shoots and works in progress: it all happens on Instagram first.",
+      cta: "Follow @indyanastudio",
     },
     portfolio: {
       title: "Portfolio",
@@ -160,6 +188,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
       success: "Thank you! Your message has been sent, I'll get back to you shortly.",
       error: "Something went wrong. Please try again or email me directly.",
       directly: "You can also email me directly at",
+      followInstagram: "While you wait for my reply, come see my latest photos on Instagram @indyanastudio.",
+      followInstagramCta: "Follow @indyanastudio",
     },
     footer: {
       rights: "All rights reserved.",

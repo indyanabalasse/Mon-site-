@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
+import { CONTACT_EMAIL } from "@/lib/site";
 
-const TO_EMAIL = "indyana.balasse@gmail.com";
+const TO_EMAIL = CONTACT_EMAIL;
 
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null);
