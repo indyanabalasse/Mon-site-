@@ -94,9 +94,22 @@ import corporate13 from "@/images/corporate/corporate-13.jpg";
 import corporate14 from "@/images/corporate/corporate-14.jpg";
 import corporate15 from "@/images/corporate/corporate-15.jpg";
 
-export type CategorySlug = "concert" | "portrait" | "headshot" | "corporate";
+import sport01 from "@/images/sport/sport-01.jpg";
+import sport02 from "@/images/sport/sport-02.jpg";
+import sport03 from "@/images/sport/sport-03.jpg";
+import sport04 from "@/images/sport/sport-04.jpg";
+import sport05 from "@/images/sport/sport-05.jpg";
+import sport06 from "@/images/sport/sport-06.jpg";
+import sport07 from "@/images/sport/sport-07.jpg";
+import sport08 from "@/images/sport/sport-08.jpg";
+import sport09 from "@/images/sport/sport-09.jpg";
+import sport10 from "@/images/sport/sport-10.jpg";
+import sport11 from "@/images/sport/sport-11.jpg";
+import sport12 from "@/images/sport/sport-12.jpg";
 
-export const categorySlugs: CategorySlug[] = ["concert", "portrait", "headshot", "corporate"];
+export type CategorySlug = "concert" | "portrait" | "headshot" | "corporate" | "sport";
+
+export const categorySlugs: CategorySlug[] = ["concert", "portrait", "headshot", "corporate", "sport"];
 
 export const portfolio: Record<CategorySlug, StaticImageData[]> = {
   concert: [
@@ -120,6 +133,10 @@ export const portfolio: Record<CategorySlug, StaticImageData[]> = {
     corporate08, corporate09, corporate10, corporate11, corporate12, corporate13, corporate14,
     corporate15,
   ],
+  sport: [
+    sport01, sport02, sport03, sport04, sport05, sport06, sport07, sport08, sport09, sport10,
+    sport11, sport12,
+  ],
 };
 
 export const heroImage = concert04;
@@ -128,4 +145,5 @@ export const coverImages: Record<CategorySlug, StaticImageData> = {
   portrait: portrait08,
   headshot: headshot05,
   corporate: corporate02,
+  sport: sport07,
 };

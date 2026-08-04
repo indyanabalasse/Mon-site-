@@ -37,6 +37,7 @@ type Dictionary = {
     portrait: { title: string; description: string };
     headshot: { title: string; description: string };
     corporate: { title: string; description: string };
+    sport: { title: string; description: string };
   };
   about: {
     title: string;
@@ -109,6 +110,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
       corporate: {
         title: "Corporate",
         description: "Photographie d'entreprise : équipes, événements et portraits professionnels.",
+      },
+      sport: {
+        title: "Sport",
+        description: "Entraînement, préparation physique et kinésithérapie sportive en action.",
       },
     },
     about: {
@@ -185,6 +190,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
       corporate: {
         title: "Corporate",
         description: "Corporate photography: teams, events and professional portraits.",
+      },
+      sport: {
+        title: "Sport",
+        description: "Training, athletic performance and sports physiotherapy in action.",
       },
     },
     about: {
