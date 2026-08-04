@@ -49,6 +49,17 @@ import portrait13 from "@/images/portrait/portrait-13.jpg";
 import portrait14 from "@/images/portrait/portrait-14.jpg";
 import portrait15 from "@/images/portrait/portrait-15.jpg";
 import portrait16 from "@/images/portrait/portrait-16.jpg";
+import portrait17 from "@/images/portrait/portrait-17.jpg";
+import portrait18 from "@/images/portrait/portrait-18.jpg";
+import portrait19 from "@/images/portrait/portrait-19.jpg";
+import portrait20 from "@/images/portrait/portrait-20.jpg";
+import portrait21 from "@/images/portrait/portrait-21.jpg";
+import portrait22 from "@/images/portrait/portrait-22.jpg";
+import portrait23 from "@/images/portrait/portrait-23.jpg";
+import portrait24 from "@/images/portrait/portrait-24.jpg";
+import portrait25 from "@/images/portrait/portrait-25.jpg";
+import portrait26 from "@/images/portrait/portrait-26.jpg";
+import portrait27 from "@/images/portrait/portrait-27.jpg";
 
 import headshot01 from "@/images/headshot/headshot-01.jpg";
 import headshot02 from "@/images/headshot/headshot-02.jpg";
@@ -67,9 +78,25 @@ import headshot14 from "@/images/headshot/headshot-14.jpg";
 import headshot15 from "@/images/headshot/headshot-15.jpg";
 import headshot16 from "@/images/headshot/headshot-16.jpg";
 
-export type CategorySlug = "concert" | "portrait" | "headshot";
+import corporate01 from "@/images/corporate/corporate-01.jpg";
+import corporate02 from "@/images/corporate/corporate-02.jpg";
+import corporate03 from "@/images/corporate/corporate-03.jpg";
+import corporate04 from "@/images/corporate/corporate-04.jpg";
+import corporate05 from "@/images/corporate/corporate-05.jpg";
+import corporate06 from "@/images/corporate/corporate-06.jpg";
+import corporate07 from "@/images/corporate/corporate-07.jpg";
+import corporate08 from "@/images/corporate/corporate-08.jpg";
+import corporate09 from "@/images/corporate/corporate-09.jpg";
+import corporate10 from "@/images/corporate/corporate-10.jpg";
+import corporate11 from "@/images/corporate/corporate-11.jpg";
+import corporate12 from "@/images/corporate/corporate-12.jpg";
+import corporate13 from "@/images/corporate/corporate-13.jpg";
+import corporate14 from "@/images/corporate/corporate-14.jpg";
+import corporate15 from "@/images/corporate/corporate-15.jpg";
 
-export const categorySlugs: CategorySlug[] = ["concert", "portrait", "headshot"];
+export type CategorySlug = "concert" | "portrait" | "headshot" | "corporate";
+
+export const categorySlugs: CategorySlug[] = ["concert", "portrait", "headshot", "corporate"];
 
 export const portfolio: Record<CategorySlug, StaticImageData[]> = {
   concert: [
@@ -81,10 +108,17 @@ export const portfolio: Record<CategorySlug, StaticImageData[]> = {
   portrait: [
     portrait01, portrait02, portrait03, portrait04, portrait05, portrait06, portrait07, portrait08,
     portrait09, portrait10, portrait11, portrait12, portrait13, portrait14, portrait15, portrait16,
+    portrait17, portrait18, portrait19, portrait20, portrait21, portrait22, portrait23, portrait24,
+    portrait25, portrait26, portrait27,
   ],
   headshot: [
     headshot01, headshot02, headshot03, headshot04, headshot05, headshot06, headshot07, headshot08,
     headshot09, headshot10, headshot11, headshot12, headshot13, headshot14, headshot15, headshot16,
+  ],
+  corporate: [
+    corporate01, corporate02, corporate03, corporate04, corporate05, corporate06, corporate07,
+    corporate08, corporate09, corporate10, corporate11, corporate12, corporate13, corporate14,
+    corporate15,
   ],
 };
 
@@ -93,4 +127,5 @@ export const coverImages: Record<CategorySlug, StaticImageData> = {
   concert: concert01,
   portrait: portrait08,
   headshot: headshot05,
+  corporate: corporate02,
 };

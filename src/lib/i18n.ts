@@ -36,6 +36,7 @@ type Dictionary = {
     concert: { title: string; description: string };
     portrait: { title: string; description: string };
     headshot: { title: string; description: string };
+    corporate: { title: string; description: string };
   };
   about: {
     title: string;
@@ -104,6 +105,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
       headshot: {
         title: "Headshot",
         description: "Portraits professionnels épurés, pensés pour révéler une présence.",
+      },
+      corporate: {
+        title: "Corporate",
+        description: "Photographie d'entreprise : équipes, événements et portraits professionnels.",
       },
     },
     about: {
@@ -176,6 +181,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
       headshot: {
         title: "Headshot",
         description: "Clean professional headshots, crafted to reveal a presence.",
+      },
+      corporate: {
+        title: "Corporate",
+        description: "Corporate photography: teams, events and professional portraits.",
       },
     },
     about: {
