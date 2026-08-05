@@ -1,17 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getDictionary, isLocale, defaultLocale, locales, type Locale } from "@/lib/i18n";
-import {
-  categorySlugs,
-  portfolio,
-  eventSubcategorySlugs,
-  eventSubcategories,
-  familySubcategorySlugs,
-  familySubcategories,
-  type CategorySlug,
-} from "@/data/portfolio";
+import { categorySlugs, getCategory, type CategorySlug } from "@/data/portfolio";
 import Gallery from "@/components/Gallery";
-import TabbedGallery from "@/components/TabbedGallery";
+import MasonryNav from "@/components/MasonryNav";
 
 function isCategory(value: string): value is CategorySlug {
   return (categorySlugs as string[]).includes(value);
@@ -53,6 +45,9 @@ export default async function CategoryPage({
 
   if (!isCategory(category)) notFound();
 
+  const data = getCategory(category);
+  if (!data) notFound();
+
   const info = dict.categories[category];
 
   return (
@@ -62,22 +57,16 @@ export default async function CategoryPage({
         <p className="mt-4 text-muted">{info.description}</p>
       </header>
 
-      {category === "evenementiel" ? (
-        <TabbedGallery
-          slugs={eventSubcategorySlugs}
-          subcategories={eventSubcategories}
-          labels={dict.eventSubcategories}
-          altPrefix={info.title}
-        />
-      ) : category === "famille" ? (
-        <TabbedGallery
-          slugs={familySubcategorySlugs}
-          subcategories={familySubcategories}
-          labels={dict.familySubcategories}
-          altPrefix={info.title}
+      {data.series.length > 1 ? (
+        <MasonryNav
+          items={data.series.map((series) => ({
+            href: `/${locale}/portfolio/${category}/${series.slug}`,
+            cover: series.cover,
+            label: info.series[series.slug] ?? series.slug,
+          }))}
         />
       ) : (
-        <Gallery images={portfolio[category]} altPrefix={info.title} />
+        <Gallery images={data.series[0].images} altPrefix={info.title} />
       )}
     </div>
   );

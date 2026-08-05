@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getDictionary, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
-import { portfolio } from "@/data/portfolio";
+import { getCategory } from "@/data/portfolio";
 
-const portraitImage = portfolio.portrait[3];
+const portraitImage = getCategory("portrait")!.series[0].images[0];
 
 export async function generateMetadata({
   params,

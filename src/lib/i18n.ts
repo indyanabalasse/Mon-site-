@@ -1,3 +1,5 @@
+import type { CategorySlug } from "@/data/portfolio";
+
 export const locales = ["fr", "en"] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "fr";
@@ -33,23 +35,10 @@ type Dictionary = {
     intro: string;
     viewSeries: string;
   };
-  categories: {
-    evenementiel: { title: string; description: string };
-    portrait: { title: string; description: string };
-    headshot: { title: string; description: string };
-    corporate: { title: string; description: string };
-    sport: { title: string; description: string };
-    famille: { title: string; description: string };
-  };
-  eventSubcategories: {
-    concert: string;
-    "open-air": string;
-    festival: string;
-    "evenement-prive": string;
-  };
-  familySubcategories: {
-    "femme-enceinte": string;
-  };
+  categories: Record<
+    CategorySlug,
+    { title: string; description: string; series: Record<string, string> }
+  >;
   packaging: {
     title: string;
     intro: string;
@@ -126,36 +115,51 @@ export const dictionaries: Record<Locale, Dictionary> = {
       evenementiel: {
         title: "Événementiel",
         description: "Concerts, scènes et festivals — immersion dans l'énergie du live.",
+        series: {
+          concert: "Concert",
+          "open-air": "Open Air",
+          festival: "Festival",
+        },
       },
       portrait: {
         title: "Portrait",
         description: "Portraits artistiques et conceptuels, entre lumière, matière et émotion.",
+        series: {
+          "laura-degreef": "Laura Degreef",
+          wolf: "Wolf",
+          herton: "Herton",
+          arty: "Arty",
+          autre: "Autre",
+        },
       },
       headshot: {
         title: "Headshot",
         description: "Portraits professionnels épurés, pensés pour révéler une présence.",
+        series: {
+          headshot: "Headshot",
+        },
       },
       corporate: {
         title: "Corporate",
         description: "Photographie d'entreprise : équipes, événements et portraits professionnels.",
+        series: {
+          "ma-vie": "Ma Vie",
+        },
       },
       sport: {
         title: "Sport",
         description: "Entraînement, préparation physique et kinésithérapie sportive en action.",
+        series: {
+          kine: "Kinésithérapie",
+        },
       },
       famille: {
         title: "Famille",
         description: "Moments de vie en famille, entre tendresse et authenticité.",
+        series: {
+          "femme-enceinte": "Femme enceinte",
+        },
       },
-    },
-    eventSubcategories: {
-      concert: "Concert",
-      "open-air": "Open Air",
-      festival: "Festival",
-      "evenement-prive": "Événement privé",
-    },
-    familySubcategories: {
-      "femme-enceinte": "Femme enceinte",
     },
     packaging: {
       title: "Formules & Tarifs",
@@ -294,36 +298,51 @@ export const dictionaries: Record<Locale, Dictionary> = {
       evenementiel: {
         title: "Events",
         description: "Concerts, stages and festivals — immersed in the energy of live music.",
+        series: {
+          concert: "Concert",
+          "open-air": "Open Air",
+          festival: "Festival",
+        },
       },
       portrait: {
         title: "Portrait",
         description: "Artistic and conceptual portraits, between light, texture and emotion.",
+        series: {
+          "laura-degreef": "Laura Degreef",
+          wolf: "Wolf",
+          herton: "Herton",
+          arty: "Arty",
+          autre: "Other",
+        },
       },
       headshot: {
         title: "Headshot",
         description: "Clean professional headshots, crafted to reveal a presence.",
+        series: {
+          headshot: "Headshot",
+        },
       },
       corporate: {
         title: "Corporate",
         description: "Corporate photography: teams, events and professional portraits.",
+        series: {
+          "ma-vie": "Ma Vie",
+        },
       },
       sport: {
         title: "Sport",
         description: "Training, athletic performance and sports physiotherapy in action.",
+        series: {
+          kine: "Physiotherapy",
+        },
       },
       famille: {
         title: "Family",
         description: "Family life moments, between tenderness and authenticity.",
+        series: {
+          "femme-enceinte": "Maternity",
+        },
       },
-    },
-    eventSubcategories: {
-      concert: "Concert",
-      "open-air": "Open Air",
-      festival: "Festival",
-      "evenement-prive": "Private Event",
-    },
-    familySubcategories: {
-      "femme-enceinte": "Maternity",
     },
     packaging: {
       title: "Packages & Rates",

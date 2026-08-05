@@ -1,9 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
 import { getDictionary, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
-import { categorySlugs, coverImages, heroImage } from "@/data/portfolio";
+import { categories, heroImages } from "@/data/portfolio";
 import { INSTAGRAM_URL } from "@/lib/site";
 import { InstagramIcon } from "@/components/icons";
+import HeroSlideshow from "@/components/HeroSlideshow";
+import MasonryNav from "@/components/MasonryNav";
+import Link from "next/link";
 
 export default async function HomePage({
   params,
@@ -14,17 +15,16 @@ export default async function HomePage({
   const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
   const dict = getDictionary(locale);
 
+  const tiles = categories.map((category) => ({
+    href: `/${locale}/portfolio/${category.slug}`,
+    cover: category.cover,
+    label: dict.categories[category.slug].title,
+  }));
+
   return (
     <div>
       <section className="relative h-[88vh] min-h-[560px] w-full overflow-hidden">
-        <Image
-          src={heroImage}
-          alt="Indyana Balasse — INDYANASTUDIO"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
+        <HeroSlideshow images={heroImages} alt="Indyana Balasse — INDYANASTUDIO" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/30" />
         <div className="relative z-10 flex h-full flex-col items-center justify-end px-6 pb-20 text-center text-white">
           <h1 className="wordmark font-serif text-4xl sm:text-6xl font-light fade-in">
@@ -54,29 +54,7 @@ export default async function HomePage({
         <h2 className="wordmark font-serif text-xl text-center mb-10 text-muted">
           {dict.home.categoriesTitle}
         </h2>
-        <div className="grid gap-6 sm:grid-cols-2">
-          {categorySlugs.map((slug) => (
-            <Link
-              key={slug}
-              href={`/${locale}/portfolio/${slug}`}
-              className="group relative block aspect-[4/5] overflow-hidden"
-            >
-              <Image
-                src={coverImages[slug]}
-                alt={dict.categories[slug].title}
-                fill
-                sizes="(min-width: 640px) 50vw, 100vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/25 group-hover:bg-black/40 transition-colors" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="wordmark font-serif text-2xl text-white">
-                  {dict.categories[slug].title}
-                </span>
-              </div>
-            </Link>
-          ))}
-        </div>
+        <MasonryNav items={tiles} />
       </section>
 
       <section className="border-t border-border bg-foreground text-background">

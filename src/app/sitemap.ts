@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site";
 import { locales } from "@/lib/i18n";
-import { categorySlugs } from "@/data/portfolio";
+import { categories } from "@/data/portfolio";
 
 const routes = [
   "",
@@ -9,7 +9,10 @@ const routes = [
   "/packaging",
   "/about",
   "/contact",
-  ...categorySlugs.map((slug) => `/portfolio/${slug}`),
+  ...categories.flatMap((category) => [
+    `/portfolio/${category.slug}`,
+    ...category.series.map((series) => `/portfolio/${category.slug}/${series.slug}`),
+  ]),
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

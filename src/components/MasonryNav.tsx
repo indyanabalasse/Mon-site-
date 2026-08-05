@@ -1,0 +1,36 @@
+import Image, { type StaticImageData } from "next/image";
+import Link from "next/link";
+
+export type MasonryTile = {
+  href: string;
+  cover: StaticImageData;
+  label: string;
+};
+
+export default function MasonryNav({ items }: { items: MasonryTile[] }) {
+  return (
+    <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 [column-fill:_balance]">
+      {items.map((item) => (
+        <Link
+          key={item.href}
+          href={item.href}
+          className="group relative mb-6 block w-full break-inside-avoid overflow-hidden"
+        >
+          <Image
+            src={item.cover}
+            alt={item.label}
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+            placeholder="blur"
+          />
+          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="wordmark font-serif text-2xl sm:text-3xl text-white text-center px-4">
+              {item.label}
+            </span>
+          </div>
+        </Link>
+      ))}
+    </div>
+  );
+}
