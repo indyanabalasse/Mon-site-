@@ -1,10 +1,23 @@
 import { NextRequest, NextResponse } from "next/server";
 import { defaultLocale, locales } from "@/lib/i18n";
+import { ADMIN_SESSION_COOKIE, verifySessionToken } from "@/lib/admin-auth";
 
 const METADATA_ROUTES = ["/icon", "/apple-icon", "/opengraph-image", "/twitter-image"];
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  // /admin is a separate, non-locale-prefixed root subtree gated by a session cookie.
+  // The login page itself must stay reachable without a valid session.
+  if (pathname === "/admin" || pathname.startsWith("/admin/")) {
+    if (pathname === "/admin/login") return NextResponse.next();
+
+    const token = request.cookies.get(ADMIN_SESSION_COOKIE)?.value;
+    if (!verifySessionToken(token)) {
+      return NextResponse.redirect(new URL("/admin/login", request.url));
+    }
+    return NextResponse.next();
+  }
 
   if (METADATA_ROUTES.some((route) => pathname === route || pathname.startsWith(`${route}.`))) {
     return NextResponse.next();

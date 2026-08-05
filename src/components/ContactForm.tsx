@@ -1,9 +1,11 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent } from "react";
+import posthog from "posthog-js";
 import type { Locale } from "@/lib/i18n";
 import { INSTAGRAM_URL } from "@/lib/site";
 import { InstagramIcon } from "@/components/icons";
+import { ANALYTICS_EVENTS } from "@/lib/analytics-events";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -25,6 +27,13 @@ export default function ContactForm({
   };
 }) {
   const [status, setStatus] = useState<Status>("idle");
+  const hasStartedRef = useRef(false);
+
+  function onFormFocus() {
+    if (hasStartedRef.current) return;
+    hasStartedRef.current = true;
+    posthog.capture(ANALYTICS_EVENTS.CONTACT_FORM_STARTED, { locale });
+  }
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -46,6 +55,7 @@ export default function ContactForm({
       });
       if (!res.ok) throw new Error("request failed");
       setStatus("success");
+      posthog.capture(ANALYTICS_EVENTS.CONTACT_FORM_SUBMITTED, { locale });
       form.reset();
     } catch {
       setStatus("error");
@@ -73,7 +83,7 @@ export default function ContactForm({
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-6">
+    <form onSubmit={onSubmit} onFocus={onFormFocus} className="space-y-6">
       <div>
         <label htmlFor="name" className="block text-xs uppercase tracking-[0.2em] text-muted mb-2">
           {labels.name}
