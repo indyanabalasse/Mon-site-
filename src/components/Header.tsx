@@ -11,6 +11,7 @@ export default function Header({ locale }: { locale: Locale }) {
 
   const links = [
     { href: `/${locale}/portfolio`, label: dict.nav.portfolio },
+    { href: `/${locale}/packaging`, label: dict.nav.packaging },
     { href: `/${locale}/about`, label: dict.nav.about },
     { href: `/${locale}/contact`, label: dict.nav.contact },
   ];

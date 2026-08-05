@@ -10,6 +10,7 @@ type Dictionary = {
   nav: {
     home: string;
     portfolio: string;
+    packaging: string;
     about: string;
     contact: string;
     themeToLight: string;
@@ -48,6 +49,22 @@ type Dictionary = {
   familySubcategories: {
     "femme-enceinte": string;
   };
+  packaging: {
+    title: string;
+    intro: string;
+    ctaTitle: string;
+    ctaText: string;
+    ctaButton: string;
+    formulas: {
+      number: string;
+      category: string;
+      subcategory: string;
+      title: string;
+      price: string;
+      unit: string;
+      features: string[];
+    }[];
+  };
   about: {
     title: string;
     paragraphs: string[];
@@ -78,6 +95,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     nav: {
       home: "Accueil",
       portfolio: "Portfolio",
+      packaging: "Packaging",
       about: "À propos",
       contact: "Contact",
       themeToLight: "Passer en mode clair",
@@ -137,6 +155,80 @@ export const dictionaries: Record<Locale, Dictionary> = {
     familySubcategories: {
       "femme-enceinte": "Femme enceinte",
     },
+    packaging: {
+      title: "Formules & Tarifs",
+      intro: "Quatre façons de capturer votre image — du portrait épuré à l'événement privé, chaque séance est pensée, cadrée et retouchée avec soin.",
+      ctaTitle: "Réservons votre séance",
+      ctaText: "Disponibilités sur demande. Chaque formule peut être adaptée selon vos envies — écrivez-moi pour en discuter.",
+      ctaButton: "Me contacter",
+      formulas: [
+        {
+          number: "N°01",
+          category: "Studio",
+          subcategory: "Essentielle",
+          title: "Formule Essentielle",
+          price: "200€",
+          unit: "Séance studio",
+          features: [
+            "Séance en studio",
+            "Matériel professionnel inclus",
+            "Retouches photo incluses",
+            "Remise de 10 photos en noir et blanc",
+          ],
+        },
+        {
+          number: "N°02",
+          category: "Studio",
+          subcategory: "Créative",
+          title: "Formule Créative",
+          price: "300€",
+          unit: "Séance studio",
+          features: [
+            "Séance en studio, mise en scène créative",
+            "Matériel professionnel inclus",
+            "Retouches photo incluses",
+            "Remise de 15 photos",
+          ],
+        },
+        {
+          number: "N°03",
+          category: "Studio",
+          subcategory: "Grossesse",
+          title: "Formule Femme Enceinte",
+          price: "400€",
+          unit: "Séance studio",
+          features: [
+            "Séance en studio dédiée grossesse",
+            "Matériel professionnel inclus",
+            "Retouches photo incluses",
+          ],
+        },
+        {
+          number: "N°04",
+          category: "Extérieur",
+          subcategory: "Événement",
+          title: "Formule Événement Privé",
+          price: "400€",
+          unit: "Demi-journée",
+          features: [
+            "Couverture photo d'une demi-journée",
+            "Reportage de votre événement privé",
+          ],
+        },
+        {
+          number: "N°05",
+          category: "Studio",
+          subcategory: "Location",
+          title: "Location Studio",
+          price: "Sur devis",
+          unit: "Tarif communiqué par e-mail",
+          features: [
+            "Mise à disposition du studio pour vos propres séances",
+            "Prise de rendez-vous sur demande",
+          ],
+        },
+      ],
+    },
     about: {
       title: "À propos",
       paragraphs: [
@@ -170,6 +262,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     nav: {
       home: "Home",
       portfolio: "Portfolio",
+      packaging: "Packaging",
       about: "About",
       contact: "Contact",
       themeToLight: "Switch to light mode",
@@ -228,6 +321,80 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     familySubcategories: {
       "femme-enceinte": "Maternity",
+    },
+    packaging: {
+      title: "Packages & Rates",
+      intro: "Four ways to capture your image — from a clean portrait to a private event, every session is thoughtfully composed, framed and retouched.",
+      ctaTitle: "Let's book your session",
+      ctaText: "Availability on request. Every package can be tailored to your needs — get in touch to discuss.",
+      ctaButton: "Contact me",
+      formulas: [
+        {
+          number: "N°01",
+          category: "Studio",
+          subcategory: "Essential",
+          title: "Essential Package",
+          price: "€200",
+          unit: "Studio session",
+          features: [
+            "Studio session",
+            "Professional equipment included",
+            "Photo retouching included",
+            "10 black and white photos delivered",
+          ],
+        },
+        {
+          number: "N°02",
+          category: "Studio",
+          subcategory: "Creative",
+          title: "Creative Package",
+          price: "€300",
+          unit: "Studio session",
+          features: [
+            "Studio session with creative staging",
+            "Professional equipment included",
+            "Photo retouching included",
+            "15 photos delivered",
+          ],
+        },
+        {
+          number: "N°03",
+          category: "Studio",
+          subcategory: "Maternity",
+          title: "Maternity Package",
+          price: "€400",
+          unit: "Studio session",
+          features: [
+            "Studio session dedicated to maternity",
+            "Professional equipment included",
+            "Photo retouching included",
+          ],
+        },
+        {
+          number: "N°04",
+          category: "Outdoor",
+          subcategory: "Event",
+          title: "Private Event Package",
+          price: "€400",
+          unit: "Half day",
+          features: [
+            "Half-day photo coverage",
+            "Coverage of your private event",
+          ],
+        },
+        {
+          number: "N°05",
+          category: "Studio",
+          subcategory: "Rental",
+          title: "Studio Rental",
+          price: "On request",
+          unit: "Rate sent by email",
+          features: [
+            "Studio made available for your own sessions",
+            "Booking on request",
+          ],
+        },
+      ],
     },
     about: {
       title: "About",
