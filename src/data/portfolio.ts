@@ -101,11 +101,6 @@ import sport04 from "@/images/sport/sport-04.jpg";
 import sport05 from "@/images/sport/sport-05.jpg";
 import sport06 from "@/images/sport/sport-06.jpg";
 import sport07 from "@/images/sport/sport-07.jpg";
-import sport08 from "@/images/sport/sport-08.jpg";
-import sport09 from "@/images/sport/sport-09.jpg";
-import sport10 from "@/images/sport/sport-10.jpg";
-import sport11 from "@/images/sport/sport-11.jpg";
-import sport12 from "@/images/sport/sport-12.jpg";
 
 export type CategorySlug = "concert" | "portrait" | "headshot" | "corporate" | "sport";
 
@@ -134,8 +129,7 @@ export const portfolio: Record<CategorySlug, StaticImageData[]> = {
     corporate15,
   ],
   sport: [
-    sport01, sport02, sport03, sport04, sport05, sport06, sport07, sport08, sport09, sport10,
-    sport11, sport12,
+    sport01, sport02, sport03, sport04, sport05, sport06, sport07,
   ],
 };
 
@@ -145,5 +139,5 @@ export const coverImages: Record<CategorySlug, StaticImageData> = {
   portrait: portrait08,
   headshot: headshot05,
   corporate: corporate02,
-  sport: sport07,
+  sport: sport04,
 };
