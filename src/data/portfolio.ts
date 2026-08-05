@@ -84,9 +84,6 @@ import corporate09 from "@/images/corporate/corporate-09.jpg";
 import corporate10 from "@/images/corporate/corporate-10.jpg";
 import corporate11 from "@/images/corporate/corporate-11.jpg";
 import corporate12 from "@/images/corporate/corporate-12.jpg";
-import corporate13 from "@/images/corporate/corporate-13.jpg";
-import corporate14 from "@/images/corporate/corporate-14.jpg";
-import corporate15 from "@/images/corporate/corporate-15.jpg";
 
 import sport01 from "@/images/sport/sport-01.jpg";
 import sport02 from "@/images/sport/sport-02.jpg";
@@ -117,8 +114,7 @@ export const portfolio: Record<CategorySlug, StaticImageData[]> = {
   ],
   corporate: [
     corporate01, corporate02, corporate03, corporate04, corporate05, corporate06, corporate07,
-    corporate08, corporate09, corporate10, corporate11, corporate12, corporate13, corporate14,
-    corporate15,
+    corporate08, corporate09, corporate10, corporate11, corporate12,
   ],
   sport: [
     sport01, sport02, sport03, sport04, sport05, sport06,
