@@ -22,8 +22,7 @@ type Dictionary = {
     instagram: string;
   };
   home: {
-    tagline: string;
-    intro: string[];
+    quote: string;
     cta: string;
     categoriesTitle: string;
   };
@@ -97,11 +96,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       instagram: "Instagram de INDYANASTUDIO",
     },
     home: {
-      tagline: "La photographie est bien plus qu'une passion, c'est une histoire de famille.",
-      intro: [
-        "Fille d'un photographe belge reconnu, j'ai grandi entourée d'objectifs, de lumière et d'émotions capturées. Tout naturellement, j'ai suivi les traces de mon père, en y apportant ma propre sensibilité et ma vision artistique.",
-        "Mon style est avant tout artistique, mais je reste ouverte à différents univers : portrait, mode, concepts créatifs ou projets professionnels.",
-      ],
+      quote: "Color your life !",
       cta: "Découvrir le portfolio",
       categoriesTitle: "Séries",
     },
@@ -282,11 +277,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       instagram: "INDYANASTUDIO on Instagram",
     },
     home: {
-      tagline: "Photography is more than just a passion — it's a family story.",
-      intro: [
-        "As the daughter of a renowned Belgian photographer, I grew up surrounded by lenses, light, and captured emotions. Naturally, I followed in my father's footsteps, bringing my own sensitivity and artistic vision to the craft.",
-        "My style is primarily artistic, but I remain open to exploring different fields: portrait, fashion, creative concepts, and professional projects.",
-      ],
+      quote: "Color your life !",
       cta: "Explore the portfolio",
       categoriesTitle: "Series",
     },

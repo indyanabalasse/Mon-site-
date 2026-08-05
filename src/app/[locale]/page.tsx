@@ -30,9 +30,6 @@ export default async function HomePage({
           <h1 className="wordmark font-serif text-4xl sm:text-6xl font-light fade-in">
             INDYANASTUDIO
           </h1>
-          <p className="mt-6 max-w-xl text-sm sm:text-base font-light italic text-white/90 fade-in">
-            {dict.home.tagline}
-          </p>
           <Link
             href={`/${locale}/portfolio`}
             className="mt-10 border border-white/70 px-8 py-3 text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-colors"
@@ -43,11 +40,9 @@ export default async function HomePage({
       </section>
 
       <section className="mx-auto max-w-3xl px-6 py-24 text-center">
-        {dict.home.intro.map((p) => (
-          <p key={p} className="mt-6 text-lg leading-relaxed text-foreground/90 first:mt-0">
-            {p}
-          </p>
-        ))}
+        <p className="wordmark font-serif italic text-2xl sm:text-3xl text-foreground/90">
+          {dict.home.quote}
+        </p>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 pb-24">
