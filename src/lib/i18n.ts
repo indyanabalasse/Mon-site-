@@ -39,6 +39,11 @@ type Dictionary = {
     corporate: { title: string; description: string };
     sport: { title: string; description: string };
   };
+  eventSubcategories: {
+    concert: string;
+    festival: string;
+    "evenement-prive": string;
+  };
   about: {
     title: string;
     paragraphs: string[];
@@ -115,6 +120,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
         title: "Sport",
         description: "Entraînement, préparation physique et kinésithérapie sportive en action.",
       },
+    },
+    eventSubcategories: {
+      concert: "Concert",
+      festival: "Festival",
+      "evenement-prive": "Événement privé",
     },
     about: {
       title: "À propos",
@@ -195,6 +205,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
         title: "Sport",
         description: "Training, athletic performance and sports physiotherapy in action.",
       },
+    },
+    eventSubcategories: {
+      concert: "Concert",
+      festival: "Festival",
+      "evenement-prive": "Private Event",
     },
     about: {
       title: "About",

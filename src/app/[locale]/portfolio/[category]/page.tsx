@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getDictionary, isLocale, defaultLocale, locales, type Locale } from "@/lib/i18n";
-import { categorySlugs, portfolio, type CategorySlug } from "@/data/portfolio";
+import {
+  categorySlugs,
+  portfolio,
+  eventSubcategorySlugs,
+  eventSubcategories,
+  type CategorySlug,
+} from "@/data/portfolio";
 import Gallery from "@/components/Gallery";
+import EventGallery from "@/components/EventGallery";
 
 function isCategory(value: string): value is CategorySlug {
   return (categorySlugs as string[]).includes(value);
@@ -44,7 +51,6 @@ export default async function CategoryPage({
 
   if (!isCategory(category)) notFound();
 
-  const images = portfolio[category];
   const info = dict.categories[category];
 
   return (
@@ -54,7 +60,16 @@ export default async function CategoryPage({
         <p className="mt-4 text-muted">{info.description}</p>
       </header>
 
-      <Gallery images={images} altPrefix={info.title} />
+      {category === "evenementiel" ? (
+        <EventGallery
+          slugs={eventSubcategorySlugs}
+          subcategories={eventSubcategories}
+          labels={dict.eventSubcategories}
+          altPrefix={info.title}
+        />
+      ) : (
+        <Gallery images={portfolio[category]} altPrefix={info.title} />
+      )}
     </div>
   );
 }

@@ -125,6 +125,16 @@ export const portfolio: Record<CategorySlug, StaticImageData[]> = {
   ],
 };
 
+export type EventSubcategorySlug = "concert" | "festival" | "evenement-prive";
+
+export const eventSubcategorySlugs: EventSubcategorySlug[] = ["concert", "festival", "evenement-prive"];
+
+export const eventSubcategories: Record<EventSubcategorySlug, StaticImageData[]> = {
+  concert: portfolio.evenementiel,
+  festival: [],
+  "evenement-prive": [],
+};
+
 export const heroImage = concert04;
 export const coverImages: Record<CategorySlug, StaticImageData> = {
   evenementiel: concert01,
