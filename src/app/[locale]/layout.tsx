@@ -92,6 +92,9 @@ export async function generateMetadata({
         "max-image-preview": "large",
       },
     },
+    verification: {
+      google: "R-YOBvqzTjQzcHYtTIsTnGaLy6ENZxXLh9HFKQbmZDI",
+    },
   };
 }
 
