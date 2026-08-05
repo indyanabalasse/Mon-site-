@@ -6,10 +6,12 @@ import {
   portfolio,
   eventSubcategorySlugs,
   eventSubcategories,
+  familySubcategorySlugs,
+  familySubcategories,
   type CategorySlug,
 } from "@/data/portfolio";
 import Gallery from "@/components/Gallery";
-import EventGallery from "@/components/EventGallery";
+import TabbedGallery from "@/components/TabbedGallery";
 
 function isCategory(value: string): value is CategorySlug {
   return (categorySlugs as string[]).includes(value);
@@ -61,10 +63,17 @@ export default async function CategoryPage({
       </header>
 
       {category === "evenementiel" ? (
-        <EventGallery
+        <TabbedGallery
           slugs={eventSubcategorySlugs}
           subcategories={eventSubcategories}
           labels={dict.eventSubcategories}
+          altPrefix={info.title}
+        />
+      ) : category === "famille" ? (
+        <TabbedGallery
+          slugs={familySubcategorySlugs}
+          subcategories={familySubcategories}
+          labels={dict.familySubcategories}
           altPrefix={info.title}
         />
       ) : (

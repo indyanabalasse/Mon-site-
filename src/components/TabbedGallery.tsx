@@ -3,25 +3,24 @@
 import { useState } from "react";
 import type { StaticImageData } from "next/image";
 import Gallery from "@/components/Gallery";
-import type { EventSubcategorySlug } from "@/data/portfolio";
 
-export default function EventGallery({
+export default function TabbedGallery<Slug extends string>({
   slugs,
   subcategories,
   labels,
   altPrefix,
 }: {
-  slugs: EventSubcategorySlug[];
-  subcategories: Record<EventSubcategorySlug, StaticImageData[]>;
-  labels: Record<EventSubcategorySlug, string>;
+  slugs: Slug[];
+  subcategories: Record<Slug, StaticImageData[]>;
+  labels: Record<Slug, string>;
   altPrefix: string;
 }) {
-  const [active, setActive] = useState<EventSubcategorySlug>(slugs[0]);
+  const [active, setActive] = useState<Slug>(slugs[0]);
   const images = subcategories[active];
 
   return (
     <>
-      <div className="flex justify-center gap-3 mb-12">
+      <div className="flex flex-wrap justify-center gap-3 mb-12">
         {slugs.map((slug) => (
           <button
             key={slug}

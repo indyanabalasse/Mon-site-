@@ -92,9 +92,21 @@ import sport04 from "@/images/sport/sport-04.jpg";
 import sport05 from "@/images/sport/sport-05.jpg";
 import sport06 from "@/images/sport/sport-06.jpg";
 
-export type CategorySlug = "evenementiel" | "portrait" | "headshot" | "corporate" | "sport";
+import femmeEnceinte01 from "@/images/famille/femme-enceinte-01.jpg";
+import femmeEnceinte02 from "@/images/famille/femme-enceinte-02.jpg";
+import femmeEnceinte03 from "@/images/famille/femme-enceinte-03.jpg";
+import femmeEnceinte04 from "@/images/famille/femme-enceinte-04.jpg";
 
-export const categorySlugs: CategorySlug[] = ["evenementiel", "portrait", "headshot", "corporate", "sport"];
+export type CategorySlug = "evenementiel" | "portrait" | "headshot" | "corporate" | "sport" | "famille";
+
+export const categorySlugs: CategorySlug[] = [
+  "evenementiel",
+  "portrait",
+  "headshot",
+  "corporate",
+  "sport",
+  "famille",
+];
 
 export const portfolio: Record<CategorySlug, StaticImageData[]> = {
   evenementiel: [
@@ -119,6 +131,7 @@ export const portfolio: Record<CategorySlug, StaticImageData[]> = {
   sport: [
     sport01, sport02, sport03, sport04, sport05, sport06,
   ],
+  famille: [],
 };
 
 export type EventSubcategorySlug = "concert" | "festival" | "evenement-prive";
@@ -131,6 +144,14 @@ export const eventSubcategories: Record<EventSubcategorySlug, StaticImageData[]>
   "evenement-prive": [],
 };
 
+export type FamilySubcategorySlug = "femme-enceinte";
+
+export const familySubcategorySlugs: FamilySubcategorySlug[] = ["femme-enceinte"];
+
+export const familySubcategories: Record<FamilySubcategorySlug, StaticImageData[]> = {
+  "femme-enceinte": [femmeEnceinte01, femmeEnceinte02, femmeEnceinte03, femmeEnceinte04],
+};
+
 export const heroImage = concert04;
 export const coverImages: Record<CategorySlug, StaticImageData> = {
   evenementiel: concert01,
@@ -138,4 +159,5 @@ export const coverImages: Record<CategorySlug, StaticImageData> = {
   headshot: headshot05,
   corporate: corporate02,
   sport: sport06,
+  famille: femmeEnceinte03,
 };

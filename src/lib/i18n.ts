@@ -38,11 +38,15 @@ type Dictionary = {
     headshot: { title: string; description: string };
     corporate: { title: string; description: string };
     sport: { title: string; description: string };
+    famille: { title: string; description: string };
   };
   eventSubcategories: {
     concert: string;
     festival: string;
     "evenement-prive": string;
+  };
+  familySubcategories: {
+    "femme-enceinte": string;
   };
   about: {
     title: string;
@@ -120,11 +124,18 @@ export const dictionaries: Record<Locale, Dictionary> = {
         title: "Sport",
         description: "Entraînement, préparation physique et kinésithérapie sportive en action.",
       },
+      famille: {
+        title: "Famille",
+        description: "Moments de vie en famille, entre tendresse et authenticité.",
+      },
     },
     eventSubcategories: {
       concert: "Concert",
       festival: "Festival",
       "evenement-prive": "Événement privé",
+    },
+    familySubcategories: {
+      "femme-enceinte": "Femme enceinte",
     },
     about: {
       title: "À propos",
@@ -205,11 +216,18 @@ export const dictionaries: Record<Locale, Dictionary> = {
         title: "Sport",
         description: "Training, athletic performance and sports physiotherapy in action.",
       },
+      famille: {
+        title: "Family",
+        description: "Family life moments, between tenderness and authenticity.",
+      },
     },
     eventSubcategories: {
       concert: "Concert",
       festival: "Festival",
       "evenement-prive": "Private Event",
+    },
+    familySubcategories: {
+      "femme-enceinte": "Maternity",
     },
     about: {
       title: "About",
