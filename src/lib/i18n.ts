@@ -43,6 +43,7 @@ type Dictionary = {
   };
   eventSubcategories: {
     concert: string;
+    "open-air": string;
     festival: string;
     "evenement-prive": string;
   };
@@ -149,6 +150,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     eventSubcategories: {
       concert: "Concert",
+      "open-air": "Open Air",
       festival: "Festival",
       "evenement-prive": "Événement privé",
     },
@@ -316,6 +318,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     eventSubcategories: {
       concert: "Concert",
+      "open-air": "Open Air",
       festival: "Festival",
       "evenement-prive": "Private Event",
     },
