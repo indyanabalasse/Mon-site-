@@ -223,21 +223,6 @@ export const categories: CategoryData[] = [
     ],
   },
   {
-    slug: "corporate",
-    cover: corporateCover,
-    series: [
-      {
-        slug: "ma-vie",
-        cover: corporateMaVieCover,
-        images: [
-          corporateMaVie01, corporateMaVie02, corporateMaVie03, corporateMaVie04,
-          corporateMaVie05, corporateMaVie06, corporateMaVie07, corporateMaVie08,
-          corporateMaVie09, corporateMaVie10, corporateMaVie11, corporateMaVie12,
-        ],
-      },
-    ],
-  },
-  {
     slug: "headshot",
     cover: headshotCover,
     series: [
@@ -249,6 +234,21 @@ export const categories: CategoryData[] = [
           headshotHeadshot05, headshotHeadshot06, headshotHeadshot07, headshotHeadshot08,
           headshotHeadshot09, headshotHeadshot10, headshotHeadshot11, headshotHeadshot12,
           headshotHeadshot13, headshotHeadshot14, headshotHeadshot15, headshotHeadshot16,
+        ],
+      },
+    ],
+  },
+  {
+    slug: "corporate",
+    cover: corporateCover,
+    series: [
+      {
+        slug: "ma-vie",
+        cover: corporateMaVieCover,
+        images: [
+          corporateMaVie01, corporateMaVie02, corporateMaVie03, corporateMaVie04,
+          corporateMaVie05, corporateMaVie06, corporateMaVie07, corporateMaVie08,
+          corporateMaVie09, corporateMaVie10, corporateMaVie11, corporateMaVie12,
         ],
       },
     ],
