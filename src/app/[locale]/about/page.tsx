@@ -2,9 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getDictionary, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
-import { getCategory } from "@/data/portfolio";
-
-const portraitImage = getCategory("portrait")!.series[0].images[0];
+import selfPortrait from "@/images/about/self-portrait.jpeg";
 
 export async function generateMetadata({
   params,
@@ -38,7 +36,7 @@ export default async function AboutPage({
       <div className="grid gap-12 md:grid-cols-2 md:items-center">
         <div className="relative aspect-[4/5] overflow-hidden order-1 md:order-none">
           <Image
-            src={portraitImage}
+            src={selfPortrait}
             alt="INDYANASTUDIO"
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
