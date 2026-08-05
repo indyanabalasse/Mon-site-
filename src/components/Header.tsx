@@ -4,6 +4,7 @@ import { INSTAGRAM_URL } from "@/lib/site";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import MobileNav from "@/components/MobileNav";
 import ThemeToggle from "@/components/ThemeToggle";
+import FullscreenToggle from "@/components/FullscreenToggle";
 import { InstagramIcon } from "@/components/icons";
 
 export default function Header({ locale }: { locale: Locale }) {
@@ -47,6 +48,9 @@ export default function Header({ locale }: { locale: Locale }) {
           </a>
           <ThemeToggle locale={locale} />
           <LanguageSwitcher locale={locale} />
+          <FullscreenToggle
+            labels={{ enter: dict.nav.fullscreenEnter, exit: dict.nav.fullscreenExit }}
+          />
         </nav>
 
         <MobileNav locale={locale} links={links} />

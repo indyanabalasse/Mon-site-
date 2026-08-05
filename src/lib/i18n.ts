@@ -17,6 +17,8 @@ type Dictionary = {
     contact: string;
     themeToLight: string;
     themeToDark: string;
+    fullscreenEnter: string;
+    fullscreenExit: string;
     instagram: string;
   };
   home: {
@@ -90,6 +92,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
       contact: "Contact",
       themeToLight: "Passer en mode clair",
       themeToDark: "Passer en mode sombre",
+      fullscreenEnter: "Passer en plein écran",
+      fullscreenExit: "Quitter le plein écran",
       instagram: "Instagram de INDYANASTUDIO",
     },
     home: {
@@ -273,6 +277,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
       contact: "Contact",
       themeToLight: "Switch to light mode",
       themeToDark: "Switch to dark mode",
+      fullscreenEnter: "Enter fullscreen",
+      fullscreenExit: "Exit fullscreen",
       instagram: "INDYANASTUDIO on Instagram",
     },
     home: {
