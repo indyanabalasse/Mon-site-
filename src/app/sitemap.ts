@@ -3,7 +3,14 @@ import { SITE_URL } from "@/lib/site";
 import { locales } from "@/lib/i18n";
 import { categorySlugs } from "@/data/portfolio";
 
-const routes = ["", "/portfolio", "/about", "/contact", ...categorySlugs.map((slug) => `/portfolio/${slug}`)];
+const routes = [
+  "",
+  "/portfolio",
+  "/packaging",
+  "/about",
+  "/contact",
+  ...categorySlugs.map((slug) => `/portfolio/${slug}`),
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return locales.flatMap((locale) =>
