@@ -46,9 +46,6 @@ export default async function HomePage({
       </section>
 
       <section className="mx-auto max-w-6xl px-6 pb-24">
-        <h2 className="wordmark font-serif text-xl text-center mb-10 text-muted">
-          {dict.home.categoriesTitle}
-        </h2>
         <MasonryNav items={tiles} />
       </section>
 

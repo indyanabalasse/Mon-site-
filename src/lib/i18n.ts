@@ -24,7 +24,6 @@ type Dictionary = {
   home: {
     quote: string;
     cta: string;
-    categoriesTitle: string;
   };
   instagramBanner: {
     title: string;
@@ -98,7 +97,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
     home: {
       quote: "Color your life !",
       cta: "Découvrir le portfolio",
-      categoriesTitle: "Séries",
     },
     instagramBanner: {
       title: "Suivez INDYANASTUDIO sur Instagram",
@@ -279,7 +277,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
     home: {
       quote: "Color your life !",
       cta: "Explore the portfolio",
-      categoriesTitle: "Series",
     },
     instagramBanner: {
       title: "Follow INDYANASTUDIO on Instagram",
