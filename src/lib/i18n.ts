@@ -33,7 +33,7 @@ type Dictionary = {
     viewSeries: string;
   };
   categories: {
-    concert: { title: string; description: string };
+    evenementiel: { title: string; description: string };
     portrait: { title: string; description: string };
     headshot: { title: string; description: string };
     corporate: { title: string; description: string };
@@ -95,9 +95,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       viewSeries: "Voir la série",
     },
     categories: {
-      concert: {
-        title: "Concert",
-        description: "Scènes, artistes et festivals — immersion dans l'énergie du live.",
+      evenementiel: {
+        title: "Événementiel",
+        description: "Concerts, scènes et festivals — immersion dans l'énergie du live.",
       },
       portrait: {
         title: "Portrait",
@@ -175,9 +175,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       viewSeries: "View series",
     },
     categories: {
-      concert: {
-        title: "Concert",
-        description: "Stages, artists and festivals — immersed in the energy of live music.",
+      evenementiel: {
+        title: "Events",
+        description: "Concerts, stages and festivals — immersed in the energy of live music.",
       },
       portrait: {
         title: "Portrait",
