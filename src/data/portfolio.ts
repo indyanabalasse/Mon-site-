@@ -57,9 +57,6 @@ import portrait21 from "@/images/portrait/portrait-21.jpg";
 import portrait22 from "@/images/portrait/portrait-22.jpg";
 import portrait23 from "@/images/portrait/portrait-23.jpg";
 import portrait24 from "@/images/portrait/portrait-24.jpg";
-import portrait25 from "@/images/portrait/portrait-25.jpg";
-import portrait26 from "@/images/portrait/portrait-26.jpg";
-import portrait27 from "@/images/portrait/portrait-27.jpg";
 
 import headshot01 from "@/images/headshot/headshot-01.jpg";
 import headshot02 from "@/images/headshot/headshot-02.jpg";
@@ -117,7 +114,6 @@ export const portfolio: Record<CategorySlug, StaticImageData[]> = {
     portrait01, portrait02, portrait03, portrait04, portrait05, portrait06, portrait07, portrait08,
     portrait09, portrait10, portrait11, portrait12, portrait13, portrait14, portrait15, portrait16,
     portrait17, portrait18, portrait19, portrait20, portrait21, portrait22, portrait23, portrait24,
-    portrait25, portrait26, portrait27,
   ],
   headshot: [
     headshot01, headshot02, headshot03, headshot04, headshot05, headshot06, headshot07, headshot08,
