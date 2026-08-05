@@ -54,9 +54,6 @@ import portrait18 from "@/images/portrait/portrait-18.jpg";
 import portrait19 from "@/images/portrait/portrait-19.jpg";
 import portrait20 from "@/images/portrait/portrait-20.jpg";
 import portrait21 from "@/images/portrait/portrait-21.jpg";
-import portrait22 from "@/images/portrait/portrait-22.jpg";
-import portrait23 from "@/images/portrait/portrait-23.jpg";
-import portrait24 from "@/images/portrait/portrait-24.jpg";
 
 import headshot01 from "@/images/headshot/headshot-01.jpg";
 import headshot02 from "@/images/headshot/headshot-02.jpg";
@@ -97,7 +94,6 @@ import sport03 from "@/images/sport/sport-03.jpg";
 import sport04 from "@/images/sport/sport-04.jpg";
 import sport05 from "@/images/sport/sport-05.jpg";
 import sport06 from "@/images/sport/sport-06.jpg";
-import sport07 from "@/images/sport/sport-07.jpg";
 
 export type CategorySlug = "concert" | "portrait" | "headshot" | "corporate" | "sport";
 
@@ -113,7 +109,7 @@ export const portfolio: Record<CategorySlug, StaticImageData[]> = {
   portrait: [
     portrait01, portrait02, portrait03, portrait04, portrait05, portrait06, portrait07, portrait08,
     portrait09, portrait10, portrait11, portrait12, portrait13, portrait14, portrait15, portrait16,
-    portrait17, portrait18, portrait19, portrait20, portrait21, portrait22, portrait23, portrait24,
+    portrait17, portrait18, portrait19, portrait20, portrait21,
   ],
   headshot: [
     headshot01, headshot02, headshot03, headshot04, headshot05, headshot06, headshot07, headshot08,
@@ -125,15 +121,15 @@ export const portfolio: Record<CategorySlug, StaticImageData[]> = {
     corporate15,
   ],
   sport: [
-    sport01, sport02, sport03, sport04, sport05, sport06, sport07,
+    sport01, sport02, sport03, sport04, sport05, sport06,
   ],
 };
 
 export const heroImage = concert04;
 export const coverImages: Record<CategorySlug, StaticImageData> = {
   concert: concert01,
-  portrait: portrait08,
+  portrait: portrait07,
   headshot: headshot05,
   corporate: corporate02,
-  sport: sport04,
+  sport: sport06,
 };
