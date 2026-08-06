@@ -146,19 +146,25 @@ import headshotHeadshot13 from "@/images/portfolio/headshot/headshot/13.jpg";
 import headshotHeadshot14 from "@/images/portfolio/headshot/headshot/14.jpg";
 import headshotHeadshot15 from "@/images/portfolio/headshot/headshot/15.jpg";
 import headshotHeadshot16 from "@/images/portfolio/headshot/headshot/16.jpg";
-import sportCover from "@/images/portfolio/sport/cover.jpg";
-import sportKineCover from "@/images/portfolio/sport/kine/cover.jpg";
-import sportKine01 from "@/images/portfolio/sport/kine/01.jpg";
-import sportKine02 from "@/images/portfolio/sport/kine/02.jpg";
-import sportKine03 from "@/images/portfolio/sport/kine/03.jpg";
-import sportKine04 from "@/images/portfolio/sport/kine/04.jpg";
-import sportKine05 from "@/images/portfolio/sport/kine/05.jpg";
+import santeCover from "@/images/portfolio/sante/cover.jpg";
+import santeKineCover from "@/images/portfolio/sante/kine/cover.jpg";
+import santeKine01 from "@/images/portfolio/sante/kine/01.jpg";
+import santeKine02 from "@/images/portfolio/sante/kine/02.jpg";
+import santeKine03 from "@/images/portfolio/sante/kine/03.jpg";
+import santeKine04 from "@/images/portfolio/sante/kine/04.jpg";
+import santeKine05 from "@/images/portfolio/sante/kine/05.jpg";
+import santeKine06 from "@/images/portfolio/sante/kine/06.jpg";
+import santeKine07 from "@/images/portfolio/sante/kine/07.jpg";
+import santeKine08 from "@/images/portfolio/sante/kine/08.jpg";
+import santeKine09 from "@/images/portfolio/sante/kine/09.jpg";
+import santeKine10 from "@/images/portfolio/sante/kine/10.jpg";
+import santeKine11 from "@/images/portfolio/sante/kine/11.jpg";
+import santeKine12 from "@/images/portfolio/sante/kine/12.jpg";
 import familleCover from "@/images/portfolio/famille/cover.jpg";
 import familleFemmeEnceinteCover from "@/images/portfolio/famille/femme-enceinte/cover.jpg";
 import familleFemmeEnceinte01 from "@/images/portfolio/famille/femme-enceinte/01.jpg";
 import familleFemmeEnceinte02 from "@/images/portfolio/famille/femme-enceinte/02.jpg";
 import familleFemmeEnceinte03 from "@/images/portfolio/famille/femme-enceinte/03.jpg";
-import familleFemmeEnceinte04 from "@/images/portfolio/famille/femme-enceinte/04.jpg";
 
 export const heroImages: StaticImageData[] = [hero01, hero02, hero03];
 
@@ -167,7 +173,7 @@ export type CategorySlug =
   | "portrait"
   | "corporate"
   | "headshot"
-  | "sport"
+  | "sante"
   | "famille";
 
 export type Series = {
@@ -304,13 +310,17 @@ export const categories: CategoryData[] = [
     ],
   },
   {
-    slug: "sport",
-    cover: sportCover,
+    slug: "sante",
+    cover: santeCover,
     series: [
       {
         slug: "kine",
-        cover: sportKineCover,
-        images: [sportKine01, sportKine02, sportKine03, sportKine04, sportKine05],
+        cover: santeKineCover,
+        images: [
+          santeKine01, santeKine02, santeKine03, santeKine04,
+          santeKine05, santeKine06, santeKine07, santeKine08,
+          santeKine09, santeKine10, santeKine11, santeKine12,
+        ],
       },
     ],
   },
@@ -322,7 +332,7 @@ export const categories: CategoryData[] = [
         slug: "femme-enceinte",
         cover: familleFemmeEnceinteCover,
         images: [
-          familleFemmeEnceinte01, familleFemmeEnceinte02, familleFemmeEnceinte03, familleFemmeEnceinte04,
+          familleFemmeEnceinte01, familleFemmeEnceinte02, familleFemmeEnceinte03,
         ],
       },
     ],

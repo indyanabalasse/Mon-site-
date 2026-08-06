@@ -144,8 +144,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
           "esg-logic": "ESG Logic",
         },
       },
-      sport: {
-        title: "Sport",
+      sante: {
+        title: "Santé",
         description: "Entraînement, préparation physique et kinésithérapie sportive en action.",
         series: {
           kine: "Kinésithérapie",
@@ -325,8 +325,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
           "esg-logic": "ESG Logic",
         },
       },
-      sport: {
-        title: "Sport",
+      sante: {
+        title: "Health",
         description: "Training, athletic performance and sports physiotherapy in action.",
         series: {
           kine: "Physiotherapy",
