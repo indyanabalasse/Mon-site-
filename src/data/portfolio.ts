@@ -128,24 +128,23 @@ import corporateEsgLogic20 from "@/images/portfolio/corporate/esg-logic/20.jpg";
 import corporateEsgLogic21 from "@/images/portfolio/corporate/esg-logic/21.jpg";
 import corporateEsgLogic22 from "@/images/portfolio/corporate/esg-logic/22.jpg";
 import corporateEsgLogic23 from "@/images/portfolio/corporate/esg-logic/23.jpg";
-import headshotCover from "@/images/portfolio/headshot/cover.jpg";
-import headshotHeadshotCover from "@/images/portfolio/headshot/headshot/cover.jpg";
-import headshotHeadshot01 from "@/images/portfolio/headshot/headshot/01.jpg";
-import headshotHeadshot02 from "@/images/portfolio/headshot/headshot/02.jpg";
-import headshotHeadshot03 from "@/images/portfolio/headshot/headshot/03.jpg";
-import headshotHeadshot04 from "@/images/portfolio/headshot/headshot/04.jpg";
-import headshotHeadshot05 from "@/images/portfolio/headshot/headshot/05.jpg";
-import headshotHeadshot06 from "@/images/portfolio/headshot/headshot/06.jpg";
-import headshotHeadshot07 from "@/images/portfolio/headshot/headshot/07.jpg";
-import headshotHeadshot08 from "@/images/portfolio/headshot/headshot/08.jpg";
-import headshotHeadshot09 from "@/images/portfolio/headshot/headshot/09.jpg";
-import headshotHeadshot10 from "@/images/portfolio/headshot/headshot/10.jpg";
-import headshotHeadshot11 from "@/images/portfolio/headshot/headshot/11.jpg";
-import headshotHeadshot12 from "@/images/portfolio/headshot/headshot/12.jpg";
-import headshotHeadshot13 from "@/images/portfolio/headshot/headshot/13.jpg";
-import headshotHeadshot14 from "@/images/portfolio/headshot/headshot/14.jpg";
-import headshotHeadshot15 from "@/images/portfolio/headshot/headshot/15.jpg";
-import headshotHeadshot16 from "@/images/portfolio/headshot/headshot/16.jpg";
+import portraitHeadshotCover from "@/images/portfolio/portrait/headshot/cover.jpg";
+import portraitHeadshot01 from "@/images/portfolio/portrait/headshot/01.jpg";
+import portraitHeadshot02 from "@/images/portfolio/portrait/headshot/02.jpg";
+import portraitHeadshot03 from "@/images/portfolio/portrait/headshot/03.jpg";
+import portraitHeadshot04 from "@/images/portfolio/portrait/headshot/04.jpg";
+import portraitHeadshot05 from "@/images/portfolio/portrait/headshot/05.jpg";
+import portraitHeadshot06 from "@/images/portfolio/portrait/headshot/06.jpg";
+import portraitHeadshot07 from "@/images/portfolio/portrait/headshot/07.jpg";
+import portraitHeadshot08 from "@/images/portfolio/portrait/headshot/08.jpg";
+import portraitHeadshot09 from "@/images/portfolio/portrait/headshot/09.jpg";
+import portraitHeadshot10 from "@/images/portfolio/portrait/headshot/10.jpg";
+import portraitHeadshot11 from "@/images/portfolio/portrait/headshot/11.jpg";
+import portraitHeadshot12 from "@/images/portfolio/portrait/headshot/12.jpg";
+import portraitHeadshot13 from "@/images/portfolio/portrait/headshot/13.jpg";
+import portraitHeadshot14 from "@/images/portfolio/portrait/headshot/14.jpg";
+import portraitHeadshot15 from "@/images/portfolio/portrait/headshot/15.jpg";
+import portraitHeadshot16 from "@/images/portfolio/portrait/headshot/16.jpg";
 import santeCover from "@/images/portfolio/sante/cover.jpg";
 import santeKineCover from "@/images/portfolio/sante/kine/cover.jpg";
 import santeKine01 from "@/images/portfolio/sante/kine/01.jpg";
@@ -172,7 +171,6 @@ export type CategorySlug =
   | "evenementiel"
   | "portrait"
   | "corporate"
-  | "headshot"
   | "sante"
   | "famille";
 
@@ -261,20 +259,14 @@ export const categories: CategoryData[] = [
           portraitAutre01, portraitAutre02, portraitAutre03, portraitAutre04, portraitAutre05,
         ],
       },
-    ],
-  },
-  {
-    slug: "headshot",
-    cover: headshotCover,
-    series: [
       {
         slug: "headshot",
-        cover: headshotHeadshotCover,
+        cover: portraitHeadshotCover,
         images: [
-          headshotHeadshot01, headshotHeadshot02, headshotHeadshot03, headshotHeadshot04,
-          headshotHeadshot05, headshotHeadshot06, headshotHeadshot07, headshotHeadshot08,
-          headshotHeadshot09, headshotHeadshot10, headshotHeadshot11, headshotHeadshot12,
-          headshotHeadshot13, headshotHeadshot14, headshotHeadshot15, headshotHeadshot16,
+          portraitHeadshot01, portraitHeadshot02, portraitHeadshot03, portraitHeadshot04,
+          portraitHeadshot05, portraitHeadshot06, portraitHeadshot07, portraitHeadshot08,
+          portraitHeadshot09, portraitHeadshot10, portraitHeadshot11, portraitHeadshot12,
+          portraitHeadshot13, portraitHeadshot14, portraitHeadshot15, portraitHeadshot16,
         ],
       },
     ],

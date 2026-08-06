@@ -127,12 +127,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
           herton: "Herton",
           arty: "Arty",
           autre: "Autre",
-        },
-      },
-      headshot: {
-        title: "Headshot",
-        description: "Portraits professionnels épurés, pensés pour révéler une présence.",
-        series: {
           headshot: "Headshot",
         },
       },
@@ -308,12 +302,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
           herton: "Herton",
           arty: "Arty",
           autre: "Other",
-        },
-      },
-      headshot: {
-        title: "Headshot",
-        description: "Clean professional headshots, crafted to reveal a presence.",
-        series: {
           headshot: "Headshot",
         },
       },
