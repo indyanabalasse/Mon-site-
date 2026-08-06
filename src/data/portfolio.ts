@@ -93,6 +93,41 @@ import corporateMaVie09 from "@/images/portfolio/corporate/ma-vie/09.jpg";
 import corporateMaVie10 from "@/images/portfolio/corporate/ma-vie/10.jpg";
 import corporateMaVie11 from "@/images/portfolio/corporate/ma-vie/11.jpg";
 import corporateMaVie12 from "@/images/portfolio/corporate/ma-vie/12.jpg";
+import corporateMaVie13 from "@/images/portfolio/corporate/ma-vie/13.jpg";
+import corporateMaVie14 from "@/images/portfolio/corporate/ma-vie/14.jpg";
+import corporateMaVie15 from "@/images/portfolio/corporate/ma-vie/15.jpg";
+import corporateMaVie16 from "@/images/portfolio/corporate/ma-vie/16.jpg";
+import corporateMaVie17 from "@/images/portfolio/corporate/ma-vie/17.jpg";
+import corporateMaVie18 from "@/images/portfolio/corporate/ma-vie/18.jpg";
+import corporateMaVie19 from "@/images/portfolio/corporate/ma-vie/19.jpg";
+import corporateMaVie20 from "@/images/portfolio/corporate/ma-vie/20.jpg";
+import corporateMaVie21 from "@/images/portfolio/corporate/ma-vie/21.jpg";
+import corporateMaVie22 from "@/images/portfolio/corporate/ma-vie/22.jpg";
+import corporateMaVie23 from "@/images/portfolio/corporate/ma-vie/23.jpg";
+import corporateEsgLogicCover from "@/images/portfolio/corporate/esg-logic/cover.jpg";
+import corporateEsgLogic01 from "@/images/portfolio/corporate/esg-logic/01.jpg";
+import corporateEsgLogic02 from "@/images/portfolio/corporate/esg-logic/02.jpg";
+import corporateEsgLogic03 from "@/images/portfolio/corporate/esg-logic/03.jpg";
+import corporateEsgLogic04 from "@/images/portfolio/corporate/esg-logic/04.jpg";
+import corporateEsgLogic05 from "@/images/portfolio/corporate/esg-logic/05.jpg";
+import corporateEsgLogic06 from "@/images/portfolio/corporate/esg-logic/06.jpg";
+import corporateEsgLogic07 from "@/images/portfolio/corporate/esg-logic/07.jpg";
+import corporateEsgLogic08 from "@/images/portfolio/corporate/esg-logic/08.jpg";
+import corporateEsgLogic09 from "@/images/portfolio/corporate/esg-logic/09.jpg";
+import corporateEsgLogic10 from "@/images/portfolio/corporate/esg-logic/10.jpg";
+import corporateEsgLogic11 from "@/images/portfolio/corporate/esg-logic/11.jpg";
+import corporateEsgLogic12 from "@/images/portfolio/corporate/esg-logic/12.jpg";
+import corporateEsgLogic13 from "@/images/portfolio/corporate/esg-logic/13.jpg";
+import corporateEsgLogic14 from "@/images/portfolio/corporate/esg-logic/14.jpg";
+import corporateEsgLogic15 from "@/images/portfolio/corporate/esg-logic/15.jpg";
+import corporateEsgLogic16 from "@/images/portfolio/corporate/esg-logic/16.jpg";
+import corporateEsgLogic17 from "@/images/portfolio/corporate/esg-logic/17.jpg";
+import corporateEsgLogic18 from "@/images/portfolio/corporate/esg-logic/18.jpg";
+import corporateEsgLogic19 from "@/images/portfolio/corporate/esg-logic/19.jpg";
+import corporateEsgLogic20 from "@/images/portfolio/corporate/esg-logic/20.jpg";
+import corporateEsgLogic21 from "@/images/portfolio/corporate/esg-logic/21.jpg";
+import corporateEsgLogic22 from "@/images/portfolio/corporate/esg-logic/22.jpg";
+import corporateEsgLogic23 from "@/images/portfolio/corporate/esg-logic/23.jpg";
 import headshotCover from "@/images/portfolio/headshot/cover.jpg";
 import headshotHeadshotCover from "@/images/portfolio/headshot/headshot/cover.jpg";
 import headshotHeadshot01 from "@/images/portfolio/headshot/headshot/01.jpg";
@@ -249,6 +284,21 @@ export const categories: CategoryData[] = [
           corporateMaVie01, corporateMaVie02, corporateMaVie03, corporateMaVie04,
           corporateMaVie05, corporateMaVie06, corporateMaVie07, corporateMaVie08,
           corporateMaVie09, corporateMaVie10, corporateMaVie11, corporateMaVie12,
+          corporateMaVie13, corporateMaVie14, corporateMaVie15, corporateMaVie16,
+          corporateMaVie17, corporateMaVie18, corporateMaVie19, corporateMaVie20,
+          corporateMaVie21, corporateMaVie22, corporateMaVie23,
+        ],
+      },
+      {
+        slug: "esg-logic",
+        cover: corporateEsgLogicCover,
+        images: [
+          corporateEsgLogic01, corporateEsgLogic02, corporateEsgLogic03, corporateEsgLogic04,
+          corporateEsgLogic05, corporateEsgLogic06, corporateEsgLogic07, corporateEsgLogic08,
+          corporateEsgLogic09, corporateEsgLogic10, corporateEsgLogic11, corporateEsgLogic12,
+          corporateEsgLogic13, corporateEsgLogic14, corporateEsgLogic15, corporateEsgLogic16,
+          corporateEsgLogic17, corporateEsgLogic18, corporateEsgLogic19, corporateEsgLogic20,
+          corporateEsgLogic21, corporateEsgLogic22, corporateEsgLogic23,
         ],
       },
     ],

@@ -141,6 +141,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         description: "Photographie d'entreprise : équipes, événements et portraits professionnels.",
         series: {
           "ma-vie": "Ma Vie",
+          "esg-logic": "ESG Logic",
         },
       },
       sport: {
@@ -321,6 +322,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         description: "Corporate photography: teams, events and professional portraits.",
         series: {
           "ma-vie": "Ma Vie",
+          "esg-logic": "ESG Logic",
         },
       },
       sport: {
