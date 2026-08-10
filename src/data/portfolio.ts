@@ -98,6 +98,14 @@ import portraitArtyCover from "@/images/portfolio/portrait/arty/cover.jpg";
 import portraitArty01 from "@/images/portfolio/portrait/arty/01.jpg";
 import portraitArty02 from "@/images/portfolio/portrait/arty/02.jpg";
 import portraitArty03 from "@/images/portfolio/portrait/arty/03.jpg";
+import portraitArty04 from "@/images/portfolio/portrait/arty/04.jpg";
+import portraitArty05 from "@/images/portfolio/portrait/arty/05.jpg";
+import portraitArty06 from "@/images/portfolio/portrait/arty/06.jpg";
+import portraitArty07 from "@/images/portfolio/portrait/arty/07.jpg";
+import portraitArty08 from "@/images/portfolio/portrait/arty/08.jpg";
+import portraitArty09 from "@/images/portfolio/portrait/arty/09.jpg";
+import portraitArty10 from "@/images/portfolio/portrait/arty/10.jpg";
+import portraitArty11 from "@/images/portfolio/portrait/arty/11.jpg";
 import portraitAutreCover from "@/images/portfolio/portrait/autre/cover.jpg";
 import portraitAutre01 from "@/images/portfolio/portrait/autre/01.jpg";
 import portraitAutre02 from "@/images/portfolio/portrait/autre/02.jpg";
@@ -311,7 +319,11 @@ export const categories: CategoryData[] = [
       {
         slug: "arty",
         cover: portraitArtyCover,
-        images: [portraitArty01, portraitArty02, portraitArty03],
+        images: [
+          portraitArty01, portraitArty02, portraitArty03, portraitArty04,
+          portraitArty05, portraitArty06, portraitArty07, portraitArty08,
+          portraitArty09, portraitArty10, portraitArty11,
+        ],
       },
       {
         slug: "autre",
