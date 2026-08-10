@@ -3,7 +3,6 @@ import type { StaticImageData } from "next/image";
 import hero01 from "@/images/hero/01.jpg";
 import hero02 from "@/images/hero/02.jpg";
 import hero03 from "@/images/hero/03.jpg";
-import hero04 from "@/images/hero/04.jpg";
 
 import evenementielCover from "@/images/portfolio/evenementiel/cover.jpg";
 import evenementielConcertCover from "@/images/portfolio/evenementiel/concert/cover.jpg";
@@ -197,7 +196,7 @@ import familleFemmeEnceinte01 from "@/images/portfolio/famille/femme-enceinte/01
 import familleFemmeEnceinte02 from "@/images/portfolio/famille/femme-enceinte/02.jpg";
 import familleFemmeEnceinte03 from "@/images/portfolio/famille/femme-enceinte/03.jpg";
 
-export const heroImages: StaticImageData[] = [hero01, hero02, hero03, hero04];
+export const heroImages: StaticImageData[] = [hero01, hero02, hero03];
 
 export type CategorySlug =
   | "evenementiel"
