@@ -128,6 +128,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           herton: "Herton",
           arty: "Arty",
           autre: "Autre",
+          "black-white": "Black & White",
           headshot: "Headshot",
         },
       },
@@ -159,6 +160,12 @@ export const dictionaries: Record<Locale, Dictionary> = {
         festival: {
           bambounou: "Bambounou",
           "laura-degreef": "Laura Degreef",
+        },
+      },
+      portrait: {
+        "black-white": {
+          wolfgang: "Wolfgang",
+          "didier-vdb": "Didier VDB",
         },
       },
     },
@@ -311,6 +318,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           herton: "Herton",
           arty: "Arty",
           autre: "Other",
+          "black-white": "Black & White",
           headshot: "Headshot",
         },
       },
@@ -342,6 +350,12 @@ export const dictionaries: Record<Locale, Dictionary> = {
         festival: {
           bambounou: "Bambounou",
           "laura-degreef": "Laura Degreef",
+        },
+      },
+      portrait: {
+        "black-white": {
+          wolfgang: "Wolfgang",
+          "didier-vdb": "Didier VDB",
         },
       },
     },

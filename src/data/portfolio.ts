@@ -52,7 +52,6 @@ import evenementielFestivalBambounou07 from "@/images/portfolio/evenementiel/fes
 import evenementielFestivalBambounou08 from "@/images/portfolio/evenementiel/festival/bambounou/08.jpg";
 import evenementielFestivalBambounou09 from "@/images/portfolio/evenementiel/festival/bambounou/09.jpg";
 import evenementielFestivalBambounou10 from "@/images/portfolio/evenementiel/festival/bambounou/10.jpg";
-import evenementielFestivalBambounou11 from "@/images/portfolio/evenementiel/festival/bambounou/11.jpg";
 import evenementielFestivalLauraDegreefCover from "@/images/portfolio/evenementiel/festival/laura-degreef/cover.jpg";
 import evenementielFestivalLauraDegreef01 from "@/images/portfolio/evenementiel/festival/laura-degreef/01.jpg";
 import evenementielFestivalLauraDegreef02 from "@/images/portfolio/evenementiel/festival/laura-degreef/02.jpg";
@@ -91,6 +90,27 @@ import portraitAutre02 from "@/images/portfolio/portrait/autre/02.jpg";
 import portraitAutre03 from "@/images/portfolio/portrait/autre/03.jpg";
 import portraitAutre04 from "@/images/portfolio/portrait/autre/04.jpg";
 import portraitAutre05 from "@/images/portfolio/portrait/autre/05.jpg";
+import portraitBlackWhiteCover from "@/images/portfolio/portrait/black-white/cover.jpg";
+import portraitBlackWhiteDidierVdbCover from "@/images/portfolio/portrait/black-white/didier-vdb/cover.jpg";
+import portraitBlackWhiteDidierVdb01 from "@/images/portfolio/portrait/black-white/didier-vdb/01.jpg";
+import portraitBlackWhiteDidierVdb02 from "@/images/portfolio/portrait/black-white/didier-vdb/02.jpg";
+import portraitBlackWhiteDidierVdb03 from "@/images/portfolio/portrait/black-white/didier-vdb/03.jpg";
+import portraitBlackWhiteDidierVdb04 from "@/images/portfolio/portrait/black-white/didier-vdb/04.jpg";
+import portraitBlackWhiteDidierVdb05 from "@/images/portfolio/portrait/black-white/didier-vdb/05.jpg";
+import portraitBlackWhiteDidierVdb06 from "@/images/portfolio/portrait/black-white/didier-vdb/06.jpg";
+import portraitBlackWhiteDidierVdb07 from "@/images/portfolio/portrait/black-white/didier-vdb/07.jpg";
+import portraitBlackWhiteDidierVdb08 from "@/images/portfolio/portrait/black-white/didier-vdb/08.jpg";
+import portraitBlackWhiteDidierVdb09 from "@/images/portfolio/portrait/black-white/didier-vdb/09.jpg";
+import portraitBlackWhiteWolfgangCover from "@/images/portfolio/portrait/black-white/wolfgang/cover.jpg";
+import portraitBlackWhiteWolfgang01 from "@/images/portfolio/portrait/black-white/wolfgang/01.jpg";
+import portraitBlackWhiteWolfgang02 from "@/images/portfolio/portrait/black-white/wolfgang/02.jpg";
+import portraitBlackWhiteWolfgang03 from "@/images/portfolio/portrait/black-white/wolfgang/03.jpg";
+import portraitBlackWhiteWolfgang04 from "@/images/portfolio/portrait/black-white/wolfgang/04.jpg";
+import portraitBlackWhiteWolfgang05 from "@/images/portfolio/portrait/black-white/wolfgang/05.jpg";
+import portraitBlackWhiteWolfgang06 from "@/images/portfolio/portrait/black-white/wolfgang/06.jpg";
+import portraitBlackWhiteWolfgang07 from "@/images/portfolio/portrait/black-white/wolfgang/07.jpg";
+import portraitBlackWhiteWolfgang08 from "@/images/portfolio/portrait/black-white/wolfgang/08.jpg";
+import portraitBlackWhiteWolfgang09 from "@/images/portfolio/portrait/black-white/wolfgang/09.jpg";
 import corporateCover from "@/images/portfolio/corporate/cover.jpg";
 import corporateMaVieCover from "@/images/portfolio/corporate/ma-vie/cover.jpg";
 import corporateMaVie01 from "@/images/portfolio/corporate/ma-vie/01.jpg";
@@ -247,7 +267,7 @@ export const categories: CategoryData[] = [
               evenementielFestivalBambounou01, evenementielFestivalBambounou02, evenementielFestivalBambounou03,
               evenementielFestivalBambounou04, evenementielFestivalBambounou05, evenementielFestivalBambounou06,
               evenementielFestivalBambounou07, evenementielFestivalBambounou08, evenementielFestivalBambounou09,
-              evenementielFestivalBambounou10, evenementielFestivalBambounou11,
+              evenementielFestivalBambounou10,
             ],
           },
           {
@@ -298,6 +318,30 @@ export const categories: CategoryData[] = [
         cover: portraitAutreCover,
         images: [
           portraitAutre01, portraitAutre02, portraitAutre03, portraitAutre04, portraitAutre05,
+        ],
+      },
+      {
+        slug: "black-white",
+        cover: portraitBlackWhiteCover,
+        subseries: [
+          {
+            slug: "wolfgang",
+            cover: portraitBlackWhiteWolfgangCover,
+            images: [
+              portraitBlackWhiteWolfgang01, portraitBlackWhiteWolfgang02, portraitBlackWhiteWolfgang03,
+              portraitBlackWhiteWolfgang04, portraitBlackWhiteWolfgang05, portraitBlackWhiteWolfgang06,
+              portraitBlackWhiteWolfgang07, portraitBlackWhiteWolfgang08, portraitBlackWhiteWolfgang09,
+            ],
+          },
+          {
+            slug: "didier-vdb",
+            cover: portraitBlackWhiteDidierVdbCover,
+            images: [
+              portraitBlackWhiteDidierVdb01, portraitBlackWhiteDidierVdb02, portraitBlackWhiteDidierVdb03,
+              portraitBlackWhiteDidierVdb04, portraitBlackWhiteDidierVdb05, portraitBlackWhiteDidierVdb06,
+              portraitBlackWhiteDidierVdb07, portraitBlackWhiteDidierVdb08, portraitBlackWhiteDidierVdb09,
+            ],
+          },
         ],
       },
       {
