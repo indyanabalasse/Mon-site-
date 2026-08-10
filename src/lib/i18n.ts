@@ -124,11 +124,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
         description: "Portraits artistiques et conceptuels, entre lumière, matière et émotion.",
         series: {
           "laura-degreef": "Laura Degreef",
-          wolf: "Wolf",
+          wolfgang: "Wolfgang",
           herton: "Herton",
           arty: "Arty",
           autre: "Autre",
-          "black-white": "Black & White",
+          "didier-vdb": "Didier VDB",
           headshot: "Headshot",
         },
       },
@@ -160,12 +160,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
         festival: {
           bambounou: "Bambounou",
           "laura-degreef": "Laura Degreef",
-        },
-      },
-      portrait: {
-        "black-white": {
-          wolfgang: "Wolfgang",
-          "didier-vdb": "Didier VDB",
         },
       },
     },
@@ -314,11 +308,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
         description: "Artistic and conceptual portraits, between light, texture and emotion.",
         series: {
           "laura-degreef": "Laura Degreef",
-          wolf: "Wolf",
+          wolfgang: "Wolfgang",
           herton: "Herton",
           arty: "Arty",
           autre: "Other",
-          "black-white": "Black & White",
+          "didier-vdb": "Didier VDB",
           headshot: "Headshot",
         },
       },
@@ -350,12 +344,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
         festival: {
           bambounou: "Bambounou",
           "laura-degreef": "Laura Degreef",
-        },
-      },
-      portrait: {
-        "black-white": {
-          wolfgang: "Wolfgang",
-          "didier-vdb": "Didier VDB",
         },
       },
     },

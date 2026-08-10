@@ -3,6 +3,7 @@ import type { StaticImageData } from "next/image";
 import hero01 from "@/images/hero/01.jpg";
 import hero02 from "@/images/hero/02.jpg";
 import hero03 from "@/images/hero/03.jpg";
+import hero04 from "@/images/hero/04.jpg";
 
 import evenementielCover from "@/images/portfolio/evenementiel/cover.jpg";
 import evenementielConcertCover from "@/images/portfolio/evenementiel/concert/cover.jpg";
@@ -65,13 +66,16 @@ import portraitLauraDegreefCover from "@/images/portfolio/portrait/laura-degreef
 import portraitLauraDegreef01 from "@/images/portfolio/portrait/laura-degreef/01.jpg";
 import portraitLauraDegreef02 from "@/images/portfolio/portrait/laura-degreef/02.jpg";
 import portraitLauraDegreef03 from "@/images/portfolio/portrait/laura-degreef/03.jpg";
-import portraitWolfCover from "@/images/portfolio/portrait/wolf/cover.jpg";
-import portraitWolf01 from "@/images/portfolio/portrait/wolf/01.jpg";
-import portraitWolf02 from "@/images/portfolio/portrait/wolf/02.jpg";
-import portraitWolf03 from "@/images/portfolio/portrait/wolf/03.jpg";
-import portraitWolf04 from "@/images/portfolio/portrait/wolf/04.jpg";
-import portraitWolf05 from "@/images/portfolio/portrait/wolf/05.jpg";
-import portraitWolf06 from "@/images/portfolio/portrait/wolf/06.jpg";
+import portraitWolfgangCover from "@/images/portfolio/portrait/wolfgang/cover.jpg";
+import portraitWolfgang01 from "@/images/portfolio/portrait/wolfgang/01.jpg";
+import portraitWolfgang02 from "@/images/portfolio/portrait/wolfgang/02.jpg";
+import portraitWolfgang03 from "@/images/portfolio/portrait/wolfgang/03.jpg";
+import portraitWolfgang04 from "@/images/portfolio/portrait/wolfgang/04.jpg";
+import portraitWolfgang05 from "@/images/portfolio/portrait/wolfgang/05.jpg";
+import portraitWolfgang06 from "@/images/portfolio/portrait/wolfgang/06.jpg";
+import portraitWolfgang07 from "@/images/portfolio/portrait/wolfgang/07.jpg";
+import portraitWolfgang08 from "@/images/portfolio/portrait/wolfgang/08.jpg";
+import portraitWolfgang09 from "@/images/portfolio/portrait/wolfgang/09.jpg";
 import portraitHertonCover from "@/images/portfolio/portrait/herton/cover.jpg";
 import portraitHerton01 from "@/images/portfolio/portrait/herton/01.jpg";
 import portraitHerton02 from "@/images/portfolio/portrait/herton/02.jpg";
@@ -87,27 +91,16 @@ import portraitAutre02 from "@/images/portfolio/portrait/autre/02.jpg";
 import portraitAutre03 from "@/images/portfolio/portrait/autre/03.jpg";
 import portraitAutre04 from "@/images/portfolio/portrait/autre/04.jpg";
 import portraitAutre05 from "@/images/portfolio/portrait/autre/05.jpg";
-import portraitBlackWhiteCover from "@/images/portfolio/portrait/black-white/cover.jpg";
-import portraitBlackWhiteDidierVdbCover from "@/images/portfolio/portrait/black-white/didier-vdb/cover.jpg";
-import portraitBlackWhiteDidierVdb01 from "@/images/portfolio/portrait/black-white/didier-vdb/01.jpg";
-import portraitBlackWhiteDidierVdb02 from "@/images/portfolio/portrait/black-white/didier-vdb/02.jpg";
-import portraitBlackWhiteDidierVdb03 from "@/images/portfolio/portrait/black-white/didier-vdb/03.jpg";
-import portraitBlackWhiteDidierVdb04 from "@/images/portfolio/portrait/black-white/didier-vdb/04.jpg";
-import portraitBlackWhiteDidierVdb05 from "@/images/portfolio/portrait/black-white/didier-vdb/05.jpg";
-import portraitBlackWhiteDidierVdb06 from "@/images/portfolio/portrait/black-white/didier-vdb/06.jpg";
-import portraitBlackWhiteDidierVdb07 from "@/images/portfolio/portrait/black-white/didier-vdb/07.jpg";
-import portraitBlackWhiteDidierVdb08 from "@/images/portfolio/portrait/black-white/didier-vdb/08.jpg";
-import portraitBlackWhiteDidierVdb09 from "@/images/portfolio/portrait/black-white/didier-vdb/09.jpg";
-import portraitBlackWhiteWolfgangCover from "@/images/portfolio/portrait/black-white/wolfgang/cover.jpg";
-import portraitBlackWhiteWolfgang01 from "@/images/portfolio/portrait/black-white/wolfgang/01.jpg";
-import portraitBlackWhiteWolfgang02 from "@/images/portfolio/portrait/black-white/wolfgang/02.jpg";
-import portraitBlackWhiteWolfgang03 from "@/images/portfolio/portrait/black-white/wolfgang/03.jpg";
-import portraitBlackWhiteWolfgang04 from "@/images/portfolio/portrait/black-white/wolfgang/04.jpg";
-import portraitBlackWhiteWolfgang05 from "@/images/portfolio/portrait/black-white/wolfgang/05.jpg";
-import portraitBlackWhiteWolfgang06 from "@/images/portfolio/portrait/black-white/wolfgang/06.jpg";
-import portraitBlackWhiteWolfgang07 from "@/images/portfolio/portrait/black-white/wolfgang/07.jpg";
-import portraitBlackWhiteWolfgang08 from "@/images/portfolio/portrait/black-white/wolfgang/08.jpg";
-import portraitBlackWhiteWolfgang09 from "@/images/portfolio/portrait/black-white/wolfgang/09.jpg";
+import portraitDidierVdbCover from "@/images/portfolio/portrait/didier-vdb/cover.jpg";
+import portraitDidierVdb01 from "@/images/portfolio/portrait/didier-vdb/01.jpg";
+import portraitDidierVdb02 from "@/images/portfolio/portrait/didier-vdb/02.jpg";
+import portraitDidierVdb03 from "@/images/portfolio/portrait/didier-vdb/03.jpg";
+import portraitDidierVdb04 from "@/images/portfolio/portrait/didier-vdb/04.jpg";
+import portraitDidierVdb05 from "@/images/portfolio/portrait/didier-vdb/05.jpg";
+import portraitDidierVdb06 from "@/images/portfolio/portrait/didier-vdb/06.jpg";
+import portraitDidierVdb07 from "@/images/portfolio/portrait/didier-vdb/07.jpg";
+import portraitDidierVdb08 from "@/images/portfolio/portrait/didier-vdb/08.jpg";
+import portraitDidierVdb09 from "@/images/portfolio/portrait/didier-vdb/09.jpg";
 import corporateCover from "@/images/portfolio/corporate/cover.jpg";
 import corporateMaVieCover from "@/images/portfolio/corporate/ma-vie/cover.jpg";
 import corporateMaVie01 from "@/images/portfolio/corporate/ma-vie/01.jpg";
@@ -194,7 +187,7 @@ import familleFemmeEnceinte01 from "@/images/portfolio/famille/femme-enceinte/01
 import familleFemmeEnceinte02 from "@/images/portfolio/famille/femme-enceinte/02.jpg";
 import familleFemmeEnceinte03 from "@/images/portfolio/famille/femme-enceinte/03.jpg";
 
-export const heroImages: StaticImageData[] = [hero01, hero02, hero03];
+export const heroImages: StaticImageData[] = [hero01, hero02, hero03, hero04];
 
 export type CategorySlug =
   | "evenementiel"
@@ -292,11 +285,12 @@ export const categories: CategoryData[] = [
         ],
       },
       {
-        slug: "wolf",
-        cover: portraitWolfCover,
+        slug: "wolfgang",
+        cover: portraitWolfgangCover,
         images: [
-          portraitWolf01, portraitWolf02, portraitWolf03,
-          portraitWolf04, portraitWolf05, portraitWolf06,
+          portraitWolfgang01, portraitWolfgang02, portraitWolfgang03,
+          portraitWolfgang04, portraitWolfgang05, portraitWolfgang06,
+          portraitWolfgang07, portraitWolfgang08, portraitWolfgang09,
         ],
       },
       {
@@ -317,27 +311,12 @@ export const categories: CategoryData[] = [
         ],
       },
       {
-        slug: "black-white",
-        cover: portraitBlackWhiteCover,
-        subseries: [
-          {
-            slug: "wolfgang",
-            cover: portraitBlackWhiteWolfgangCover,
-            images: [
-              portraitBlackWhiteWolfgang01, portraitBlackWhiteWolfgang02, portraitBlackWhiteWolfgang03,
-              portraitBlackWhiteWolfgang04, portraitBlackWhiteWolfgang05, portraitBlackWhiteWolfgang06,
-              portraitBlackWhiteWolfgang07, portraitBlackWhiteWolfgang08, portraitBlackWhiteWolfgang09,
-            ],
-          },
-          {
-            slug: "didier-vdb",
-            cover: portraitBlackWhiteDidierVdbCover,
-            images: [
-              portraitBlackWhiteDidierVdb01, portraitBlackWhiteDidierVdb02, portraitBlackWhiteDidierVdb03,
-              portraitBlackWhiteDidierVdb04, portraitBlackWhiteDidierVdb05, portraitBlackWhiteDidierVdb06,
-              portraitBlackWhiteDidierVdb07, portraitBlackWhiteDidierVdb08, portraitBlackWhiteDidierVdb09,
-            ],
-          },
+        slug: "didier-vdb",
+        cover: portraitDidierVdbCover,
+        images: [
+          portraitDidierVdb01, portraitDidierVdb02, portraitDidierVdb03,
+          portraitDidierVdb04, portraitDidierVdb05, portraitDidierVdb06,
+          portraitDidierVdb07, portraitDidierVdb08, portraitDidierVdb09,
         ],
       },
       {
