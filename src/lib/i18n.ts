@@ -162,6 +162,12 @@ export const dictionaries: Record<Locale, Dictionary> = {
           "laura-degreef": "Laura Degreef",
         },
       },
+      portrait: {
+        "laura-degreef": {
+          "shoot-1": "Shoot 1",
+          "shoot-2": "Shoot 2",
+        },
+      },
     },
     packaging: {
       title: "Formules & Tarifs",
@@ -344,6 +350,12 @@ export const dictionaries: Record<Locale, Dictionary> = {
         festival: {
           bambounou: "Bambounou",
           "laura-degreef": "Laura Degreef",
+        },
+      },
+      portrait: {
+        "laura-degreef": {
+          "shoot-1": "Shoot 1",
+          "shoot-2": "Shoot 2",
         },
       },
     },

@@ -62,23 +62,35 @@ import evenementielFestivalLauraDegreef06 from "@/images/portfolio/evenementiel/
 import evenementielFestivalLauraDegreef07 from "@/images/portfolio/evenementiel/festival/laura-degreef/07.jpg";
 import portraitCover from "@/images/portfolio/portrait/cover.jpg";
 import portraitLauraDegreefCover from "@/images/portfolio/portrait/laura-degreef/cover.jpg";
-import portraitLauraDegreef01 from "@/images/portfolio/portrait/laura-degreef/01.jpg";
-import portraitLauraDegreef02 from "@/images/portfolio/portrait/laura-degreef/02.jpg";
-import portraitLauraDegreef03 from "@/images/portfolio/portrait/laura-degreef/03.jpg";
-import portraitLauraDegreef04 from "@/images/portfolio/portrait/laura-degreef/04.jpg";
-import portraitLauraDegreef05 from "@/images/portfolio/portrait/laura-degreef/05.jpg";
-import portraitLauraDegreef06 from "@/images/portfolio/portrait/laura-degreef/06.jpg";
-import portraitLauraDegreef07 from "@/images/portfolio/portrait/laura-degreef/07.jpg";
-import portraitLauraDegreef08 from "@/images/portfolio/portrait/laura-degreef/08.jpg";
-import portraitLauraDegreef09 from "@/images/portfolio/portrait/laura-degreef/09.jpg";
-import portraitLauraDegreef10 from "@/images/portfolio/portrait/laura-degreef/10.jpg";
-import portraitLauraDegreef11 from "@/images/portfolio/portrait/laura-degreef/11.jpg";
-import portraitLauraDegreef12 from "@/images/portfolio/portrait/laura-degreef/12.jpg";
-import portraitLauraDegreef13 from "@/images/portfolio/portrait/laura-degreef/13.jpg";
-import portraitLauraDegreef14 from "@/images/portfolio/portrait/laura-degreef/14.jpg";
-import portraitLauraDegreef15 from "@/images/portfolio/portrait/laura-degreef/15.jpg";
-import portraitLauraDegreef16 from "@/images/portfolio/portrait/laura-degreef/16.jpg";
-import portraitLauraDegreef17 from "@/images/portfolio/portrait/laura-degreef/17.jpg";
+import portraitLauraDegreefShoot1Cover from "@/images/portfolio/portrait/laura-degreef/shoot-1/cover.jpg";
+import portraitLauraDegreefShoot101 from "@/images/portfolio/portrait/laura-degreef/shoot-1/01.jpg";
+import portraitLauraDegreefShoot102 from "@/images/portfolio/portrait/laura-degreef/shoot-1/02.jpg";
+import portraitLauraDegreefShoot103 from "@/images/portfolio/portrait/laura-degreef/shoot-1/03.jpg";
+import portraitLauraDegreefShoot104 from "@/images/portfolio/portrait/laura-degreef/shoot-1/04.jpg";
+import portraitLauraDegreefShoot105 from "@/images/portfolio/portrait/laura-degreef/shoot-1/05.jpg";
+import portraitLauraDegreefShoot106 from "@/images/portfolio/portrait/laura-degreef/shoot-1/06.jpg";
+import portraitLauraDegreefShoot107 from "@/images/portfolio/portrait/laura-degreef/shoot-1/07.jpg";
+import portraitLauraDegreefShoot108 from "@/images/portfolio/portrait/laura-degreef/shoot-1/08.jpg";
+import portraitLauraDegreefShoot109 from "@/images/portfolio/portrait/laura-degreef/shoot-1/09.jpg";
+import portraitLauraDegreefShoot110 from "@/images/portfolio/portrait/laura-degreef/shoot-1/10.jpg";
+import portraitLauraDegreefShoot111 from "@/images/portfolio/portrait/laura-degreef/shoot-1/11.jpg";
+import portraitLauraDegreefShoot112 from "@/images/portfolio/portrait/laura-degreef/shoot-1/12.jpg";
+import portraitLauraDegreefShoot113 from "@/images/portfolio/portrait/laura-degreef/shoot-1/13.jpg";
+import portraitLauraDegreefShoot114 from "@/images/portfolio/portrait/laura-degreef/shoot-1/14.jpg";
+import portraitLauraDegreefShoot2Cover from "@/images/portfolio/portrait/laura-degreef/shoot-2/cover.jpg";
+import portraitLauraDegreefShoot201 from "@/images/portfolio/portrait/laura-degreef/shoot-2/01.jpg";
+import portraitLauraDegreefShoot202 from "@/images/portfolio/portrait/laura-degreef/shoot-2/02.jpg";
+import portraitLauraDegreefShoot203 from "@/images/portfolio/portrait/laura-degreef/shoot-2/03.jpg";
+import portraitLauraDegreefShoot204 from "@/images/portfolio/portrait/laura-degreef/shoot-2/04.jpg";
+import portraitLauraDegreefShoot205 from "@/images/portfolio/portrait/laura-degreef/shoot-2/05.jpg";
+import portraitLauraDegreefShoot206 from "@/images/portfolio/portrait/laura-degreef/shoot-2/06.jpg";
+import portraitLauraDegreefShoot207 from "@/images/portfolio/portrait/laura-degreef/shoot-2/07.jpg";
+import portraitLauraDegreefShoot208 from "@/images/portfolio/portrait/laura-degreef/shoot-2/08.jpg";
+import portraitLauraDegreefShoot209 from "@/images/portfolio/portrait/laura-degreef/shoot-2/09.jpg";
+import portraitLauraDegreefShoot210 from "@/images/portfolio/portrait/laura-degreef/shoot-2/10.jpg";
+import portraitLauraDegreefShoot211 from "@/images/portfolio/portrait/laura-degreef/shoot-2/11.jpg";
+import portraitLauraDegreefShoot212 from "@/images/portfolio/portrait/laura-degreef/shoot-2/12.jpg";
+import portraitLauraDegreefShoot213 from "@/images/portfolio/portrait/laura-degreef/shoot-2/13.jpg";
 import portraitWolfgangCover from "@/images/portfolio/portrait/wolfgang/cover.jpg";
 import portraitWolfgang01 from "@/images/portfolio/portrait/wolfgang/01.jpg";
 import portraitWolfgang02 from "@/images/portfolio/portrait/wolfgang/02.jpg";
@@ -122,6 +134,8 @@ import portraitDidierVdb06 from "@/images/portfolio/portrait/didier-vdb/06.jpg";
 import portraitDidierVdb07 from "@/images/portfolio/portrait/didier-vdb/07.jpg";
 import portraitDidierVdb08 from "@/images/portfolio/portrait/didier-vdb/08.jpg";
 import portraitDidierVdb09 from "@/images/portfolio/portrait/didier-vdb/09.jpg";
+import portraitDidierVdb10 from "@/images/portfolio/portrait/didier-vdb/10.jpg";
+import portraitDidierVdb11 from "@/images/portfolio/portrait/didier-vdb/11.jpg";
 import corporateCover from "@/images/portfolio/corporate/cover.jpg";
 import corporateMaVieCover from "@/images/portfolio/corporate/ma-vie/cover.jpg";
 import corporateMaVie01 from "@/images/portfolio/corporate/ma-vie/01.jpg";
@@ -293,13 +307,29 @@ export const categories: CategoryData[] = [
       {
         slug: "laura-degreef",
         cover: portraitLauraDegreefCover,
-        images: [
-          portraitLauraDegreef01, portraitLauraDegreef02, portraitLauraDegreef03,
-          portraitLauraDegreef04, portraitLauraDegreef05, portraitLauraDegreef06,
-          portraitLauraDegreef07, portraitLauraDegreef08, portraitLauraDegreef09,
-          portraitLauraDegreef10, portraitLauraDegreef11, portraitLauraDegreef12,
-          portraitLauraDegreef13, portraitLauraDegreef14, portraitLauraDegreef15,
-          portraitLauraDegreef16, portraitLauraDegreef17,
+        subseries: [
+          {
+            slug: "shoot-1",
+            cover: portraitLauraDegreefShoot1Cover,
+            images: [
+              portraitLauraDegreefShoot101, portraitLauraDegreefShoot102, portraitLauraDegreefShoot103,
+              portraitLauraDegreefShoot104, portraitLauraDegreefShoot105, portraitLauraDegreefShoot106,
+              portraitLauraDegreefShoot107, portraitLauraDegreefShoot108, portraitLauraDegreefShoot109,
+              portraitLauraDegreefShoot110, portraitLauraDegreefShoot111, portraitLauraDegreefShoot112,
+              portraitLauraDegreefShoot113, portraitLauraDegreefShoot114,
+            ],
+          },
+          {
+            slug: "shoot-2",
+            cover: portraitLauraDegreefShoot2Cover,
+            images: [
+              portraitLauraDegreefShoot201, portraitLauraDegreefShoot202, portraitLauraDegreefShoot203,
+              portraitLauraDegreefShoot204, portraitLauraDegreefShoot205, portraitLauraDegreefShoot206,
+              portraitLauraDegreefShoot207, portraitLauraDegreefShoot208, portraitLauraDegreefShoot209,
+              portraitLauraDegreefShoot210, portraitLauraDegreefShoot211, portraitLauraDegreefShoot212,
+              portraitLauraDegreefShoot213,
+            ],
+          },
         ],
       },
       {
@@ -339,6 +369,7 @@ export const categories: CategoryData[] = [
           portraitDidierVdb01, portraitDidierVdb02, portraitDidierVdb03,
           portraitDidierVdb04, portraitDidierVdb05, portraitDidierVdb06,
           portraitDidierVdb07, portraitDidierVdb08, portraitDidierVdb09,
+          portraitDidierVdb10, portraitDidierVdb11,
         ],
       },
       {
