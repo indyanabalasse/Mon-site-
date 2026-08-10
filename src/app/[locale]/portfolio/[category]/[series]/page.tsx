@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getDictionary, isLocale, defaultLocale, locales, type Locale } from "@/lib/i18n";
-import { categorySlugs, categories, getCategory, getSeries, type CategorySlug } from "@/data/portfolio";
+import { categorySlugs, categories, getCategory, getSeries, isSeriesGroup, type CategorySlug } from "@/data/portfolio";
 import Gallery from "@/components/Gallery";
+import MasonryNav from "@/components/MasonryNav";
 
 function isCategory(value: string): value is CategorySlug {
   return (categorySlugs as string[]).includes(value);
@@ -58,6 +59,26 @@ export default async function SeriesPage({
 
   const info = dict.categories[category];
   const seriesLabel = info.series[series] ?? series;
+
+  if (isSeriesGroup(seriesData)) {
+    const subLabels = dict.subseries?.[category]?.[series] ?? {};
+    return (
+      <div className="mx-auto max-w-7xl px-6 py-20">
+        <header className="max-w-2xl mx-auto text-center mb-14">
+          <p className="text-xs uppercase tracking-[0.2em] text-muted">{info.title}</p>
+          <h1 className="wordmark font-serif text-4xl font-light mt-2">{seriesLabel}</h1>
+        </header>
+
+        <MasonryNav
+          items={seriesData.subseries.map((sub) => ({
+            href: `/${locale}/portfolio/${category}/${series}/${sub.slug}`,
+            cover: sub.cover,
+            label: subLabels[sub.slug] ?? sub.slug,
+          }))}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-20">

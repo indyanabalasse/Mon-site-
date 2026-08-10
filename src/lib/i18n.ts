@@ -39,6 +39,7 @@ type Dictionary = {
     CategorySlug,
     { title: string; description: string; series: Record<string, string> }
   >;
+  subseries?: Partial<Record<CategorySlug, Record<string, Record<string, string>>>>;
   packaging: {
     title: string;
     intro: string;
@@ -150,6 +151,14 @@ export const dictionaries: Record<Locale, Dictionary> = {
         description: "Moments de vie en famille, entre tendresse et authenticité.",
         series: {
           "femme-enceinte": "Femme enceinte",
+        },
+      },
+    },
+    subseries: {
+      evenementiel: {
+        festival: {
+          bambounou: "Bambounou",
+          "laura-degreef": "Laura Degreef",
         },
       },
     },
@@ -325,6 +334,14 @@ export const dictionaries: Record<Locale, Dictionary> = {
         description: "Family life moments, between tenderness and authenticity.",
         series: {
           "femme-enceinte": "Maternity",
+        },
+      },
+    },
+    subseries: {
+      evenementiel: {
+        festival: {
+          bambounou: "Bambounou",
+          "laura-degreef": "Laura Degreef",
         },
       },
     },

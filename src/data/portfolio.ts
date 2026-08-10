@@ -41,14 +41,26 @@ import evenementielOpenAir08 from "@/images/portfolio/evenementiel/open-air/08.j
 import evenementielOpenAir09 from "@/images/portfolio/evenementiel/open-air/09.jpg";
 import evenementielOpenAir10 from "@/images/portfolio/evenementiel/open-air/10.jpg";
 import evenementielFestivalCover from "@/images/portfolio/evenementiel/festival/cover.jpg";
-import evenementielFestival01 from "@/images/portfolio/evenementiel/festival/01.jpg";
-import evenementielFestival02 from "@/images/portfolio/evenementiel/festival/02.jpg";
-import evenementielFestival03 from "@/images/portfolio/evenementiel/festival/03.jpg";
-import evenementielFestival04 from "@/images/portfolio/evenementiel/festival/04.jpg";
-import evenementielFestival05 from "@/images/portfolio/evenementiel/festival/05.jpg";
-import evenementielFestival06 from "@/images/portfolio/evenementiel/festival/06.jpg";
-import evenementielFestival07 from "@/images/portfolio/evenementiel/festival/07.jpg";
-import evenementielFestival08 from "@/images/portfolio/evenementiel/festival/08.jpg";
+import evenementielFestivalBambounouCover from "@/images/portfolio/evenementiel/festival/bambounou/cover.jpg";
+import evenementielFestivalBambounou01 from "@/images/portfolio/evenementiel/festival/bambounou/01.jpg";
+import evenementielFestivalBambounou02 from "@/images/portfolio/evenementiel/festival/bambounou/02.jpg";
+import evenementielFestivalBambounou03 from "@/images/portfolio/evenementiel/festival/bambounou/03.jpg";
+import evenementielFestivalBambounou04 from "@/images/portfolio/evenementiel/festival/bambounou/04.jpg";
+import evenementielFestivalBambounou05 from "@/images/portfolio/evenementiel/festival/bambounou/05.jpg";
+import evenementielFestivalBambounou06 from "@/images/portfolio/evenementiel/festival/bambounou/06.jpg";
+import evenementielFestivalBambounou07 from "@/images/portfolio/evenementiel/festival/bambounou/07.jpg";
+import evenementielFestivalBambounou08 from "@/images/portfolio/evenementiel/festival/bambounou/08.jpg";
+import evenementielFestivalBambounou09 from "@/images/portfolio/evenementiel/festival/bambounou/09.jpg";
+import evenementielFestivalBambounou10 from "@/images/portfolio/evenementiel/festival/bambounou/10.jpg";
+import evenementielFestivalBambounou11 from "@/images/portfolio/evenementiel/festival/bambounou/11.jpg";
+import evenementielFestivalLauraDegreefCover from "@/images/portfolio/evenementiel/festival/laura-degreef/cover.jpg";
+import evenementielFestivalLauraDegreef01 from "@/images/portfolio/evenementiel/festival/laura-degreef/01.jpg";
+import evenementielFestivalLauraDegreef02 from "@/images/portfolio/evenementiel/festival/laura-degreef/02.jpg";
+import evenementielFestivalLauraDegreef03 from "@/images/portfolio/evenementiel/festival/laura-degreef/03.jpg";
+import evenementielFestivalLauraDegreef04 from "@/images/portfolio/evenementiel/festival/laura-degreef/04.jpg";
+import evenementielFestivalLauraDegreef05 from "@/images/portfolio/evenementiel/festival/laura-degreef/05.jpg";
+import evenementielFestivalLauraDegreef06 from "@/images/portfolio/evenementiel/festival/laura-degreef/06.jpg";
+import evenementielFestivalLauraDegreef07 from "@/images/portfolio/evenementiel/festival/laura-degreef/07.jpg";
 import portraitCover from "@/images/portfolio/portrait/cover.jpg";
 import portraitLauraDegreefCover from "@/images/portfolio/portrait/laura-degreef/cover.jpg";
 import portraitLauraDegreef01 from "@/images/portfolio/portrait/laura-degreef/01.jpg";
@@ -180,10 +192,22 @@ export type Series = {
   images: StaticImageData[];
 };
 
+export type SeriesGroup = {
+  slug: string;
+  cover: StaticImageData;
+  subseries: Series[];
+};
+
+export type SeriesEntry = Series | SeriesGroup;
+
+export function isSeriesGroup(entry: SeriesEntry): entry is SeriesGroup {
+  return "subseries" in entry;
+}
+
 export type CategoryData = {
   slug: CategorySlug;
   cover: StaticImageData;
-  series: Series[];
+  series: SeriesEntry[];
 };
 
 export const categories: CategoryData[] = [
@@ -215,9 +239,26 @@ export const categories: CategoryData[] = [
       {
         slug: "festival",
         cover: evenementielFestivalCover,
-        images: [
-          evenementielFestival01, evenementielFestival02, evenementielFestival03, evenementielFestival04,
-          evenementielFestival05, evenementielFestival06, evenementielFestival07, evenementielFestival08,
+        subseries: [
+          {
+            slug: "bambounou",
+            cover: evenementielFestivalBambounouCover,
+            images: [
+              evenementielFestivalBambounou01, evenementielFestivalBambounou02, evenementielFestivalBambounou03,
+              evenementielFestivalBambounou04, evenementielFestivalBambounou05, evenementielFestivalBambounou06,
+              evenementielFestivalBambounou07, evenementielFestivalBambounou08, evenementielFestivalBambounou09,
+              evenementielFestivalBambounou10, evenementielFestivalBambounou11,
+            ],
+          },
+          {
+            slug: "laura-degreef",
+            cover: evenementielFestivalLauraDegreefCover,
+            images: [
+              evenementielFestivalLauraDegreef01, evenementielFestivalLauraDegreef02, evenementielFestivalLauraDegreef03,
+              evenementielFestivalLauraDegreef04, evenementielFestivalLauraDegreef05, evenementielFestivalLauraDegreef06,
+              evenementielFestivalLauraDegreef07,
+            ],
+          },
         ],
       },
     ],
@@ -337,6 +378,16 @@ export function getCategory(slug: string): CategoryData | undefined {
   return categories.find((c) => c.slug === slug);
 }
 
-export function getSeries(categorySlug: string, seriesSlug: string): Series | undefined {
+export function getSeries(categorySlug: string, seriesSlug: string): SeriesEntry | undefined {
   return getCategory(categorySlug)?.series.find((s) => s.slug === seriesSlug);
+}
+
+export function getSubseries(
+  categorySlug: string,
+  seriesSlug: string,
+  subseriesSlug: string
+): Series | undefined {
+  const series = getSeries(categorySlug, seriesSlug);
+  if (!series || !isSeriesGroup(series)) return undefined;
+  return series.subseries.find((s) => s.slug === subseriesSlug);
 }

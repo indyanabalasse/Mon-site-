@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getDictionary, isLocale, defaultLocale, locales, type Locale } from "@/lib/i18n";
-import { categorySlugs, getCategory, type CategorySlug } from "@/data/portfolio";
+import { categorySlugs, getCategory, isSeriesGroup, type CategorySlug } from "@/data/portfolio";
 import Gallery from "@/components/Gallery";
 import MasonryNav from "@/components/MasonryNav";
 
@@ -57,7 +57,7 @@ export default async function CategoryPage({
         <p className="mt-4 text-muted">{info.description}</p>
       </header>
 
-      {data.series.length > 1 ? (
+      {data.series.length > 1 || isSeriesGroup(data.series[0]) ? (
         <MasonryNav
           items={data.series.map((series) => ({
             href: `/${locale}/portfolio/${category}/${series.slug}`,
