@@ -163,10 +163,6 @@ import portraitHeadshot09 from "@/images/portfolio/portrait/headshot/09.jpg";
 import portraitHeadshot10 from "@/images/portfolio/portrait/headshot/10.jpg";
 import portraitHeadshot11 from "@/images/portfolio/portrait/headshot/11.jpg";
 import portraitHeadshot12 from "@/images/portfolio/portrait/headshot/12.jpg";
-import portraitHeadshot13 from "@/images/portfolio/portrait/headshot/13.jpg";
-import portraitHeadshot14 from "@/images/portfolio/portrait/headshot/14.jpg";
-import portraitHeadshot15 from "@/images/portfolio/portrait/headshot/15.jpg";
-import portraitHeadshot16 from "@/images/portfolio/portrait/headshot/16.jpg";
 import santeCover from "@/images/portfolio/sante/cover.jpg";
 import santeKineCover from "@/images/portfolio/sante/kine/cover.jpg";
 import santeKine01 from "@/images/portfolio/sante/kine/01.jpg";
@@ -326,7 +322,6 @@ export const categories: CategoryData[] = [
           portraitHeadshot01, portraitHeadshot02, portraitHeadshot03, portraitHeadshot04,
           portraitHeadshot05, portraitHeadshot06, portraitHeadshot07, portraitHeadshot08,
           portraitHeadshot09, portraitHeadshot10, portraitHeadshot11, portraitHeadshot12,
-          portraitHeadshot13, portraitHeadshot14, portraitHeadshot15, portraitHeadshot16,
         ],
       },
     ],
