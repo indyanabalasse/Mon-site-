@@ -66,6 +66,20 @@ import portraitLauraDegreefCover from "@/images/portfolio/portrait/laura-degreef
 import portraitLauraDegreef01 from "@/images/portfolio/portrait/laura-degreef/01.jpg";
 import portraitLauraDegreef02 from "@/images/portfolio/portrait/laura-degreef/02.jpg";
 import portraitLauraDegreef03 from "@/images/portfolio/portrait/laura-degreef/03.jpg";
+import portraitLauraDegreef04 from "@/images/portfolio/portrait/laura-degreef/04.jpg";
+import portraitLauraDegreef05 from "@/images/portfolio/portrait/laura-degreef/05.jpg";
+import portraitLauraDegreef06 from "@/images/portfolio/portrait/laura-degreef/06.jpg";
+import portraitLauraDegreef07 from "@/images/portfolio/portrait/laura-degreef/07.jpg";
+import portraitLauraDegreef08 from "@/images/portfolio/portrait/laura-degreef/08.jpg";
+import portraitLauraDegreef09 from "@/images/portfolio/portrait/laura-degreef/09.jpg";
+import portraitLauraDegreef10 from "@/images/portfolio/portrait/laura-degreef/10.jpg";
+import portraitLauraDegreef11 from "@/images/portfolio/portrait/laura-degreef/11.jpg";
+import portraitLauraDegreef12 from "@/images/portfolio/portrait/laura-degreef/12.jpg";
+import portraitLauraDegreef13 from "@/images/portfolio/portrait/laura-degreef/13.jpg";
+import portraitLauraDegreef14 from "@/images/portfolio/portrait/laura-degreef/14.jpg";
+import portraitLauraDegreef15 from "@/images/portfolio/portrait/laura-degreef/15.jpg";
+import portraitLauraDegreef16 from "@/images/portfolio/portrait/laura-degreef/16.jpg";
+import portraitLauraDegreef17 from "@/images/portfolio/portrait/laura-degreef/17.jpg";
 import portraitWolfgangCover from "@/images/portfolio/portrait/wolfgang/cover.jpg";
 import portraitWolfgang01 from "@/images/portfolio/portrait/wolfgang/01.jpg";
 import portraitWolfgang02 from "@/images/portfolio/portrait/wolfgang/02.jpg";
@@ -278,6 +292,11 @@ export const categories: CategoryData[] = [
         cover: portraitLauraDegreefCover,
         images: [
           portraitLauraDegreef01, portraitLauraDegreef02, portraitLauraDegreef03,
+          portraitLauraDegreef04, portraitLauraDegreef05, portraitLauraDegreef06,
+          portraitLauraDegreef07, portraitLauraDegreef08, portraitLauraDegreef09,
+          portraitLauraDegreef10, portraitLauraDegreef11, portraitLauraDegreef12,
+          portraitLauraDegreef13, portraitLauraDegreef14, portraitLauraDegreef15,
+          portraitLauraDegreef16, portraitLauraDegreef17,
         ],
       },
       {
