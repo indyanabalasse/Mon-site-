@@ -65,9 +65,6 @@ import portraitLauraDegreefCover from "@/images/portfolio/portrait/laura-degreef
 import portraitLauraDegreef01 from "@/images/portfolio/portrait/laura-degreef/01.jpg";
 import portraitLauraDegreef02 from "@/images/portfolio/portrait/laura-degreef/02.jpg";
 import portraitLauraDegreef03 from "@/images/portfolio/portrait/laura-degreef/03.jpg";
-import portraitLauraDegreef04 from "@/images/portfolio/portrait/laura-degreef/04.jpg";
-import portraitLauraDegreef05 from "@/images/portfolio/portrait/laura-degreef/05.jpg";
-import portraitLauraDegreef06 from "@/images/portfolio/portrait/laura-degreef/06.jpg";
 import portraitWolfCover from "@/images/portfolio/portrait/wolf/cover.jpg";
 import portraitWolf01 from "@/images/portfolio/portrait/wolf/01.jpg";
 import portraitWolf02 from "@/images/portfolio/portrait/wolf/02.jpg";
@@ -292,7 +289,6 @@ export const categories: CategoryData[] = [
         cover: portraitLauraDegreefCover,
         images: [
           portraitLauraDegreef01, portraitLauraDegreef02, portraitLauraDegreef03,
-          portraitLauraDegreef04, portraitLauraDegreef05, portraitLauraDegreef06,
         ],
       },
       {
