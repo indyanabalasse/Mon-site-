@@ -186,10 +186,6 @@ import santeKine05 from "@/images/portfolio/sante/kine/05.jpg";
 import santeKine06 from "@/images/portfolio/sante/kine/06.jpg";
 import santeKine07 from "@/images/portfolio/sante/kine/07.jpg";
 import santeKine08 from "@/images/portfolio/sante/kine/08.jpg";
-import santeKine09 from "@/images/portfolio/sante/kine/09.jpg";
-import santeKine10 from "@/images/portfolio/sante/kine/10.jpg";
-import santeKine11 from "@/images/portfolio/sante/kine/11.jpg";
-import santeKine12 from "@/images/portfolio/sante/kine/12.jpg";
 import familleCover from "@/images/portfolio/famille/cover.jpg";
 import familleFemmeEnceinteCover from "@/images/portfolio/famille/femme-enceinte/cover.jpg";
 import familleFemmeEnceinte01 from "@/images/portfolio/famille/femme-enceinte/01.jpg";
@@ -384,7 +380,6 @@ export const categories: CategoryData[] = [
         images: [
           santeKine01, santeKine02, santeKine03, santeKine04,
           santeKine05, santeKine06, santeKine07, santeKine08,
-          santeKine09, santeKine10, santeKine11, santeKine12,
         ],
       },
     ],
