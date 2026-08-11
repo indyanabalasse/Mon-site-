@@ -219,6 +219,8 @@ export type Series = {
   slug: string;
   cover: StaticImageData;
   images: StaticImageData[];
+  /** 0-based indices in `images` that should be displayed side-by-side with the next photo. */
+  pairAfter?: number[];
 };
 
 export type SeriesGroup = {
@@ -372,6 +374,7 @@ export const categories: CategoryData[] = [
           portraitEsphan09, portraitEsphan10, portraitEsphan11, portraitEsphan12,
           portraitEsphan13, portraitEsphan14, portraitEsphan15,
         ],
+        pairAfter: [3, 8],
       },
     ],
   },

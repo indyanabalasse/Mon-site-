@@ -87,7 +87,7 @@ export default async function SeriesPage({
         <h1 className="wordmark font-serif text-4xl font-light mt-2">{seriesLabel}</h1>
       </header>
 
-      <Gallery images={seriesData.images} altPrefix={seriesLabel} />
+      <Gallery images={seriesData.images} altPrefix={seriesLabel} pairAfter={seriesData.pairAfter} />
     </div>
   );
 }

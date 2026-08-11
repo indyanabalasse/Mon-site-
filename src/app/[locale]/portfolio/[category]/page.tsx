@@ -66,7 +66,11 @@ export default async function CategoryPage({
           }))}
         />
       ) : (
-        <Gallery images={data.series[0].images} altPrefix={info.title} />
+        <Gallery
+          images={data.series[0].images}
+          altPrefix={info.title}
+          pairAfter={data.series[0].pairAfter}
+        />
       )}
     </div>
   );
