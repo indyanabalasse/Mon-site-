@@ -23,12 +23,6 @@ import evenementielConcert14 from "@/images/portfolio/evenementiel/concert/14.jp
 import evenementielConcert15 from "@/images/portfolio/evenementiel/concert/15.jpg";
 import evenementielConcert16 from "@/images/portfolio/evenementiel/concert/16.jpg";
 import evenementielConcert17 from "@/images/portfolio/evenementiel/concert/17.jpg";
-import evenementielConcert18 from "@/images/portfolio/evenementiel/concert/18.jpg";
-import evenementielConcert19 from "@/images/portfolio/evenementiel/concert/19.jpg";
-import evenementielConcert20 from "@/images/portfolio/evenementiel/concert/20.jpg";
-import evenementielConcert21 from "@/images/portfolio/evenementiel/concert/21.jpg";
-import evenementielConcert22 from "@/images/portfolio/evenementiel/concert/22.jpg";
-import evenementielConcert23 from "@/images/portfolio/evenementiel/concert/23.jpg";
 import evenementielOpenAirCover from "@/images/portfolio/evenementiel/open-air/cover.jpg";
 import evenementielOpenAir01 from "@/images/portfolio/evenementiel/open-air/01.jpg";
 import evenementielOpenAir02 from "@/images/portfolio/evenementiel/open-air/02.jpg";
@@ -247,8 +241,7 @@ export const categories: CategoryData[] = [
           evenementielConcert05, evenementielConcert06, evenementielConcert07, evenementielConcert08,
           evenementielConcert09, evenementielConcert10, evenementielConcert11, evenementielConcert12,
           evenementielConcert13, evenementielConcert14, evenementielConcert15, evenementielConcert16,
-          evenementielConcert17, evenementielConcert18, evenementielConcert19, evenementielConcert20,
-          evenementielConcert21, evenementielConcert22, evenementielConcert23,
+          evenementielConcert17,
         ],
       },
       {
