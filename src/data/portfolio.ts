@@ -91,6 +91,11 @@ import portraitHerton01 from "@/images/portfolio/portrait/herton/01.jpg";
 import portraitHerton02 from "@/images/portfolio/portrait/herton/02.jpg";
 import portraitHerton03 from "@/images/portfolio/portrait/herton/03.jpg";
 import portraitHerton04 from "@/images/portfolio/portrait/herton/04.jpg";
+import portraitHerton05 from "@/images/portfolio/portrait/herton/05.jpg";
+import portraitHerton06 from "@/images/portfolio/portrait/herton/06.jpg";
+import portraitHerton07 from "@/images/portfolio/portrait/herton/07.jpg";
+import portraitHerton08 from "@/images/portfolio/portrait/herton/08.jpg";
+import portraitHerton09 from "@/images/portfolio/portrait/herton/09.jpg";
 import portraitArtyCover from "@/images/portfolio/portrait/arty/cover.jpg";
 import portraitArty01 from "@/images/portfolio/portrait/arty/01.jpg";
 import portraitArty02 from "@/images/portfolio/portrait/arty/02.jpg";
@@ -321,7 +326,11 @@ export const categories: CategoryData[] = [
       {
         slug: "herton",
         cover: portraitHertonCover,
-        images: [portraitHerton01, portraitHerton02, portraitHerton03, portraitHerton04],
+        images: [
+          portraitHerton01, portraitHerton02, portraitHerton03, portraitHerton04,
+          portraitHerton05, portraitHerton06, portraitHerton07, portraitHerton08,
+          portraitHerton09,
+        ],
       },
       {
         slug: "arty",
