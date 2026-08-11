@@ -133,6 +133,22 @@ import portraitDidierVdb08 from "@/images/portfolio/portrait/didier-vdb/08.jpg";
 import portraitDidierVdb09 from "@/images/portfolio/portrait/didier-vdb/09.jpg";
 import portraitDidierVdb10 from "@/images/portfolio/portrait/didier-vdb/10.jpg";
 import portraitDidierVdb11 from "@/images/portfolio/portrait/didier-vdb/11.jpg";
+import portraitEsphanCover from "@/images/portfolio/portrait/esphan/cover.jpg";
+import portraitEsphan01 from "@/images/portfolio/portrait/esphan/01.jpg";
+import portraitEsphan02 from "@/images/portfolio/portrait/esphan/02.jpg";
+import portraitEsphan03 from "@/images/portfolio/portrait/esphan/03.jpg";
+import portraitEsphan04 from "@/images/portfolio/portrait/esphan/04.jpg";
+import portraitEsphan05 from "@/images/portfolio/portrait/esphan/05.jpg";
+import portraitEsphan06 from "@/images/portfolio/portrait/esphan/06.jpg";
+import portraitEsphan07 from "@/images/portfolio/portrait/esphan/07.jpg";
+import portraitEsphan08 from "@/images/portfolio/portrait/esphan/08.jpg";
+import portraitEsphan09 from "@/images/portfolio/portrait/esphan/09.jpg";
+import portraitEsphan10 from "@/images/portfolio/portrait/esphan/10.jpg";
+import portraitEsphan11 from "@/images/portfolio/portrait/esphan/11.jpg";
+import portraitEsphan12 from "@/images/portfolio/portrait/esphan/12.jpg";
+import portraitEsphan13 from "@/images/portfolio/portrait/esphan/13.jpg";
+import portraitEsphan14 from "@/images/portfolio/portrait/esphan/14.jpg";
+import portraitEsphan15 from "@/images/portfolio/portrait/esphan/15.jpg";
 import corporateCover from "@/images/portfolio/corporate/cover.jpg";
 import corporateMaVieCover from "@/images/portfolio/corporate/ma-vie/cover.jpg";
 import corporateMaVie01 from "@/images/portfolio/corporate/ma-vie/01.jpg";
@@ -345,6 +361,16 @@ export const categories: CategoryData[] = [
           portraitDidierVdb04, portraitDidierVdb05, portraitDidierVdb06,
           portraitDidierVdb07, portraitDidierVdb08, portraitDidierVdb09,
           portraitDidierVdb10, portraitDidierVdb11,
+        ],
+      },
+      {
+        slug: "esphan",
+        cover: portraitEsphanCover,
+        images: [
+          portraitEsphan01, portraitEsphan02, portraitEsphan03, portraitEsphan04,
+          portraitEsphan05, portraitEsphan06, portraitEsphan07, portraitEsphan08,
+          portraitEsphan09, portraitEsphan10, portraitEsphan11, portraitEsphan12,
+          portraitEsphan13, portraitEsphan14, portraitEsphan15,
         ],
       },
     ],
