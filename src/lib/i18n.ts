@@ -129,7 +129,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
           arty: "Arty",
           autre: "Autre",
           "didier-vdb": "Didier VDB",
-          headshot: "Headshot",
         },
       },
       corporate: {
@@ -319,7 +318,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
           arty: "Arty",
           autre: "Other",
           "didier-vdb": "Didier VDB",
-          headshot: "Headshot",
         },
       },
       corporate: {

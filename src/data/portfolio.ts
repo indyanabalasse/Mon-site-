@@ -98,9 +98,6 @@ import portraitWolfgang03 from "@/images/portfolio/portrait/wolfgang/03.jpg";
 import portraitWolfgang04 from "@/images/portfolio/portrait/wolfgang/04.jpg";
 import portraitWolfgang05 from "@/images/portfolio/portrait/wolfgang/05.jpg";
 import portraitWolfgang06 from "@/images/portfolio/portrait/wolfgang/06.jpg";
-import portraitWolfgang07 from "@/images/portfolio/portrait/wolfgang/07.jpg";
-import portraitWolfgang08 from "@/images/portfolio/portrait/wolfgang/08.jpg";
-import portraitWolfgang09 from "@/images/portfolio/portrait/wolfgang/09.jpg";
 import portraitHertonCover from "@/images/portfolio/portrait/herton/cover.jpg";
 import portraitHerton01 from "@/images/portfolio/portrait/herton/01.jpg";
 import portraitHerton02 from "@/images/portfolio/portrait/herton/02.jpg";
@@ -155,12 +152,6 @@ import corporateMaVie14 from "@/images/portfolio/corporate/ma-vie/14.jpg";
 import corporateMaVie15 from "@/images/portfolio/corporate/ma-vie/15.jpg";
 import corporateMaVie16 from "@/images/portfolio/corporate/ma-vie/16.jpg";
 import corporateMaVie17 from "@/images/portfolio/corporate/ma-vie/17.jpg";
-import corporateMaVie18 from "@/images/portfolio/corporate/ma-vie/18.jpg";
-import corporateMaVie19 from "@/images/portfolio/corporate/ma-vie/19.jpg";
-import corporateMaVie20 from "@/images/portfolio/corporate/ma-vie/20.jpg";
-import corporateMaVie21 from "@/images/portfolio/corporate/ma-vie/21.jpg";
-import corporateMaVie22 from "@/images/portfolio/corporate/ma-vie/22.jpg";
-import corporateMaVie23 from "@/images/portfolio/corporate/ma-vie/23.jpg";
 import corporateEsgLogicCover from "@/images/portfolio/corporate/esg-logic/cover.jpg";
 import corporateEsgLogic01 from "@/images/portfolio/corporate/esg-logic/01.jpg";
 import corporateEsgLogic02 from "@/images/portfolio/corporate/esg-logic/02.jpg";
@@ -185,19 +176,6 @@ import corporateEsgLogic20 from "@/images/portfolio/corporate/esg-logic/20.jpg";
 import corporateEsgLogic21 from "@/images/portfolio/corporate/esg-logic/21.jpg";
 import corporateEsgLogic22 from "@/images/portfolio/corporate/esg-logic/22.jpg";
 import corporateEsgLogic23 from "@/images/portfolio/corporate/esg-logic/23.jpg";
-import portraitHeadshotCover from "@/images/portfolio/portrait/headshot/cover.jpg";
-import portraitHeadshot01 from "@/images/portfolio/portrait/headshot/01.jpg";
-import portraitHeadshot02 from "@/images/portfolio/portrait/headshot/02.jpg";
-import portraitHeadshot03 from "@/images/portfolio/portrait/headshot/03.jpg";
-import portraitHeadshot04 from "@/images/portfolio/portrait/headshot/04.jpg";
-import portraitHeadshot05 from "@/images/portfolio/portrait/headshot/05.jpg";
-import portraitHeadshot06 from "@/images/portfolio/portrait/headshot/06.jpg";
-import portraitHeadshot07 from "@/images/portfolio/portrait/headshot/07.jpg";
-import portraitHeadshot08 from "@/images/portfolio/portrait/headshot/08.jpg";
-import portraitHeadshot09 from "@/images/portfolio/portrait/headshot/09.jpg";
-import portraitHeadshot10 from "@/images/portfolio/portrait/headshot/10.jpg";
-import portraitHeadshot11 from "@/images/portfolio/portrait/headshot/11.jpg";
-import portraitHeadshot12 from "@/images/portfolio/portrait/headshot/12.jpg";
 import santeCover from "@/images/portfolio/sante/cover.jpg";
 import santeKineCover from "@/images/portfolio/sante/kine/cover.jpg";
 import santeKine01 from "@/images/portfolio/sante/kine/01.jpg";
@@ -206,8 +184,6 @@ import santeKine03 from "@/images/portfolio/sante/kine/03.jpg";
 import santeKine04 from "@/images/portfolio/sante/kine/04.jpg";
 import santeKine05 from "@/images/portfolio/sante/kine/05.jpg";
 import santeKine06 from "@/images/portfolio/sante/kine/06.jpg";
-import santeKine07 from "@/images/portfolio/sante/kine/07.jpg";
-import santeKine08 from "@/images/portfolio/sante/kine/08.jpg";
 import familleCover from "@/images/portfolio/famille/cover.jpg";
 import familleFemmeEnceinteCover from "@/images/portfolio/famille/femme-enceinte/cover.jpg";
 import familleFemmeEnceinte01 from "@/images/portfolio/famille/femme-enceinte/01.jpg";
@@ -338,7 +314,6 @@ export const categories: CategoryData[] = [
         images: [
           portraitWolfgang01, portraitWolfgang02, portraitWolfgang03,
           portraitWolfgang04, portraitWolfgang05, portraitWolfgang06,
-          portraitWolfgang07, portraitWolfgang08, portraitWolfgang09,
         ],
       },
       {
@@ -372,15 +347,6 @@ export const categories: CategoryData[] = [
           portraitDidierVdb10, portraitDidierVdb11,
         ],
       },
-      {
-        slug: "headshot",
-        cover: portraitHeadshotCover,
-        images: [
-          portraitHeadshot01, portraitHeadshot02, portraitHeadshot03, portraitHeadshot04,
-          portraitHeadshot05, portraitHeadshot06, portraitHeadshot07, portraitHeadshot08,
-          portraitHeadshot09, portraitHeadshot10, portraitHeadshot11, portraitHeadshot12,
-        ],
-      },
     ],
   },
   {
@@ -395,8 +361,7 @@ export const categories: CategoryData[] = [
           corporateMaVie05, corporateMaVie06, corporateMaVie07, corporateMaVie08,
           corporateMaVie09, corporateMaVie10, corporateMaVie11, corporateMaVie12,
           corporateMaVie13, corporateMaVie14, corporateMaVie15, corporateMaVie16,
-          corporateMaVie17, corporateMaVie18, corporateMaVie19, corporateMaVie20,
-          corporateMaVie21, corporateMaVie22, corporateMaVie23,
+          corporateMaVie17,
         ],
       },
       {
@@ -422,7 +387,7 @@ export const categories: CategoryData[] = [
         cover: santeKineCover,
         images: [
           santeKine01, santeKine02, santeKine03, santeKine04,
-          santeKine05, santeKine06, santeKine07, santeKine08,
+          santeKine05, santeKine06,
         ],
       },
     ],
