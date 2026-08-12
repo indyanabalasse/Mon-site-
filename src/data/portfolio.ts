@@ -77,13 +77,13 @@ import portraitWolfgang04 from "@/images/portfolio/portrait/wolfgang/04.jpg";
 import portraitWolfgang05 from "@/images/portfolio/portrait/wolfgang/05.jpg";
 import portraitWolfgang06 from "@/images/portfolio/portrait/wolfgang/06.jpg";
 import portraitHertonCover from "@/images/portfolio/portrait/herton/cover.jpg";
+import portraitHertonCover2 from "@/images/portfolio/portrait/herton/cover2.jpg";
 import portraitHerton01 from "@/images/portfolio/portrait/herton/01.jpg";
 import portraitHerton02 from "@/images/portfolio/portrait/herton/02.jpg";
 import portraitHerton03 from "@/images/portfolio/portrait/herton/03.jpg";
 import portraitHerton04 from "@/images/portfolio/portrait/herton/04.jpg";
 import portraitHerton05 from "@/images/portfolio/portrait/herton/05.jpg";
 import portraitHerton06 from "@/images/portfolio/portrait/herton/06.jpg";
-import portraitHerton07 from "@/images/portfolio/portrait/herton/07.jpg";
 import portraitArtyCover from "@/images/portfolio/portrait/arty/cover.jpg";
 import portraitArty01 from "@/images/portfolio/portrait/arty/01.jpg";
 import portraitArty02 from "@/images/portfolio/portrait/arty/02.jpg";
@@ -190,6 +190,8 @@ export type CategorySlug =
 export type Series = {
   slug: string;
   cover: StaticImageData;
+  /** Additional covers to crossfade through on the series tile, alongside `cover`. */
+  coverImages?: StaticImageData[];
   images: StaticImageData[];
   /** 0-based indices in `images` that should be displayed side-by-side with the next photo. */
   pairAfter?: number[];
@@ -303,9 +305,10 @@ export const categories: CategoryData[] = [
       {
         slug: "herton",
         cover: portraitHertonCover,
+        coverImages: [portraitHertonCover, portraitHertonCover2],
         images: [
           portraitHerton01, portraitHerton02, portraitHerton03, portraitHerton04,
-          portraitHerton05, portraitHerton06, portraitHerton07,
+          portraitHerton05, portraitHerton06,
         ],
       },
       {

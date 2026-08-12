@@ -62,6 +62,7 @@ export default async function CategoryPage({
           items={data.series.map((series) => ({
             href: `/${locale}/portfolio/${category}/${series.slug}`,
             cover: series.cover,
+            covers: isSeriesGroup(series) ? undefined : series.coverImages,
             label: info.series[series.slug] ?? series.slug,
           }))}
         />

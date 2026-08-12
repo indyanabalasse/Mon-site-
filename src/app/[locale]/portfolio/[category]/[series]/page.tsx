@@ -73,6 +73,7 @@ export default async function SeriesPage({
           items={seriesData.subseries.map((sub) => ({
             href: `/${locale}/portfolio/${category}/${series}/${sub.slug}`,
             cover: sub.cover,
+            covers: sub.coverImages,
             label: subLabels[sub.slug] ?? sub.slug,
           }))}
         />
