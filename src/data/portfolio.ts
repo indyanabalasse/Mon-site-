@@ -183,7 +183,6 @@ import corporateEsgLogic19 from "@/images/portfolio/corporate/esg-logic/19.jpg";
 import corporateEsgLogic20 from "@/images/portfolio/corporate/esg-logic/20.jpg";
 import corporateEsgLogic21 from "@/images/portfolio/corporate/esg-logic/21.jpg";
 import corporateEsgLogic22 from "@/images/portfolio/corporate/esg-logic/22.jpg";
-import corporateEsgLogic23 from "@/images/portfolio/corporate/esg-logic/23.jpg";
 import santeCover from "@/images/portfolio/sante/cover.jpg";
 import santeKineCover from "@/images/portfolio/sante/kine/cover.jpg";
 import santeKine01 from "@/images/portfolio/sante/kine/01.jpg";
@@ -395,7 +394,7 @@ export const categories: CategoryData[] = [
           corporateEsgLogic09, corporateEsgLogic10, corporateEsgLogic11, corporateEsgLogic12,
           corporateEsgLogic13, corporateEsgLogic14, corporateEsgLogic15, corporateEsgLogic16,
           corporateEsgLogic17, corporateEsgLogic18, corporateEsgLogic19, corporateEsgLogic20,
-          corporateEsgLogic21, corporateEsgLogic22, corporateEsgLogic23,
+          corporateEsgLogic21, corporateEsgLogic22,
         ],
       },
     ],
