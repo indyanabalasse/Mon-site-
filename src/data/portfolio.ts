@@ -96,15 +96,11 @@ import portraitArty08 from "@/images/portfolio/portrait/arty/08.jpg";
 import portraitGoWithTheFlowCover from "@/images/portfolio/portrait/go-with-the-flow/cover.jpg";
 import portraitGoWithTheFlowCover2 from "@/images/portfolio/portrait/go-with-the-flow/cover2.jpg";
 import portraitGoWithTheFlow01 from "@/images/portfolio/portrait/go-with-the-flow/01.jpg";
-import portraitGoWithTheFlow02 from "@/images/portfolio/portrait/go-with-the-flow/02.jpg";
 import portraitGoWithTheFlow03 from "@/images/portfolio/portrait/go-with-the-flow/03.jpg";
 import portraitGoWithTheFlow04 from "@/images/portfolio/portrait/go-with-the-flow/04.jpg";
 import portraitGoWithTheFlow05 from "@/images/portfolio/portrait/go-with-the-flow/05.jpg";
-import portraitGoWithTheFlow06 from "@/images/portfolio/portrait/go-with-the-flow/06.jpg";
-import portraitGoWithTheFlow07 from "@/images/portfolio/portrait/go-with-the-flow/07.jpg";
 import portraitGoWithTheFlow08 from "@/images/portfolio/portrait/go-with-the-flow/08.jpg";
 import portraitGoWithTheFlow09 from "@/images/portfolio/portrait/go-with-the-flow/09.jpg";
-import portraitGoWithTheFlow10 from "@/images/portfolio/portrait/go-with-the-flow/10.jpg";
 import portraitGaelCover from "@/images/portfolio/portrait/gael/cover.jpg";
 import portraitGael01 from "@/images/portfolio/portrait/gael/01.jpg";
 import portraitGael02 from "@/images/portfolio/portrait/gael/02.jpg";
@@ -332,8 +328,8 @@ export const categories: CategoryData[] = [
         cover: portraitGoWithTheFlowCover,
         coverImages: [portraitGoWithTheFlowCover, portraitGoWithTheFlowCover2],
         images: [
-          portraitGoWithTheFlow01, portraitGoWithTheFlow02, portraitGoWithTheFlow03, portraitGoWithTheFlow04, portraitGoWithTheFlow05,
-          portraitGoWithTheFlow06, portraitGoWithTheFlow07, portraitGoWithTheFlow08, portraitGoWithTheFlow09, portraitGoWithTheFlow10,
+          portraitGoWithTheFlow01, portraitGoWithTheFlow03, portraitGoWithTheFlow04, portraitGoWithTheFlow05,
+          portraitGoWithTheFlow08, portraitGoWithTheFlow09,
         ],
       },
       {
