@@ -32,6 +32,7 @@ export default async function PortfolioPage({
   const tiles = categories.map((category) => ({
     href: `/${locale}/portfolio/${category.slug}`,
     cover: category.cover,
+    covers: category.coverImages,
     label: dict.categories[category.slug].title,
   }));
 

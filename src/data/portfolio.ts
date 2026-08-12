@@ -50,6 +50,7 @@ import evenementielFestivalLauraDegreef03 from "@/images/portfolio/evenementiel/
 import evenementielFestivalLauraDegreef04 from "@/images/portfolio/evenementiel/festival/laura-degreef/04.jpg";
 import evenementielFestivalLauraDegreef05 from "@/images/portfolio/evenementiel/festival/laura-degreef/05.jpg";
 import portraitCover from "@/images/portfolio/portrait/cover.jpg";
+import portraitCover2 from "@/images/portfolio/portrait/cover2.jpg";
 import portraitLauraDegreefCover from "@/images/portfolio/portrait/laura-degreef/cover.jpg";
 import portraitLauraDegreefShoot1Cover from "@/images/portfolio/portrait/laura-degreef/shoot-1/cover.jpg";
 import portraitLauraDegreefShoot101 from "@/images/portfolio/portrait/laura-degreef/shoot-1/01.jpg";
@@ -206,6 +207,8 @@ export function isSeriesGroup(entry: SeriesEntry): entry is SeriesGroup {
 export type CategoryData = {
   slug: CategorySlug;
   cover: StaticImageData;
+  /** Additional covers to crossfade through on the portfolio index, alongside `cover`. */
+  coverImages?: StaticImageData[];
   series: SeriesEntry[];
 };
 
@@ -261,6 +264,7 @@ export const categories: CategoryData[] = [
   {
     slug: "portrait",
     cover: portraitCover,
+    coverImages: [portraitCover, portraitCover2],
     series: [
       {
         slug: "laura-degreef",
