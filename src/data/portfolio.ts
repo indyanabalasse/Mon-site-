@@ -73,7 +73,6 @@ import portraitLauraDegreefShoot206 from "@/images/portfolio/portrait/laura-degr
 import portraitLauraDegreefShoot207 from "@/images/portfolio/portrait/laura-degreef/shoot-2/07.jpg";
 import portraitLauraDegreefShoot208 from "@/images/portfolio/portrait/laura-degreef/shoot-2/08.jpg";
 import portraitLauraDegreefShoot209 from "@/images/portfolio/portrait/laura-degreef/shoot-2/09.jpg";
-import portraitLauraDegreefShoot210 from "@/images/portfolio/portrait/laura-degreef/shoot-2/10.jpg";
 import portraitWolfgangCover from "@/images/portfolio/portrait/wolfgang/cover.jpg";
 import portraitWolfgang01 from "@/images/portfolio/portrait/wolfgang/01.jpg";
 import portraitWolfgang02 from "@/images/portfolio/portrait/wolfgang/02.jpg";
@@ -116,7 +115,6 @@ import portraitDidierVdb03 from "@/images/portfolio/portrait/didier-vdb/03.jpg";
 import portraitDidierVdb04 from "@/images/portfolio/portrait/didier-vdb/04.jpg";
 import portraitDidierVdb05 from "@/images/portfolio/portrait/didier-vdb/05.jpg";
 import portraitDidierVdb06 from "@/images/portfolio/portrait/didier-vdb/06.jpg";
-import portraitDidierVdb07 from "@/images/portfolio/portrait/didier-vdb/07.jpg";
 import portraitEsphanCover from "@/images/portfolio/portrait/esphan/cover.jpg";
 import portraitEsphan01 from "@/images/portfolio/portrait/esphan/01.jpg";
 import portraitEsphan02 from "@/images/portfolio/portrait/esphan/02.jpg";
@@ -128,11 +126,6 @@ import portraitEsphan07 from "@/images/portfolio/portrait/esphan/07.jpg";
 import portraitEsphan08 from "@/images/portfolio/portrait/esphan/08.jpg";
 import portraitEsphan09 from "@/images/portfolio/portrait/esphan/09.jpg";
 import portraitEsphan10 from "@/images/portfolio/portrait/esphan/10.jpg";
-import portraitEsphan11 from "@/images/portfolio/portrait/esphan/11.jpg";
-import portraitEsphan12 from "@/images/portfolio/portrait/esphan/12.jpg";
-import portraitEsphan13 from "@/images/portfolio/portrait/esphan/13.jpg";
-import portraitEsphan14 from "@/images/portfolio/portrait/esphan/14.jpg";
-import portraitEsphan15 from "@/images/portfolio/portrait/esphan/15.jpg";
 import corporateCover from "@/images/portfolio/corporate/cover.jpg";
 import corporateMaVieCover from "@/images/portfolio/corporate/ma-vie/cover.jpg";
 import corporateMaVie01 from "@/images/portfolio/corporate/ma-vie/01.jpg";
@@ -299,7 +292,6 @@ export const categories: CategoryData[] = [
               portraitLauraDegreefShoot201, portraitLauraDegreefShoot202, portraitLauraDegreefShoot203,
               portraitLauraDegreefShoot204, portraitLauraDegreefShoot205, portraitLauraDegreefShoot206,
               portraitLauraDegreefShoot207, portraitLauraDegreefShoot208, portraitLauraDegreefShoot209,
-              portraitLauraDegreefShoot210,
             ],
           },
         ],
@@ -343,7 +335,6 @@ export const categories: CategoryData[] = [
         images: [
           portraitDidierVdb01, portraitDidierVdb02, portraitDidierVdb03,
           portraitDidierVdb04, portraitDidierVdb05, portraitDidierVdb06,
-          portraitDidierVdb07,
         ],
       },
       {
@@ -352,10 +343,8 @@ export const categories: CategoryData[] = [
         images: [
           portraitEsphan01, portraitEsphan02, portraitEsphan03, portraitEsphan04,
           portraitEsphan05, portraitEsphan06, portraitEsphan07, portraitEsphan08,
-          portraitEsphan09, portraitEsphan10, portraitEsphan11, portraitEsphan12,
-          portraitEsphan13, portraitEsphan14, portraitEsphan15,
+          portraitEsphan09, portraitEsphan10,
         ],
-        pairAfter: [3, 8],
       },
     ],
   },
