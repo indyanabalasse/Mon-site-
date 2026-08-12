@@ -105,6 +105,11 @@ import portraitGoWithTheFlow08 from "@/images/portfolio/portrait/go-with-the-flo
 import portraitGaelCover from "@/images/portfolio/portrait/gael/cover.jpg";
 import portraitGael01 from "@/images/portfolio/portrait/gael/01.jpg";
 import portraitGael02 from "@/images/portfolio/portrait/gael/02.jpg";
+import portraitCarlCashCover from "@/images/portfolio/portrait/carl-cash/cover.jpg";
+import portraitCarlCash01 from "@/images/portfolio/portrait/carl-cash/01.jpg";
+import portraitCarlCash02 from "@/images/portfolio/portrait/carl-cash/02.jpg";
+import portraitCarlCash03 from "@/images/portfolio/portrait/carl-cash/03.jpg";
+import portraitCarlCash04 from "@/images/portfolio/portrait/carl-cash/04.jpg";
 import portraitDidierVdbCover from "@/images/portfolio/portrait/didier-vdb/cover.jpg";
 import portraitDidierVdb01 from "@/images/portfolio/portrait/didier-vdb/01.jpg";
 import portraitDidierVdb02 from "@/images/portfolio/portrait/didier-vdb/02.jpg";
@@ -331,6 +336,11 @@ export const categories: CategoryData[] = [
         slug: "gael",
         cover: portraitGaelCover,
         images: [portraitGael01, portraitGael02],
+      },
+      {
+        slug: "carl-cash",
+        cover: portraitCarlCashCover,
+        images: [portraitCarlCash01, portraitCarlCash02, portraitCarlCash03, portraitCarlCash04],
       },
       {
         slug: "didier-vdb",
