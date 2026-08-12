@@ -116,7 +116,6 @@ import portraitEsphan06 from "@/images/portfolio/portrait/esphan/06.jpg";
 import portraitEsphan07 from "@/images/portfolio/portrait/esphan/07.jpg";
 import portraitEsphan08 from "@/images/portfolio/portrait/esphan/08.jpg";
 import portraitEsphan09 from "@/images/portfolio/portrait/esphan/09.jpg";
-import portraitEsphan10 from "@/images/portfolio/portrait/esphan/10.jpg";
 import corporateCover from "@/images/portfolio/corporate/cover.jpg";
 import corporateMaVieCover from "@/images/portfolio/corporate/ma-vie/cover.jpg";
 import corporateMaVie01 from "@/images/portfolio/corporate/ma-vie/01.jpg";
@@ -329,7 +328,7 @@ export const categories: CategoryData[] = [
         images: [
           portraitEsphan01, portraitEsphan02, portraitEsphan03, portraitEsphan04,
           portraitEsphan05, portraitEsphan06, portraitEsphan07, portraitEsphan08,
-          portraitEsphan09, portraitEsphan10,
+          portraitEsphan09,
         ],
       },
     ],
