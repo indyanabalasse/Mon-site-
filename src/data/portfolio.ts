@@ -82,6 +82,7 @@ import portraitHerton03 from "@/images/portfolio/portrait/herton/03.jpg";
 import portraitHerton04 from "@/images/portfolio/portrait/herton/04.jpg";
 import portraitHerton05 from "@/images/portfolio/portrait/herton/05.jpg";
 import portraitHerton06 from "@/images/portfolio/portrait/herton/06.jpg";
+import portraitHerton07 from "@/images/portfolio/portrait/herton/07.jpg";
 import portraitArtyCover from "@/images/portfolio/portrait/arty/cover.jpg";
 import portraitArty01 from "@/images/portfolio/portrait/arty/01.jpg";
 import portraitArty02 from "@/images/portfolio/portrait/arty/02.jpg";
@@ -91,12 +92,15 @@ import portraitArty05 from "@/images/portfolio/portrait/arty/05.jpg";
 import portraitArty06 from "@/images/portfolio/portrait/arty/06.jpg";
 import portraitArty07 from "@/images/portfolio/portrait/arty/07.jpg";
 import portraitArty08 from "@/images/portfolio/portrait/arty/08.jpg";
-import portraitAutreCover from "@/images/portfolio/portrait/autre/cover.jpg";
-import portraitAutre01 from "@/images/portfolio/portrait/autre/01.jpg";
-import portraitAutre02 from "@/images/portfolio/portrait/autre/02.jpg";
-import portraitAutre03 from "@/images/portfolio/portrait/autre/03.jpg";
-import portraitAutre04 from "@/images/portfolio/portrait/autre/04.jpg";
-import portraitAutre05 from "@/images/portfolio/portrait/autre/05.jpg";
+import portraitGoWithTheFlowCover from "@/images/portfolio/portrait/go-with-the-flow/cover.jpg";
+import portraitGoWithTheFlow01 from "@/images/portfolio/portrait/go-with-the-flow/01.jpg";
+import portraitGoWithTheFlow02 from "@/images/portfolio/portrait/go-with-the-flow/02.jpg";
+import portraitGoWithTheFlow03 from "@/images/portfolio/portrait/go-with-the-flow/03.jpg";
+import portraitGoWithTheFlow04 from "@/images/portfolio/portrait/go-with-the-flow/04.jpg";
+import portraitGoWithTheFlow05 from "@/images/portfolio/portrait/go-with-the-flow/05.jpg";
+import portraitGaelCover from "@/images/portfolio/portrait/gael/cover.jpg";
+import portraitGael01 from "@/images/portfolio/portrait/gael/01.jpg";
+import portraitGael02 from "@/images/portfolio/portrait/gael/02.jpg";
 import portraitDidierVdbCover from "@/images/portfolio/portrait/didier-vdb/cover.jpg";
 import portraitDidierVdb01 from "@/images/portfolio/portrait/didier-vdb/01.jpg";
 import portraitDidierVdb02 from "@/images/portfolio/portrait/didier-vdb/02.jpg";
@@ -294,7 +298,7 @@ export const categories: CategoryData[] = [
         cover: portraitHertonCover,
         images: [
           portraitHerton01, portraitHerton02, portraitHerton03, portraitHerton04,
-          portraitHerton05, portraitHerton06,
+          portraitHerton05, portraitHerton06, portraitHerton07,
         ],
       },
       {
@@ -306,11 +310,16 @@ export const categories: CategoryData[] = [
         ],
       },
       {
-        slug: "autre",
-        cover: portraitAutreCover,
+        slug: "go-with-the-flow",
+        cover: portraitGoWithTheFlowCover,
         images: [
-          portraitAutre01, portraitAutre02, portraitAutre03, portraitAutre04, portraitAutre05,
+          portraitGoWithTheFlow01, portraitGoWithTheFlow02, portraitGoWithTheFlow03, portraitGoWithTheFlow04, portraitGoWithTheFlow05,
         ],
+      },
+      {
+        slug: "gael",
+        cover: portraitGaelCover,
+        images: [portraitGael01, portraitGael02],
       },
       {
         slug: "didier-vdb",
