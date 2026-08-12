@@ -122,9 +122,6 @@ import portraitDidierVdb04 from "@/images/portfolio/portrait/didier-vdb/04.jpg";
 import portraitDidierVdb05 from "@/images/portfolio/portrait/didier-vdb/05.jpg";
 import portraitDidierVdb06 from "@/images/portfolio/portrait/didier-vdb/06.jpg";
 import portraitDidierVdb07 from "@/images/portfolio/portrait/didier-vdb/07.jpg";
-import portraitDidierVdb08 from "@/images/portfolio/portrait/didier-vdb/08.jpg";
-import portraitDidierVdb09 from "@/images/portfolio/portrait/didier-vdb/09.jpg";
-import portraitDidierVdb10 from "@/images/portfolio/portrait/didier-vdb/10.jpg";
 import portraitEsphanCover from "@/images/portfolio/portrait/esphan/cover.jpg";
 import portraitEsphan01 from "@/images/portfolio/portrait/esphan/01.jpg";
 import portraitEsphan02 from "@/images/portfolio/portrait/esphan/02.jpg";
@@ -353,8 +350,7 @@ export const categories: CategoryData[] = [
         images: [
           portraitDidierVdb01, portraitDidierVdb02, portraitDidierVdb03,
           portraitDidierVdb04, portraitDidierVdb05, portraitDidierVdb06,
-          portraitDidierVdb07, portraitDidierVdb08, portraitDidierVdb09,
-          portraitDidierVdb10,
+          portraitDidierVdb07,
         ],
       },
       {
