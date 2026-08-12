@@ -74,8 +74,6 @@ import portraitLauraDegreefShoot207 from "@/images/portfolio/portrait/laura-degr
 import portraitLauraDegreefShoot208 from "@/images/portfolio/portrait/laura-degreef/shoot-2/08.jpg";
 import portraitLauraDegreefShoot209 from "@/images/portfolio/portrait/laura-degreef/shoot-2/09.jpg";
 import portraitLauraDegreefShoot210 from "@/images/portfolio/portrait/laura-degreef/shoot-2/10.jpg";
-import portraitLauraDegreefShoot211 from "@/images/portfolio/portrait/laura-degreef/shoot-2/11.jpg";
-import portraitLauraDegreefShoot212 from "@/images/portfolio/portrait/laura-degreef/shoot-2/12.jpg";
 import portraitWolfgangCover from "@/images/portfolio/portrait/wolfgang/cover.jpg";
 import portraitWolfgang01 from "@/images/portfolio/portrait/wolfgang/01.jpg";
 import portraitWolfgang02 from "@/images/portfolio/portrait/wolfgang/02.jpg";
@@ -301,7 +299,7 @@ export const categories: CategoryData[] = [
               portraitLauraDegreefShoot201, portraitLauraDegreefShoot202, portraitLauraDegreefShoot203,
               portraitLauraDegreefShoot204, portraitLauraDegreefShoot205, portraitLauraDegreefShoot206,
               portraitLauraDegreefShoot207, portraitLauraDegreefShoot208, portraitLauraDegreefShoot209,
-              portraitLauraDegreefShoot210, portraitLauraDegreefShoot211, portraitLauraDegreefShoot212,
+              portraitLauraDegreefShoot210,
             ],
           },
         ],
