@@ -84,6 +84,7 @@ import portraitHerton03 from "@/images/portfolio/portrait/herton/03.jpg";
 import portraitHerton04 from "@/images/portfolio/portrait/herton/04.jpg";
 import portraitHerton05 from "@/images/portfolio/portrait/herton/05.jpg";
 import portraitHerton06 from "@/images/portfolio/portrait/herton/06.jpg";
+import portraitHerton07 from "@/images/portfolio/portrait/herton/07.jpg";
 import portraitArtyCover from "@/images/portfolio/portrait/arty/cover.jpg";
 import portraitArty01 from "@/images/portfolio/portrait/arty/01.jpg";
 import portraitArty02 from "@/images/portfolio/portrait/arty/02.jpg";
@@ -92,18 +93,15 @@ import portraitArty04 from "@/images/portfolio/portrait/arty/04.jpg";
 import portraitArty05 from "@/images/portfolio/portrait/arty/05.jpg";
 import portraitArty06 from "@/images/portfolio/portrait/arty/06.jpg";
 import portraitArty07 from "@/images/portfolio/portrait/arty/07.jpg";
-import portraitArty08 from "@/images/portfolio/portrait/arty/08.jpg";
-import portraitGoWithTheFlowCover from "@/images/portfolio/portrait/go-with-the-flow/cover.jpg";
-import portraitGoWithTheFlowCover2 from "@/images/portfolio/portrait/go-with-the-flow/cover2.jpg";
-import portraitGoWithTheFlow01 from "@/images/portfolio/portrait/go-with-the-flow/01.jpg";
-import portraitGoWithTheFlow03 from "@/images/portfolio/portrait/go-with-the-flow/03.jpg";
-import portraitGoWithTheFlow04 from "@/images/portfolio/portrait/go-with-the-flow/04.jpg";
-import portraitGoWithTheFlow05 from "@/images/portfolio/portrait/go-with-the-flow/05.jpg";
-import portraitGoWithTheFlow08 from "@/images/portfolio/portrait/go-with-the-flow/08.jpg";
-import portraitGoWithTheFlow09 from "@/images/portfolio/portrait/go-with-the-flow/09.jpg";
-import portraitGaelCover from "@/images/portfolio/portrait/gael/cover.jpg";
-import portraitGael01 from "@/images/portfolio/portrait/gael/01.jpg";
-import portraitGael02 from "@/images/portfolio/portrait/gael/02.jpg";
+import portraitArtisticMoodCover from "@/images/portfolio/portrait/artistic-mood/cover.jpg";
+import portraitArtisticMoodCover2 from "@/images/portfolio/portrait/artistic-mood/cover2.jpg";
+import portraitArtisticMood01 from "@/images/portfolio/portrait/artistic-mood/01.jpg";
+import portraitArtisticMood02 from "@/images/portfolio/portrait/artistic-mood/02.jpg";
+import portraitArtisticMood03 from "@/images/portfolio/portrait/artistic-mood/03.jpg";
+import portraitArtisticMood04 from "@/images/portfolio/portrait/artistic-mood/04.jpg";
+import portraitArtisticMood05 from "@/images/portfolio/portrait/artistic-mood/05.jpg";
+import portraitArtisticMood08 from "@/images/portfolio/portrait/artistic-mood/08.jpg";
+import portraitArtisticMood09 from "@/images/portfolio/portrait/artistic-mood/09.jpg";
 import portraitCarlCashCover from "@/images/portfolio/portrait/carl-cash/cover.jpg";
 import portraitCarlCash01 from "@/images/portfolio/portrait/carl-cash/01.jpg";
 import portraitCarlCash02 from "@/images/portfolio/portrait/carl-cash/02.jpg";
@@ -312,7 +310,7 @@ export const categories: CategoryData[] = [
         coverImages: [portraitHertonCover, portraitHertonCover2],
         images: [
           portraitHerton01, portraitHerton02, portraitHerton03, portraitHerton04,
-          portraitHerton05, portraitHerton06,
+          portraitHerton05, portraitHerton06, portraitHerton07,
         ],
       },
       {
@@ -320,22 +318,17 @@ export const categories: CategoryData[] = [
         cover: portraitArtyCover,
         images: [
           portraitArty01, portraitArty02, portraitArty03, portraitArty04,
-          portraitArty05, portraitArty06, portraitArty07, portraitArty08,
+          portraitArty05, portraitArty06, portraitArty07,
         ],
       },
       {
-        slug: "go-with-the-flow",
-        cover: portraitGoWithTheFlowCover,
-        coverImages: [portraitGoWithTheFlowCover, portraitGoWithTheFlowCover2],
+        slug: "artistic-mood",
+        cover: portraitArtisticMoodCover,
+        coverImages: [portraitArtisticMoodCover, portraitArtisticMoodCover2],
         images: [
-          portraitGoWithTheFlow01, portraitGoWithTheFlow03, portraitGoWithTheFlow04, portraitGoWithTheFlow05,
-          portraitGoWithTheFlow08, portraitGoWithTheFlow09,
+          portraitArtisticMood01, portraitArtisticMood02, portraitArtisticMood03, portraitArtisticMood04,
+          portraitArtisticMood05, portraitArtisticMood08, portraitArtisticMood09,
         ],
-      },
-      {
-        slug: "gael",
-        cover: portraitGaelCover,
-        images: [portraitGael01, portraitGael02],
       },
       {
         slug: "carl-cash",
