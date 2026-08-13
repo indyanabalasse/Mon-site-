@@ -12,6 +12,7 @@ type Dictionary = {
   nav: {
     home: string;
     portfolio: string;
+    studio: string;
     packaging: string;
     about: string;
     contact: string;
@@ -40,6 +41,17 @@ type Dictionary = {
     { title: string; description: string; series: Record<string, string> }
   >;
   subseries?: Partial<Record<CategorySlug, Record<string, Record<string, string>>>>;
+  studio: {
+    title: string;
+    subtitle: string;
+    tagline: string;
+    intro: string;
+    equipment: { title: string; items: string[] };
+    kitchen: { title: string; text: string };
+    sanitary: { text: string };
+    garden: { title: string; text: string };
+    closing: { title: string; text: string; note: string; cta: string };
+  };
   packaging: {
     title: string;
     intro: string;
@@ -86,7 +98,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
     nav: {
       home: "Accueil",
       portfolio: "Portfolio",
-      packaging: "Packaging",
+      studio: "Studio",
+      packaging: "Package",
       about: "À propos",
       contact: "Contact",
       themeToLight: "Passer en mode clair",
@@ -168,6 +181,40 @@ export const dictionaries: Record<Locale, Dictionary> = {
           "shoot-1": "Shoot 1",
           "shoot-2": "Shoot 2",
         },
+      },
+    },
+    studio: {
+      title: "Studio Photo",
+      subtitle: "Location professionnelle",
+      tagline: "Un espace lumineux et polyvalent, pensé pour vos productions.",
+      intro:
+        "Aménagé sous une charpente blanche à l'architecture remarquable, ce studio bénéficie d'un apport de lumière naturelle exceptionnel grâce à ses multiples fenêtres de toit. Mur en briques blanchies, volumes généreux et sol carrelé clair composent un décor épuré et intemporel, adapté à tout type de production : portrait, mode, beauté, packshot ou vidéo.",
+      equipment: {
+        title: "Équipement mis à disposition",
+        items: [
+          "Fond studio sur système à enrouleurs (papier blanc et coloris variés)",
+          "Rideaux occultants permettant de moduler la lumière naturelle selon les besoins",
+          "Kit d'éclairage professionnel : softbox, réflecteurs, flashs, pieds sur roulettes",
+          "Ventilateur, échelle et accessoires techniques",
+          "Coin make-up équipé d'un miroir lumineux, pour la préparation des modèles avant le shooting",
+        ],
+      },
+      kitchen: {
+        title: "Espace cuisine",
+        text: "Un espace cuisine entièrement équipé (plaques de cuisson, hotte, réfrigérateur, machine à café, micro-ondes) est mis à la disposition des équipes tout au long de la journée de location. Sa grande table conviviale permet d'accueillir l'ensemble de l'équipe pour les pauses et les repas.",
+      },
+      sanitary: {
+        text: "Des toilettes sont accessibles en permanence pour le confort des équipes et des modèles pendant toute la durée du shooting.",
+      },
+      garden: {
+        title: "Jardin",
+        text: "Le lieu dispose également d'un accès à un jardin arboré et paisible, à l'écart de l'agitation urbaine. Cet espace extérieur — avec son grand arbre offrant une ombre naturelle et son hamac — se prête aussi bien à une pause détente qu'à des prises de vue en extérieur.",
+      },
+      closing: {
+        title: "Un lieu clé en main pour vos tournages",
+        text: "Studio équipé, espace de restauration fonctionnel et jardin apaisant : ce lieu réunit tous les éléments nécessaires à des productions photo et vidéo dans des conditions optimales.",
+        note: "Studio disponible à la location — contactez-nous pour toute demande de réservation.",
+        cta: "Réserver le studio",
       },
     },
     packaging: {
@@ -277,7 +324,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
     nav: {
       home: "Home",
       portfolio: "Portfolio",
-      packaging: "Packaging",
+      studio: "Studio",
+      packaging: "Package",
       about: "About",
       contact: "Contact",
       themeToLight: "Switch to light mode",
@@ -359,6 +407,40 @@ export const dictionaries: Record<Locale, Dictionary> = {
           "shoot-1": "Shoot 1",
           "shoot-2": "Shoot 2",
         },
+      },
+    },
+    studio: {
+      title: "Photo Studio",
+      subtitle: "Professional location",
+      tagline: "A bright, versatile space, designed for your productions.",
+      intro:
+        "Set beneath a striking white timber roof structure, this studio enjoys exceptional natural light through its multiple skylights. Whitewashed brick walls, generous volumes and a light tiled floor create a clean, timeless setting suited to any type of production: portrait, fashion, beauty, packshot or video.",
+      equipment: {
+        title: "Equipment provided",
+        items: [
+          "Roller-mounted studio backdrop system (white and assorted colours)",
+          "Blackout curtains to adjust natural light as needed",
+          "Professional lighting kit: softbox, reflectors, flashes, wheeled stands",
+          "Fan, ladder and technical accessories",
+          "Make-up corner with a lit mirror, for preparing models before the shoot",
+        ],
+      },
+      kitchen: {
+        title: "Kitchen area",
+        text: "A fully equipped kitchen (hob, extractor hood, fridge, coffee machine, microwave) is available to crews throughout the rental day. Its large, convivial table comfortably seats the whole team for breaks and meals.",
+      },
+      sanitary: {
+        text: "Restrooms are accessible at all times for the comfort of crews and models throughout the shoot.",
+      },
+      garden: {
+        title: "Garden",
+        text: "The location also gives access to a peaceful, tree-lined garden, away from the city bustle. This outdoor space — with its large shade tree and hammock — is just as suited to a relaxing break as to outdoor shots.",
+      },
+      closing: {
+        title: "A turnkey location for your shoots",
+        text: "An equipped studio, a functional catering area and a calming garden: this location brings together everything needed for photo and video productions in optimal conditions.",
+        note: "Studio available for rent — get in touch for any booking request.",
+        cta: "Book the studio",
       },
     },
     packaging: {

@@ -6,6 +6,7 @@ import { categories } from "@/data/portfolio";
 const routes = [
   "",
   "/portfolio",
+  "/studio",
   "/packaging",
   "/about",
   "/contact",

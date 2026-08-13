@@ -1,0 +1,147 @@
+import Image from "next/image";
+import Link from "next/link";
+import type { Metadata } from "next";
+import { getDictionary, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
+import heroImage from "@/images/Studio/PHOTO-2026-08-13-11-18-19.jpg";
+import lightingImage from "@/images/Studio/PHOTO-2026-08-13-11-25-37.jpg";
+import backdropImage from "@/images/Studio/PHOTO-2026-08-13-11-26-57.jpg";
+import makeupImage from "@/images/Studio/PHOTO-2026-08-13-11-24-52.jpg";
+import naturalLightImage from "@/images/Studio/PHOTO-2026-08-13-11-17-39.jpg";
+import kitchenImage from "@/images/Studio/PHOTO-2026-08-13-11-26-39.jpg";
+import gardenImage from "@/images/Studio/PHOTO-2026-08-13-11-26-12.jpg";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale: rawLocale } = await params;
+  const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
+  const dict = getDictionary(locale);
+  const path = `/${locale}/studio`;
+  return {
+    title: dict.studio.title,
+    description: dict.studio.intro,
+    alternates: { canonical: path },
+    openGraph: { title: dict.studio.title, description: dict.studio.intro, url: path },
+  };
+}
+
+export default async function StudioPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale: rawLocale } = await params;
+  const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
+  const dict = getDictionary(locale);
+  const studio = dict.studio;
+
+  return (
+    <div className="mx-auto max-w-6xl px-6 py-20">
+      <header className="max-w-2xl mx-auto text-center mb-16">
+        <p className="text-xs uppercase tracking-[0.2em] text-muted">{studio.subtitle}</p>
+        <h1 className="wordmark font-serif text-4xl font-light mt-3">{studio.title}</h1>
+        <p className="mt-4 text-muted">{studio.tagline}</p>
+      </header>
+
+      <div className="relative aspect-[16/9] overflow-hidden mb-16">
+        <Image
+          src={heroImage}
+          alt={studio.title}
+          fill
+          sizes="100vw"
+          className="object-cover"
+          priority
+        />
+      </div>
+
+      <div className="max-w-3xl mx-auto text-center mb-20">
+        <p className="leading-relaxed text-foreground/90">{studio.intro}</p>
+      </div>
+
+      <div className="grid gap-12 md:grid-cols-2 md:items-center">
+        <div>
+          <h2 className="wordmark font-serif text-2xl font-light">{studio.equipment.title}</h2>
+          <ul className="mt-6 space-y-3">
+            {studio.equipment.items.map((item) => (
+              <li key={item} className="flex gap-3 text-sm text-foreground/90 leading-relaxed">
+                <span className="text-muted">—</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="relative aspect-[4/5] overflow-hidden">
+          <Image
+            src={lightingImage}
+            alt={studio.equipment.title}
+            fill
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className="object-cover"
+          />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-3 gap-4 mt-8">
+        <div className="relative aspect-square overflow-hidden">
+          <Image src={backdropImage} alt={studio.title} fill sizes="33vw" className="object-cover" />
+        </div>
+        <div className="relative aspect-square overflow-hidden">
+          <Image src={makeupImage} alt={studio.title} fill sizes="33vw" className="object-cover" />
+        </div>
+        <div className="relative aspect-square overflow-hidden">
+          <Image src={naturalLightImage} alt={studio.title} fill sizes="33vw" className="object-cover" />
+        </div>
+      </div>
+
+      <div className="grid gap-12 md:grid-cols-2 md:items-center mt-20 pt-16 border-t border-border">
+        <div className="relative aspect-[4/5] overflow-hidden order-1 md:order-none">
+          <Image
+            src={kitchenImage}
+            alt={studio.kitchen.title}
+            fill
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className="object-cover"
+          />
+        </div>
+        <div>
+          <h2 className="wordmark font-serif text-2xl font-light">{studio.kitchen.title}</h2>
+          <p className="mt-5 leading-relaxed text-foreground/90">{studio.kitchen.text}</p>
+        </div>
+      </div>
+
+      <div className="max-w-2xl mx-auto text-center mt-16">
+        <p className="text-sm text-muted leading-relaxed">{studio.sanitary.text}</p>
+      </div>
+
+      <div className="grid gap-12 md:grid-cols-2 md:items-center mt-16 pt-16 border-t border-border">
+        <div>
+          <h2 className="wordmark font-serif text-2xl font-light">{studio.garden.title}</h2>
+          <p className="mt-5 leading-relaxed text-foreground/90">{studio.garden.text}</p>
+        </div>
+        <div className="relative aspect-[4/5] overflow-hidden">
+          <Image
+            src={gardenImage}
+            alt={studio.garden.title}
+            fill
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className="object-cover"
+          />
+        </div>
+      </div>
+
+      <div className="mt-24 border-t border-border pt-16 text-center">
+        <h2 className="wordmark font-serif text-2xl font-light">{studio.closing.title}</h2>
+        <p className="mt-4 max-w-xl mx-auto text-muted">{studio.closing.text}</p>
+        <p className="mt-2 text-sm text-muted italic">{studio.closing.note}</p>
+        <Link
+          href={`/${locale}/contact`}
+          className="mt-8 inline-block border border-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors"
+        >
+          {studio.closing.cta}
+        </Link>
+      </div>
+    </div>
+  );
+}
