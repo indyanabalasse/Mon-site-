@@ -140,8 +140,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           wolfgang: "Wolfgang",
           herton: "Herton",
           arty: "Arty",
-          "artistic-mood": "Artistic Mood",
-          "carl-cash": "Carl Cash",
+          "my-mood": "My Mood",
           "didier-vdb": "Didier VDB",
           esphan: "Esphan",
         },
@@ -188,7 +187,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       subtitle: "Location professionnelle",
       tagline: "Un espace lumineux et polyvalent, pensé pour vos productions.",
       intro:
-        "Aménagé sous une charpente blanche à l'architecture remarquable, ce studio bénéficie d'un apport de lumière naturelle exceptionnel grâce à ses multiples fenêtres de toit. Mur en briques blanchies, volumes généreux et sol carrelé clair composent un décor épuré et intemporel, adapté à tout type de production : portrait, mode, beauté, packshot ou vidéo.",
+        "Aménagé sous une charpente blanche à l'architecture remarquable, ce studio bénéficie d'un bel apport de lumière naturelle grâce à ses multiples fenêtres de toit. Mur en briques blanchies, volumes généreux et sol carrelé clair composent un décor épuré et intemporel, adapté à tout type de production : portrait, mode, beauté, packshot ou vidéo.",
       equipment: {
         title: "Équipement mis à disposition",
         items: [
@@ -366,8 +365,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           wolfgang: "Wolfgang",
           herton: "Herton",
           arty: "Arty",
-          "artistic-mood": "Artistic Mood",
-          "carl-cash": "Carl Cash",
+          "my-mood": "My Mood",
           "didier-vdb": "Didier VDB",
           esphan: "Esphan",
         },
@@ -414,7 +412,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       subtitle: "Professional location",
       tagline: "A bright, versatile space, designed for your productions.",
       intro:
-        "Set beneath a striking white timber roof structure, this studio enjoys exceptional natural light through its multiple skylights. Whitewashed brick walls, generous volumes and a light tiled floor create a clean, timeless setting suited to any type of production: portrait, fashion, beauty, packshot or video.",
+        "Set beneath a striking white timber roof structure, this studio enjoys lovely natural light through its multiple skylights. Whitewashed brick walls, generous volumes and a light tiled floor create a clean, timeless setting suited to any type of production: portrait, fashion, beauty, packshot or video.",
       equipment: {
         title: "Equipment provided",
         items: [

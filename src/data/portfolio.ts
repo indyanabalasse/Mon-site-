@@ -91,21 +91,15 @@ import portraitArty03 from "@/images/portfolio/portrait/arty/03.jpg";
 import portraitArty04 from "@/images/portfolio/portrait/arty/04.jpg";
 import portraitArty05 from "@/images/portfolio/portrait/arty/05.jpg";
 import portraitArty06 from "@/images/portfolio/portrait/arty/06.jpg";
-import portraitArty07 from "@/images/portfolio/portrait/arty/07.jpg";
-import portraitArtisticMoodCover from "@/images/portfolio/portrait/artistic-mood/cover.jpg";
-import portraitArtisticMoodCover2 from "@/images/portfolio/portrait/artistic-mood/cover2.jpg";
-import portraitArtisticMood01 from "@/images/portfolio/portrait/artistic-mood/01.jpg";
-import portraitArtisticMood02 from "@/images/portfolio/portrait/artistic-mood/02.jpg";
-import portraitArtisticMood03 from "@/images/portfolio/portrait/artistic-mood/03.jpg";
-import portraitArtisticMood04 from "@/images/portfolio/portrait/artistic-mood/04.jpg";
-import portraitArtisticMood05 from "@/images/portfolio/portrait/artistic-mood/05.jpg";
-import portraitArtisticMood08 from "@/images/portfolio/portrait/artistic-mood/08.jpg";
-import portraitArtisticMood09 from "@/images/portfolio/portrait/artistic-mood/09.jpg";
-import portraitCarlCashCover from "@/images/portfolio/portrait/carl-cash/cover.jpg";
-import portraitCarlCash01 from "@/images/portfolio/portrait/carl-cash/01.jpg";
-import portraitCarlCash02 from "@/images/portfolio/portrait/carl-cash/02.jpg";
-import portraitCarlCash03 from "@/images/portfolio/portrait/carl-cash/03.jpg";
-import portraitCarlCash04 from "@/images/portfolio/portrait/carl-cash/04.jpg";
+import portraitMyMoodCover from "@/images/portfolio/portrait/My Mood/cover2.jpg";
+import portraitMyMood01 from "@/images/portfolio/portrait/My Mood/01.jpg";
+import portraitMyMood02 from "@/images/portfolio/portrait/My Mood/02.jpg";
+import portraitMyMood03 from "@/images/portfolio/portrait/My Mood/03.jpg";
+import portraitMyMood04 from "@/images/portfolio/portrait/My Mood/04.jpg";
+import portraitMyMood05 from "@/images/portfolio/portrait/My Mood/05.jpg";
+import portraitMyMood08 from "@/images/portfolio/portrait/My Mood/08.jpg";
+import portraitMyMood09 from "@/images/portfolio/portrait/My Mood/09.jpg";
+import portraitMyMood10 from "@/images/portfolio/portrait/My Mood/10.jpg";
 import portraitDidierVdbCover from "@/images/portfolio/portrait/didier-vdb/cover.jpg";
 import portraitDidierVdb01 from "@/images/portfolio/portrait/didier-vdb/01.jpg";
 import portraitDidierVdb02 from "@/images/portfolio/portrait/didier-vdb/02.jpg";
@@ -114,14 +108,12 @@ import portraitDidierVdb04 from "@/images/portfolio/portrait/didier-vdb/04.jpg";
 import portraitDidierVdb05 from "@/images/portfolio/portrait/didier-vdb/05.jpg";
 import portraitDidierVdb06 from "@/images/portfolio/portrait/didier-vdb/06.jpg";
 import portraitEsphanCover from "@/images/portfolio/portrait/esphan/cover.jpg";
-import portraitEsphan01 from "@/images/portfolio/portrait/esphan/01.jpg";
 import portraitEsphan02 from "@/images/portfolio/portrait/esphan/02.jpg";
 import portraitEsphan03 from "@/images/portfolio/portrait/esphan/03.jpg";
 import portraitEsphan04 from "@/images/portfolio/portrait/esphan/04.jpg";
 import portraitEsphan05 from "@/images/portfolio/portrait/esphan/05.jpg";
 import portraitEsphan06 from "@/images/portfolio/portrait/esphan/06.jpg";
 import portraitEsphan07 from "@/images/portfolio/portrait/esphan/07.jpg";
-import portraitEsphan08 from "@/images/portfolio/portrait/esphan/08.jpg";
 import portraitEsphan09 from "@/images/portfolio/portrait/esphan/09.jpg";
 import corporateCover from "@/images/portfolio/corporate/cover.jpg";
 import corporateMaVieCover from "@/images/portfolio/corporate/ma-vie/cover.jpg";
@@ -131,16 +123,12 @@ import corporateMaVie03 from "@/images/portfolio/corporate/ma-vie/03.jpg";
 import corporateMaVie04 from "@/images/portfolio/corporate/ma-vie/04.jpg";
 import corporateMaVie05 from "@/images/portfolio/corporate/ma-vie/05.jpg";
 import corporateMaVie06 from "@/images/portfolio/corporate/ma-vie/06.jpg";
-import corporateMaVie07 from "@/images/portfolio/corporate/ma-vie/07.jpg";
-import corporateMaVie08 from "@/images/portfolio/corporate/ma-vie/08.jpg";
 import corporateMaVie09 from "@/images/portfolio/corporate/ma-vie/09.jpg";
-import corporateMaVie10 from "@/images/portfolio/corporate/ma-vie/10.jpg";
 import corporateMaVie11 from "@/images/portfolio/corporate/ma-vie/11.jpg";
 import corporateMaVie12 from "@/images/portfolio/corporate/ma-vie/12.jpg";
 import corporateMaVie13 from "@/images/portfolio/corporate/ma-vie/13.jpg";
 import corporateMaVie14 from "@/images/portfolio/corporate/ma-vie/14.jpg";
 import corporateMaVie15 from "@/images/portfolio/corporate/ma-vie/15.jpg";
-import corporateMaVie16 from "@/images/portfolio/corporate/ma-vie/16.jpg";
 import corporateMaVie17 from "@/images/portfolio/corporate/ma-vie/17.jpg";
 import corporateEsgLogicCover from "@/images/portfolio/corporate/esg-logic/cover.jpg";
 import corporateEsgLogic01 from "@/images/portfolio/corporate/esg-logic/01.jpg";
@@ -317,22 +305,16 @@ export const categories: CategoryData[] = [
         cover: portraitArtyCover,
         images: [
           portraitArty01, portraitArty02, portraitArty03, portraitArty04,
-          portraitArty05, portraitArty06, portraitArty07,
+          portraitArty05, portraitArty06,
         ],
       },
       {
-        slug: "artistic-mood",
-        cover: portraitArtisticMoodCover,
-        coverImages: [portraitArtisticMoodCover, portraitArtisticMoodCover2],
+        slug: "my-mood",
+        cover: portraitMyMoodCover,
         images: [
-          portraitArtisticMood01, portraitArtisticMood02, portraitArtisticMood03, portraitArtisticMood04,
-          portraitArtisticMood05, portraitArtisticMood08, portraitArtisticMood09,
+          portraitMyMood01, portraitMyMood02, portraitMyMood03, portraitMyMood04,
+          portraitMyMood05, portraitMyMood08, portraitMyMood09, portraitMyMood10,
         ],
-      },
-      {
-        slug: "carl-cash",
-        cover: portraitCarlCashCover,
-        images: [portraitCarlCash01, portraitCarlCash02, portraitCarlCash03, portraitCarlCash04],
       },
       {
         slug: "didier-vdb",
@@ -346,8 +328,8 @@ export const categories: CategoryData[] = [
         slug: "esphan",
         cover: portraitEsphanCover,
         images: [
-          portraitEsphan01, portraitEsphan02, portraitEsphan03, portraitEsphan04,
-          portraitEsphan05, portraitEsphan06, portraitEsphan07, portraitEsphan08,
+          portraitEsphan02, portraitEsphan03, portraitEsphan04,
+          portraitEsphan05, portraitEsphan06, portraitEsphan07,
           portraitEsphan09,
         ],
       },
@@ -362,9 +344,8 @@ export const categories: CategoryData[] = [
         cover: corporateMaVieCover,
         images: [
           corporateMaVie01, corporateMaVie02, corporateMaVie03, corporateMaVie04,
-          corporateMaVie05, corporateMaVie06, corporateMaVie07, corporateMaVie08,
-          corporateMaVie09, corporateMaVie10, corporateMaVie11, corporateMaVie12,
-          corporateMaVie13, corporateMaVie14, corporateMaVie15, corporateMaVie16,
+          corporateMaVie05, corporateMaVie06, corporateMaVie09, corporateMaVie11,
+          corporateMaVie12, corporateMaVie13, corporateMaVie14, corporateMaVie15,
           corporateMaVie17,
         ],
       },
