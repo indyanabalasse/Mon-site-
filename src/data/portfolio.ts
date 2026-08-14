@@ -197,10 +197,6 @@ import corporateEsgLogic12 from "@/images/portfolio/corporate/esg-logic/12.jpg";
 import corporateEsgLogic13 from "@/images/portfolio/corporate/esg-logic/13.jpg";
 import corporateEsgLogic14 from "@/images/portfolio/corporate/esg-logic/14.jpg";
 import corporateEsgLogic15 from "@/images/portfolio/corporate/esg-logic/15.jpg";
-import corporateEsgLogic16 from "@/images/portfolio/corporate/esg-logic/16.jpg";
-import corporateEsgLogic17 from "@/images/portfolio/corporate/esg-logic/17.jpg";
-import corporateEsgLogic18 from "@/images/portfolio/corporate/esg-logic/18.jpg";
-import corporateEsgLogic19 from "@/images/portfolio/corporate/esg-logic/19.jpg";
 import corporateEsgLogic20 from "@/images/portfolio/corporate/esg-logic/20.jpg";
 import corporateEsgLogic21 from "@/images/portfolio/corporate/esg-logic/21.jpg";
 import corporateEsgLogic22 from "@/images/portfolio/corporate/esg-logic/22.jpg";
@@ -405,9 +401,8 @@ export const categories: CategoryData[] = [
           corporateEsgLogic01, corporateEsgLogic02, corporateEsgLogic03, corporateEsgLogic04,
           corporateEsgLogic05, corporateEsgLogic06, corporateEsgLogic07, corporateEsgLogic08,
           corporateEsgLogic09, corporateEsgLogic10, corporateEsgLogic11, corporateEsgLogic12,
-          corporateEsgLogic13, corporateEsgLogic14, corporateEsgLogic15, corporateEsgLogic16,
-          corporateEsgLogic17, corporateEsgLogic18, corporateEsgLogic19, corporateEsgLogic20,
-          corporateEsgLogic21, corporateEsgLogic22,
+          corporateEsgLogic13, corporateEsgLogic14, corporateEsgLogic15,
+          corporateEsgLogic20, corporateEsgLogic21, corporateEsgLogic22,
         ],
       },
     ],
