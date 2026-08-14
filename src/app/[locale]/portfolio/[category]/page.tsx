@@ -64,6 +64,7 @@ export default async function CategoryPage({
             cover: series.cover,
             covers: isSeriesGroup(series) ? undefined : series.coverImages,
             label: info.series[series.slug] ?? series.slug,
+            showLabel: category !== "portrait" || series.slug === "my-mood",
           }))}
         />
       ) : (

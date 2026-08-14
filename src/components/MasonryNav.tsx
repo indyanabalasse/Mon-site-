@@ -7,6 +7,7 @@ export type MasonryTile = {
   cover: StaticImageData;
   covers?: StaticImageData[];
   label: string;
+  showLabel?: boolean;
 };
 
 const TILE_SIZES = "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw";
@@ -34,11 +35,13 @@ export default function MasonryNav({ items }: { items: MasonryTile[] }) {
             />
           )}
           <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="wordmark font-serif text-2xl sm:text-3xl text-white text-center px-4">
-              {item.label}
-            </span>
-          </div>
+          {item.showLabel !== false && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="wordmark font-serif text-2xl sm:text-3xl text-white text-center px-4">
+                {item.label}
+              </span>
+            </div>
+          )}
         </Link>
       ))}
     </div>
