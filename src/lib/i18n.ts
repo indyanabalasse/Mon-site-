@@ -167,6 +167,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
           "femme-enceinte": "Femme enceinte",
         },
       },
+      "my-mood": {
+        title: "INDY MOOD",
+        description: "Univers personnel et créatif, entre expérimentation et émotion.",
+        series: {
+          "my-mood": "INDY MOOD",
+        },
+      },
     },
     subseries: {
       portrait: {
@@ -287,7 +294,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     about: {
       title: "À propos",
       paragraphs: [
-        "Fille d'un photographe belge reconnu, j'ai grandi entourée d'objectifs, de lumière et d'émotions capturées. Tout naturellement, j'ai suivi les traces de mon père, en apportant ma propre sensibilité et ma vision artistique à ce métier.",
+        "Fille d'un photographe de mode, j'ai grandi entourée d'objectifs, de lumière et d'émotions capturées. Tout naturellement, j'ai suivi les traces de mon père, en apportant ma propre sensibilité et ma vision artistique à ce métier.",
         "Depuis un an, je me consacre pleinement à la photographie, un univers où je peux exprimer ma créativité et donner vie aux émotions à travers l'image. Mon style est avant tout artistique, mais je reste ouverte à différents univers : portrait, mode, concepts créatifs ou projets professionnels.",
         "J'ai commencé mon parcours dans mon propre studio photo, un espace où je peux créer librement, jouer avec la lumière, les textures et les atmosphères pour raconter des histoires visuelles uniques. Chaque séance est une rencontre — une expérience humaine et artistique où l'authenticité prime avant tout.",
         "Mon objectif ? Capturer l'instant, révéler la beauté dans sa forme la plus pure, et créer des images qui vous ressemblent vraiment.",
@@ -384,6 +391,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
         description: "Family life moments, between tenderness and authenticity.",
         series: {
           "femme-enceinte": "Maternity",
+        },
+      },
+      "my-mood": {
+        title: "INDY MOOD",
+        description: "A personal, creative universe, between experimentation and emotion.",
+        series: {
+          "my-mood": "INDY MOOD",
         },
       },
     },

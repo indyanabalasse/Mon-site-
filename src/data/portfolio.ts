@@ -97,6 +97,7 @@ import portraitMyMood07 from "@/images/portfolio/portrait/My Mood/07.jpg";
 import portraitMyMood08 from "@/images/portfolio/portrait/My Mood/08.jpg";
 import portraitMyMood09 from "@/images/portfolio/portrait/My Mood/09.jpg";
 import portraitMyMood10 from "@/images/portfolio/portrait/My Mood/10.jpg";
+import portraitMyMood11 from "@/images/portfolio/portrait/My Mood/11.jpg";
 import portraitDidierVdbCover from "@/images/portfolio/portrait/didier-vdb/cover.jpg";
 import portraitDidierVdb01 from "@/images/portfolio/portrait/didier-vdb/01.jpg";
 import portraitDidierVdb02 from "@/images/portfolio/portrait/didier-vdb/02.jpg";
@@ -115,7 +116,6 @@ import portraitEsphan09 from "@/images/portfolio/portrait/esphan/09.jpg";
 import corporateCover from "@/images/portfolio/corporate/cover.jpg";
 import corporateMaVieCover from "@/images/portfolio/corporate/ma-vie/cover.jpg";
 import corporateMaVie01 from "@/images/portfolio/corporate/ma-vie/01.jpg";
-import corporateMaVie02 from "@/images/portfolio/corporate/ma-vie/02.jpg";
 import corporateMaVie03 from "@/images/portfolio/corporate/ma-vie/03.jpg";
 import corporateMaVie04 from "@/images/portfolio/corporate/ma-vie/04.jpg";
 import corporateMaVie05 from "@/images/portfolio/corporate/ma-vie/05.jpg";
@@ -171,7 +171,8 @@ export type CategorySlug =
   | "portrait"
   | "corporate"
   | "sante"
-  | "famille";
+  | "famille"
+  | "my-mood";
 
 export type Series = {
   slug: string;
@@ -293,15 +294,6 @@ export const categories: CategoryData[] = [
         ],
       },
       {
-        slug: "my-mood",
-        cover: portraitMyMoodCover,
-        images: [
-          portraitMyMood01, portraitMyMood02, portraitMyMood03, portraitMyMood04,
-          portraitMyMood05, portraitMyMood06, portraitMyMood07, portraitMyMood08,
-          portraitMyMood09, portraitMyMood10,
-        ],
-      },
-      {
         slug: "didier-vdb",
         cover: portraitDidierVdbCover,
         images: [
@@ -328,7 +320,7 @@ export const categories: CategoryData[] = [
         slug: "ma-vie",
         cover: corporateMaVieCover,
         images: [
-          corporateMaVie01, corporateMaVie02, corporateMaVie03, corporateMaVie04,
+          corporateMaVie01, corporateMaVie03, corporateMaVie04,
           corporateMaVie05, corporateMaVie06, corporateMaVie09, corporateMaVie11,
           corporateMaVie12, corporateMaVie13, corporateMaVie14, corporateMaVie15,
           corporateMaVie17,
@@ -371,6 +363,21 @@ export const categories: CategoryData[] = [
         cover: familleFemmeEnceinteCover,
         images: [
           familleFemmeEnceinte01, familleFemmeEnceinte02, familleFemmeEnceinte03,
+        ],
+      },
+    ],
+  },
+  {
+    slug: "my-mood",
+    cover: portraitMyMoodCover,
+    series: [
+      {
+        slug: "my-mood",
+        cover: portraitMyMoodCover,
+        images: [
+          portraitMyMood01, portraitMyMood02, portraitMyMood03, portraitMyMood04,
+          portraitMyMood05, portraitMyMood06, portraitMyMood07, portraitMyMood08,
+          portraitMyMood09, portraitMyMood10, portraitMyMood11,
         ],
       },
     ],

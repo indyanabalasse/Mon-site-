@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getDictionary, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
-import heroImage from "@/images/Studio/PHOTO-2026-08-13-11-18-19.jpg";
+import heroImage from "@/images/Studio/PHOTO-2026-08-14-13-01-50.jpg";
 import lightingImage from "@/images/Studio/PHOTO-2026-08-13-11-25-37.jpg";
 import backdropImage from "@/images/Studio/PHOTO-2026-08-13-11-26-57.jpg";
 import makeupImage from "@/images/Studio/PHOTO-2026-08-13-11-24-52.jpg";
