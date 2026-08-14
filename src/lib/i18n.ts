@@ -197,7 +197,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         text: "Un espace cuisine entièrement équipé (cuisinière, hotte, réfrigérateur, machine à café, micro-ondes) est mis à la disposition des équipes tout au long de la journée de location. Sa grande table conviviale permet d'accueillir l'ensemble de l'équipe pour les pauses et les repas.",
       },
       sanitary: {
-        text: "Des toilettes ainsi qu'une douche sont accessibles en permanence pour le confort des équipes et des modèles pendant toute la durée du shooting.",
+        text: "Toilette et douche à disposition.",
       },
       garden: {
         title: "Jardin",
@@ -416,7 +416,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         text: "A fully equipped kitchen (cooker, extractor hood, fridge, coffee machine, microwave) is available to crews throughout the rental day. Its large, convivial table comfortably seats the whole team for breaks and meals.",
       },
       sanitary: {
-        text: "Restrooms and a shower are accessible at all times for the comfort of crews and models throughout the shoot.",
+        text: "Restroom and shower available.",
       },
       garden: {
         title: "Garden",
