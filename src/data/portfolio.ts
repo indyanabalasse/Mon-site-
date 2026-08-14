@@ -34,7 +34,6 @@ import evenementielOpenAir10 from "@/images/portfolio/evenementiel/open-air/10.j
 import evenementielOpenAir11 from "@/images/portfolio/evenementiel/open-air/11.jpg";
 import evenementielOpenAir12 from "@/images/portfolio/evenementiel/open-air/12.jpg";
 import evenementielFestivalCover from "@/images/portfolio/evenementiel/festival/cover.jpg";
-import evenementielFestivalBambounouCover from "@/images/portfolio/evenementiel/festival/bambounou/cover.jpg";
 import evenementielFestivalBambounou01 from "@/images/portfolio/evenementiel/festival/bambounou/01.jpg";
 import evenementielFestivalBambounou02 from "@/images/portfolio/evenementiel/festival/bambounou/02.jpg";
 import evenementielFestivalBambounou03 from "@/images/portfolio/evenementiel/festival/bambounou/03.jpg";
@@ -43,7 +42,6 @@ import evenementielFestivalBambounou05 from "@/images/portfolio/evenementiel/fes
 import evenementielFestivalBambounou06 from "@/images/portfolio/evenementiel/festival/bambounou/06.jpg";
 import evenementielFestivalBambounou07 from "@/images/portfolio/evenementiel/festival/bambounou/07.jpg";
 import evenementielFestivalBambounou08 from "@/images/portfolio/evenementiel/festival/bambounou/08.jpg";
-import evenementielFestivalLauraDegreefCover from "@/images/portfolio/evenementiel/festival/laura-degreef/cover.jpg";
 import evenementielFestivalLauraDegreef01 from "@/images/portfolio/evenementiel/festival/laura-degreef/01.jpg";
 import evenementielFestivalLauraDegreef02 from "@/images/portfolio/evenementiel/festival/laura-degreef/02.jpg";
 import evenementielFestivalLauraDegreef03 from "@/images/portfolio/evenementiel/festival/laura-degreef/03.jpg";
@@ -228,24 +226,12 @@ export const categories: CategoryData[] = [
       {
         slug: "festival",
         cover: evenementielFestivalCover,
-        subseries: [
-          {
-            slug: "bambounou",
-            cover: evenementielFestivalBambounouCover,
-            images: [
-              evenementielFestivalBambounou01, evenementielFestivalBambounou02, evenementielFestivalBambounou03,
-              evenementielFestivalBambounou04, evenementielFestivalBambounou05, evenementielFestivalBambounou06,
-              evenementielFestivalBambounou07, evenementielFestivalBambounou08,
-            ],
-          },
-          {
-            slug: "laura-degreef",
-            cover: evenementielFestivalLauraDegreefCover,
-            images: [
-              evenementielFestivalLauraDegreef01, evenementielFestivalLauraDegreef02, evenementielFestivalLauraDegreef03,
-              evenementielFestivalLauraDegreef04, evenementielFestivalLauraDegreef05,
-            ],
-          },
+        images: [
+          evenementielFestivalBambounou01, evenementielFestivalBambounou02, evenementielFestivalBambounou03,
+          evenementielFestivalBambounou04, evenementielFestivalBambounou05, evenementielFestivalBambounou06,
+          evenementielFestivalBambounou07, evenementielFestivalBambounou08,
+          evenementielFestivalLauraDegreef01, evenementielFestivalLauraDegreef02, evenementielFestivalLauraDegreef03,
+          evenementielFestivalLauraDegreef04, evenementielFestivalLauraDegreef05,
         ],
       },
     ],

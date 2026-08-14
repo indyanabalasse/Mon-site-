@@ -169,12 +169,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
       },
     },
     subseries: {
-      evenementiel: {
-        festival: {
-          bambounou: "Bambounou",
-          "laura-degreef": "Laura Degreef",
-        },
-      },
       portrait: {
         "laura-degreef": {
           "shoot-1": "Shoot 1",
@@ -394,12 +388,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
       },
     },
     subseries: {
-      evenementiel: {
-        festival: {
-          bambounou: "Bambounou",
-          "laura-degreef": "Laura Degreef",
-        },
-      },
       portrait: {
         "laura-degreef": {
           "shoot-1": "Shoot 1",
