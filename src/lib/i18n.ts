@@ -140,7 +140,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           wolfgang: "Wolfgang",
           herton: "Herton",
           arty: "Arty",
-          "my-mood": "INDY Mood",
+          "my-mood": "INDY MOOD",
           "didier-vdb": "Didier VDB",
           esphan: "Esphan",
         },
@@ -181,7 +181,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       subtitle: "Location professionnelle",
       tagline: "Un espace lumineux et polyvalent, pensé pour vos productions.",
       intro:
-        "Aménagé sous une charpente blanche à l'architecture remarquable, ce studio bénéficie d'un bel apport de lumière naturelle grâce à ses multiples fenêtres de toit. Mur en briques blanchies, volumes généreux et sol carrelé clair composent un décor épuré et intemporel, adapté à tout type de production : portrait, mode, beauté, packshot ou vidéo.",
+        "Aménagé sous une charpente blanche, ce studio bénéficie d'un bel apport de lumière naturelle grâce à ses multiples fenêtres de toit. Mur en briques blanchies, volumes généreux et sol carrelé clair composent un décor épuré et intemporel, adapté à tout type de production : portrait, mode, beauté, packshot ou vidéo.",
       equipment: {
         title: "Équipement mis à disposition",
         items: [
@@ -194,10 +194,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
       },
       kitchen: {
         title: "Espace cuisine",
-        text: "Un espace cuisine entièrement équipé (plaques de cuisson, hotte, réfrigérateur, machine à café, micro-ondes) est mis à la disposition des équipes tout au long de la journée de location. Sa grande table conviviale permet d'accueillir l'ensemble de l'équipe pour les pauses et les repas.",
+        text: "Un espace cuisine entièrement équipé (cuisinière, hotte, réfrigérateur, machine à café, micro-ondes) est mis à la disposition des équipes tout au long de la journée de location. Sa grande table conviviale permet d'accueillir l'ensemble de l'équipe pour les pauses et les repas.",
       },
       sanitary: {
-        text: "Des toilettes sont accessibles en permanence pour le confort des équipes et des modèles pendant toute la durée du shooting.",
+        text: "Des toilettes ainsi qu'une douche sont accessibles en permanence pour le confort des équipes et des modèles pendant toute la durée du shooting.",
       },
       garden: {
         title: "Jardin",
@@ -359,7 +359,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           wolfgang: "Wolfgang",
           herton: "Herton",
           arty: "Arty",
-          "my-mood": "INDY Mood",
+          "my-mood": "INDY MOOD",
           "didier-vdb": "Didier VDB",
           esphan: "Esphan",
         },
@@ -400,7 +400,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       subtitle: "Professional location",
       tagline: "A bright, versatile space, designed for your productions.",
       intro:
-        "Set beneath a striking white timber roof structure, this studio enjoys lovely natural light through its multiple skylights. Whitewashed brick walls, generous volumes and a light tiled floor create a clean, timeless setting suited to any type of production: portrait, fashion, beauty, packshot or video.",
+        "Set beneath a white timber roof structure, this studio enjoys lovely natural light through its multiple skylights. Whitewashed brick walls, generous volumes and a light tiled floor create a clean, timeless setting suited to any type of production: portrait, fashion, beauty, packshot or video.",
       equipment: {
         title: "Equipment provided",
         items: [
@@ -413,10 +413,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
       },
       kitchen: {
         title: "Kitchen area",
-        text: "A fully equipped kitchen (hob, extractor hood, fridge, coffee machine, microwave) is available to crews throughout the rental day. Its large, convivial table comfortably seats the whole team for breaks and meals.",
+        text: "A fully equipped kitchen (cooker, extractor hood, fridge, coffee machine, microwave) is available to crews throughout the rental day. Its large, convivial table comfortably seats the whole team for breaks and meals.",
       },
       sanitary: {
-        text: "Restrooms are accessible at all times for the comfort of crews and models throughout the shoot.",
+        text: "Restrooms and a shower are accessible at all times for the comfort of crews and models throughout the shoot.",
       },
       garden: {
         title: "Garden",
