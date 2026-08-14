@@ -47,6 +47,55 @@ import evenementielFestivalLauraDegreef02 from "@/images/portfolio/evenementiel/
 import evenementielFestivalLauraDegreef03 from "@/images/portfolio/evenementiel/festival/laura-degreef/03.jpg";
 import evenementielFestivalLauraDegreef04 from "@/images/portfolio/evenementiel/festival/laura-degreef/04.jpg";
 import evenementielFestivalLauraDegreef05 from "@/images/portfolio/evenementiel/festival/laura-degreef/05.jpg";
+import evenementielAnniversaireCover from "@/images/portfolio/evenementiel/anniversaire/cover.jpg";
+import evenementielAnniversaire01 from "@/images/portfolio/evenementiel/anniversaire/01.jpg";
+import evenementielAnniversaire02 from "@/images/portfolio/evenementiel/anniversaire/02.jpg";
+import evenementielAnniversaire03 from "@/images/portfolio/evenementiel/anniversaire/03.jpg";
+import evenementielAnniversaire04 from "@/images/portfolio/evenementiel/anniversaire/04.jpg";
+import evenementielAnniversaire05 from "@/images/portfolio/evenementiel/anniversaire/05.jpg";
+import evenementielAnniversaire06 from "@/images/portfolio/evenementiel/anniversaire/06.jpg";
+import evenementielAnniversaire07 from "@/images/portfolio/evenementiel/anniversaire/07.jpg";
+import evenementielAnniversaire08 from "@/images/portfolio/evenementiel/anniversaire/08.jpg";
+import evenementielAnniversaire09 from "@/images/portfolio/evenementiel/anniversaire/09.jpg";
+import evenementielAnniversaire10 from "@/images/portfolio/evenementiel/anniversaire/10.jpg";
+import evenementielAnniversaire11 from "@/images/portfolio/evenementiel/anniversaire/11.jpg";
+import evenementielAnniversaire12 from "@/images/portfolio/evenementiel/anniversaire/12.jpg";
+import evenementielAnniversaire13 from "@/images/portfolio/evenementiel/anniversaire/13.jpg";
+import evenementielAnniversaire14 from "@/images/portfolio/evenementiel/anniversaire/14.jpg";
+import evenementielAnniversaire15 from "@/images/portfolio/evenementiel/anniversaire/15.jpg";
+import evenementielAnniversaire16 from "@/images/portfolio/evenementiel/anniversaire/16.jpg";
+import evenementielAnniversaire17 from "@/images/portfolio/evenementiel/anniversaire/17.jpg";
+import evenementielAnniversaire18 from "@/images/portfolio/evenementiel/anniversaire/18.jpg";
+import evenementielAnniversaire19 from "@/images/portfolio/evenementiel/anniversaire/19.jpg";
+import evenementielAnniversaire20 from "@/images/portfolio/evenementiel/anniversaire/20.jpg";
+import evenementielAnniversaire21 from "@/images/portfolio/evenementiel/anniversaire/21.jpg";
+import evenementielAnniversaire22 from "@/images/portfolio/evenementiel/anniversaire/22.jpg";
+import evenementielAnniversaire23 from "@/images/portfolio/evenementiel/anniversaire/23.jpg";
+import evenementielAnniversaire24 from "@/images/portfolio/evenementiel/anniversaire/24.jpg";
+import evenementielAnniversaire25 from "@/images/portfolio/evenementiel/anniversaire/25.jpg";
+import evenementielAnniversaire26 from "@/images/portfolio/evenementiel/anniversaire/26.jpg";
+import evenementielAnniversaire27 from "@/images/portfolio/evenementiel/anniversaire/27.jpg";
+import evenementielAnniversaire28 from "@/images/portfolio/evenementiel/anniversaire/28.jpg";
+import evenementielAnniversaire29 from "@/images/portfolio/evenementiel/anniversaire/29.jpg";
+import evenementielAnniversaire30 from "@/images/portfolio/evenementiel/anniversaire/30.jpg";
+import evenementielAnniversaire31 from "@/images/portfolio/evenementiel/anniversaire/31.jpg";
+import evenementielAnniversaire32 from "@/images/portfolio/evenementiel/anniversaire/32.jpg";
+import evenementielAnniversaire33 from "@/images/portfolio/evenementiel/anniversaire/33.jpg";
+import evenementielAnniversaire34 from "@/images/portfolio/evenementiel/anniversaire/34.jpg";
+import evenementielAnniversaire35 from "@/images/portfolio/evenementiel/anniversaire/35.jpg";
+import evenementielAnniversaire36 from "@/images/portfolio/evenementiel/anniversaire/36.jpg";
+import evenementielAnniversaire37 from "@/images/portfolio/evenementiel/anniversaire/37.jpg";
+import evenementielAnniversaire38 from "@/images/portfolio/evenementiel/anniversaire/38.jpg";
+import evenementielAnniversaire39 from "@/images/portfolio/evenementiel/anniversaire/39.jpg";
+import evenementielAnniversaire40 from "@/images/portfolio/evenementiel/anniversaire/40.jpg";
+import evenementielAnniversaire41 from "@/images/portfolio/evenementiel/anniversaire/41.jpg";
+import evenementielAnniversaire42 from "@/images/portfolio/evenementiel/anniversaire/42.jpg";
+import evenementielAnniversaire43 from "@/images/portfolio/evenementiel/anniversaire/43.jpg";
+import evenementielAnniversaire44 from "@/images/portfolio/evenementiel/anniversaire/44.jpg";
+import evenementielAnniversaire45 from "@/images/portfolio/evenementiel/anniversaire/45.jpg";
+import evenementielAnniversaire46 from "@/images/portfolio/evenementiel/anniversaire/46.jpg";
+import evenementielAnniversaire47 from "@/images/portfolio/evenementiel/anniversaire/47.jpg";
+import evenementielAnniversaire48 from "@/images/portfolio/evenementiel/anniversaire/48.jpg";
 import portraitCover from "@/images/portfolio/portrait/cover.jpg";
 import portraitCover2 from "@/images/portfolio/portrait/cover2.jpg";
 import portraitLauraDegreefCover from "@/images/portfolio/portrait/laura-degreef/cover.jpg";
@@ -86,18 +135,23 @@ import portraitArty03 from "@/images/portfolio/portrait/arty/03.jpg";
 import portraitArty04 from "@/images/portfolio/portrait/arty/04.jpg";
 import portraitArty05 from "@/images/portfolio/portrait/arty/05.jpg";
 import portraitArty06 from "@/images/portfolio/portrait/arty/06.jpg";
-import portraitMyMoodCover from "@/images/portfolio/portrait/My Mood/cover2.jpg";
-import portraitMyMood01 from "@/images/portfolio/portrait/My Mood/01.jpg";
-import portraitMyMood02 from "@/images/portfolio/portrait/My Mood/02.jpg";
-import portraitMyMood03 from "@/images/portfolio/portrait/My Mood/03.jpg";
-import portraitMyMood04 from "@/images/portfolio/portrait/My Mood/04.jpg";
-import portraitMyMood05 from "@/images/portfolio/portrait/My Mood/05.jpg";
-import portraitMyMood06 from "@/images/portfolio/portrait/My Mood/06.jpg";
-import portraitMyMood07 from "@/images/portfolio/portrait/My Mood/07.jpg";
-import portraitMyMood08 from "@/images/portfolio/portrait/My Mood/08.jpg";
-import portraitMyMood09 from "@/images/portfolio/portrait/My Mood/09.jpg";
-import portraitMyMood10 from "@/images/portfolio/portrait/My Mood/10.jpg";
-import portraitMyMood11 from "@/images/portfolio/portrait/My Mood/11.jpg";
+import portraitMyMoodCover from "@/images/portfolio/My Mood/cover2.jpg";
+import portraitMyMood01 from "@/images/portfolio/My Mood/01.jpg";
+import portraitMyMood02 from "@/images/portfolio/My Mood/02.jpg";
+import portraitMyMood03 from "@/images/portfolio/My Mood/03.jpg";
+import portraitMyMood04 from "@/images/portfolio/My Mood/04.jpg";
+import portraitMyMood05 from "@/images/portfolio/My Mood/05.jpg";
+import portraitMyMood06 from "@/images/portfolio/My Mood/06.jpg";
+import portraitMyMood07 from "@/images/portfolio/My Mood/07.jpg";
+import portraitMyMood08 from "@/images/portfolio/My Mood/08.jpg";
+import portraitMyMood09 from "@/images/portfolio/My Mood/09.jpg";
+import portraitMyMood10 from "@/images/portfolio/My Mood/10.jpg";
+import portraitMyMood11 from "@/images/portfolio/My Mood/11.jpg";
+import portraitMyMood12 from "@/images/portfolio/My Mood/12.jpg";
+import portraitMyMood13 from "@/images/portfolio/My Mood/13.jpg";
+import portraitMyMood14 from "@/images/portfolio/My Mood/14.jpg";
+import portraitMyMood15 from "@/images/portfolio/My Mood/15.jpg";
+import portraitMyMood16 from "@/images/portfolio/My Mood/16.jpg";
 import portraitDidierVdbCover from "@/images/portfolio/portrait/didier-vdb/cover.jpg";
 import portraitDidierVdb01 from "@/images/portfolio/portrait/didier-vdb/01.jpg";
 import portraitDidierVdb02 from "@/images/portfolio/portrait/didier-vdb/02.jpg";
@@ -239,6 +293,24 @@ export const categories: CategoryData[] = [
           evenementielFestivalLauraDegreef04, evenementielFestivalLauraDegreef05,
         ],
       },
+      {
+        slug: "anniversaire",
+        cover: evenementielAnniversaireCover,
+        images: [
+          evenementielAnniversaire01, evenementielAnniversaire02, evenementielAnniversaire03, evenementielAnniversaire04,
+          evenementielAnniversaire05, evenementielAnniversaire06, evenementielAnniversaire07, evenementielAnniversaire08,
+          evenementielAnniversaire09, evenementielAnniversaire10, evenementielAnniversaire11, evenementielAnniversaire12,
+          evenementielAnniversaire13, evenementielAnniversaire14, evenementielAnniversaire15, evenementielAnniversaire16,
+          evenementielAnniversaire17, evenementielAnniversaire18, evenementielAnniversaire19, evenementielAnniversaire20,
+          evenementielAnniversaire21, evenementielAnniversaire22, evenementielAnniversaire23, evenementielAnniversaire24,
+          evenementielAnniversaire25, evenementielAnniversaire26, evenementielAnniversaire27, evenementielAnniversaire28,
+          evenementielAnniversaire29, evenementielAnniversaire30, evenementielAnniversaire31, evenementielAnniversaire32,
+          evenementielAnniversaire33, evenementielAnniversaire34, evenementielAnniversaire35, evenementielAnniversaire36,
+          evenementielAnniversaire37, evenementielAnniversaire38, evenementielAnniversaire39, evenementielAnniversaire40,
+          evenementielAnniversaire41, evenementielAnniversaire42, evenementielAnniversaire43, evenementielAnniversaire44,
+          evenementielAnniversaire45, evenementielAnniversaire46, evenementielAnniversaire47, evenementielAnniversaire48,
+        ],
+      },
     ],
   },
   {
@@ -377,7 +449,8 @@ export const categories: CategoryData[] = [
         images: [
           portraitMyMood01, portraitMyMood02, portraitMyMood03, portraitMyMood04,
           portraitMyMood05, portraitMyMood06, portraitMyMood07, portraitMyMood08,
-          portraitMyMood09, portraitMyMood10, portraitMyMood11,
+          portraitMyMood09, portraitMyMood10, portraitMyMood11, portraitMyMood12,
+          portraitMyMood13, portraitMyMood14, portraitMyMood15, portraitMyMood16,
         ],
       },
     ],

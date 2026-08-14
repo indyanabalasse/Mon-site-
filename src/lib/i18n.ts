@@ -130,6 +130,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           concert: "Concert",
           "open-air": "Open Air",
           festival: "Festival",
+          anniversaire: "Anniversaire",
         },
       },
       portrait: {
@@ -356,6 +357,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           concert: "Concert",
           "open-air": "Open Air",
           festival: "Festival",
+          anniversaire: "Birthday",
         },
       },
       portrait: {
