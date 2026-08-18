@@ -293,75 +293,6 @@ export const categories: CategoryData[] = [
     ],
   },
   {
-    slug: "sante",
-    cover: santeCover,
-    series: [
-      {
-        slug: "kine",
-        cover: santeKineCover,
-        images: [
-          santeKine01, santeKine02, santeKine03, santeKine04,
-          santeKine05, santeKine06,
-        ],
-      },
-    ],
-  },
-  {
-    slug: "evenementiel",
-    cover: evenementielCover,
-    series: [
-      {
-        slug: "concert",
-        cover: evenementielConcertCover,
-        images: [
-          evenementielConcert01, evenementielConcert02, evenementielConcert03, evenementielConcert04,
-          evenementielConcert05, evenementielConcert06, evenementielConcert07,
-          evenementielConcert09, evenementielConcert10, evenementielConcert11, evenementielConcert12,
-          evenementielConcert13, evenementielConcert14,
-        ],
-      },
-      {
-        slug: "open-air",
-        cover: evenementielOpenAirCover,
-        images: [
-          evenementielOpenAir01, evenementielOpenAir03, evenementielOpenAir04,
-          evenementielOpenAir05, evenementielOpenAir07, evenementielOpenAir08,
-          evenementielOpenAir09, evenementielOpenAir10, evenementielOpenAir11, evenementielOpenAir12,
-        ],
-      },
-      {
-        slug: "festival",
-        cover: evenementielFestivalCover,
-        images: [
-          evenementielFestivalBambounou01, evenementielFestivalBambounou02, evenementielFestivalBambounou03,
-          evenementielFestivalBambounou04, evenementielFestivalBambounou05,
-          evenementielFestivalBambounou07, evenementielFestivalBambounou08,
-          evenementielFestivalLauraDegreef01, evenementielFestivalLauraDegreef02, evenementielFestivalLauraDegreef03,
-          evenementielFestivalLauraDegreef04, evenementielFestivalLauraDegreef05,
-        ],
-      },
-      {
-        slug: "anniversaire",
-        cover: evenementielAnniversaireCover,
-        images: [
-          evenementielAnniversaire02, evenementielAnniversaire03, evenementielAnniversaire04,
-          evenementielAnniversaire05, evenementielAnniversaire06, evenementielAnniversaire07, evenementielAnniversaire08,
-          evenementielAnniversaire09, evenementielAnniversaire10, evenementielAnniversaire11, evenementielAnniversaire12,
-          evenementielAnniversaire13, evenementielAnniversaire14, evenementielAnniversaire15, evenementielAnniversaire16,
-          evenementielAnniversaire17, evenementielAnniversaire19, evenementielAnniversaire20,
-          evenementielAnniversaire21, evenementielAnniversaire23, evenementielAnniversaire24,
-          evenementielAnniversaire26, evenementielAnniversaire27, evenementielAnniversaire28,
-          evenementielAnniversaire29, evenementielAnniversaire30, evenementielAnniversaire31, evenementielAnniversaire32,
-          evenementielAnniversaire33, evenementielAnniversaire34, evenementielAnniversaire35, evenementielAnniversaire36,
-          evenementielAnniversaire37, evenementielAnniversaire39,
-          evenementielAnniversaire41, evenementielAnniversaire42, evenementielAnniversaire43, evenementielAnniversaire44,
-          evenementielAnniversaire45, evenementielAnniversaire46, evenementielAnniversaire47, evenementielAnniversaire48,
-          evenementielAnniversaire49,
-        ],
-      },
-    ],
-  },
-  {
     slug: "portrait",
     cover: portraitCover,
     coverImages: [portraitCover, portraitCover2],
@@ -441,6 +372,75 @@ export const categories: CategoryData[] = [
         cover: familleFemmeEnceinteCover,
         images: [
           familleFemmeEnceinte01, familleFemmeEnceinte02, familleFemmeEnceinte03,
+        ],
+      },
+    ],
+  },
+  {
+    slug: "sante",
+    cover: santeCover,
+    series: [
+      {
+        slug: "kine",
+        cover: santeKineCover,
+        images: [
+          santeKine01, santeKine02, santeKine03, santeKine04,
+          santeKine05, santeKine06,
+        ],
+      },
+    ],
+  },
+  {
+    slug: "evenementiel",
+    cover: evenementielCover,
+    series: [
+      {
+        slug: "concert",
+        cover: evenementielConcertCover,
+        images: [
+          evenementielConcert01, evenementielConcert02, evenementielConcert03, evenementielConcert04,
+          evenementielConcert05, evenementielConcert06, evenementielConcert07,
+          evenementielConcert09, evenementielConcert10, evenementielConcert11, evenementielConcert12,
+          evenementielConcert13, evenementielConcert14,
+        ],
+      },
+      {
+        slug: "open-air",
+        cover: evenementielOpenAirCover,
+        images: [
+          evenementielOpenAir01, evenementielOpenAir03, evenementielOpenAir04,
+          evenementielOpenAir05, evenementielOpenAir07, evenementielOpenAir08,
+          evenementielOpenAir09, evenementielOpenAir10, evenementielOpenAir11, evenementielOpenAir12,
+        ],
+      },
+      {
+        slug: "festival",
+        cover: evenementielFestivalCover,
+        images: [
+          evenementielFestivalBambounou01, evenementielFestivalBambounou02, evenementielFestivalBambounou03,
+          evenementielFestivalBambounou04, evenementielFestivalBambounou05,
+          evenementielFestivalBambounou07, evenementielFestivalBambounou08,
+          evenementielFestivalLauraDegreef01, evenementielFestivalLauraDegreef02, evenementielFestivalLauraDegreef03,
+          evenementielFestivalLauraDegreef04, evenementielFestivalLauraDegreef05,
+        ],
+      },
+      {
+        slug: "anniversaire",
+        cover: evenementielAnniversaireCover,
+        images: [
+          evenementielAnniversaire02, evenementielAnniversaire03, evenementielAnniversaire04,
+          evenementielAnniversaire05, evenementielAnniversaire06, evenementielAnniversaire07, evenementielAnniversaire08,
+          evenementielAnniversaire09, evenementielAnniversaire10, evenementielAnniversaire11, evenementielAnniversaire12,
+          evenementielAnniversaire13, evenementielAnniversaire14, evenementielAnniversaire15, evenementielAnniversaire16,
+          evenementielAnniversaire17, evenementielAnniversaire19, evenementielAnniversaire20,
+          evenementielAnniversaire21, evenementielAnniversaire23, evenementielAnniversaire24,
+          evenementielAnniversaire26, evenementielAnniversaire27, evenementielAnniversaire28,
+          evenementielAnniversaire29, evenementielAnniversaire30, evenementielAnniversaire31, evenementielAnniversaire32,
+          evenementielAnniversaire33, evenementielAnniversaire34, evenementielAnniversaire35, evenementielAnniversaire36,
+          evenementielAnniversaire37, evenementielAnniversaire39,
+          evenementielAnniversaire41, evenementielAnniversaire42, evenementielAnniversaire43, evenementielAnniversaire44,
+          evenementielAnniversaire45, evenementielAnniversaire46, evenementielAnniversaire47, evenementielAnniversaire48,
+          evenementielAnniversaire49,
         ],
       },
     ],
