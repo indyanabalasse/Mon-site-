@@ -204,6 +204,24 @@ import familleFemmeEnceinteCover from "@/images/portfolio/famille/femme-enceinte
 import familleFemmeEnceinte01 from "@/images/portfolio/famille/femme-enceinte/01.jpg";
 import familleFemmeEnceinte02 from "@/images/portfolio/famille/femme-enceinte/02.jpg";
 import familleFemmeEnceinte03 from "@/images/portfolio/famille/femme-enceinte/03.jpg";
+import funPhotoBoothCover from "@/images/portfolio/fun-photo-booth/cover.jpg";
+import funPhotoBooth01 from "@/images/portfolio/fun-photo-booth/01.jpg";
+import funPhotoBooth02 from "@/images/portfolio/fun-photo-booth/02.jpg";
+import funPhotoBooth03 from "@/images/portfolio/fun-photo-booth/03.jpg";
+import funPhotoBooth04 from "@/images/portfolio/fun-photo-booth/04.jpg";
+import funPhotoBooth05 from "@/images/portfolio/fun-photo-booth/05.jpg";
+import funPhotoBooth06 from "@/images/portfolio/fun-photo-booth/06.jpg";
+import funPhotoBooth07 from "@/images/portfolio/fun-photo-booth/07.jpg";
+import funPhotoBooth08 from "@/images/portfolio/fun-photo-booth/08.jpg";
+import funPhotoBooth09 from "@/images/portfolio/fun-photo-booth/09.jpg";
+import funPhotoBooth10 from "@/images/portfolio/fun-photo-booth/10.jpg";
+import funPhotoBooth11 from "@/images/portfolio/fun-photo-booth/11.jpg";
+import funPhotoBooth12 from "@/images/portfolio/fun-photo-booth/12.jpg";
+import funPhotoBooth13 from "@/images/portfolio/fun-photo-booth/13.jpg";
+import funPhotoBooth14 from "@/images/portfolio/fun-photo-booth/14.jpg";
+import funPhotoBooth15 from "@/images/portfolio/fun-photo-booth/15.jpg";
+import funPhotoBooth16 from "@/images/portfolio/fun-photo-booth/16.jpg";
+import funPhotoBooth17 from "@/images/portfolio/fun-photo-booth/17.jpg";
 
 export const heroImages: StaticImageData[] = [hero01, hero02, hero03];
 
@@ -213,7 +231,8 @@ export type CategorySlug =
   | "corporate"
   | "sante"
   | "famille"
-  | "my-mood";
+  | "my-mood"
+  | "fun-photo-booth";
 
 export type Series = {
   slug: string;
@@ -438,6 +457,23 @@ export const categories: CategoryData[] = [
           portraitMyMood05, portraitMyMood06, portraitMyMood07, portraitMyMood08,
           portraitMyMood09, portraitMyMood10, portraitMyMood11, portraitMyMood12,
           portraitMyMood13, portraitMyMood14, portraitMyMood15, portraitMyMood16,
+        ],
+      },
+    ],
+  },
+  {
+    slug: "fun-photo-booth",
+    cover: funPhotoBoothCover,
+    series: [
+      {
+        slug: "fun-photo-booth",
+        cover: funPhotoBoothCover,
+        images: [
+          funPhotoBooth01, funPhotoBooth02, funPhotoBooth03, funPhotoBooth04,
+          funPhotoBooth05, funPhotoBooth06, funPhotoBooth07, funPhotoBooth08,
+          funPhotoBooth09, funPhotoBooth10, funPhotoBooth11, funPhotoBooth12,
+          funPhotoBooth13, funPhotoBooth14, funPhotoBooth15, funPhotoBooth16,
+          funPhotoBooth17,
         ],
       },
     ],

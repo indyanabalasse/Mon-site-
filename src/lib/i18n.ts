@@ -175,6 +175,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
           "my-mood": "INDY MOOD",
         },
       },
+      "fun-photo-booth": {
+        title: "Fun Photo Booth",
+        description: "Ambiance déjantée et lumières colorées, pour des souvenirs pleins de fun.",
+        series: {
+          "fun-photo-booth": "Fun Photo Booth",
+        },
+      },
     },
     subseries: {
       portrait: {
@@ -400,6 +407,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
         description: "A personal, creative universe, between experimentation and emotion.",
         series: {
           "my-mood": "INDY MOOD",
+        },
+      },
+      "fun-photo-booth": {
+        title: "Fun Photo Booth",
+        description: "Wild vibes and colorful lights, for memories full of fun.",
+        series: {
+          "fun-photo-booth": "Fun Photo Booth",
         },
       },
     },
