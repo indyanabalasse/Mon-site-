@@ -392,20 +392,6 @@ export const categories: CategoryData[] = [
     ],
   },
   {
-    slug: "sante",
-    cover: santeCover,
-    series: [
-      {
-        slug: "kine",
-        cover: santeKineCover,
-        images: [
-          santeKine01, santeKine02, santeKine03, santeKine04,
-          santeKine05, santeKine06,
-        ],
-      },
-    ],
-  },
-  {
     slug: "corporate",
     cover: corporateCover,
     series: [
@@ -428,6 +414,20 @@ export const categories: CategoryData[] = [
           corporateEsgLogic09, corporateEsgLogic10, corporateEsgLogic11, corporateEsgLogic12,
           corporateEsgLogic13, corporateEsgLogic14, corporateEsgLogic15,
           corporateEsgLogic20, corporateEsgLogic21, corporateEsgLogic22,
+        ],
+      },
+    ],
+  },
+  {
+    slug: "sante",
+    cover: santeCover,
+    series: [
+      {
+        slug: "kine",
+        cover: santeKineCover,
+        images: [
+          santeKine01, santeKine02, santeKine03, santeKine04,
+          santeKine05, santeKine06,
         ],
       },
     ],
