@@ -44,7 +44,6 @@ import evenementielFestivalLauraDegreef03 from "@/images/portfolio/evenementiel/
 import evenementielFestivalLauraDegreef04 from "@/images/portfolio/evenementiel/festival/laura-degreef/04.jpg";
 import evenementielFestivalLauraDegreef05 from "@/images/portfolio/evenementiel/festival/laura-degreef/05.jpg";
 import evenementielAnniversaireCover from "@/images/portfolio/evenementiel/anniversaire/cover.jpg";
-import evenementielAnniversaire01 from "@/images/portfolio/evenementiel/anniversaire/01.jpg";
 import evenementielAnniversaire02 from "@/images/portfolio/evenementiel/anniversaire/02.jpg";
 import evenementielAnniversaire03 from "@/images/portfolio/evenementiel/anniversaire/03.jpg";
 import evenementielAnniversaire04 from "@/images/portfolio/evenementiel/anniversaire/04.jpg";
@@ -61,14 +60,11 @@ import evenementielAnniversaire14 from "@/images/portfolio/evenementiel/annivers
 import evenementielAnniversaire15 from "@/images/portfolio/evenementiel/anniversaire/15.jpg";
 import evenementielAnniversaire16 from "@/images/portfolio/evenementiel/anniversaire/16.jpg";
 import evenementielAnniversaire17 from "@/images/portfolio/evenementiel/anniversaire/17.jpg";
-import evenementielAnniversaire18 from "@/images/portfolio/evenementiel/anniversaire/18.jpg";
 import evenementielAnniversaire19 from "@/images/portfolio/evenementiel/anniversaire/19.jpg";
 import evenementielAnniversaire20 from "@/images/portfolio/evenementiel/anniversaire/20.jpg";
 import evenementielAnniversaire21 from "@/images/portfolio/evenementiel/anniversaire/21.jpg";
-import evenementielAnniversaire22 from "@/images/portfolio/evenementiel/anniversaire/22.jpg";
 import evenementielAnniversaire23 from "@/images/portfolio/evenementiel/anniversaire/23.jpg";
 import evenementielAnniversaire24 from "@/images/portfolio/evenementiel/anniversaire/24.jpg";
-import evenementielAnniversaire25 from "@/images/portfolio/evenementiel/anniversaire/25.jpg";
 import evenementielAnniversaire26 from "@/images/portfolio/evenementiel/anniversaire/26.jpg";
 import evenementielAnniversaire27 from "@/images/portfolio/evenementiel/anniversaire/27.jpg";
 import evenementielAnniversaire28 from "@/images/portfolio/evenementiel/anniversaire/28.jpg";
@@ -81,9 +77,7 @@ import evenementielAnniversaire34 from "@/images/portfolio/evenementiel/annivers
 import evenementielAnniversaire35 from "@/images/portfolio/evenementiel/anniversaire/35.jpg";
 import evenementielAnniversaire36 from "@/images/portfolio/evenementiel/anniversaire/36.jpg";
 import evenementielAnniversaire37 from "@/images/portfolio/evenementiel/anniversaire/37.jpg";
-import evenementielAnniversaire38 from "@/images/portfolio/evenementiel/anniversaire/38.jpg";
 import evenementielAnniversaire39 from "@/images/portfolio/evenementiel/anniversaire/39.jpg";
-import evenementielAnniversaire40 from "@/images/portfolio/evenementiel/anniversaire/40.jpg";
 import evenementielAnniversaire41 from "@/images/portfolio/evenementiel/anniversaire/41.jpg";
 import evenementielAnniversaire42 from "@/images/portfolio/evenementiel/anniversaire/42.jpg";
 import evenementielAnniversaire43 from "@/images/portfolio/evenementiel/anniversaire/43.jpg";
@@ -92,6 +86,7 @@ import evenementielAnniversaire45 from "@/images/portfolio/evenementiel/annivers
 import evenementielAnniversaire46 from "@/images/portfolio/evenementiel/anniversaire/46.jpg";
 import evenementielAnniversaire47 from "@/images/portfolio/evenementiel/anniversaire/47.jpg";
 import evenementielAnniversaire48 from "@/images/portfolio/evenementiel/anniversaire/48.jpg";
+import evenementielAnniversaire49 from "@/images/portfolio/evenementiel/anniversaire/DSC_6323.jpg";
 import portraitCover from "@/images/portfolio/portrait/cover.jpg";
 import portraitCover2 from "@/images/portfolio/portrait/cover2.jpg";
 import portraitLauraDegreefCover from "@/images/portfolio/portrait/laura-degreef/cover.jpg";
@@ -289,18 +284,19 @@ export const categories: CategoryData[] = [
         slug: "anniversaire",
         cover: evenementielAnniversaireCover,
         images: [
-          evenementielAnniversaire01, evenementielAnniversaire02, evenementielAnniversaire03, evenementielAnniversaire04,
+          evenementielAnniversaire02, evenementielAnniversaire03, evenementielAnniversaire04,
           evenementielAnniversaire05, evenementielAnniversaire06, evenementielAnniversaire07, evenementielAnniversaire08,
           evenementielAnniversaire09, evenementielAnniversaire10, evenementielAnniversaire11, evenementielAnniversaire12,
           evenementielAnniversaire13, evenementielAnniversaire14, evenementielAnniversaire15, evenementielAnniversaire16,
-          evenementielAnniversaire17, evenementielAnniversaire18, evenementielAnniversaire19, evenementielAnniversaire20,
-          evenementielAnniversaire21, evenementielAnniversaire22, evenementielAnniversaire23, evenementielAnniversaire24,
-          evenementielAnniversaire25, evenementielAnniversaire26, evenementielAnniversaire27, evenementielAnniversaire28,
+          evenementielAnniversaire17, evenementielAnniversaire19, evenementielAnniversaire20,
+          evenementielAnniversaire21, evenementielAnniversaire23, evenementielAnniversaire24,
+          evenementielAnniversaire26, evenementielAnniversaire27, evenementielAnniversaire28,
           evenementielAnniversaire29, evenementielAnniversaire30, evenementielAnniversaire31, evenementielAnniversaire32,
           evenementielAnniversaire33, evenementielAnniversaire34, evenementielAnniversaire35, evenementielAnniversaire36,
-          evenementielAnniversaire37, evenementielAnniversaire38, evenementielAnniversaire39, evenementielAnniversaire40,
+          evenementielAnniversaire37, evenementielAnniversaire39,
           evenementielAnniversaire41, evenementielAnniversaire42, evenementielAnniversaire43, evenementielAnniversaire44,
           evenementielAnniversaire45, evenementielAnniversaire46, evenementielAnniversaire47, evenementielAnniversaire48,
+          evenementielAnniversaire49,
         ],
       },
     ],
