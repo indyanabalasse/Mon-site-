@@ -222,6 +222,11 @@ import funPhotoBooth14 from "@/images/portfolio/fun-photo-booth/14.jpg";
 import funPhotoBooth15 from "@/images/portfolio/fun-photo-booth/15.jpg";
 import funPhotoBooth16 from "@/images/portfolio/fun-photo-booth/16.jpg";
 import funPhotoBooth17 from "@/images/portfolio/fun-photo-booth/17.jpg";
+import pressKitCover from "@/images/portfolio/press-kit/cover.png";
+import pressKit01 from "@/images/portfolio/press-kit/01.png";
+import pressKit02 from "@/images/portfolio/press-kit/02.png";
+import pressKit03 from "@/images/portfolio/press-kit/03.png";
+import pressKit04 from "@/images/portfolio/press-kit/04.png";
 
 export const heroImages: StaticImageData[] = [hero01, hero02, hero03];
 
@@ -232,7 +237,8 @@ export type CategorySlug =
   | "sante"
   | "famille"
   | "my-mood"
-  | "fun-photo-booth";
+  | "fun-photo-booth"
+  | "press-kit";
 
 export type Series = {
   slug: string;
@@ -475,6 +481,17 @@ export const categories: CategoryData[] = [
           portraitMyMood09, portraitMyMood10, portraitMyMood11, portraitMyMood12,
           portraitMyMood13, portraitMyMood14, portraitMyMood15, portraitMyMood16,
         ],
+      },
+    ],
+  },
+  {
+    slug: "press-kit",
+    cover: pressKitCover,
+    series: [
+      {
+        slug: "press-kit",
+        cover: pressKitCover,
+        images: [pressKit01, pressKit02, pressKit03, pressKit04],
       },
     ],
   },

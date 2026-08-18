@@ -182,6 +182,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
           "fun-photo-booth": "Fun Photo Booth",
         },
       },
+      "press-kit": {
+        title: "Press Kit",
+        description: "Visuels promotionnels pour événements et soirées.",
+        series: {
+          "press-kit": "Press Kit",
+        },
+      },
     },
     subseries: {
       portrait: {
@@ -414,6 +421,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
         description: "Wild vibes and colorful lights, for memories full of fun.",
         series: {
           "fun-photo-booth": "Fun Photo Booth",
+        },
+      },
+      "press-kit": {
+        title: "Press Kit",
+        description: "Promotional visuals for events and parties.",
+        series: {
+          "press-kit": "Press Kit",
         },
       },
     },
