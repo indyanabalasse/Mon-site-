@@ -392,6 +392,20 @@ export const categories: CategoryData[] = [
     ],
   },
   {
+    slug: "sante",
+    cover: santeCover,
+    series: [
+      {
+        slug: "kine",
+        cover: santeKineCover,
+        images: [
+          santeKine01, santeKine02, santeKine03, santeKine04,
+          santeKine05, santeKine06,
+        ],
+      },
+    ],
+  },
+  {
     slug: "corporate",
     cover: corporateCover,
     series: [
@@ -419,20 +433,6 @@ export const categories: CategoryData[] = [
     ],
   },
   {
-    slug: "sante",
-    cover: santeCover,
-    series: [
-      {
-        slug: "kine",
-        cover: santeKineCover,
-        images: [
-          santeKine01, santeKine02, santeKine03, santeKine04,
-          santeKine05, santeKine06,
-        ],
-      },
-    ],
-  },
-  {
     slug: "famille",
     cover: familleCover,
     series: [
@@ -441,22 +441,6 @@ export const categories: CategoryData[] = [
         cover: familleFemmeEnceinteCover,
         images: [
           familleFemmeEnceinte01, familleFemmeEnceinte02, familleFemmeEnceinte03,
-        ],
-      },
-    ],
-  },
-  {
-    slug: "my-mood",
-    cover: portraitMyMoodCover,
-    series: [
-      {
-        slug: "my-mood",
-        cover: portraitMyMoodCover,
-        images: [
-          portraitMyMood01, portraitMyMood02, portraitMyMood03, portraitMyMood04,
-          portraitMyMood05, portraitMyMood06, portraitMyMood07, portraitMyMood08,
-          portraitMyMood09, portraitMyMood10, portraitMyMood11, portraitMyMood12,
-          portraitMyMood13, portraitMyMood14, portraitMyMood15, portraitMyMood16,
         ],
       },
     ],
@@ -474,6 +458,22 @@ export const categories: CategoryData[] = [
           funPhotoBooth09, funPhotoBooth10, funPhotoBooth11, funPhotoBooth12,
           funPhotoBooth13, funPhotoBooth14, funPhotoBooth15, funPhotoBooth16,
           funPhotoBooth17,
+        ],
+      },
+    ],
+  },
+  {
+    slug: "my-mood",
+    cover: portraitMyMoodCover,
+    series: [
+      {
+        slug: "my-mood",
+        cover: portraitMyMoodCover,
+        images: [
+          portraitMyMood01, portraitMyMood02, portraitMyMood03, portraitMyMood04,
+          portraitMyMood05, portraitMyMood06, portraitMyMood07, portraitMyMood08,
+          portraitMyMood09, portraitMyMood10, portraitMyMood11, portraitMyMood12,
+          portraitMyMood13, portraitMyMood14, portraitMyMood15, portraitMyMood16,
         ],
       },
     ],
