@@ -13,7 +13,6 @@ import evenementielConcert04 from "@/images/portfolio/evenementiel/concert/04.jp
 import evenementielConcert05 from "@/images/portfolio/evenementiel/concert/05.jpg";
 import evenementielConcert06 from "@/images/portfolio/evenementiel/concert/06.jpg";
 import evenementielConcert07 from "@/images/portfolio/evenementiel/concert/07.jpg";
-import evenementielConcert08 from "@/images/portfolio/evenementiel/concert/08.jpg";
 import evenementielConcert09 from "@/images/portfolio/evenementiel/concert/09.jpg";
 import evenementielConcert10 from "@/images/portfolio/evenementiel/concert/10.jpg";
 import evenementielConcert11 from "@/images/portfolio/evenementiel/concert/11.jpg";
@@ -22,11 +21,9 @@ import evenementielConcert13 from "@/images/portfolio/evenementiel/concert/13.jp
 import evenementielConcert14 from "@/images/portfolio/evenementiel/concert/14.jpg";
 import evenementielOpenAirCover from "@/images/portfolio/evenementiel/open-air/cover.jpg";
 import evenementielOpenAir01 from "@/images/portfolio/evenementiel/open-air/01.jpg";
-import evenementielOpenAir02 from "@/images/portfolio/evenementiel/open-air/02.jpg";
 import evenementielOpenAir03 from "@/images/portfolio/evenementiel/open-air/03.jpg";
 import evenementielOpenAir04 from "@/images/portfolio/evenementiel/open-air/04.jpg";
 import evenementielOpenAir05 from "@/images/portfolio/evenementiel/open-air/05.jpg";
-import evenementielOpenAir06 from "@/images/portfolio/evenementiel/open-air/06.jpg";
 import evenementielOpenAir07 from "@/images/portfolio/evenementiel/open-air/07.jpg";
 import evenementielOpenAir08 from "@/images/portfolio/evenementiel/open-air/08.jpg";
 import evenementielOpenAir09 from "@/images/portfolio/evenementiel/open-air/09.jpg";
@@ -39,7 +36,6 @@ import evenementielFestivalBambounou02 from "@/images/portfolio/evenementiel/fes
 import evenementielFestivalBambounou03 from "@/images/portfolio/evenementiel/festival/bambounou/03.jpg";
 import evenementielFestivalBambounou04 from "@/images/portfolio/evenementiel/festival/bambounou/04.jpg";
 import evenementielFestivalBambounou05 from "@/images/portfolio/evenementiel/festival/bambounou/05.jpg";
-import evenementielFestivalBambounou06 from "@/images/portfolio/evenementiel/festival/bambounou/06.jpg";
 import evenementielFestivalBambounou07 from "@/images/portfolio/evenementiel/festival/bambounou/07.jpg";
 import evenementielFestivalBambounou08 from "@/images/portfolio/evenementiel/festival/bambounou/08.jpg";
 import evenementielFestivalLauraDegreef01 from "@/images/portfolio/evenementiel/festival/laura-degreef/01.jpg";
@@ -264,7 +260,7 @@ export const categories: CategoryData[] = [
         cover: evenementielConcertCover,
         images: [
           evenementielConcert01, evenementielConcert02, evenementielConcert03, evenementielConcert04,
-          evenementielConcert05, evenementielConcert06, evenementielConcert07, evenementielConcert08,
+          evenementielConcert05, evenementielConcert06, evenementielConcert07,
           evenementielConcert09, evenementielConcert10, evenementielConcert11, evenementielConcert12,
           evenementielConcert13, evenementielConcert14,
         ],
@@ -273,8 +269,8 @@ export const categories: CategoryData[] = [
         slug: "open-air",
         cover: evenementielOpenAirCover,
         images: [
-          evenementielOpenAir01, evenementielOpenAir02, evenementielOpenAir03, evenementielOpenAir04,
-          evenementielOpenAir05, evenementielOpenAir06, evenementielOpenAir07, evenementielOpenAir08,
+          evenementielOpenAir01, evenementielOpenAir03, evenementielOpenAir04,
+          evenementielOpenAir05, evenementielOpenAir07, evenementielOpenAir08,
           evenementielOpenAir09, evenementielOpenAir10, evenementielOpenAir11, evenementielOpenAir12,
         ],
       },
@@ -283,7 +279,7 @@ export const categories: CategoryData[] = [
         cover: evenementielFestivalCover,
         images: [
           evenementielFestivalBambounou01, evenementielFestivalBambounou02, evenementielFestivalBambounou03,
-          evenementielFestivalBambounou04, evenementielFestivalBambounou05, evenementielFestivalBambounou06,
+          evenementielFestivalBambounou04, evenementielFestivalBambounou05,
           evenementielFestivalBambounou07, evenementielFestivalBambounou08,
           evenementielFestivalLauraDegreef01, evenementielFestivalLauraDegreef02, evenementielFestivalLauraDegreef03,
           evenementielFestivalLauraDegreef04, evenementielFestivalLauraDegreef05,
