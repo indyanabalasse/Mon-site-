@@ -266,6 +266,47 @@ export type CategoryData = {
 
 export const categories: CategoryData[] = [
   {
+    slug: "corporate",
+    cover: corporateCover,
+    series: [
+      {
+        slug: "ma-vie",
+        cover: corporateMaVieCover,
+        images: [
+          corporateMaVie01, corporateMaVie03, corporateMaVie04,
+          corporateMaVie05, corporateMaVie06, corporateMaVie09, corporateMaVie11,
+          corporateMaVie12, corporateMaVie13, corporateMaVie14, corporateMaVie15,
+          corporateMaVie17,
+        ],
+      },
+      {
+        slug: "esg-logic",
+        cover: corporateEsgLogicCover,
+        images: [
+          corporateEsgLogic01, corporateEsgLogic02, corporateEsgLogic03, corporateEsgLogic04,
+          corporateEsgLogic05, corporateEsgLogic06, corporateEsgLogic07, corporateEsgLogic08,
+          corporateEsgLogic09, corporateEsgLogic10, corporateEsgLogic11, corporateEsgLogic12,
+          corporateEsgLogic13, corporateEsgLogic14, corporateEsgLogic15,
+          corporateEsgLogic20, corporateEsgLogic21, corporateEsgLogic22,
+        ],
+      },
+    ],
+  },
+  {
+    slug: "sante",
+    cover: santeCover,
+    series: [
+      {
+        slug: "kine",
+        cover: santeKineCover,
+        images: [
+          santeKine01, santeKine02, santeKine03, santeKine04,
+          santeKine05, santeKine06,
+        ],
+      },
+    ],
+  },
+  {
     slug: "evenementiel",
     cover: evenementielCover,
     series: [
@@ -387,47 +428,6 @@ export const categories: CategoryData[] = [
           portraitEsphan02, portraitEsphan03, portraitEsphan04,
           portraitEsphan05, portraitEsphan06, portraitEsphan07,
           portraitEsphan09,
-        ],
-      },
-    ],
-  },
-  {
-    slug: "corporate",
-    cover: corporateCover,
-    series: [
-      {
-        slug: "ma-vie",
-        cover: corporateMaVieCover,
-        images: [
-          corporateMaVie01, corporateMaVie03, corporateMaVie04,
-          corporateMaVie05, corporateMaVie06, corporateMaVie09, corporateMaVie11,
-          corporateMaVie12, corporateMaVie13, corporateMaVie14, corporateMaVie15,
-          corporateMaVie17,
-        ],
-      },
-      {
-        slug: "esg-logic",
-        cover: corporateEsgLogicCover,
-        images: [
-          corporateEsgLogic01, corporateEsgLogic02, corporateEsgLogic03, corporateEsgLogic04,
-          corporateEsgLogic05, corporateEsgLogic06, corporateEsgLogic07, corporateEsgLogic08,
-          corporateEsgLogic09, corporateEsgLogic10, corporateEsgLogic11, corporateEsgLogic12,
-          corporateEsgLogic13, corporateEsgLogic14, corporateEsgLogic15,
-          corporateEsgLogic20, corporateEsgLogic21, corporateEsgLogic22,
-        ],
-      },
-    ],
-  },
-  {
-    slug: "sante",
-    cover: santeCover,
-    series: [
-      {
-        slug: "kine",
-        cover: santeKineCover,
-        images: [
-          santeKine01, santeKine02, santeKine03, santeKine04,
-          santeKine05, santeKine06,
         ],
       },
     ],
