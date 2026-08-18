@@ -177,7 +177,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       },
       "fun-photo-booth": {
         title: "Fun Photo Booth",
-        description: "Ambiance déjantée et lumières colorées, pour des souvenirs pleins de fun.",
+        description: "Un photobooth pas comme les autres : c'est moi qui prends les photos en direct, tout au long de votre événement. Le décor est sélectionné en amont pour s'accorder au thème de votre soirée, et chaque invité peut choisir un déguisement ou un accessoire pour une touche spontanée et ludique. Loin de la cabine fermée et des selfies figés, Fun Booth propose une expérience photo vivante, encadrée par un œil professionnel — un moment qui rassemble les invités autant qu'il immortalise la soirée.",
         series: {
           "fun-photo-booth": "Fun Photo Booth",
         },
@@ -304,6 +304,20 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Prise de rendez-vous sur demande",
           ],
         },
+        {
+          number: "N°06",
+          category: "Événementiel",
+          subcategory: "Animation",
+          title: "Fun Booth",
+          price: "Sur devis",
+          unit: "Tarif communiqué par e-mail",
+          features: [
+            "Animation photo live tout au long de l'événement",
+            "Décor sélectionné selon le thème de votre soirée",
+            "Déguisements et accessoires pour les invités",
+            "Idéal pour mariages, anniversaires, soirées d'entreprise",
+          ],
+        },
       ],
     },
     about: {
@@ -418,7 +432,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       },
       "fun-photo-booth": {
         title: "Fun Photo Booth",
-        description: "Wild vibes and colorful lights, for memories full of fun.",
+        description: "A photo booth like no other: I take the photos live, throughout your event. The backdrop is chosen in advance to match your evening's theme, and each guest can pick a costume or accessory for a spontaneous, playful touch. Far from the closed booth and stiff selfies, Fun Booth offers a living photo experience guided by a professional eye — a moment that brings guests together as much as it captures the night.",
         series: {
           "fun-photo-booth": "Fun Photo Booth",
         },
@@ -543,6 +557,20 @@ export const dictionaries: Record<Locale, Dictionary> = {
           features: [
             "Studio made available for your own sessions",
             "Booking on request",
+          ],
+        },
+        {
+          number: "N°06",
+          category: "Events",
+          subcategory: "Entertainment",
+          title: "Fun Booth",
+          price: "On request",
+          unit: "Rate sent by email",
+          features: [
+            "Live photo animation throughout the event",
+            "Backdrop chosen to match your event's theme",
+            "Costumes and accessories available for guests",
+            "Perfect for weddings, birthdays, corporate parties",
           ],
         },
       ],

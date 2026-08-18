@@ -383,20 +383,6 @@ export const categories: CategoryData[] = [
     ],
   },
   {
-    slug: "sante",
-    cover: santeCover,
-    series: [
-      {
-        slug: "kine",
-        cover: santeKineCover,
-        images: [
-          santeKine01, santeKine02, santeKine03, santeKine04,
-          santeKine05, santeKine06,
-        ],
-      },
-    ],
-  },
-  {
     slug: "evenementiel",
     cover: evenementielCover,
     series: [
@@ -452,6 +438,17 @@ export const categories: CategoryData[] = [
     ],
   },
   {
+    slug: "press-kit",
+    cover: pressKitCover,
+    series: [
+      {
+        slug: "press-kit",
+        cover: pressKitCover,
+        images: [pressKit01, pressKit02, pressKit03, pressKit04],
+      },
+    ],
+  },
+  {
     slug: "fun-photo-booth",
     cover: funPhotoBoothCover,
     series: [
@@ -469,6 +466,20 @@ export const categories: CategoryData[] = [
     ],
   },
   {
+    slug: "sante",
+    cover: santeCover,
+    series: [
+      {
+        slug: "kine",
+        cover: santeKineCover,
+        images: [
+          santeKine01, santeKine02, santeKine03, santeKine04,
+          santeKine05, santeKine06,
+        ],
+      },
+    ],
+  },
+  {
     slug: "my-mood",
     cover: portraitMyMoodCover,
     series: [
@@ -481,17 +492,6 @@ export const categories: CategoryData[] = [
           portraitMyMood09, portraitMyMood10, portraitMyMood11, portraitMyMood12,
           portraitMyMood13, portraitMyMood14, portraitMyMood15, portraitMyMood16,
         ],
-      },
-    ],
-  },
-  {
-    slug: "press-kit",
-    cover: pressKitCover,
-    series: [
-      {
-        slug: "press-kit",
-        cover: pressKitCover,
-        images: [pressKit01, pressKit02, pressKit03, pressKit04],
       },
     ],
   },

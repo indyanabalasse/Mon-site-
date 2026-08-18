@@ -9,10 +9,13 @@ export default function TileSlideshow({
   images,
   alt,
   sizes,
+  fill = false,
 }: {
   images: StaticImageData[];
   alt: string;
   sizes: string;
+  /** When true, fills the parent's box instead of computing its own aspect ratio. */
+  fill?: boolean;
 }) {
   const [active, setActive] = useState(0);
 
@@ -28,8 +31,8 @@ export default function TileSlideshow({
 
   return (
     <div
-      className="relative w-full"
-      style={{ aspectRatio: `${first.width} / ${first.height}` }}
+      className={fill ? "relative w-full h-full" : "relative w-full"}
+      style={fill ? undefined : { aspectRatio: `${first.width} / ${first.height}` }}
     >
       {images.map((img, i) => (
         <Image

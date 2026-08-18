@@ -43,7 +43,7 @@ export default async function PortfolioPage({
         <p className="mt-4 text-muted">{dict.portfolio.intro}</p>
       </header>
 
-      <MasonryNav items={tiles} />
+      <MasonryNav items={tiles} variant="grid" />
     </div>
   );
 }
