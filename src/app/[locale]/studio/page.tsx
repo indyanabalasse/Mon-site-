@@ -7,7 +7,7 @@ import lightingImage from "@/images/Studio/PHOTO-2026-08-13-11-25-37.jpg";
 import backdropImage from "@/images/Studio/PHOTO-2026-08-13-11-26-57.jpg";
 import makeupImage from "@/images/Studio/PHOTO-2026-08-13-11-24-52.jpg";
 import naturalLightImage from "@/images/Studio/PHOTO-2026-08-13-11-17-39.jpg";
-import kitchenImage from "@/images/Studio/PHOTO-2026-08-13-11-26-39.jpg";
+import kitchenImage from "@/images/Studio/PHOTO-2026-08-19-16-05-39.jpg";
 import gardenImage from "@/images/Studio/PHOTO-2026-08-13-11-26-12.jpg";
 
 export async function generateMetadata({
