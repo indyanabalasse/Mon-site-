@@ -214,7 +214,6 @@ import funPhotoBoothMariage108 from "@/images/portfolio/fun-photo-booth/Mariage 
 import funPhotoBoothMariage109 from "@/images/portfolio/fun-photo-booth/Mariage 1/09.jpg";
 import funPhotoBoothMariage110 from "@/images/portfolio/fun-photo-booth/Mariage 1/10.jpg";
 import funPhotoBoothMariage111 from "@/images/portfolio/fun-photo-booth/Mariage 1/11.jpg";
-import funPhotoBoothMariage112 from "@/images/portfolio/fun-photo-booth/Mariage 1/12.jpg";
 import funPhotoBoothMariage113 from "@/images/portfolio/fun-photo-booth/Mariage 1/13.jpg";
 import funPhotoBoothMariage114 from "@/images/portfolio/fun-photo-booth/Mariage 1/14.jpg";
 import funPhotoBoothMariage115 from "@/images/portfolio/fun-photo-booth/Mariage 1/15.jpg";
@@ -481,7 +480,7 @@ export const categories: CategoryData[] = [
         images: [
           funPhotoBoothMariage101, funPhotoBoothMariage102, funPhotoBoothMariage103, funPhotoBoothMariage104,
           funPhotoBoothMariage105, funPhotoBoothMariage106, funPhotoBoothMariage107, funPhotoBoothMariage108,
-          funPhotoBoothMariage109, funPhotoBoothMariage110, funPhotoBoothMariage111, funPhotoBoothMariage112,
+          funPhotoBoothMariage109, funPhotoBoothMariage110, funPhotoBoothMariage111,
           funPhotoBoothMariage113, funPhotoBoothMariage114, funPhotoBoothMariage115, funPhotoBoothMariage116,
           funPhotoBoothMariage117,
         ],
