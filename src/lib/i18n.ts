@@ -141,7 +141,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           wolfgang: "Wolfgang",
           herton: "Herton",
           arty: "Arty",
-          "my-mood": "INDY MOOD",
+          "my-mood": "INDY LAB",
           "didier-vdb": "Didier VDB",
           esphan: "Esphan",
         },
@@ -169,10 +169,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
       },
       "my-mood": {
-        title: "INDY MOOD",
+        title: "INDY LAB",
         description: "Univers personnel et créatif, entre expérimentation et émotion.",
         series: {
-          "my-mood": "INDY MOOD",
+          "my-mood": "INDY LAB",
         },
       },
       "fun-photo-booth": {
@@ -396,7 +396,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           wolfgang: "Wolfgang",
           herton: "Herton",
           arty: "Arty",
-          "my-mood": "INDY MOOD",
+          "my-mood": "INDY LAB",
           "didier-vdb": "Didier VDB",
           esphan: "Esphan",
         },
@@ -424,10 +424,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
       },
       "my-mood": {
-        title: "INDY MOOD",
+        title: "INDY LAB",
         description: "A personal, creative universe, between experimentation and emotion.",
         series: {
-          "my-mood": "INDY MOOD",
+          "my-mood": "INDY LAB",
         },
       },
       "fun-photo-booth": {
