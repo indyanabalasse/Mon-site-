@@ -127,7 +127,6 @@ import portraitArty04 from "@/images/portfolio/portrait/arty/04.jpg";
 import portraitArty05 from "@/images/portfolio/portrait/arty/05.jpg";
 import portraitArty06 from "@/images/portfolio/portrait/arty/06.jpg";
 import portraitMyMoodCover from "@/images/portfolio/My Mood/cover2.jpg";
-import portraitMyMood01 from "@/images/portfolio/My Mood/01.jpg";
 import portraitMyMood02 from "@/images/portfolio/My Mood/02.jpg";
 import portraitMyMood03 from "@/images/portfolio/My Mood/03.jpg";
 import portraitMyMood04 from "@/images/portfolio/My Mood/04.jpg";
@@ -135,7 +134,6 @@ import portraitMyMood05 from "@/images/portfolio/My Mood/05.jpg";
 import portraitMyMood06 from "@/images/portfolio/My Mood/06.jpg";
 import portraitMyMood07 from "@/images/portfolio/My Mood/07.jpg";
 import portraitMyMood08 from "@/images/portfolio/My Mood/08.jpg";
-import portraitMyMood09 from "@/images/portfolio/My Mood/c2.jpg";
 import portraitMyMood10 from "@/images/portfolio/My Mood/10.jpg";
 import portraitMyMood11 from "@/images/portfolio/My Mood/11.jpg";
 import portraitMyMood12 from "@/images/portfolio/My Mood/12.jpg";
@@ -487,9 +485,9 @@ export const categories: CategoryData[] = [
         slug: "my-mood",
         cover: portraitMyMoodCover,
         images: [
-          portraitMyMood01, portraitMyMood02, portraitMyMood03, portraitMyMood04,
+          portraitMyMood02, portraitMyMood03, portraitMyMood04,
           portraitMyMood05, portraitMyMood06, portraitMyMood07, portraitMyMood08,
-          portraitMyMood09, portraitMyMood10, portraitMyMood11, portraitMyMood12,
+          portraitMyMood10, portraitMyMood11, portraitMyMood12,
           portraitMyMood13, portraitMyMood14, portraitMyMood15, portraitMyMood16,
         ],
       },
