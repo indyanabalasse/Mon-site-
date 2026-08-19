@@ -202,24 +202,49 @@ import familleFemmeEnceinteCover from "@/images/portfolio/famille/femme-enceinte
 import familleFemmeEnceinte01 from "@/images/portfolio/famille/femme-enceinte/01.jpg";
 import familleFemmeEnceinte02 from "@/images/portfolio/famille/femme-enceinte/02.jpg";
 import familleFemmeEnceinte03 from "@/images/portfolio/famille/femme-enceinte/03.jpg";
-import funPhotoBoothCover from "@/images/portfolio/fun-photo-booth/cover.jpg";
-import funPhotoBooth01 from "@/images/portfolio/fun-photo-booth/01.jpg";
-import funPhotoBooth02 from "@/images/portfolio/fun-photo-booth/02.jpg";
-import funPhotoBooth03 from "@/images/portfolio/fun-photo-booth/03.jpg";
-import funPhotoBooth04 from "@/images/portfolio/fun-photo-booth/04.jpg";
-import funPhotoBooth05 from "@/images/portfolio/fun-photo-booth/05.jpg";
-import funPhotoBooth06 from "@/images/portfolio/fun-photo-booth/06.jpg";
-import funPhotoBooth07 from "@/images/portfolio/fun-photo-booth/07.jpg";
-import funPhotoBooth08 from "@/images/portfolio/fun-photo-booth/08.jpg";
-import funPhotoBooth09 from "@/images/portfolio/fun-photo-booth/09.jpg";
-import funPhotoBooth10 from "@/images/portfolio/fun-photo-booth/10.jpg";
-import funPhotoBooth11 from "@/images/portfolio/fun-photo-booth/11.jpg";
-import funPhotoBooth12 from "@/images/portfolio/fun-photo-booth/12.jpg";
-import funPhotoBooth13 from "@/images/portfolio/fun-photo-booth/13.jpg";
-import funPhotoBooth14 from "@/images/portfolio/fun-photo-booth/14.jpg";
-import funPhotoBooth15 from "@/images/portfolio/fun-photo-booth/15.jpg";
-import funPhotoBooth16 from "@/images/portfolio/fun-photo-booth/16.jpg";
-import funPhotoBooth17 from "@/images/portfolio/fun-photo-booth/17.jpg";
+import funPhotoBoothMariage1Cover from "@/images/portfolio/fun-photo-booth/Mariage 1/cover.jpg";
+import funPhotoBoothMariage101 from "@/images/portfolio/fun-photo-booth/Mariage 1/01.jpg";
+import funPhotoBoothMariage102 from "@/images/portfolio/fun-photo-booth/Mariage 1/02.jpg";
+import funPhotoBoothMariage103 from "@/images/portfolio/fun-photo-booth/Mariage 1/03.jpg";
+import funPhotoBoothMariage104 from "@/images/portfolio/fun-photo-booth/Mariage 1/04.jpg";
+import funPhotoBoothMariage105 from "@/images/portfolio/fun-photo-booth/Mariage 1/05.jpg";
+import funPhotoBoothMariage106 from "@/images/portfolio/fun-photo-booth/Mariage 1/06.jpg";
+import funPhotoBoothMariage107 from "@/images/portfolio/fun-photo-booth/Mariage 1/07.jpg";
+import funPhotoBoothMariage108 from "@/images/portfolio/fun-photo-booth/Mariage 1/08.jpg";
+import funPhotoBoothMariage109 from "@/images/portfolio/fun-photo-booth/Mariage 1/09.jpg";
+import funPhotoBoothMariage110 from "@/images/portfolio/fun-photo-booth/Mariage 1/10.jpg";
+import funPhotoBoothMariage111 from "@/images/portfolio/fun-photo-booth/Mariage 1/11.jpg";
+import funPhotoBoothMariage112 from "@/images/portfolio/fun-photo-booth/Mariage 1/12.jpg";
+import funPhotoBoothMariage113 from "@/images/portfolio/fun-photo-booth/Mariage 1/13.jpg";
+import funPhotoBoothMariage114 from "@/images/portfolio/fun-photo-booth/Mariage 1/14.jpg";
+import funPhotoBoothMariage115 from "@/images/portfolio/fun-photo-booth/Mariage 1/15.jpg";
+import funPhotoBoothMariage116 from "@/images/portfolio/fun-photo-booth/Mariage 1/16.jpg";
+import funPhotoBoothMariage117 from "@/images/portfolio/fun-photo-booth/Mariage 1/17.jpg";
+import funPhotoBoothMariage2Cover from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7474.jpg";
+import funPhotoBoothMariage2_02 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7503.jpg";
+import funPhotoBoothMariage2_03 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7509.jpg";
+import funPhotoBoothMariage2_04 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7515.jpg";
+import funPhotoBoothMariage2_05 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7525.jpg";
+import funPhotoBoothMariage2_06 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7529.jpg";
+import funPhotoBoothMariage2_07 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7556.jpg";
+import funPhotoBoothMariage2_08 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7560.jpg";
+import funPhotoBoothMariage2_09 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7578.jpg";
+import funPhotoBoothMariage2_10 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7582.jpg";
+import funPhotoBoothMariage2_11 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7585.jpg";
+import funPhotoBoothMariage2_12 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7596.jpg";
+import funPhotoBoothMariage2_13 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7603.jpg";
+import funPhotoBoothMariage2_14 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7611.jpg";
+import funPhotoBoothMariage2_15 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7617.jpg";
+import funPhotoBoothMariage2_16 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7624.jpg";
+import funPhotoBoothMariage2_17 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7642.jpg";
+import funPhotoBoothMariage2_18 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7651.jpg";
+import funPhotoBoothMariage2_19 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7659.jpg";
+import funPhotoBoothMariage2_20 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7664.jpg";
+import funPhotoBoothMariage2_21 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7666.jpg";
+import funPhotoBoothMariage2_22 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7679.jpg";
+import funPhotoBoothMariage2_23 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7701.jpg";
+import funPhotoBoothMariage2_24 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7731.jpg";
+import funPhotoBoothMariage2_25 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7757.jpg";
 import pressKitCover from "@/images/portfolio/press-kit/cover.png";
 import pressKit01 from "@/images/portfolio/press-kit/01.png";
 import pressKit02 from "@/images/portfolio/press-kit/02.png";
@@ -448,17 +473,30 @@ export const categories: CategoryData[] = [
   },
   {
     slug: "fun-photo-booth",
-    cover: funPhotoBoothCover,
+    cover: funPhotoBoothMariage1Cover,
     series: [
       {
-        slug: "fun-photo-booth",
-        cover: funPhotoBoothCover,
+        slug: "mariage-1",
+        cover: funPhotoBoothMariage1Cover,
         images: [
-          funPhotoBooth01, funPhotoBooth02, funPhotoBooth03, funPhotoBooth04,
-          funPhotoBooth05, funPhotoBooth06, funPhotoBooth07, funPhotoBooth08,
-          funPhotoBooth09, funPhotoBooth10, funPhotoBooth11, funPhotoBooth12,
-          funPhotoBooth13, funPhotoBooth14, funPhotoBooth15, funPhotoBooth16,
-          funPhotoBooth17,
+          funPhotoBoothMariage101, funPhotoBoothMariage102, funPhotoBoothMariage103, funPhotoBoothMariage104,
+          funPhotoBoothMariage105, funPhotoBoothMariage106, funPhotoBoothMariage107, funPhotoBoothMariage108,
+          funPhotoBoothMariage109, funPhotoBoothMariage110, funPhotoBoothMariage111, funPhotoBoothMariage112,
+          funPhotoBoothMariage113, funPhotoBoothMariage114, funPhotoBoothMariage115, funPhotoBoothMariage116,
+          funPhotoBoothMariage117,
+        ],
+      },
+      {
+        slug: "mariage-2",
+        cover: funPhotoBoothMariage2Cover,
+        images: [
+          funPhotoBoothMariage2Cover, funPhotoBoothMariage2_02, funPhotoBoothMariage2_03, funPhotoBoothMariage2_04,
+          funPhotoBoothMariage2_05, funPhotoBoothMariage2_06, funPhotoBoothMariage2_07, funPhotoBoothMariage2_08,
+          funPhotoBoothMariage2_09, funPhotoBoothMariage2_10, funPhotoBoothMariage2_11, funPhotoBoothMariage2_12,
+          funPhotoBoothMariage2_13, funPhotoBoothMariage2_14, funPhotoBoothMariage2_15, funPhotoBoothMariage2_16,
+          funPhotoBoothMariage2_17, funPhotoBoothMariage2_18, funPhotoBoothMariage2_19, funPhotoBoothMariage2_20,
+          funPhotoBoothMariage2_21, funPhotoBoothMariage2_22, funPhotoBoothMariage2_23, funPhotoBoothMariage2_24,
+          funPhotoBoothMariage2_25,
         ],
       },
     ],

@@ -179,7 +179,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
         title: "Fun Photo Booth",
         description: "Un photobooth pas comme les autres : c'est moi qui prends les photos en direct, tout au long de votre événement. Le décor est sélectionné en amont pour s'accorder au thème de votre soirée, et chaque invité peut choisir un déguisement ou un accessoire pour une touche spontanée et ludique. Loin de la cabine fermée et des selfies figés, Fun Booth propose une expérience photo vivante, encadrée par un œil professionnel — un moment qui rassemble les invités autant qu'il immortalise la soirée.",
         series: {
-          "fun-photo-booth": "Fun Photo Booth",
+          "mariage-1": "Mariage 1",
+          "mariage-2": "Mariage 2",
         },
       },
       "press-kit": {
@@ -434,7 +435,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
         title: "Fun Photo Booth",
         description: "A photo booth like no other: I take the photos live, throughout your event. The backdrop is chosen in advance to match your evening's theme, and each guest can pick a costume or accessory for a spontaneous, playful touch. Far from the closed booth and stiff selfies, Fun Booth offers a living photo experience guided by a professional eye — a moment that brings guests together as much as it captures the night.",
         series: {
-          "fun-photo-booth": "Fun Photo Booth",
+          "mariage-1": "Wedding 1",
+          "mariage-2": "Wedding 2",
         },
       },
       "press-kit": {
