@@ -51,8 +51,7 @@ body {
  * On the plain page background, always use theme tokens so text and
  * buttons flip correctly between light and dark mode:
  *   - Titles (h1/h2, .wordmark)   → no color class (inherits --foreground)
- *   - Body / description text     → text-foreground/90
- *   - Secondary / caption / meta  → text-muted
+ *   - Body, description, and all secondary/caption/meta text → text-muted
  *   - CTA buttons                 → border border-foreground, text
  *                                    inherits --foreground, and invert on
  *                                    hover: hover:bg-foreground hover:text-background

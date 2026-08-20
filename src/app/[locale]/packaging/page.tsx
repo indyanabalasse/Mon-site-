@@ -52,7 +52,7 @@ export default async function PackagingPage({
               <h2 className="wordmark font-serif text-2xl font-light mt-4">{formula.title}</h2>
               <ul className="mt-6 space-y-2">
                 {formula.features.map((feature) => (
-                  <li key={feature} className="flex gap-3 text-sm text-foreground/90">
+                  <li key={feature} className="flex gap-3 text-sm text-muted">
                     <span className="text-muted">—</span>
                     {feature}
                   </li>

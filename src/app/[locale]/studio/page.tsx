@@ -75,7 +75,7 @@ export default async function StudioPage({
       </div>
 
       <div className="max-w-3xl mx-auto text-center mb-20">
-        <p className="leading-relaxed text-foreground/90">{studio.highlight}</p>
+        <p className="leading-relaxed text-muted">{studio.highlight}</p>
       </div>
 
       <div className="grid gap-12 md:grid-cols-2 md:items-center">
@@ -83,7 +83,7 @@ export default async function StudioPage({
           <h2 className="wordmark font-serif text-2xl font-light">{studio.equipment.title}</h2>
           <ul className="mt-6 space-y-3">
             {studio.equipment.items.map((item) => (
-              <li key={item} className="flex gap-3 text-sm text-foreground/90 leading-relaxed">
+              <li key={item} className="flex gap-3 text-sm text-muted leading-relaxed">
                 <span className="text-muted">—</span>
                 {item}
               </li>
@@ -121,7 +121,7 @@ export default async function StudioPage({
 
       <div className="max-w-2xl mx-auto text-center mt-20 pt-16 border-t border-border">
         <h2 className="wordmark font-serif text-2xl font-light">{studio.kitchen.title}</h2>
-        <p className="mt-5 leading-relaxed text-foreground/90">{studio.kitchen.text}</p>
+        <p className="mt-5 leading-relaxed text-muted">{studio.kitchen.text}</p>
       </div>
 
       <div className="max-w-2xl mx-auto text-center mt-16">
@@ -131,7 +131,7 @@ export default async function StudioPage({
       <div className="grid gap-12 md:grid-cols-2 md:items-center mt-16 pt-16 border-t border-border">
         <div>
           <h2 className="wordmark font-serif text-2xl font-light">{studio.garden.title}</h2>
-          <p className="mt-5 leading-relaxed text-foreground/90">{studio.garden.text}</p>
+          <p className="mt-5 leading-relaxed text-muted">{studio.garden.text}</p>
         </div>
         <div className="relative aspect-[4/5] overflow-hidden">
           <Image

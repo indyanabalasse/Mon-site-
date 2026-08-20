@@ -46,7 +46,7 @@ export default async function AboutPage({
         <div>
           <h1 className="wordmark font-serif text-4xl font-light mb-8">{dict.about.title}</h1>
           {dict.about.paragraphs.map((p) => (
-            <p key={p} className="mt-5 leading-relaxed text-foreground/90 first:mt-0">
+            <p key={p} className="mt-5 leading-relaxed text-muted first:mt-0">
               {p}
             </p>
           ))}
