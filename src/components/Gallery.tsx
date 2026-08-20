@@ -14,7 +14,10 @@ export type GalleryEndScreen = {
 };
 
 const AUTO_ADVANCE_MS = 4500;
-const FADE_MS = 800;
+const FADE_MS = 1600;
+// Kept well past FADE_MS so the zoom is still gently drifting, never visibly
+// finished, right up to the moment a photo fades out for the next one.
+const ZOOM_MS = 7000;
 
 function FadeLayer({
   image,
@@ -38,10 +41,10 @@ function FadeLayer({
       alt={alt}
       fill
       sizes="90vw"
-      className={`object-contain transition-opacity ease-in-out ${
-        entered ? "opacity-100" : "opacity-0"
-      }`}
-      style={{ transitionDuration: `${FADE_MS}ms` }}
+      className={`object-contain ${entered ? "opacity-100 scale-110" : "opacity-0 scale-100"}`}
+      style={{
+        transition: `opacity ${FADE_MS}ms ease-in-out, transform ${ZOOM_MS}ms ease-out`,
+      }}
       priority={isTop}
     />
   );
@@ -229,7 +232,7 @@ export default function Gallery({
             ‹
           </button>
           <div
-            className="relative h-[85vh] max-w-5xl w-full"
+            className="relative h-[85vh] max-w-5xl w-full overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             {isEndCard && endScreen ? (

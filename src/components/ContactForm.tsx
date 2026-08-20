@@ -24,6 +24,7 @@ export default function ContactForm({
     error: string;
     followInstagram: string;
     followInstagramCta: string;
+    newsletterOptIn: string;
   };
 }) {
   const [status, setStatus] = useState<Status>("idle");
@@ -40,9 +41,11 @@ export default function ContactForm({
     setStatus("sending");
 
     const form = e.currentTarget;
+    const email = (form.elements.namedItem("email") as HTMLInputElement).value;
+    const subscribeToNewsletter = (form.elements.namedItem("newsletter") as HTMLInputElement).checked;
     const data = {
       name: (form.elements.namedItem("name") as HTMLInputElement).value,
-      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      email,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
       locale,
     };
@@ -57,6 +60,17 @@ export default function ContactForm({
       setStatus("success");
       posthog.capture(ANALYTICS_EVENTS.CONTACT_FORM_SUBMITTED, { locale });
       form.reset();
+
+      // Newsletter opt-in still goes through the double opt-in confirmation
+      // flow, so a failure here shouldn't affect the contact form's own
+      // success state.
+      if (subscribeToNewsletter) {
+        fetch("/api/newsletter/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, locale }),
+        }).catch(() => {});
+      }
     } catch {
       setStatus("error");
     }
@@ -120,6 +134,16 @@ export default function ContactForm({
           className="w-full border-b border-border bg-transparent py-2 focus:outline-none focus:border-foreground transition-colors resize-none"
         />
       </div>
+
+      <label className="flex items-center gap-3 text-sm text-muted">
+        <input
+          id="newsletter"
+          name="newsletter"
+          type="checkbox"
+          className="h-4 w-4 shrink-0 accent-foreground"
+        />
+        {labels.newsletterOptIn}
+      </label>
 
       {status === "error" && <p className="text-sm text-danger">{labels.error}</p>}
 

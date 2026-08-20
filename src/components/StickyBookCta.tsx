@@ -6,7 +6,7 @@ import { getDictionary, type Locale } from "@/lib/i18n";
 
 export default function StickyBookCta({ locale }: { locale: Locale }) {
   const pathname = usePathname();
-  if (pathname === `/${locale}/contact`) return null;
+  if (pathname !== `/${locale}/packaging`) return null;
 
   const dict = getDictionary(locale);
 

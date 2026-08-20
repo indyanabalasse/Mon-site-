@@ -130,6 +130,7 @@ type Dictionary = {
     phone: string;
     followInstagram: string;
     followInstagramCta: string;
+    newsletterOptIn: string;
   };
   footer: {
     rights: string;
@@ -433,6 +434,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       phone: "Ou m'appeler au",
       followInstagram: "En attendant ma réponse, venez voir mes dernières photos sur Instagram @indyanastudio.",
       followInstagramCta: "Suivre @indyanastudio",
+      newsletterOptIn: "M'inscrire aussi à la newsletter",
     },
     footer: {
       rights: "Tous droits réservés.",
@@ -741,6 +743,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       phone: "Or call me at",
       followInstagram: "While you wait for my reply, come see my latest photos on Instagram @indyanastudio.",
       followInstagramCta: "Follow @indyanastudio",
+      newsletterOptIn: "Also subscribe me to the newsletter",
     },
     footer: {
       rights: "All rights reserved.",
