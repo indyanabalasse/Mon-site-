@@ -52,9 +52,18 @@ body {
  * buttons flip correctly between light and dark mode:
  *   - Titles (h1/h2, .wordmark)   → no color class (inherits --foreground)
  *   - Body, description, and all secondary/caption/meta text → text-muted
- *   - CTA buttons                 → border border-foreground, text
+ *   - CTA buttons (single, standalone) → border border-foreground, text
  *                                    inherits --foreground, and invert on
  *                                    hover: hover:bg-foreground hover:text-background
+ *
+ * When TWO CTAs sit side by side, split them into primary/secondary —
+ * the primary is the conversion action (book/contact/buy), the
+ * secondary is everything else (browse/learn more/view examples):
+ *   - Primary   → border border-foreground bg-foreground text-background,
+ *                 inverts on hover: hover:bg-transparent hover:text-foreground
+ *   - Secondary → the standalone CTA style above, unchanged
+ * Only apply this split when two CTAs are actually adjacent; a lone
+ * CTA stays the standalone (secondary-looking) style.
  *
  * Only use literal text-white / text-black / bg-black / bg-white when
  * content sits ON TOP OF A PHOTO (hero, gallery tiles) or inside a
