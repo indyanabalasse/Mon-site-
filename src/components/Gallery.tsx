@@ -13,6 +13,40 @@ export type GalleryEndScreen = {
   closeLabel: string;
 };
 
+const AUTO_ADVANCE_MS = 4500;
+const FADE_MS = 800;
+
+function FadeLayer({
+  image,
+  alt,
+  isTop,
+}: {
+  image: StaticImageData;
+  alt: string;
+  isTop: boolean;
+}) {
+  const [entered, setEntered] = useState(false);
+
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setEntered(true));
+    return () => cancelAnimationFrame(id);
+  }, []);
+
+  return (
+    <Image
+      src={image}
+      alt={alt}
+      fill
+      sizes="90vw"
+      className={`object-contain transition-opacity ease-in-out ${
+        entered ? "opacity-100" : "opacity-0"
+      }`}
+      style={{ transitionDuration: `${FADE_MS}ms` }}
+      priority={isTop}
+    />
+  );
+}
+
 export default function Gallery({
   images,
   altPrefix,
@@ -66,6 +100,31 @@ export default function Gallery({
     },
     [showNext, showPrev]
   );
+
+  // Crossfade layers: each navigation stacks a new fading-in image on top of
+  // the previous one, which is pruned once its fade-in finishes.
+  const [layers, setLayers] = useState<{ idx: number; key: number }[]>([]);
+  const layerKey = useRef(0);
+
+  useEffect(() => {
+    if (activeIndex === null || isEndCard) {
+      setLayers([]);
+      return;
+    }
+    setLayers((prev) => [...prev, { idx: activeIndex, key: layerKey.current++ }]);
+    const id = setTimeout(() => {
+      setLayers((prev) => prev.slice(-1));
+    }, FADE_MS);
+    return () => clearTimeout(id);
+  }, [activeIndex, isEndCard]);
+
+  // Auto-advance to the next photo while the lightbox is open, pausing on
+  // the end card so it doesn't navigate away from the CTA on its own.
+  useEffect(() => {
+    if (activeIndex === null || isEndCard) return;
+    const id = setInterval(showNext, AUTO_ADVANCE_MS);
+    return () => clearInterval(id);
+  }, [activeIndex, isEndCard, showNext]);
 
   useEffect(() => {
     if (activeIndex === null) return;
@@ -170,45 +229,48 @@ export default function Gallery({
             ‹
           </button>
           <div
-            className="relative max-h-[85vh] max-w-5xl w-full"
+            className="relative h-[85vh] max-w-5xl w-full"
             onClick={(e) => e.stopPropagation()}
           >
             {isEndCard && endScreen ? (
-              <div className="mx-auto flex max-w-sm flex-col items-center gap-8 py-16 text-center">
-                {endScreen.next && (
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.2em] text-white/60">
-                      {endScreen.nextKicker}
-                    </p>
-                    <Link
-                      href={endScreen.next.href}
-                      className="wordmark font-serif text-2xl text-white mt-2 inline-block hover:opacity-80 transition-opacity"
-                    >
-                      {endScreen.next.label}
-                    </Link>
-                  </div>
-                )}
-                <Link
-                  href={endScreen.bookHref}
-                  className="inline-block border border-white px-8 py-3 text-xs uppercase tracking-[0.2em] text-white hover:bg-white hover:text-black transition-colors"
-                >
-                  {endScreen.bookLabel}
-                </Link>
-                <Link
-                  href={endScreen.closeHref}
-                  className="text-sm text-white/70 underline underline-offset-4 hover:text-white transition-colors"
-                >
-                  {endScreen.closeLabel}
-                </Link>
+              <div className="absolute inset-0 flex items-center justify-center overflow-y-auto px-4">
+                <div className="mx-auto flex max-w-sm flex-col items-center gap-8 py-16 text-center">
+                  {endScreen.next && (
+                    <div>
+                      <p className="text-xs uppercase tracking-[0.2em] text-white/60">
+                        {endScreen.nextKicker}
+                      </p>
+                      <Link
+                        href={endScreen.next.href}
+                        className="wordmark font-serif text-2xl text-white mt-2 inline-block hover:opacity-80 transition-opacity"
+                      >
+                        {endScreen.next.label}
+                      </Link>
+                    </div>
+                  )}
+                  <Link
+                    href={endScreen.bookHref}
+                    className="inline-block border border-white px-8 py-3 text-xs uppercase tracking-[0.2em] text-white hover:bg-white hover:text-black transition-colors"
+                  >
+                    {endScreen.bookLabel}
+                  </Link>
+                  <Link
+                    href={endScreen.closeHref}
+                    className="text-sm text-white/70 underline underline-offset-4 hover:text-white transition-colors"
+                  >
+                    {endScreen.closeLabel}
+                  </Link>
+                </div>
               </div>
             ) : (
-              <Image
-                src={images[activeIndex ?? 0]}
-                alt={`${altPrefix} ${(activeIndex ?? 0) + 1}`}
-                sizes="90vw"
-                className="mx-auto max-h-[85vh] w-auto h-auto object-contain"
-                priority
-              />
+              layers.map((layer, i) => (
+                <FadeLayer
+                  key={layer.key}
+                  image={images[layer.idx]}
+                  alt={`${altPrefix} ${layer.idx + 1}`}
+                  isTop={i === layers.length - 1}
+                />
+              ))
             )}
           </div>
           <button
