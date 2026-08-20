@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
 import Image, { type StaticImageData } from "next/image";
 
@@ -37,6 +37,34 @@ export default function Gallery({
   const showNext = useCallback(
     () => setActiveIndex((i) => (i === null ? i : (i + 1) % slideCount)),
     [slideCount]
+  );
+
+  // Horizontal swipe to move between photos on touch devices.
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
+  const SWIPE_MIN_DISTANCE = 50;
+
+  const onTouchStart = useCallback((e: React.TouchEvent) => {
+    const touch = e.touches[0];
+    touchStart.current = { x: touch.clientX, y: touch.clientY };
+  }, []);
+
+  const onTouchEnd = useCallback(
+    (e: React.TouchEvent) => {
+      const start = touchStart.current;
+      touchStart.current = null;
+      if (!start) return;
+
+      const touch = e.changedTouches[0];
+      const deltaX = touch.clientX - start.x;
+      const deltaY = touch.clientY - start.y;
+
+      // Ignore mostly-vertical gestures so scrolling never flips the photo.
+      if (Math.abs(deltaX) < SWIPE_MIN_DISTANCE || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+
+      if (deltaX < 0) showNext();
+      else showPrev();
+    },
+    [showNext, showPrev]
   );
 
   useEffect(() => {
@@ -118,6 +146,8 @@ export default function Gallery({
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 px-4"
           onClick={close}
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
         >
           <button
             onClick={(e) => {
@@ -125,7 +155,7 @@ export default function Gallery({
               close();
             }}
             aria-label="Fermer"
-            className="absolute top-4 right-4 sm:top-6 sm:right-6 p-3 text-white text-3xl leading-none"
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 z-10 p-3 text-white text-3xl leading-none"
           >
             ×
           </button>
@@ -135,7 +165,7 @@ export default function Gallery({
               showPrev();
             }}
             aria-label="Précédent"
-            className="absolute left-2 sm:left-6 text-white text-3xl px-2 py-2"
+            className="absolute left-2 sm:left-6 z-10 text-white text-3xl px-2 py-2"
           >
             ‹
           </button>
@@ -187,7 +217,7 @@ export default function Gallery({
               showNext();
             }}
             aria-label="Suivant"
-            className="absolute right-2 sm:right-6 text-white text-3xl px-2 py-2"
+            className="absolute right-2 sm:right-6 z-10 text-white text-3xl px-2 py-2"
           >
             ›
           </button>
