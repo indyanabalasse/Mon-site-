@@ -54,14 +54,18 @@ export default async function PackagingPage({
               href={href}
               className="group relative block aspect-[4/5] overflow-hidden"
             >
-              <Image
-                src={OFFER_IMAGES[offer.slug]}
-                alt={offer.title}
-                fill
-                sizes="(min-width: 640px) 50vw, 100vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                placeholder="blur"
-              />
+              <div
+                className={`absolute inset-0 ${offer.slug === "shooting-studio" ? "-scale-x-100" : ""}`}
+              >
+                <Image
+                  src={OFFER_IMAGES[offer.slug]}
+                  alt={offer.title}
+                  fill
+                  sizes="(min-width: 640px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  placeholder="blur"
+                />
+              </div>
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/55 transition-colors" />
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 text-center">
                 <span className="wordmark font-serif text-2xl sm:text-3xl text-white">
