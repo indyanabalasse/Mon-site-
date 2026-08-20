@@ -67,7 +67,9 @@ export default async function PackagingPage({
                 <span className="wordmark font-serif text-2xl sm:text-3xl text-white">
                   {offer.title}
                 </span>
-                <p className="text-sm text-white/80 max-w-xs">{offer.tagline}</p>
+                {offer.tagline && (
+                  <p className="text-sm text-white/80 max-w-xs">{offer.tagline}</p>
+                )}
                 <span className="mt-2 inline-block border border-white px-6 py-2 text-xs uppercase tracking-[0.2em] text-white group-hover:bg-white group-hover:text-black transition-colors">
                   {offer.cta}
                 </span>
