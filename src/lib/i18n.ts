@@ -275,10 +275,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
           },
           {
             title: "Cuisine",
-            text: "Cuisine équipée, avec salle à manger.",
+            text: "Full équipée, avec salle à manger.",
           },
           {
-            title: "Toilette & douche",
+            title: "Sanitaire",
             text: "Toilette et douche.",
           },
         ],
