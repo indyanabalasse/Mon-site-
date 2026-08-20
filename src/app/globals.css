@@ -44,3 +44,21 @@ body {
   color: var(--foreground);
   transition: background-color 0.25s ease, color 0.25s ease;
 }
+
+/*
+ * Design system — text & CTA colors
+ *
+ * On the plain page background, always use theme tokens so text and
+ * buttons flip correctly between light and dark mode:
+ *   - Titles (h1/h2, .wordmark)   → no color class (inherits --foreground)
+ *   - Body / description text     → text-foreground/90
+ *   - Secondary / caption / meta  → text-muted
+ *   - CTA buttons                 → border border-foreground, text
+ *                                    inherits --foreground, and invert on
+ *                                    hover: hover:bg-foreground hover:text-background
+ *
+ * Only use literal text-white / text-black / bg-black / bg-white when
+ * content sits ON TOP OF A PHOTO (hero, gallery tiles) or inside a
+ * fixed black overlay (lightbox, Instagram banner) — those need
+ * guaranteed contrast regardless of the site's light/dark theme.
+ */
