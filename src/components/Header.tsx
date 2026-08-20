@@ -39,13 +39,16 @@ export default function Header({ locale }: { locale: Locale }) {
               <Link
                 key={link.href}
                 href={link.href}
-                className={
-                  isActive
-                    ? "text-foreground border-b border-foreground pb-1 transition-colors"
-                    : "text-muted hover:text-foreground transition-colors"
-                }
+                className={`group relative pb-1 transition-colors ${
+                  isActive ? "text-foreground" : "text-muted hover:text-foreground"
+                }`}
               >
                 {link.label}
+                <span
+                  className={`absolute inset-x-0 bottom-0 h-px origin-center bg-foreground transition-transform duration-300 ease-out ${
+                    isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                  }`}
+                />
               </Link>
             );
           })}
