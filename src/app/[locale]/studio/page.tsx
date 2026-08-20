@@ -7,7 +7,6 @@ import lightingImage from "@/images/Studio/PHOTO-2026-08-13-11-25-37.jpg";
 import backdropImage from "@/images/Studio/PHOTO-2026-08-13-11-26-57.jpg";
 import makeupImage from "@/images/Studio/PHOTO-2026-08-13-11-24-52.jpg";
 import naturalLightImage from "@/images/Studio/PHOTO-2026-08-13-11-17-39.jpg";
-import kitchenImage from "@/images/Studio/PHOTO-2026-08-19-16-05-39.jpg";
 import gardenImage from "@/images/Studio/PHOTO-2026-08-13-11-26-12.jpg";
 
 export async function generateMetadata({
@@ -95,20 +94,9 @@ export default async function StudioPage({
         </div>
       </div>
 
-      <div className="grid gap-12 md:grid-cols-2 md:items-center mt-20 pt-16 border-t border-border">
-        <div className="relative aspect-[4/5] overflow-hidden order-1 md:order-none">
-          <Image
-            src={kitchenImage}
-            alt={studio.kitchen.title}
-            fill
-            sizes="(min-width: 768px) 50vw, 100vw"
-            className="object-cover"
-          />
-        </div>
-        <div>
-          <h2 className="wordmark font-serif text-2xl font-light">{studio.kitchen.title}</h2>
-          <p className="mt-5 leading-relaxed text-foreground/90">{studio.kitchen.text}</p>
-        </div>
+      <div className="max-w-2xl mx-auto text-center mt-20 pt-16 border-t border-border">
+        <h2 className="wordmark font-serif text-2xl font-light">{studio.kitchen.title}</h2>
+        <p className="mt-5 leading-relaxed text-foreground/90">{studio.kitchen.text}</p>
       </div>
 
       <div className="max-w-2xl mx-auto text-center mt-16">
