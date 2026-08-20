@@ -47,7 +47,6 @@ type Dictionary = {
   subseries?: Partial<Record<CategorySlug, Record<string, Record<string, string>>>>;
   studio: {
     title: string;
-    subtitle: string;
     highlight: string;
     equipment: { title: string; items: string[]; cta: string };
     amenities: {
@@ -250,7 +249,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     studio: {
       title: "INDY Studio",
-      subtitle: "Location professionnelle",
       highlight:
         "Pensé pour la photographie comme pour la vidéo, ce lieu unique de 150 m² vous offre jusqu'à 5 mètres sous plafond pour donner vie à toutes vos idées créatives. Sa flexibilité s'adapte à des besoins et des budgets variés, quel que soit votre projet.",
       equipment: {
@@ -397,7 +395,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ctaButton: "Book now",
     },
     about: {
-      title: "À propos",
+      title: "Indyana Balasse",
       paragraphs: [
         "Derrière chaque image, il y a une rencontre. Une photographie ne commence jamais au déclencheur. Elle commence bien avant. Dans un regard, une conversation, un éclat de rire. C'est là que tout commence.",
         "J'ai grandi dans un studio photo. Mais j'ai trouvé ma propre lumière. Mon père est photographe. J'ai grandi entourée d'appareils, de décors et de créativité. J'ai gardé l'exigence, mais j'ai construit un monde qui m'appartient : plus libre, plus coloré, parfois hors des codes.",
@@ -539,7 +537,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     studio: {
       title: "INDY Studio",
-      subtitle: "Professional location",
       highlight:
         "Designed for both photography and video, this unique 150 m² space gives you up to 5 metres of ceiling height to bring your creative ideas to life. Its flexibility adapts to a variety of needs and budgets, whatever your project.",
       equipment: {
@@ -686,7 +683,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ctaButton: "Book now",
     },
     about: {
-      title: "About",
+      title: "Indyana Balasse",
       paragraphs: [
         "Behind every image, there's an encounter. A photograph never begins at the shutter click. It begins long before. In a look, a conversation, a burst of laughter. That's where it all starts.",
         "I grew up in a photo studio. But I found my own light. My father is a photographer. I grew up surrounded by cameras, sets and creativity. I kept the rigour, but built a world of my own: freer, more colourful, sometimes off the beaten path.",

@@ -94,7 +94,7 @@ export default async function ShootingEvenementPage({
           </Link>
           <Link
             href={`/${locale}/contact`}
-            className="inline-block border border-foreground bg-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] text-background hover:bg-transparent hover:text-foreground transition-colors"
+            className="hidden md:inline-block border border-foreground bg-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] text-background hover:bg-transparent hover:text-foreground transition-colors"
           >
             {offer.ctaButton}
           </Link>

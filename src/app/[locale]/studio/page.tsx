@@ -45,8 +45,7 @@ export default async function StudioPage({
   return (
     <div className="mx-auto max-w-6xl px-6 py-20">
       <header className="max-w-2xl mx-auto text-center mb-16">
-        <p className="text-xs uppercase tracking-[0.2em] text-muted">{studio.subtitle}</p>
-        <h1 className="wordmark font-serif text-4xl font-light mt-3">{studio.title}</h1>
+        <h1 className="wordmark font-serif text-4xl font-light">{studio.title}</h1>
         <div className="mt-4 flex flex-col items-center gap-2 text-muted">
           <a
             href={CONTACT_MAPS_URL}
@@ -67,7 +66,7 @@ export default async function StudioPage({
         </div>
         <Link
           href={`/${locale}/contact`}
-          className="mt-8 inline-block border border-foreground bg-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] text-background hover:bg-transparent hover:text-foreground transition-colors"
+          className="mt-8 hidden md:inline-block border border-foreground bg-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] text-background hover:bg-transparent hover:text-foreground transition-colors"
         >
           {studio.closing.cta}
         </Link>
@@ -101,7 +100,7 @@ export default async function StudioPage({
           </ul>
           <Link
             href={`/${locale}/contact`}
-            className="mt-8 inline-block border border-foreground bg-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] text-background hover:bg-transparent hover:text-foreground transition-colors"
+            className="mt-8 hidden md:inline-block border border-foreground bg-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] text-background hover:bg-transparent hover:text-foreground transition-colors"
           >
             {studio.equipment.cta}
           </Link>

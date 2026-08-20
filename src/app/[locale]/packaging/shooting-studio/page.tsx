@@ -57,7 +57,7 @@ export default async function ShootingStudioPage({
             </Link>
             <Link
               href={`/${locale}/contact`}
-              className="inline-block border border-foreground bg-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] text-background hover:bg-transparent hover:text-foreground transition-colors"
+              className="hidden md:inline-block border border-foreground bg-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] text-background hover:bg-transparent hover:text-foreground transition-colors"
             >
               {offer.bookNowCta}
             </Link>
@@ -102,7 +102,7 @@ export default async function ShootingStudioPage({
         <p className="mt-2 text-sm text-muted">{offer.ctaText}</p>
         <Link
           href={`/${locale}/contact`}
-          className="mt-5 inline-block border border-foreground bg-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] text-background hover:bg-transparent hover:text-foreground transition-colors"
+          className="mt-5 hidden md:inline-block border border-foreground bg-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] text-background hover:bg-transparent hover:text-foreground transition-colors"
         >
           {offer.ctaButton}
         </Link>

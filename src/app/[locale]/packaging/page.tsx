@@ -42,11 +42,6 @@ export default async function PackagingPage({
 
   return (
     <div className="mx-auto max-w-6xl px-6 py-12 sm:py-16 md:py-20">
-      <header className="max-w-2xl mx-auto text-center mb-16">
-        <h1 className="wordmark font-serif text-4xl font-light">{dict.packaging.title}</h1>
-        <p className="mt-4 text-muted">{dict.packaging.intro}</p>
-      </header>
-
       <div className="grid gap-6 sm:grid-cols-2">
         {dict.packaging.offers.map((offer) => {
           const href =
