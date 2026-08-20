@@ -15,7 +15,7 @@ export default function Footer({ locale }: { locale: Locale }) {
 
   return (
     <footer className="border-t border-border">
-      <div className="mx-auto max-w-6xl px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs tracking-wide uppercase text-muted">
+      <div className="flex flex-col gap-4 px-6 py-5 text-xs uppercase tracking-wide text-muted sm:flex-row sm:items-center sm:justify-between sm:px-10">
         <span>
           © {year} INDYANASTUDIO — {dict.footer.rights}
         </span>
