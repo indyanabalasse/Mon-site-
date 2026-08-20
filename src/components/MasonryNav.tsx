@@ -54,7 +54,7 @@ export default function MasonryNav({
                 alt={item.label}
                 fill
                 sizes={GRID_SIZES}
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
                 placeholder="blur"
               />
             )}
@@ -83,7 +83,7 @@ export default function MasonryNav({
           className="group relative mb-6 block w-full break-inside-avoid overflow-hidden"
         >
           {item.covers && item.covers.length > 1 ? (
-            <div className="transition-transform duration-700 group-hover:scale-105">
+            <div className="transition-transform duration-1000 ease-out group-hover:scale-110">
               <TileSlideshow images={item.covers} alt={item.label} sizes={TILE_SIZES} />
             </div>
           ) : (
@@ -91,7 +91,7 @@ export default function MasonryNav({
               src={item.cover}
               alt={item.label}
               sizes={TILE_SIZES}
-              className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+              className="w-full h-auto object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
               placeholder="blur"
             />
           )}
