@@ -63,7 +63,7 @@ export default async function StudioPage({
         </div>
         <Link
           href={`/${locale}/contact`}
-          className="mt-8 inline-block border border-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors"
+          className="mt-8 inline-block border border-foreground bg-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] text-background hover:bg-transparent hover:text-foreground transition-colors"
         >
           {studio.closing.cta}
         </Link>
@@ -97,7 +97,7 @@ export default async function StudioPage({
           </ul>
           <Link
             href={`/${locale}/contact`}
-            className="mt-8 inline-block border border-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors"
+            className="mt-8 inline-block border border-foreground bg-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] text-background hover:bg-transparent hover:text-foreground transition-colors"
           >
             {studio.equipment.cta}
           </Link>

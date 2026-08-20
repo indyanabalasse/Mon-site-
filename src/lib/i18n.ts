@@ -264,7 +264,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           "Système son (sono)",
           "Coin make-up équipé d'un miroir lumineux, pour la préparation des modèles avant le shooting",
         ],
-        cta: "Réserver le studio",
+        cta: "Book now",
       },
       kitchen: {
         title: "Espace cuisine",
@@ -278,7 +278,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         text: "Le lieu dispose également d'un accès à un jardin arboré et paisible, à l'écart de l'agitation urbaine. Cet espace extérieur — avec son grand arbre offrant une ombre naturelle et son hamac — se prête aussi bien à une pause détente qu'à des prises de vue en extérieur.",
       },
       closing: {
-        cta: "Réserver le studio",
+        cta: "Book now",
       },
     },
     packaging: {
@@ -355,7 +355,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ],
       ctaTitle: "Prêt(e) à réserver ?",
       ctaText: "Choisissez votre formule, on s'occupe du reste.",
-      ctaButton: "Réserver ma séance",
+      ctaButton: "Book now",
     },
     offerEvenement: {
       kicker: "Shooting Événement",
@@ -374,7 +374,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ],
       ctaTitle: "Parlons de votre événement",
       ctaText: "Racontez-moi votre projet, on construit la formule ensemble.",
-      ctaButton: "Demander un devis",
+      ctaButton: "Book now",
     },
     offerPhotobooth: {
       kicker: "Spécial Photobooth",
@@ -391,7 +391,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       criteria: ["Idéal pour mariages, anniversaires, soirées d'entreprise"],
       ctaTitle: "Envie d'un Fun Booth à votre soirée ?",
       ctaText: "Parlons de votre événement pour composer l'animation idéale.",
-      ctaButton: "Demander un devis",
+      ctaButton: "Book now",
     },
     about: {
       title: "À propos",
@@ -551,7 +551,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           "Sound system",
           "Make-up corner with a lit mirror, for preparing models before the shoot",
         ],
-        cta: "Book the studio",
+        cta: "Book now",
       },
       kitchen: {
         title: "Kitchen area",
@@ -565,7 +565,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         text: "The location also gives access to a peaceful, tree-lined garden, away from the city bustle. This outdoor space — with its large shade tree and hammock — is just as suited to a relaxing break as to outdoor shots.",
       },
       closing: {
-        cta: "Book the studio",
+        cta: "Book now",
       },
     },
     packaging: {
@@ -642,7 +642,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ],
       ctaTitle: "Ready to book?",
       ctaText: "Pick your package, we'll take care of the rest.",
-      ctaButton: "Book my session",
+      ctaButton: "Book now",
     },
     offerEvenement: {
       kicker: "Event Shoot",
@@ -661,7 +661,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ],
       ctaTitle: "Let's talk about your event",
       ctaText: "Tell me about your project and we'll build the right package together.",
-      ctaButton: "Request a quote",
+      ctaButton: "Book now",
     },
     offerPhotobooth: {
       kicker: "Photo Booth Special",
@@ -678,7 +678,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       criteria: ["Perfect for weddings, birthdays, corporate parties"],
       ctaTitle: "Want a Fun Booth at your party?",
       ctaText: "Let's talk about your event to put together the ideal animation.",
-      ctaButton: "Request a quote",
+      ctaButton: "Book now",
     },
     about: {
       title: "About",
