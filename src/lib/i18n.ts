@@ -306,7 +306,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         {
           slug: "photobooth",
           title: "Spécial Photobooth",
-          tagline: "Une animation photo live et déguisée qui rassemble vos invités toute la soirée.",
+          tagline: "Une animation photo live et déguisée qui colore vos events.",
           cta: "Découvrir",
         },
         {
@@ -594,7 +594,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         {
           slug: "photobooth",
           title: "Photo Booth Special",
-          tagline: "A live, costume-filled photo animation that brings your guests together all night.",
+          tagline: "A live, costume-filled photo animation that colors your events.",
           cta: "Discover",
         },
         {
