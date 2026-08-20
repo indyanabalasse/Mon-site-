@@ -269,15 +269,15 @@ export const dictionaries: Record<Locale, Dictionary> = {
         items: [
           {
             title: "Jardin",
-            text: "Un jardin arboré et paisible, à l'écart de l'agitation urbaine, avec un grand arbre offrant de l'ombre et un hamac. Idéal pour une pause détente ou des prises de vue en extérieur.",
+            text: "Idéal pour des prises de vue en extérieur.",
           },
           {
             title: "Cuisine",
-            text: "Cuisine entièrement équipée (cuisinière, hotte, réfrigérateur, machine à café, micro-ondes), avec une grande table conviviale pour les pauses et les repas de l'équipe.",
+            text: "Cuisine équipée, avec salle à manger.",
           },
           {
             title: "Toilette & douche",
-            text: "Toilette et douche à disposition tout au long de la journée de location.",
+            text: "Toilette et douche.",
           },
         ],
       },
@@ -556,15 +556,15 @@ export const dictionaries: Record<Locale, Dictionary> = {
         items: [
           {
             title: "Garden",
-            text: "A peaceful, tree-lined garden away from the city bustle, with a large shade tree and a hammock. Ideal for a relaxing break or outdoor shots.",
+            text: "Ideal for outdoor shots.",
           },
           {
             title: "Kitchen",
-            text: "Fully equipped kitchen (cooker, extractor hood, fridge, coffee machine, microwave), with a large table for the team's breaks and meals.",
+            text: "Equipped kitchen, with dining area.",
           },
           {
             title: "Restroom & shower",
-            text: "Restroom and shower available throughout the rental day.",
+            text: "Restroom and shower.",
           },
         ],
       },
