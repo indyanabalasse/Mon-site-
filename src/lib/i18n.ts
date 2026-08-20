@@ -78,13 +78,10 @@ type Dictionary = {
     bookNowCta: string;
     packagesTitle: string;
     packages: { title: string; photos: string; price: string }[];
-    packagesNote: string;
-    processTitle: string;
-    process: { title: string; text: string }[];
-    addonsTitle: string;
-    addonsNote: string;
+    processLabel: string;
+    process: string[];
+    addonsLabel: string;
     addons: { title: string; text: string }[];
-    criteria: string[];
     ctaTitle: string;
     ctaText: string;
     ctaButton: string;
@@ -320,7 +317,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     offerStudio: {
       kicker: "Shooting Studio",
       title: "Une séance sur mesure, dans un cadre pensé pour vous",
-      intro: "Portrait, création artistique ou maternité : chaque séance studio est une rencontre avant d'être une photo. On prend le temps de comprendre ce que vous voulez raconter, puis on le met en lumière.",
+      intro: "Portrait, création artistique ou maternité : une séance sur mesure dans notre studio du 143 rue du Ham à Uccle, matériel et commodités inclus.",
       viewShootsCta: "Voir les shootings",
       bookNowCta: "Book now",
       packagesTitle: "Nos formules",
@@ -336,41 +333,23 @@ export const dictionaries: Record<Locale, Dictionary> = {
           price: "475 €",
         },
       ],
-      packagesNote: "Studio, matériel et commodités inclus dans le prix.",
-      processTitle: "Le déroulé",
+      processLabel: "Le déroulé",
       process: [
-        {
-          title: "Briefing & direction artistique",
-          text: "On cadre ensemble le projet et son univers.",
-        },
-        {
-          title: "Set-up studio & lumière",
-          text: "Studio et éclairage installés selon vos besoins.",
-        },
-        {
-          title: "Prise de vue",
-          text: "Place au shooting.",
-        },
-        {
-          title: "Post-production",
-          text: "Sélection et retouche des photos.",
-        },
+        "Briefing & direction artistique",
+        "Set-up studio & lumière",
+        "Prise de vue",
+        "Post-production",
       ],
-      addonsTitle: "En option",
-      addonsNote: "Pour un shooting réussi de A à Z.",
+      addonsLabel: "En option",
       addons: [
         {
           title: "Stylisme",
-          text: "Un styliste vous accompagne pour composer la tenue idéale avant la séance.",
+          text: "Composer la tenue idéale avant la séance.",
         },
         {
           title: "Maquillage",
-          text: "Une maquilleuse professionnelle prépare votre peau et votre look pour l'objectif.",
+          text: "Peau et look préparés pour l'objectif.",
         },
-      ],
-      criteria: [
-        "Séance en studio, au 143 rue du Ham à Uccle",
-        "Studio, matériel et commodités inclus dans le prix",
       ],
       ctaTitle: "Prêt(e) à réserver ?",
       ctaText: "Choisissez votre formule, on s'occupe du reste.",
@@ -624,7 +603,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     offerStudio: {
       kicker: "Studio Shoot",
       title: "A tailored session, in a space designed for you",
-      intro: "Portrait, creative concept or maternity: every studio session is an encounter before it's a photo. We take the time to understand what you want to tell, then bring it to light.",
+      intro: "Portrait, creative concept or maternity: a tailored session in our studio at 143 rue du Ham, Uccle, equipment and amenities included.",
       viewShootsCta: "View the shoots",
       bookNowCta: "Book now",
       packagesTitle: "Our packages",
@@ -640,41 +619,23 @@ export const dictionaries: Record<Locale, Dictionary> = {
           price: "€475",
         },
       ],
-      packagesNote: "Studio, equipment and amenities included in the price.",
-      processTitle: "How it works",
+      processLabel: "How it works",
       process: [
-        {
-          title: "Briefing & creative direction",
-          text: "We frame the project and its visual world together.",
-        },
-        {
-          title: "Studio & lighting set-up",
-          text: "Studio and lighting set up to match your project.",
-        },
-        {
-          title: "The shoot",
-          text: "Time for the session itself.",
-        },
-        {
-          title: "Post-production",
-          text: "Selection and retouching of the photos.",
-        },
+        "Briefing & creative direction",
+        "Studio & lighting set-up",
+        "The shoot",
+        "Post-production",
       ],
-      addonsTitle: "Add-ons",
-      addonsNote: "For a shoot that goes off without a hitch.",
+      addonsLabel: "Add-ons",
       addons: [
         {
           title: "Styling",
-          text: "A stylist helps you put together the perfect outfit before the session.",
+          text: "Putting together the perfect outfit before the session.",
         },
         {
           title: "Make-up",
-          text: "A professional make-up artist preps your skin and look for the camera.",
+          text: "Skin and look prepped for the camera.",
         },
-      ],
-      criteria: [
-        "Studio session at 143 rue du Ham, Uccle",
-        "Studio, equipment and amenities included in the price",
       ],
       ctaTitle: "Ready to book?",
       ctaText: "Pick your package, we'll take care of the rest.",
