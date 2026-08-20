@@ -47,7 +47,7 @@ export default function Header({ locale }: { locale: Locale }) {
   }, [activeHref]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
+    <header className="sticky top-0 z-40 bg-background/90 backdrop-blur">
       <div className="flex items-center justify-between px-6 py-5 sm:px-10">
         <Link
           href={`/${locale}`}

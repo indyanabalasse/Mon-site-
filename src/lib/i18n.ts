@@ -62,7 +62,6 @@ type Dictionary = {
       slug: string;
       title: string;
       tagline: string;
-      cta: string;
     }[];
     gift: {
       title: string;
@@ -134,6 +133,24 @@ type Dictionary = {
   };
   footer: {
     rights: string;
+  };
+  newsletter: {
+    heading: string;
+    intro: string;
+    emailPlaceholder: string;
+    submitCta: string;
+    consent: string;
+    successMessage: string;
+    alreadySubscribedOrGenericSuccess: string;
+    errorMessage: string;
+    confirmedTitle: string;
+    confirmedBody: string;
+    unsubscribedTitle: string;
+    unsubscribedBody: string;
+    confirmEmailSubject: string;
+    confirmEmailHeading: string;
+    confirmEmailBody: string;
+    confirmEmailCta: string;
   };
 };
 
@@ -293,25 +310,21 @@ export const dictionaries: Record<Locale, Dictionary> = {
           slug: "shooting-studio",
           title: "Shooting Studio",
           tagline: "",
-          cta: "Découvrir",
         },
         {
           slug: "shooting-evenement",
           title: "Shooting Événement",
           tagline: "",
-          cta: "Découvrir",
         },
         {
           slug: "photobooth",
           title: "Spécial Photobooth",
           tagline: "",
-          cta: "Découvrir",
         },
         {
           slug: "location-studio",
           title: "Location Studio",
           tagline: "",
-          cta: "Découvrir",
         },
       ],
       gift: {
@@ -423,6 +436,31 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     footer: {
       rights: "Tous droits réservés.",
+    },
+    newsletter: {
+      heading: "La newsletter",
+      intro:
+        "De temps en temps, un mot sur une nouvelle série, un shooting ou une actualité du studio. Rien de plus.",
+      emailPlaceholder: "Votre email",
+      submitCta: "S'inscrire",
+      consent:
+        "En vous inscrivant, vous acceptez de recevoir occasionnellement des nouvelles d'INDYANASTUDIO. Désabonnement possible à tout moment via le lien présent dans chaque email.",
+      successMessage:
+        "Presque terminé : vérifiez votre boîte mail et cliquez sur le lien de confirmation pour finaliser votre inscription.",
+      alreadySubscribedOrGenericSuccess:
+        "Si cette adresse n'est pas déjà inscrite, un email de confirmation vient de vous être envoyé.",
+      errorMessage: "Une erreur est survenue. Réessayez dans quelques instants.",
+      confirmedTitle: "Inscription confirmée",
+      confirmedBody:
+        "Votre adresse est bien enregistrée. Vous recevrez de temps en temps des nouvelles d'INDYANASTUDIO.",
+      unsubscribedTitle: "Désabonnement effectué",
+      unsubscribedBody:
+        "Votre adresse a été retirée de la liste. Vous ne recevrez plus d'emails d'INDYANASTUDIO.",
+      confirmEmailSubject: "Confirmez votre inscription à la newsletter",
+      confirmEmailHeading: "Confirmez votre inscription",
+      confirmEmailBody:
+        "Cliquez sur le bouton ci-dessous pour confirmer votre inscription à la newsletter d'INDYANASTUDIO. Si vous n'êtes pas à l'origine de cette demande, ignorez simplement cet email.",
+      confirmEmailCta: "Confirmer mon inscription",
     },
   },
   en: {
@@ -580,25 +618,21 @@ export const dictionaries: Record<Locale, Dictionary> = {
           slug: "shooting-studio",
           title: "Studio Shoot",
           tagline: "",
-          cta: "Discover",
         },
         {
           slug: "shooting-evenement",
           title: "Event Shoot",
           tagline: "",
-          cta: "Discover",
         },
         {
           slug: "photobooth",
           title: "Photo Booth Special",
           tagline: "",
-          cta: "Discover",
         },
         {
           slug: "location-studio",
           title: "Studio Rental",
           tagline: "",
-          cta: "Discover",
         },
       ],
       gift: {
@@ -710,6 +744,29 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     footer: {
       rights: "All rights reserved.",
+    },
+    newsletter: {
+      heading: "The newsletter",
+      intro:
+        "Every once in a while, a note about a new series, a shoot, or studio news. Nothing more.",
+      emailPlaceholder: "Your email",
+      submitCta: "Subscribe",
+      consent:
+        "By signing up, you agree to occasionally receive news from INDYANASTUDIO. You can unsubscribe at any time via the link in every email.",
+      successMessage:
+        "Almost there: check your inbox and click the confirmation link to complete your subscription.",
+      alreadySubscribedOrGenericSuccess:
+        "If this address isn't already subscribed, a confirmation email has just been sent to you.",
+      errorMessage: "Something went wrong. Please try again in a moment.",
+      confirmedTitle: "Subscription confirmed",
+      confirmedBody: "Your address is now on the list. You'll hear from INDYANASTUDIO from time to time.",
+      unsubscribedTitle: "Unsubscribed",
+      unsubscribedBody: "Your address has been removed from the list. You won't receive emails from INDYANASTUDIO anymore.",
+      confirmEmailSubject: "Confirm your newsletter subscription",
+      confirmEmailHeading: "Confirm your subscription",
+      confirmEmailBody:
+        "Click the button below to confirm your subscription to the INDYANASTUDIO newsletter. If you didn't request this, just ignore this email.",
+      confirmEmailCta: "Confirm my subscription",
     },
   },
 };

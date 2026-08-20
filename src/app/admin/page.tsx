@@ -5,7 +5,7 @@ import { getDashboardData, isPostHogConfigured } from "@/lib/posthog-query";
 import type { DashboardData } from "@/lib/posthog-query";
 import AdminDashboard from "@/components/admin/AdminDashboard";
 import NotConfiguredNotice from "@/components/admin/NotConfiguredNotice";
-import LogoutButton from "@/components/admin/LogoutButton";
+import AdminHeader from "@/components/admin/AdminHeader";
 
 const DEFAULT_DAYS = 30;
 
@@ -46,14 +46,7 @@ export default async function AdminPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="border-b border-border">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <span className="font-serif text-lg sm:text-xl font-medium">
-            INDYANASTUDIO
-          </span>
-          <LogoutButton />
-        </div>
-      </header>
+      <AdminHeader active="/admin" />
 
       <main className="flex-1 mx-auto w-full max-w-6xl px-6 py-10">
         {!configured ? (

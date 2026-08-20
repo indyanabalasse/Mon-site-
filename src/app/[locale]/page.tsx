@@ -5,6 +5,7 @@ import { INSTAGRAM_URL } from "@/lib/site";
 import { InstagramIcon } from "@/components/icons";
 import HeroSlideshow from "@/components/HeroSlideshow";
 import MasonryNav from "@/components/MasonryNav";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import Link from "next/link";
 
 export async function generateMetadata({
@@ -94,6 +95,12 @@ export default async function HomePage({
           >
             {dict.instagramBanner.cta}
           </a>
+        </div>
+      </section>
+
+      <section className="border-t border-border">
+        <div className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
+          <NewsletterSignup locale={locale} />
         </div>
       </section>
     </div>
