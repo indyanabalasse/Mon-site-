@@ -65,32 +65,52 @@ export default async function ShootingStudioPage({
         </div>
       </div>
 
-      <div className="grid gap-8 sm:grid-cols-3">
-        {offer.styles.map((style) => (
-          <div key={style.title} className="border-t border-border pt-6">
-            <h2 className="wordmark font-serif text-xl font-light">{style.title}</h2>
-            <p className="mt-3 text-sm leading-relaxed text-muted">{style.text}</p>
-          </div>
-        ))}
+      <div>
+        <h2 className="wordmark font-serif text-2xl font-light text-center mb-10">
+          {offer.packagesTitle}
+        </h2>
+        <div className="grid gap-8 sm:grid-cols-2 max-w-2xl mx-auto">
+          {offer.packages.map((pkg) => (
+            <div key={pkg.title} className="border border-border p-8 text-center">
+              <h3 className="wordmark font-serif text-xl font-light">{pkg.title}</h3>
+              <p className="mt-2 text-sm text-muted">{pkg.photos}</p>
+              <p className="wordmark font-serif text-4xl font-light mt-6">{pkg.price}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-6 text-center text-sm text-muted">{offer.packagesNote}</p>
+      </div>
+
+      <div className="mt-20 pt-16 border-t border-border">
+        <h2 className="wordmark font-serif text-2xl font-light text-center mb-10">
+          {offer.processTitle}
+        </h2>
+        <div className="grid gap-8 sm:grid-cols-4 max-w-3xl mx-auto text-center">
+          {offer.process.map((step, i) => (
+            <div key={step.title}>
+              <span className="wordmark font-serif text-xl text-muted">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="mt-2 text-sm font-medium">{step.title}</h3>
+              <p className="mt-1 text-xs text-muted leading-relaxed">{step.text}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="mt-20 pt-16 border-t border-border max-w-2xl mx-auto">
-        <h2 className="wordmark font-serif text-2xl font-light text-center mb-12">
-          {offer.journeyTitle}
+        <h2 className="wordmark font-serif text-2xl font-light text-center mb-2">
+          {offer.addonsTitle}
         </h2>
-        <ol className="space-y-8">
-          {offer.journey.map((step, i) => (
-            <li key={step.title} className="flex gap-6">
-              <span className="wordmark font-serif text-2xl text-muted shrink-0">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <div>
-                <h3 className="font-medium">{step.title}</h3>
-                <p className="mt-1 text-sm text-muted leading-relaxed">{step.text}</p>
-              </div>
-            </li>
+        <p className="text-center text-sm text-muted mb-10">{offer.addonsNote}</p>
+        <div className="grid gap-8 sm:grid-cols-2">
+          {offer.addons.map((addon) => (
+            <div key={addon.title} className="text-center">
+              <h3 className="wordmark font-serif text-lg font-light">{addon.title}</h3>
+              <p className="mt-2 text-sm text-muted leading-relaxed">{addon.text}</p>
+            </div>
           ))}
-        </ol>
+        </div>
       </div>
 
       <ul className="mt-16 space-y-3 max-w-xl mx-auto">

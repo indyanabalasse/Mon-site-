@@ -76,9 +76,14 @@ type Dictionary = {
     intro: string;
     viewShootsCta: string;
     bookNowCta: string;
-    styles: { title: string; text: string }[];
-    journeyTitle: string;
-    journey: { title: string; text: string }[];
+    packagesTitle: string;
+    packages: { title: string; photos: string; price: string }[];
+    packagesNote: string;
+    processTitle: string;
+    process: { title: string; text: string }[];
+    addonsTitle: string;
+    addonsNote: string;
+    addons: { title: string; text: string }[];
     criteria: string[];
     ctaTitle: string;
     ctaText: string;
@@ -318,55 +323,58 @@ export const dictionaries: Record<Locale, Dictionary> = {
       intro: "Portrait, création artistique ou maternité : chaque séance studio est une rencontre avant d'être une photo. On prend le temps de comprendre ce que vous voulez raconter, puis on le met en lumière.",
       viewShootsCta: "Voir les shootings",
       bookNowCta: "Book now",
-      styles: [
+      packagesTitle: "Nos formules",
+      packages: [
         {
-          title: "Essentielle",
-          text: "Une séance épurée en studio, pensée pour un portrait sincère. Matériel professionnel et retouches inclus, remise de 10 photos en noir et blanc.",
+          title: "Demi-journée",
+          photos: "5 photos livrées",
+          price: "350 €",
         },
         {
-          title: "Créative",
-          text: "Une mise en scène plus affirmée, pour des images qui sortent des codes. Matériel professionnel et retouches inclus, remise de 15 photos.",
-        },
-        {
-          title: "Femme enceinte",
-          text: "Une séance dédiée à ce moment suspendu, tout en douceur. Matériel professionnel et retouches inclus.",
+          title: "Journée complète",
+          photos: "12 photos livrées",
+          price: "475 €",
         },
       ],
-      journeyTitle: "Votre séance, étape par étape",
-      journey: [
+      packagesNote: "Studio, matériel et commodités inclus dans le prix.",
+      processTitle: "Le déroulé",
+      process: [
         {
-          title: "Rendez-vous découverte",
-          text: "Un premier échange pour comprendre votre projet et cerner précisément vos envies.",
+          title: "Briefing & direction artistique",
+          text: "On cadre ensemble le projet et son univers.",
         },
         {
-          title: "Direction artistique",
-          text: "Brainstorming et création d'un moodboard sur Pinterest, pour poser ensemble l'univers visuel de la séance.",
+          title: "Set-up studio & lumière",
+          text: "Studio et éclairage installés selon vos besoins.",
         },
         {
-          title: "Accueil sur le plateau",
-          text: "Le jour J, vous êtes accueilli(e) dans un cadre pensé pour vous mettre pleinement à l'aise.",
+          title: "Prise de vue",
+          text: "Place au shooting.",
         },
         {
-          title: "Stylisme & maquillage",
-          text: "Un styliste et une maquilleuse sont mis à votre disposition pour préparer chaque détail avant l'objectif.",
+          title: "Post-production",
+          text: "Sélection et retouche des photos.",
+        },
+      ],
+      addonsTitle: "En option",
+      addonsNote: "Pour un shooting réussi de A à Z.",
+      addons: [
+        {
+          title: "Stylisme",
+          text: "Un styliste vous accompagne pour composer la tenue idéale avant la séance.",
         },
         {
-          title: "La séance",
-          text: "Le shooting démarre, porté par une direction claire et une confiance installée en amont.",
-        },
-        {
-          title: "Retouche photo",
-          text: "Une fois la séance terminée, chaque image est sublimée avec soin avant de vous être livrée.",
+          title: "Maquillage",
+          text: "Une maquilleuse professionnelle prépare votre peau et votre look pour l'objectif.",
         },
       ],
       criteria: [
         "Séance en studio, au 143 rue du Ham à Uccle",
-        "Matériel professionnel et retouches toujours inclus",
-        "Tarif communiqué sur devis, selon la formule choisie",
+        "Studio, matériel et commodités inclus dans le prix",
       ],
-      ctaTitle: "Envie d'en discuter ?",
-      ctaText: "Chaque séance est unique : on l'ajuste ensemble selon vos envies.",
-      ctaButton: "Demander un devis",
+      ctaTitle: "Prêt(e) à réserver ?",
+      ctaText: "Choisissez votre formule, on s'occupe du reste.",
+      ctaButton: "Réserver ma séance",
     },
     offerEvenement: {
       kicker: "Shooting Événement",
@@ -619,55 +627,58 @@ export const dictionaries: Record<Locale, Dictionary> = {
       intro: "Portrait, creative concept or maternity: every studio session is an encounter before it's a photo. We take the time to understand what you want to tell, then bring it to light.",
       viewShootsCta: "View the shoots",
       bookNowCta: "Book now",
-      styles: [
+      packagesTitle: "Our packages",
+      packages: [
         {
-          title: "Essential",
-          text: "A clean studio session, built for a sincere portrait. Professional equipment and retouching included, 10 black and white photos delivered.",
+          title: "Half day",
+          photos: "5 photos delivered",
+          price: "€350",
         },
         {
-          title: "Creative",
-          text: "A bolder staging, for images that step outside the usual codes. Professional equipment and retouching included, 15 photos delivered.",
-        },
-        {
-          title: "Maternity",
-          text: "A gentle session dedicated to this suspended moment. Professional equipment and retouching included.",
+          title: "Full day",
+          photos: "12 photos delivered",
+          price: "€475",
         },
       ],
-      journeyTitle: "Your session, step by step",
-      journey: [
+      packagesNote: "Studio, equipment and amenities included in the price.",
+      processTitle: "How it works",
+      process: [
         {
-          title: "Discovery meeting",
-          text: "A first conversation to understand your project and pin down exactly what you're after.",
+          title: "Briefing & creative direction",
+          text: "We frame the project and its visual world together.",
         },
         {
-          title: "Creative direction",
-          text: "Brainstorming and building a Pinterest moodboard together, to set the visual direction of the session.",
-        },
-        {
-          title: "Welcome on set",
-          text: "On the day, you're welcomed into a space designed to put you fully at ease.",
-        },
-        {
-          title: "Styling & make-up",
-          text: "A stylist and make-up artist are on hand to prepare every detail before the camera.",
+          title: "Studio & lighting set-up",
+          text: "Studio and lighting set up to match your project.",
         },
         {
           title: "The shoot",
-          text: "The session begins, carried by a clear direction and the trust built beforehand.",
+          text: "Time for the session itself.",
         },
         {
-          title: "Retouching",
-          text: "Once the session wraps, every image is carefully refined before it's delivered to you.",
+          title: "Post-production",
+          text: "Selection and retouching of the photos.",
+        },
+      ],
+      addonsTitle: "Add-ons",
+      addonsNote: "For a shoot that goes off without a hitch.",
+      addons: [
+        {
+          title: "Styling",
+          text: "A stylist helps you put together the perfect outfit before the session.",
+        },
+        {
+          title: "Make-up",
+          text: "A professional make-up artist preps your skin and look for the camera.",
         },
       ],
       criteria: [
         "Studio session at 143 rue du Ham, Uccle",
-        "Professional equipment and retouching always included",
-        "Rate quoted on request, depending on the package",
+        "Studio, equipment and amenities included in the price",
       ],
-      ctaTitle: "Want to talk it through?",
-      ctaText: "Every session is unique: we shape it together around what you want.",
-      ctaButton: "Request a quote",
+      ctaTitle: "Ready to book?",
+      ctaText: "Pick your package, we'll take care of the rest.",
+      ctaButton: "Book my session",
     },
     offerEvenement: {
       kicker: "Event Shoot",
