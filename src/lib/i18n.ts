@@ -289,7 +289,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       },
     },
     packaging: {
-      title: "Nos prestations",
+      title: "Booking",
       intro: "Quatre façons de travailler ensemble, une seule exigence : des images qui vous ressemblent vraiment. Trouvez l'offre qui correspond à votre projet.",
       offers: [
         {
@@ -325,7 +325,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     offerStudio: {
       kicker: "Shooting Studio",
-      title: "Une séance sur mesure, dans un cadre pensé pour vous",
+      title: "Shooting Photo",
       intro: "Portrait, création artistique ou maternité : une séance sur mesure dans notre studio du 143 rue du Ham à Uccle, matériel et commodités inclus.",
       viewShootsCta: "Voir les shootings",
       bookNowCta: "Book now",
@@ -385,7 +385,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     offerPhotobooth: {
       kicker: "Spécial Photobooth",
-      title: "Une animation photo qui rassemble vos invités",
+      title: "Une animation photo qui colore vos soirées",
       intro: "Loin de la cabine fermée et des selfies figés, Fun Booth propose une expérience photo vivante, encadrée par un œil professionnel : un moment qui rassemble les invités autant qu'il immortalise la soirée.",
       viewSeriesCta: "Voir mes photobooths",
       includesTitle: "Ce qui est inclus",
@@ -582,7 +582,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       },
     },
     packaging: {
-      title: "Our Services",
+      title: "Booking",
       intro: "Four ways to work together, one standard: images that truly look like you. Find the offer that fits your project.",
       offers: [
         {
@@ -618,7 +618,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     offerStudio: {
       kicker: "Studio Shoot",
-      title: "A tailored session, in a space designed for you",
+      title: "Photo Shoot",
       intro: "Portrait, creative concept or maternity: a tailored session in our studio at 143 rue du Ham, Uccle, equipment and amenities included.",
       viewShootsCta: "View the shoots",
       bookNowCta: "Book now",
@@ -678,7 +678,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     offerPhotobooth: {
       kicker: "Photo Booth Special",
-      title: "A photo animation that brings your guests together",
+      title: "A photo animation that colors your parties",
       intro: "Far from the closed booth and stiff selfies, Fun Booth offers a living photo experience guided by a professional eye: a moment that brings guests together as much as it captures the night.",
       viewSeriesCta: "View my photo booths",
       includesTitle: "What's included",
