@@ -22,9 +22,9 @@ export async function generateMetadata({
   const path = `/${locale}/studio`;
   return {
     title: dict.studio.title,
-    description: dict.studio.intro,
+    description: dict.studio.highlight,
     alternates: { canonical: path },
-    openGraph: { title: dict.studio.title, description: dict.studio.intro, url: path },
+    openGraph: { title: dict.studio.title, description: dict.studio.highlight, url: path },
   };
 }
 
@@ -75,10 +75,9 @@ export default async function StudioPage({
       </div>
 
       <div className="max-w-3xl mx-auto text-center mb-20">
-        <p className="wordmark font-serif text-xl sm:text-2xl font-light text-foreground">
+        <p className="text-lg sm:text-xl leading-relaxed text-foreground/90">
           {studio.highlight}
         </p>
-        <p className="mt-6 leading-relaxed text-foreground/90">{studio.intro}</p>
       </div>
 
       <div className="grid gap-12 md:grid-cols-2 md:items-center">
@@ -92,6 +91,12 @@ export default async function StudioPage({
               </li>
             ))}
           </ul>
+          <Link
+            href={`/${locale}/contact`}
+            className="mt-8 inline-block border border-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors"
+          >
+            {studio.equipment.cta}
+          </Link>
         </div>
         <div className="relative aspect-[4/5] overflow-hidden">
           <Image

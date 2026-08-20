@@ -44,8 +44,7 @@ type Dictionary = {
     title: string;
     subtitle: string;
     highlight: string;
-    intro: string;
-    equipment: { title: string; items: string[] };
+    equipment: { title: string; items: string[]; cta: string };
     kitchen: { title: string; text: string };
     sanitary: { text: string };
     garden: { title: string; text: string };
@@ -201,9 +200,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       title: "INDY Studio",
       subtitle: "Location professionnelle",
       highlight:
-        "Pensé pour la photographie comme pour la vidéo, cet espace de 150 m² offre une hauteur sous plafond variant de 3 à 5 mètres — de quoi s'adapter à des besoins et des budgets différents.",
-      intro:
-        "Aménagé sous une charpente blanche, ce studio bénéficie d'un bel apport de lumière naturelle grâce à ses multiples fenêtres de toit. Mur en briques blanchies, volumes généreux et sol carrelé clair composent un décor épuré et intemporel, adapté à tout type de production : portrait, mode, beauté, packshot ou vidéo.",
+        "Pensé pour la photographie comme pour la vidéo, ce lieu unique de 150 m² vous offre jusqu'à 5 mètres sous plafond pour donner vie à toutes vos idées créatives. Sa flexibilité s'adapte à des besoins et des budgets variés, quel que soit votre projet.",
       equipment: {
         title: "Équipement mis à disposition",
         items: [
@@ -213,6 +210,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           "Ventilateur, échelle et accessoires techniques",
           "Coin make-up équipé d'un miroir lumineux, pour la préparation des modèles avant le shooting",
         ],
+        cta: "Réserver du matériel",
       },
       kitchen: {
         title: "Espace cuisine",
@@ -457,9 +455,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       title: "INDY Studio",
       subtitle: "Professional location",
       highlight:
-        "Designed for both photography and video, this 150 m² space offers a ceiling height ranging from 3 to 5 metres — adaptable to a variety of needs and budgets.",
-      intro:
-        "Set beneath a white timber roof structure, this studio enjoys lovely natural light through its multiple skylights. Whitewashed brick walls, generous volumes and a light tiled floor create a clean, timeless setting suited to any type of production: portrait, fashion, beauty, packshot or video.",
+        "Designed for both photography and video, this unique 150 m² space gives you up to 5 metres of ceiling height to bring your creative ideas to life. Its flexibility adapts to a variety of needs and budgets, whatever your project.",
       equipment: {
         title: "Equipment provided",
         items: [
@@ -469,6 +465,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           "Fan, ladder and technical accessories",
           "Make-up corner with a lit mirror, for preparing models before the shoot",
         ],
+        cta: "Book equipment",
       },
       kitchen: {
         title: "Kitchen area",
