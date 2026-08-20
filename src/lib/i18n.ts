@@ -90,6 +90,7 @@ type Dictionary = {
     kicker: string;
     title: string;
     intro: string;
+    viewSeriesCta: string;
     includesTitle: string;
     includes: string[];
     criteriaTitle: string;
@@ -359,6 +360,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       kicker: "Shooting Événement",
       title: "Votre événement, raconté en images",
       intro: "Mariage, anniversaire, festival, soirée d'entreprise : je me glisse dans votre événement pour en capturer l'énergie et les instants qu'on ne rejoue jamais deux fois.",
+      viewSeriesCta: "Voir mes événements",
       includesTitle: "Ce qui est inclus",
       includes: [
         "Reportage complet de votre événement, en demi-journée ou journée complète",
@@ -644,6 +646,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       kicker: "Event Shoot",
       title: "Your event, told in images",
       intro: "Wedding, birthday, festival, corporate party: I slip into your event to capture its energy and the moments that only happen once.",
+      viewSeriesCta: "View my events",
       includesTitle: "What's included",
       includes: [
         "Full event coverage, half-day or full-day",

@@ -55,6 +55,12 @@ export default async function ShootingEvenementPage({
 
       <div className="max-w-2xl mx-auto text-center mb-16">
         <p className="leading-relaxed text-muted">{offer.intro}</p>
+        <Link
+          href={`/${locale}/portfolio/evenementiel`}
+          className="mt-6 inline-block border border-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors"
+        >
+          {offer.viewSeriesCta}
+        </Link>
       </div>
 
       <div className="grid gap-12 sm:grid-cols-2 max-w-2xl mx-auto">
