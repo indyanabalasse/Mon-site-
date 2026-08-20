@@ -33,24 +33,22 @@ export default async function ShootingStudioPage({
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-20">
-      <header className="max-w-2xl mx-auto text-center mb-16">
-        <p className="text-xs uppercase tracking-[0.2em] text-muted">{offer.kicker}</p>
-        <h1 className="wordmark font-serif text-4xl font-light mt-3">{offer.title}</h1>
-      </header>
-
-      <div className="relative aspect-[16/9] overflow-hidden mb-16">
-        <Image
-          src={heroImage}
-          alt={offer.title}
-          fill
-          sizes="100vw"
-          className="object-cover"
-          priority
-        />
-      </div>
-
-      <div className="max-w-2xl mx-auto text-center mb-16">
-        <p className="leading-relaxed text-muted">{offer.intro}</p>
+      <div className="grid gap-12 md:grid-cols-2 md:items-center mb-16">
+        <div className="relative aspect-[4/5] overflow-hidden order-1 md:order-none">
+          <Image
+            src={heroImage}
+            alt={offer.title}
+            fill
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div>
+          <p className="text-xs uppercase tracking-[0.2em] text-muted">{offer.kicker}</p>
+          <h1 className="wordmark font-serif text-4xl font-light mt-3">{offer.title}</h1>
+          <p className="mt-5 leading-relaxed text-muted">{offer.intro}</p>
+        </div>
       </div>
 
       <div className="grid gap-8 sm:grid-cols-3">
