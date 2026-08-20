@@ -98,11 +98,16 @@ export default async function HomePage({
         </div>
       </section>
 
-      <section className="border-t border-border">
-        <div className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
-          <NewsletterSignup locale={locale} />
-        </div>
-      </section>
+      {/* Resend's shared test sender can only reach the account owner, so the
+          form would fail for every real visitor until a verified domain is set
+          in NEWSLETTER_FROM. Hide the section rather than show a broken form. */}
+      {process.env.NEWSLETTER_FROM && (
+        <section className="border-t border-border">
+          <div className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
+            <NewsletterSignup locale={locale} />
+          </div>
+        </section>
+      )}
     </div>
   );
 }

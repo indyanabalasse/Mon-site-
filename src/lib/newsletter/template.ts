@@ -1,4 +1,10 @@
-import { CONTACT_EMAIL, INSTAGRAM_URL, SITE_NAME } from "@/lib/site";
+import {
+  CONTACT_EMAIL,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_HREF,
+  INSTAGRAM_URL,
+  SITE_URL,
+} from "@/lib/site";
 
 /**
  * Renders a complete, standalone newsletter email HTML document.
@@ -16,17 +22,36 @@ const COLOR_FOREGROUND = "#171717";
 const COLOR_BORDER = "#e5e5e5";
 const COLOR_MUTED = "#6b6b6b";
 
+const CONTENT_WIDTH = 560;
+
 export function renderNewsletterEmail(params: {
   locale: "fr" | "en";
   preheader?: string;
+  /** Small uppercase label above the heading, e.g. the series' category. */
+  kicker?: string;
   heading: string;
-  bodyHtml: string;
+  /** Absolute URL to a hero image shown above the text, e.g. a series cover. */
+  imageUrl?: string;
+  imageAlt?: string;
+  bodyHtml?: string;
   ctaLabel?: string;
   ctaHref?: string;
   unsubscribeUrl?: string;
 }): string {
-  const { locale, preheader, heading, bodyHtml, ctaLabel, ctaHref, unsubscribeUrl } = params;
+  const {
+    locale,
+    preheader,
+    kicker,
+    heading,
+    imageUrl,
+    imageAlt,
+    bodyHtml,
+    ctaLabel,
+    ctaHref,
+    unsubscribeUrl,
+  } = params;
   const showCta = Boolean(ctaLabel && ctaHref);
+  const role = locale === "fr" ? "Photographe" : "Photographer";
 
   return `<!doctype html>
 <html lang="${locale}">
@@ -47,23 +72,50 @@ export function renderNewsletterEmail(params: {
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:${COLOR_BACKGROUND};">
       <tr>
         <td align="center" style="padding:40px 20px;">
-          <table role="presentation" width="560" cellpadding="0" cellspacing="0" border="0" style="width:560px; max-width:560px;">
+          <table role="presentation" width="${CONTENT_WIDTH}" cellpadding="0" cellspacing="0" border="0" style="width:${CONTENT_WIDTH}px; max-width:${CONTENT_WIDTH}px;">
             <tr>
               <td style="padding-bottom:32px; text-align:center;">
                 <a
-                  href="https://www.indyanabalasse.com"
-                  style="font-family:${SERIF_STACK}; font-size:20px; letter-spacing:3px; text-transform:uppercase; color:${COLOR_FOREGROUND}; text-decoration:none;"
-                >${SITE_NAME}</a>
+                  href="${SITE_URL}"
+                  style="font-family:${SERIF_STACK}; font-size:24px; color:${COLOR_FOREGROUND}; text-decoration:none;"
+                >Indyana Balasse</a>
               </td>
             </tr>
+            ${
+              imageUrl
+                ? `<tr>
+              <td style="padding-bottom:32px;">
+                <a href="${escapeAttribute(ctaHref ?? SITE_URL)}" style="text-decoration:none;">
+                  <img
+                    src="${escapeAttribute(imageUrl)}"
+                    alt="${escapeAttribute(imageAlt ?? heading)}"
+                    width="${CONTENT_WIDTH}"
+                    style="display:block; width:100%; max-width:${CONTENT_WIDTH}px; height:auto; border:0; outline:none; text-decoration:none;"
+                  />
+                </a>
+              </td>
+            </tr>`
+                : ""
+            }
             <tr>
               <td style="border-top:1px solid ${COLOR_BORDER}; padding-top:32px;">
-                <h1 style="margin:0 0 20px 0; font-family:${SERIF_STACK}; font-weight:400; font-size:28px; line-height:1.3; color:${COLOR_FOREGROUND};">
+                ${
+                  kicker
+                    ? `<p style="margin:0 0 10px 0; font-family:${SANS_STACK}; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:${COLOR_MUTED};">${escapeHtml(
+                        kicker
+                      )}</p>`
+                    : ""
+                }
+                <h1 style="margin:0; font-family:${SERIF_STACK}; font-weight:400; font-size:28px; line-height:1.3; color:${COLOR_FOREGROUND};">
                   ${escapeHtml(heading)}
                 </h1>
-                <div style="font-family:${SANS_STACK}; font-size:15px; line-height:1.7; color:${COLOR_FOREGROUND};">
+                ${
+                  bodyHtml
+                    ? `<div style="margin-top:20px; font-family:${SANS_STACK}; font-size:15px; line-height:1.7; color:${COLOR_FOREGROUND};">
                   ${bodyHtml}
-                </div>
+                </div>`
+                    : ""
+                }
               </td>
             </tr>
             ${
@@ -85,15 +137,26 @@ export function renderNewsletterEmail(params: {
                 : ""
             }
             <tr>
-              <td style="padding-top:40px; border-top:1px solid ${COLOR_BORDER}; margin-top:40px;">
-                <p style="margin:32px 0 4px 0; font-family:${SERIF_STACK}; font-size:16px; color:${COLOR_FOREGROUND};">
-                  Indyana Balasse<br />${SITE_NAME}
-                </p>
-                <p style="margin:0; font-family:${SANS_STACK}; font-size:13px; color:${COLOR_MUTED};">
-                  <a href="mailto:${CONTACT_EMAIL}" style="color:${COLOR_MUTED}; text-decoration:underline;">${CONTACT_EMAIL}</a>
-                  &nbsp;&middot;&nbsp;
-                  <a href="${INSTAGRAM_URL}" style="color:${COLOR_MUTED}; text-decoration:underline;">Instagram</a>
-                </p>
+              <td style="padding-top:40px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <td style="border-top:1px solid ${COLOR_BORDER}; padding-top:32px;">
+                      <p style="margin:0 0 6px 0; font-family:${SERIF_STACK}; font-size:18px; line-height:1.4; color:${COLOR_FOREGROUND};">
+                        Indyana Balasse
+                      </p>
+                      <p style="margin:0 0 12px 0; font-family:${SANS_STACK}; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:${COLOR_MUTED};">
+                        ${role}
+                      </p>
+                      <p style="margin:0; font-family:${SANS_STACK}; font-size:13px; line-height:1.8; color:${COLOR_MUTED};">
+                        <a href="mailto:${CONTACT_EMAIL}" style="color:${COLOR_MUTED}; text-decoration:underline;">${CONTACT_EMAIL}</a>
+                        <br />
+                        <a href="tel:${CONTACT_PHONE_HREF}" style="color:${COLOR_MUTED}; text-decoration:underline;">${CONTACT_PHONE_DISPLAY}</a>
+                        &nbsp;&middot;&nbsp;
+                        <a href="${INSTAGRAM_URL}" style="color:${COLOR_MUTED}; text-decoration:underline;">Instagram</a>
+                      </p>
+                    </td>
+                  </tr>
+                </table>
               </td>
             </tr>
             ${

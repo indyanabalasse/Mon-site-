@@ -30,12 +30,9 @@ export async function POST(request: Request) {
 
   const body = await request.json().catch(() => null);
 
-  if (
-    !body ||
-    !isNonEmptyString(body.subject) ||
-    !isNonEmptyString(body.heading) ||
-    !isNonEmptyString(body.bodyHtml)
-  ) {
+  // bodyHtml is optional: a "new series" campaign is just the cover image,
+  // the category, the series name and the CTA, with no paragraph of copy.
+  if (!body || !isNonEmptyString(body.subject) || !isNonEmptyString(body.heading)) {
     return NextResponse.json({ error: "invalid_payload" }, { status: 400 });
   }
 
@@ -44,8 +41,11 @@ export async function POST(request: Request) {
 
   const html = renderNewsletterEmail({
     locale: BROADCAST_LOCALE,
+    kicker: isNonEmptyString(body.kicker) ? body.kicker : undefined,
     heading: body.heading,
-    bodyHtml: body.bodyHtml,
+    imageUrl: isNonEmptyString(body.imageUrl) ? body.imageUrl : undefined,
+    imageAlt: isNonEmptyString(body.imageAlt) ? body.imageAlt : undefined,
+    bodyHtml: isNonEmptyString(body.bodyHtml) ? body.bodyHtml : undefined,
     ctaLabel: ctaLabel && ctaHref ? ctaLabel : undefined,
     ctaHref: ctaLabel && ctaHref ? ctaHref : undefined,
     unsubscribeUrl: UNSUBSCRIBE_MERGE_TAG,

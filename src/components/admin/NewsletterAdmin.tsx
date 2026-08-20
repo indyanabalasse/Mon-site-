@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useMemo, useState, type ChangeEvent, type FormEvent } from "react";
-import { categorySlugs } from "@/data/portfolio";
+import { categories, isSeriesGroup } from "@/data/portfolio";
 import { getDictionary } from "@/lib/i18n";
-import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
+import { CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, SITE_URL } from "@/lib/site";
 
 type Subscriber = { id: string; email: string; createdAt: string };
 
@@ -16,10 +16,50 @@ type SendState = { status: "idle" | "sending" | "success" | "error"; message?: s
 
 const dict = getDictionary("fr");
 
-const CATEGORY_OPTIONS = categorySlugs.map((slug) => ({
-  slug,
-  title: dict.categories[slug]?.title ?? slug,
-}));
+type SeriesOption = {
+  key: string;
+  seriesTitle: string;
+  categoryTitle: string;
+  href: string;
+  coverUrl: string;
+};
+
+/**
+ * Every series across every category, flattened for the prefill dropdown.
+ * Series groups contribute their subseries, since those are the leaf pages
+ * a visitor actually lands on.
+ */
+const SERIES_OPTIONS: SeriesOption[] = categories.flatMap((category) => {
+  const categoryTitle = dict.categories[category.slug]?.title ?? category.slug;
+
+  return category.series.flatMap((entry) => {
+    const entryTitle = dict.categories[category.slug]?.series?.[entry.slug] ?? entry.slug;
+
+    if (!isSeriesGroup(entry)) {
+      return [
+        {
+          key: `${category.slug}/${entry.slug}`,
+          seriesTitle: entryTitle,
+          categoryTitle,
+          href: `${SITE_URL}/fr/portfolio/${category.slug}/${entry.slug}`,
+          coverUrl: `${SITE_URL}${entry.cover.src}`,
+        },
+      ];
+    }
+
+    return entry.subseries.map((sub) => {
+      const subTitle =
+        dict.subseries?.[category.slug]?.[entry.slug]?.[sub.slug] ?? sub.slug;
+      return {
+        key: `${category.slug}/${entry.slug}/${sub.slug}`,
+        seriesTitle: `${entryTitle} · ${subTitle}`,
+        categoryTitle,
+        href: `${SITE_URL}/fr/portfolio/${category.slug}/${entry.slug}/${sub.slug}`,
+        coverUrl: `${SITE_URL}${sub.cover.src}`,
+      };
+    });
+  });
+});
 
 function formatDate(value: string): string {
   const date = new Date(value);
@@ -52,9 +92,11 @@ function buildBodyHtml(text: string): string {
 export default function NewsletterAdmin() {
   const [subscribers, setSubscribers] = useState<SubscribersState>({ status: "loading" });
 
-  const [categorySlug, setCategorySlug] = useState("");
+  const [seriesKey, setSeriesKey] = useState("");
   const [subject, setSubject] = useState("");
+  const [kicker, setKicker] = useState("");
   const [heading, setHeading] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
   const [body, setBody] = useState("");
   const [ctaLabel, setCtaLabel] = useState("");
   const [ctaHref, setCtaHref] = useState("");
@@ -82,18 +124,20 @@ export default function NewsletterAdmin() {
     };
   }, []);
 
-  function handleCategoryChange(e: ChangeEvent<HTMLSelectElement>) {
-    const slug = e.target.value;
-    setCategorySlug(slug);
-    if (!slug) return;
+  function handleSeriesChange(e: ChangeEvent<HTMLSelectElement>) {
+    const key = e.target.value;
+    setSeriesKey(key);
+    if (!key) return;
 
-    const option = CATEGORY_OPTIONS.find((o) => o.slug === slug);
+    const option = SERIES_OPTIONS.find((o) => o.key === key);
     if (!option) return;
 
-    setSubject(`Nouvelle série : ${option.title}`);
-    setHeading(`Nouvelle série : ${option.title}`);
-    setCtaLabel("Découvrir la série");
-    setCtaHref(`${SITE_URL}/fr/portfolio/${slug}`);
+    setSubject(`Nouvelle série : ${option.seriesTitle}`);
+    setKicker(option.categoryTitle);
+    setHeading(option.seriesTitle);
+    setImageUrl(option.coverUrl);
+    setCtaLabel("Explore");
+    setCtaHref(option.href);
   }
 
   const bodyPreviewLines = useMemo(
@@ -106,8 +150,8 @@ export default function NewsletterAdmin() {
   async function handleSend(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    if (!subject.trim() || !heading.trim() || !body.trim()) {
-      setSendState({ status: "error", message: "Objet, titre et message sont obligatoires." });
+    if (!subject.trim() || !heading.trim()) {
+      setSendState({ status: "error", message: "L'objet et le titre sont obligatoires." });
       return;
     }
 
@@ -129,8 +173,11 @@ export default function NewsletterAdmin() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           subject,
+          kicker: kicker.trim() || undefined,
           heading,
-          bodyHtml: buildBodyHtml(body),
+          imageUrl: imageUrl.trim() || undefined,
+          imageAlt: heading,
+          bodyHtml: body.trim() ? buildBodyHtml(body) : undefined,
           ctaLabel: ctaLabel.trim() || undefined,
           ctaHref: ctaHref.trim() || undefined,
         }),
@@ -207,21 +254,21 @@ export default function NewsletterAdmin() {
           <form onSubmit={handleSend} className="space-y-6">
             <div>
               <label
-                htmlFor="category"
+                htmlFor="series"
                 className="block text-xs uppercase tracking-[0.2em] text-muted mb-2"
               >
-                Pré-remplir depuis une catégorie
+                Pré-remplir depuis une série
               </label>
               <select
-                id="category"
-                value={categorySlug}
-                onChange={handleCategoryChange}
+                id="series"
+                value={seriesKey}
+                onChange={handleSeriesChange}
                 className="w-full border-b border-border bg-transparent py-2 focus:outline-none focus:border-foreground transition-colors"
               >
-                <option value="">Choisir une catégorie</option>
-                {CATEGORY_OPTIONS.map((o) => (
-                  <option key={o.slug} value={o.slug}>
-                    {o.title}
+                <option value="">Choisir une série</option>
+                {SERIES_OPTIONS.map((o) => (
+                  <option key={o.key} value={o.key}>
+                    {o.categoryTitle} · {o.seriesTitle}
                   </option>
                 ))}
               </select>
@@ -246,10 +293,26 @@ export default function NewsletterAdmin() {
 
             <div>
               <label
+                htmlFor="kicker"
+                className="block text-xs uppercase tracking-[0.2em] text-muted mb-2"
+              >
+                Catégorie
+              </label>
+              <input
+                id="kicker"
+                type="text"
+                value={kicker}
+                onChange={(e) => setKicker(e.target.value)}
+                className="w-full border-b border-border bg-transparent py-2 focus:outline-none focus:border-foreground transition-colors"
+              />
+            </div>
+
+            <div>
+              <label
                 htmlFor="heading"
                 className="block text-xs uppercase tracking-[0.2em] text-muted mb-2"
               >
-                Titre affiché
+                Nom de la série
               </label>
               <input
                 id="heading"
@@ -263,15 +326,30 @@ export default function NewsletterAdmin() {
 
             <div>
               <label
+                htmlFor="imageUrl"
+                className="block text-xs uppercase tracking-[0.2em] text-muted mb-2"
+              >
+                Photo de couverture
+              </label>
+              <input
+                id="imageUrl"
+                type="url"
+                value={imageUrl}
+                onChange={(e) => setImageUrl(e.target.value)}
+                className="w-full border-b border-border bg-transparent py-2 focus:outline-none focus:border-foreground transition-colors"
+              />
+            </div>
+
+            <div>
+              <label
                 htmlFor="body"
                 className="block text-xs uppercase tracking-[0.2em] text-muted mb-2"
               >
-                Message
+                Message (optionnel)
               </label>
               <textarea
                 id="body"
-                required
-                rows={8}
+                rows={6}
                 value={body}
                 onChange={(e) => setBody(e.target.value)}
                 className="w-full border-b border-border bg-transparent py-2 focus:outline-none focus:border-foreground transition-colors resize-none"
@@ -330,25 +408,36 @@ export default function NewsletterAdmin() {
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-muted mb-4">Aperçu</p>
             <div className="border border-border p-8 sm:p-10">
-              <div className="text-center pb-8 border-b border-border">
-                <span className="font-serif text-lg tracking-[0.2em] uppercase">
-                  INDYANASTUDIO
-                </span>
+              <div className="text-center pb-8">
+                <span className="font-serif text-xl">Indyana Balasse</span>
               </div>
-              <div className="pt-8">
-                <p className="text-xs uppercase tracking-[0.2em] text-muted mb-3">
+              {imageUrl && (
+                // Preview only, from a URL the admin can freely edit, so
+                // next/image's build-time optimisation doesn't apply here.
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={imageUrl}
+                  alt={heading}
+                  className="block w-full h-auto mb-8"
+                />
+              )}
+              <div className="pt-8 border-t border-border">
+                <p className="text-xs uppercase tracking-[0.2em] text-muted mb-4">
                   Objet : {subject || "Objet de l'email"}
                 </p>
-                <h3 className="font-serif text-2xl sm:text-3xl mb-6">
-                  {heading || "Titre affiché"}
+                {kicker && (
+                  <p className="text-xs uppercase tracking-[0.2em] text-muted mb-2">{kicker}</p>
+                )}
+                <h3 className="font-serif text-2xl sm:text-3xl">
+                  {heading || "Nom de la série"}
                 </h3>
-                <div className="space-y-4 text-sm leading-relaxed">
-                  {bodyPreviewLines.length > 0 ? (
-                    bodyPreviewLines.map((line, i) => <p key={i}>{line}</p>)
-                  ) : (
-                    <p className="text-muted">Votre message apparaîtra ici.</p>
-                  )}
-                </div>
+                {bodyPreviewLines.length > 0 && (
+                  <div className="space-y-4 text-sm leading-relaxed mt-5">
+                    {bodyPreviewLines.map((line, i) => (
+                      <p key={i}>{line}</p>
+                    ))}
+                  </div>
+                )}
                 {ctaLabel && ctaHref && (
                   <div className="pt-8">
                     <span className="inline-block border border-foreground px-6 py-3 text-xs uppercase tracking-[0.2em]">
@@ -358,13 +447,12 @@ export default function NewsletterAdmin() {
                 )}
               </div>
               <div className="pt-8 mt-8 border-t border-border">
-                <p className="font-serif text-base leading-snug">
-                  Indyana Balasse
+                <p className="font-serif text-lg">Indyana Balasse</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-muted mt-1">Photographe</p>
+                <p className="text-xs text-muted mt-3 leading-relaxed">
+                  {CONTACT_EMAIL}
                   <br />
-                  INDYANASTUDIO
-                </p>
-                <p className="text-xs text-muted mt-3">
-                  {CONTACT_EMAIL} &middot; Instagram
+                  {CONTACT_PHONE_DISPLAY} &middot; Instagram
                 </p>
               </div>
             </div>

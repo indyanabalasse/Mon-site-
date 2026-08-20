@@ -12,7 +12,13 @@
 
 const RESEND_API_BASE = "https://api.resend.com";
 const AUDIENCE_NAME = "INDYANASTUDIO Newsletter";
-const FROM_ADDRESS = "INDYANASTUDIO <onboarding@resend.dev>";
+
+// Resend's shared onboarding@resend.dev sender can only deliver to the account
+// owner's own address, so real subscribers get a 403 until a domain is verified
+// at resend.com/domains. Once it is, setting NEWSLETTER_FROM (e.g.
+// "Indyana Balasse <hello@indyanabalasse.com>") switches every send over
+// without a code change.
+const FROM_ADDRESS = process.env.NEWSLETTER_FROM || "Indyana Balasse <onboarding@resend.dev>";
 
 function getApiKey(): string {
   const key = process.env.RESEND_API_KEY;
