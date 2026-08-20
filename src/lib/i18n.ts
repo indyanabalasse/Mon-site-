@@ -292,7 +292,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         {
           slug: "shooting-evenement",
           title: "Shooting Événement",
-          tagline: "Mariage, anniversaire, soirée d'entreprise : votre événement raconté en images.",
+          tagline: "Mariage, anniversaire, festival, soirée d'entreprise : votre événement raconté en images.",
           cta: "Découvrir l'offre",
         },
         {
@@ -358,16 +358,16 @@ export const dictionaries: Record<Locale, Dictionary> = {
     offerEvenement: {
       kicker: "Shooting Événement",
       title: "Votre événement, raconté en images",
-      intro: "Mariage, anniversaire, soirée d'entreprise : je me glisse dans votre événement pour en capturer l'énergie et les instants qu'on ne rejoue jamais deux fois.",
+      intro: "Mariage, anniversaire, festival, soirée d'entreprise : je me glisse dans votre événement pour en capturer l'énergie et les instants qu'on ne rejoue jamais deux fois.",
       includesTitle: "Ce qui est inclus",
       includes: [
-        "Couverture photo d'une demi-journée",
+        "Couverture photo d'une demi-journée ou d'une journée complète",
         "Reportage complet de votre événement privé",
         "Livraison de photos retouchées, prêtes à partager",
       ],
       criteriaTitle: "À savoir",
       criteria: [
-        "Idéal pour les mariages, anniversaires et soirées d'entreprise",
+        "Idéal pour les mariages, anniversaires, festivals et soirées d'entreprise",
         "Durée et formule ajustables selon votre événement",
       ],
       ctaTitle: "Parlons de votre événement",
@@ -578,7 +578,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         {
           slug: "shooting-evenement",
           title: "Event Shoot",
-          tagline: "Wedding, birthday, corporate party: your event told in images.",
+          tagline: "Wedding, birthday, festival, corporate party: your event told in images.",
           cta: "Discover the offer",
         },
         {
@@ -644,16 +644,16 @@ export const dictionaries: Record<Locale, Dictionary> = {
     offerEvenement: {
       kicker: "Event Shoot",
       title: "Your event, told in images",
-      intro: "Wedding, birthday, corporate party: I slip into your event to capture its energy and the moments that only happen once.",
+      intro: "Wedding, birthday, festival, corporate party: I slip into your event to capture its energy and the moments that only happen once.",
       includesTitle: "What's included",
       includes: [
-        "Half-day photo coverage",
+        "Half-day or full-day photo coverage",
         "Full coverage of your private event",
         "Retouched photos delivered, ready to share",
       ],
       criteriaTitle: "Good to know",
       criteria: [
-        "Perfect for weddings, birthdays and corporate parties",
+        "Perfect for weddings, birthdays, festivals and corporate parties",
         "Duration and package adjustable to your event",
       ],
       ctaTitle: "Let's talk about your event",
