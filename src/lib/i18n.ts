@@ -74,6 +74,8 @@ type Dictionary = {
     kicker: string;
     title: string;
     intro: string;
+    viewShootsCta: string;
+    bookNowCta: string;
     styles: { title: string; text: string }[];
     journeyTitle: string;
     journey: { title: string; text: string }[];
@@ -282,7 +284,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         {
           slug: "shooting-studio",
           title: "Shooting Studio",
-          tagline: "Portrait, création ou grossesse : une séance sur mesure dans un cadre professionnel.",
+          tagline: "Portrait, création ou maternité : une séance sur mesure dans un cadre professionnel.",
           cta: "Découvrir l'offre",
         },
         {
@@ -313,7 +315,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
     offerStudio: {
       kicker: "Shooting Studio",
       title: "Une séance sur mesure, dans un cadre pensé pour vous",
-      intro: "Portrait, création artistique ou grossesse : chaque séance studio est une rencontre avant d'être une photo. On prend le temps de comprendre ce que vous voulez raconter, puis on le met en lumière.",
+      intro: "Portrait, création artistique ou maternité : chaque séance studio est une rencontre avant d'être une photo. On prend le temps de comprendre ce que vous voulez raconter, puis on le met en lumière.",
+      viewShootsCta: "Voir les shootings",
+      bookNowCta: "Book now",
       styles: [
         {
           title: "Essentielle",
@@ -613,6 +617,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
       kicker: "Studio Shoot",
       title: "A tailored session, in a space designed for you",
       intro: "Portrait, creative concept or maternity: every studio session is an encounter before it's a photo. We take the time to understand what you want to tell, then bring it to light.",
+      viewShootsCta: "View the shoots",
+      bookNowCta: "Book now",
       styles: [
         {
           title: "Essential",

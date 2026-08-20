@@ -48,6 +48,20 @@ export default async function ShootingStudioPage({
           <p className="text-xs uppercase tracking-[0.2em] text-muted">{offer.kicker}</p>
           <h1 className="wordmark font-serif text-4xl font-light mt-3">{offer.title}</h1>
           <p className="mt-5 leading-relaxed text-muted">{offer.intro}</p>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Link
+              href={`/${locale}/portfolio/portrait`}
+              className="inline-block border border-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors"
+            >
+              {offer.viewShootsCta}
+            </Link>
+            <Link
+              href={`/${locale}/contact`}
+              className="inline-block border border-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors"
+            >
+              {offer.bookNowCta}
+            </Link>
+          </div>
         </div>
       </div>
 
