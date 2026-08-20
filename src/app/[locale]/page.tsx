@@ -28,8 +28,8 @@ export default async function HomePage({
         <HeroSlideshow images={heroImages} alt="Indyana Balasse — INDYANASTUDIO" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/30" />
         <div className="relative z-10 flex h-full flex-col items-center justify-end px-6 pb-20 text-center text-white">
-          <h1 className="wordmark font-serif text-4xl sm:text-6xl font-light fade-in">
-            COLOR YOUR LIFE
+          <h1 className="wordmark font-serif italic text-4xl sm:text-6xl font-light fade-in">
+            Color Your Life !
           </h1>
           <Link
             href={`/${locale}/portfolio`}
