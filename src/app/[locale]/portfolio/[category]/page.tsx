@@ -56,6 +56,7 @@ export default async function CategoryPage({
       <BackLink href={`/${locale}/portfolio`} label={dict.gallery.back} />
       {data.series.length > 1 || isSeriesGroup(data.series[0]) ? (
         <MasonryNav
+          variant="grid"
           items={data.series.map((series) => ({
             href: `/${locale}/portfolio/${category}/${series.slug}`,
             cover: series.cover,

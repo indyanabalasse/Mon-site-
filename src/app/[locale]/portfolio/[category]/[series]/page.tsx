@@ -73,6 +73,7 @@ export default async function SeriesPage({
       <div className="mx-auto max-w-7xl px-6 pt-6 pb-20">
         <BackLink href={`/${locale}/portfolio/${category}`} label={dict.gallery.back} />
         <MasonryNav
+          variant="grid"
           items={seriesData.subseries.map((sub) => ({
             href: `/${locale}/portfolio/${category}/${series}/${sub.slug}`,
             cover: sub.cover,
