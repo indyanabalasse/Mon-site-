@@ -50,9 +50,10 @@ type Dictionary = {
     subtitle: string;
     highlight: string;
     equipment: { title: string; items: string[]; cta: string };
-    kitchen: { title: string; text: string };
-    sanitary: { text: string };
-    garden: { title: string; text: string };
+    amenities: {
+      title: string;
+      items: { title: string; text: string }[];
+    };
     closing: { cta: string };
   };
   packaging: {
@@ -266,16 +267,22 @@ export const dictionaries: Record<Locale, Dictionary> = {
         ],
         cta: "Book now",
       },
-      kitchen: {
-        title: "Espace cuisine",
-        text: "Un espace cuisine entièrement équipé (cuisinière, hotte, réfrigérateur, machine à café, micro-ondes) est mis à la disposition des équipes tout au long de la journée de location. Sa grande table conviviale permet d'accueillir l'ensemble de l'équipe pour les pauses et les repas.",
-      },
-      sanitary: {
-        text: "Toilette et douche à disposition.",
-      },
-      garden: {
-        title: "Jardin",
-        text: "Le lieu dispose également d'un accès à un jardin arboré et paisible, à l'écart de l'agitation urbaine. Cet espace extérieur — avec son grand arbre offrant une ombre naturelle et son hamac — se prête aussi bien à une pause détente qu'à des prises de vue en extérieur.",
+      amenities: {
+        title: "Commodités",
+        items: [
+          {
+            title: "Jardin",
+            text: "Un jardin arboré et paisible, à l'écart de l'agitation urbaine, avec un grand arbre offrant de l'ombre et un hamac. Idéal pour une pause détente ou des prises de vue en extérieur.",
+          },
+          {
+            title: "Cuisine",
+            text: "Cuisine entièrement équipée (cuisinière, hotte, réfrigérateur, machine à café, micro-ondes), avec une grande table conviviale pour les pauses et les repas de l'équipe.",
+          },
+          {
+            title: "Toilette & douche",
+            text: "Toilette et douche à disposition tout au long de la journée de location.",
+          },
+        ],
       },
       closing: {
         cta: "Book now",
@@ -553,16 +560,22 @@ export const dictionaries: Record<Locale, Dictionary> = {
         ],
         cta: "Book now",
       },
-      kitchen: {
-        title: "Kitchen area",
-        text: "A fully equipped kitchen (cooker, extractor hood, fridge, coffee machine, microwave) is available to crews throughout the rental day. Its large, convivial table comfortably seats the whole team for breaks and meals.",
-      },
-      sanitary: {
-        text: "Restroom and shower available.",
-      },
-      garden: {
-        title: "Garden",
-        text: "The location also gives access to a peaceful, tree-lined garden, away from the city bustle. This outdoor space — with its large shade tree and hammock — is just as suited to a relaxing break as to outdoor shots.",
+      amenities: {
+        title: "Amenities",
+        items: [
+          {
+            title: "Garden",
+            text: "A peaceful, tree-lined garden away from the city bustle, with a large shade tree and a hammock. Ideal for a relaxing break or outdoor shots.",
+          },
+          {
+            title: "Kitchen",
+            text: "Fully equipped kitchen (cooker, extractor hood, fridge, coffee machine, microwave), with a large table for the team's breaks and meals.",
+          },
+          {
+            title: "Restroom & shower",
+            text: "Restroom and shower available throughout the rental day.",
+          },
+        ],
       },
       closing: {
         cta: "Book now",

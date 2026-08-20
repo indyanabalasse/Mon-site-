@@ -4,12 +4,16 @@ import type { Metadata } from "next";
 import { getDictionary, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
 import { CONTACT_ADDRESS, CONTACT_MAPS_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF } from "@/lib/site";
 import { MapPinIcon, PhoneIcon } from "@/components/icons";
-import heroImage from "@/images/Studio/PHOTO-2026-08-14-13-01-50.jpg";
+import TileSlideshow from "@/components/TileSlideshow";
+import heroImage from "@/images/Studio/PHOTO-2026-08-20-13-30-50.jpg";
 import lightingImage from "@/images/Studio/PHOTO-2026-08-13-11-25-37.jpg";
 import backdropImage from "@/images/Studio/PHOTO-2026-08-13-11-26-57.jpg";
 import makeupImage from "@/images/Studio/PHOTO-2026-08-13-11-24-52.jpg";
 import naturalLightImage from "@/images/Studio/PHOTO-2026-08-13-11-17-39.jpg";
 import gardenImage from "@/images/Studio/PHOTO-2026-08-13-11-26-12.jpg";
+import courtyardImage from "@/images/Studio/PHOTO-2026-08-20-13-30-54.jpg";
+
+const amenitiesImages = [gardenImage, courtyardImage];
 
 export async function generateMetadata({
   params,
@@ -125,28 +129,25 @@ export default async function StudioPage({
         </div>
       </div>
 
-      <div className="max-w-2xl mx-auto text-center mt-20 pt-16 border-t border-border">
-        <h2 className="wordmark font-serif text-2xl font-light">{studio.kitchen.title}</h2>
-        <p className="mt-5 leading-relaxed text-muted">{studio.kitchen.text}</p>
-      </div>
-
-      <div className="max-w-2xl mx-auto text-center mt-16">
-        <p className="text-sm text-muted leading-relaxed">{studio.sanitary.text}</p>
-      </div>
-
-      <div className="grid gap-12 md:grid-cols-2 md:items-center mt-16 pt-16 border-t border-border">
-        <div>
-          <h2 className="wordmark font-serif text-2xl font-light">{studio.garden.title}</h2>
-          <p className="mt-5 leading-relaxed text-muted">{studio.garden.text}</p>
-        </div>
-        <div className="relative aspect-[4/5] overflow-hidden">
-          <Image
-            src={gardenImage}
-            alt={studio.garden.title}
-            fill
+      <div className="grid gap-12 md:grid-cols-2 md:items-center mt-20 pt-16 border-t border-border">
+        <div className="relative aspect-[4/5] overflow-hidden order-1 md:order-none">
+          <TileSlideshow
+            images={amenitiesImages}
+            alt={studio.amenities.title}
             sizes="(min-width: 768px) 50vw, 100vw"
-            className="object-cover"
+            fill
           />
+        </div>
+        <div>
+          <h2 className="wordmark font-serif text-2xl font-light">{studio.amenities.title}</h2>
+          <ul className="mt-6 space-y-5">
+            {studio.amenities.items.map((item) => (
+              <li key={item.title}>
+                <h3 className="font-medium">{item.title}</h3>
+                <p className="mt-1 text-sm text-muted leading-relaxed">{item.text}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
