@@ -61,6 +61,12 @@ export default async function StudioPage({
             {CONTACT_PHONE_DISPLAY}
           </a>
         </div>
+        <Link
+          href={`/${locale}/contact`}
+          className="mt-8 inline-block border border-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors"
+        >
+          {studio.closing.cta}
+        </Link>
       </header>
 
       <div className="relative aspect-[16/9] overflow-hidden mb-16">
@@ -142,17 +148,6 @@ export default async function StudioPage({
             className="object-cover"
           />
         </div>
-      </div>
-
-      <div className="mt-24 border-t border-border pt-16 text-center">
-        <h2 className="wordmark font-serif text-2xl font-light">{studio.closing.title}</h2>
-        <p className="mt-4 max-w-xl mx-auto text-muted">{studio.closing.text}</p>
-        <Link
-          href={`/${locale}/contact`}
-          className="mt-8 inline-block border border-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors"
-        >
-          {studio.closing.cta}
-        </Link>
       </div>
     </div>
   );

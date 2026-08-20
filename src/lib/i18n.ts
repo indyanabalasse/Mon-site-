@@ -48,7 +48,7 @@ type Dictionary = {
     kitchen: { title: string; text: string };
     sanitary: { text: string };
     garden: { title: string; text: string };
-    closing: { title: string; text: string; cta: string };
+    closing: { cta: string };
   };
   packaging: {
     title: string;
@@ -227,8 +227,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
         text: "Le lieu dispose également d'un accès à un jardin arboré et paisible, à l'écart de l'agitation urbaine. Cet espace extérieur — avec son grand arbre offrant une ombre naturelle et son hamac — se prête aussi bien à une pause détente qu'à des prises de vue en extérieur.",
       },
       closing: {
-        title: "Un lieu clé en main pour vos tournages",
-        text: "Studio équipé, espace de restauration fonctionnel et jardin apaisant : ce lieu réunit tous les éléments nécessaires à des productions photo et vidéo dans des conditions optimales.",
         cta: "Réserver le studio",
       },
     },
@@ -484,8 +482,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
         text: "The location also gives access to a peaceful, tree-lined garden, away from the city bustle. This outdoor space — with its large shade tree and hammock — is just as suited to a relaxing break as to outdoor shots.",
       },
       closing: {
-        title: "A turnkey location for your shoots",
-        text: "An equipped studio, a functional catering area and a calming garden: this location brings together everything needed for photo and video productions in optimal conditions.",
         cta: "Book the studio",
       },
     },
