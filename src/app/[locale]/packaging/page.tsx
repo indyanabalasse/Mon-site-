@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getDictionary, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
 import studioImage from "@/images/Studio/PHOTO-2026-08-20-13-30-50.jpg";
-import shootingStudioImage from "@/images/Studio/PHOTO-2026-08-13-11-25-37.jpg";
+import shootingStudioImage from "@/images/booking/shooting-studio-cover.jpg";
 import evenementielImage from "@/images/portfolio/evenementiel/cover.jpg";
 import photoboothImage from "@/images/portfolio/fun-photo-booth/Mariage 1/cover.jpg";
 
