@@ -35,6 +35,11 @@ type Dictionary = {
     intro: string;
     viewSeries: string;
   };
+  gallery: {
+    nextKicker: string;
+    bookCta: string;
+    backToCategory: string;
+  };
   categories: Record<
     CategorySlug,
     { title: string; description: string; series: Record<string, string> }
@@ -118,6 +123,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       title: "Portfolio",
       intro: "Trois univers, une même exigence : capturer l'authenticité de l'instant.",
       viewSeries: "Voir la série",
+    },
+    gallery: {
+      nextKicker: "Découvrir la série suivante",
+      bookCta: "Réserver votre shooting",
+      backToCategory: "Retour à la catégorie",
     },
     categories: {
       evenementiel: {
@@ -376,6 +386,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       title: "Portfolio",
       intro: "Three worlds, one standard: capturing the authenticity of the moment.",
       viewSeries: "View series",
+    },
+    gallery: {
+      nextKicker: "Discover the next series",
+      bookCta: "Book your shoot",
+      backToCategory: "Back to category",
     },
     categories: {
       evenementiel: {

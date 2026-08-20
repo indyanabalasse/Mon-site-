@@ -72,6 +72,13 @@ export default async function CategoryPage({
           images={data.series[0].images}
           altPrefix={info.title}
           pairAfter={data.series[0].pairAfter}
+          endScreen={{
+            nextKicker: dict.gallery.nextKicker,
+            bookHref: `/${locale}/contact`,
+            bookLabel: dict.gallery.bookCta,
+            closeHref: `/${locale}/portfolio`,
+            closeLabel: dict.gallery.backToCategory,
+          }}
         />
       )}
     </div>

@@ -60,6 +60,12 @@ export default async function SeriesPage({
   const info = dict.categories[category];
   const seriesLabel = info.series[series] ?? series;
 
+  const seriesIndex = categoryData.series.findIndex((s) => s.slug === series);
+  const nextSeries =
+    categoryData.series.length > 1
+      ? categoryData.series[(seriesIndex + 1) % categoryData.series.length]
+      : undefined;
+
   if (isSeriesGroup(seriesData)) {
     const subLabels = dict.subseries?.[category]?.[series] ?? {};
     return (
@@ -88,7 +94,24 @@ export default async function SeriesPage({
         <h1 className="wordmark font-serif text-4xl font-light mt-2">{seriesLabel}</h1>
       </header>
 
-      <Gallery images={seriesData.images} altPrefix={seriesLabel} pairAfter={seriesData.pairAfter} />
+      <Gallery
+        images={seriesData.images}
+        altPrefix={seriesLabel}
+        pairAfter={seriesData.pairAfter}
+        endScreen={{
+          next: nextSeries
+            ? {
+                href: `/${locale}/portfolio/${category}/${nextSeries.slug}`,
+                label: info.series[nextSeries.slug] ?? nextSeries.slug,
+              }
+            : undefined,
+          nextKicker: dict.gallery.nextKicker,
+          bookHref: `/${locale}/contact`,
+          bookLabel: dict.gallery.bookCta,
+          closeHref: `/${locale}/portfolio/${category}`,
+          closeLabel: dict.gallery.backToCategory,
+        }}
+      />
     </div>
   );
 }

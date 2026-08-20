@@ -66,6 +66,18 @@ export default async function SubseriesPage({
   const seriesLabel = info.series[series] ?? series;
   const subseriesLabel = dict.subseries?.[category]?.[series]?.[subseries] ?? subseries;
 
+  const seriesGroup = categoryData.series.find((s) => s.slug === series);
+  const subLabels = dict.subseries?.[category]?.[series] ?? {};
+  let nextSubseries: { href: string; label: string } | undefined;
+  if (seriesGroup && isSeriesGroup(seriesGroup) && seriesGroup.subseries.length > 1) {
+    const idx = seriesGroup.subseries.findIndex((s) => s.slug === subseries);
+    const nextEntry = seriesGroup.subseries[(idx + 1) % seriesGroup.subseries.length];
+    nextSubseries = {
+      href: `/${locale}/portfolio/${category}/${series}/${nextEntry.slug}`,
+      label: subLabels[nextEntry.slug] ?? nextEntry.slug,
+    };
+  }
+
   return (
     <div className="mx-auto max-w-7xl px-6 py-20">
       <header className="max-w-2xl mx-auto text-center mb-14">
@@ -75,7 +87,18 @@ export default async function SubseriesPage({
         <h1 className="wordmark font-serif text-4xl font-light mt-2">{subseriesLabel}</h1>
       </header>
 
-      <Gallery images={subseriesData.images} altPrefix={subseriesLabel} />
+      <Gallery
+        images={subseriesData.images}
+        altPrefix={subseriesLabel}
+        endScreen={{
+          next: nextSubseries,
+          nextKicker: dict.gallery.nextKicker,
+          bookHref: `/${locale}/contact`,
+          bookLabel: dict.gallery.bookCta,
+          closeHref: `/${locale}/portfolio/${category}`,
+          closeLabel: dict.gallery.backToCategory,
+        }}
+      />
     </div>
   );
 }

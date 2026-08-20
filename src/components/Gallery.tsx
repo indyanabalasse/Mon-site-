@@ -1,27 +1,42 @@
 "use client";
 
 import { useCallback, useEffect, useState, type ReactNode } from "react";
+import Link from "next/link";
 import Image, { type StaticImageData } from "next/image";
+
+export type GalleryEndScreen = {
+  next?: { href: string; label: string };
+  nextKicker: string;
+  bookHref: string;
+  bookLabel: string;
+  closeHref: string;
+  closeLabel: string;
+};
 
 export default function Gallery({
   images,
   altPrefix,
   pairAfter = [],
+  endScreen,
 }: {
   images: StaticImageData[];
   altPrefix: string;
   pairAfter?: number[];
+  /** When set, browsing past the last photo shows an end card instead of looping. */
+  endScreen?: GalleryEndScreen;
 }) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const slideCount = images.length + (endScreen ? 1 : 0);
+  const isEndCard = activeIndex === images.length;
 
   const close = useCallback(() => setActiveIndex(null), []);
   const showPrev = useCallback(
-    () => setActiveIndex((i) => (i === null ? i : (i - 1 + images.length) % images.length)),
-    [images.length]
+    () => setActiveIndex((i) => (i === null ? i : (i - 1 + slideCount) % slideCount)),
+    [slideCount]
   );
   const showNext = useCallback(
-    () => setActiveIndex((i) => (i === null ? i : (i + 1) % images.length)),
-    [images.length]
+    () => setActiveIndex((i) => (i === null ? i : (i + 1) % slideCount)),
+    [slideCount]
   );
 
   useEffect(() => {
@@ -124,14 +139,47 @@ export default function Gallery({
           >
             ‹
           </button>
-          <div className="relative max-h-[85vh] max-w-5xl w-full" onClick={(e) => e.stopPropagation()}>
-            <Image
-              src={images[activeIndex]}
-              alt={`${altPrefix} ${activeIndex + 1}`}
-              sizes="90vw"
-              className="mx-auto max-h-[85vh] w-auto h-auto object-contain"
-              priority
-            />
+          <div
+            className="relative max-h-[85vh] max-w-5xl w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {isEndCard && endScreen ? (
+              <div className="mx-auto flex max-w-sm flex-col items-center gap-8 py-16 text-center">
+                {endScreen.next && (
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.2em] text-white/60">
+                      {endScreen.nextKicker}
+                    </p>
+                    <Link
+                      href={endScreen.next.href}
+                      className="wordmark font-serif text-2xl text-white mt-2 inline-block hover:opacity-80 transition-opacity"
+                    >
+                      {endScreen.next.label}
+                    </Link>
+                  </div>
+                )}
+                <Link
+                  href={endScreen.bookHref}
+                  className="inline-block border border-white px-8 py-3 text-xs uppercase tracking-[0.2em] text-white hover:bg-white hover:text-black transition-colors"
+                >
+                  {endScreen.bookLabel}
+                </Link>
+                <Link
+                  href={endScreen.closeHref}
+                  className="text-sm text-white/70 underline underline-offset-4 hover:text-white transition-colors"
+                >
+                  {endScreen.closeLabel}
+                </Link>
+              </div>
+            ) : (
+              <Image
+                src={images[activeIndex ?? 0]}
+                alt={`${altPrefix} ${(activeIndex ?? 0) + 1}`}
+                sizes="90vw"
+                className="mx-auto max-h-[85vh] w-auto h-auto object-contain"
+                priority
+              />
+            )}
           </div>
           <button
             onClick={(e) => {
