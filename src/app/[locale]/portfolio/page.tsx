@@ -37,13 +37,15 @@ export default async function PortfolioPage({
   }));
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-20">
-      <header className="max-w-2xl mx-auto text-center mb-16">
+    <div className="py-20">
+      <header className="max-w-2xl mx-auto text-center mb-16 px-6">
         <h1 className="wordmark font-serif text-4xl font-light">{dict.portfolio.title}</h1>
         <p className="mt-4 text-muted">{dict.portfolio.intro}</p>
       </header>
 
-      <MasonryNav items={tiles} variant="grid" />
+      <div className="w-full">
+        <MasonryNav items={tiles} />
+      </div>
     </div>
   );
 }
