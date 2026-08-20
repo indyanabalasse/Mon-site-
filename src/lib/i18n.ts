@@ -39,6 +39,7 @@ type Dictionary = {
     nextKicker: string;
     bookCta: string;
     backToCategory: string;
+    back: string;
   };
   categories: Record<
     CategorySlug,
@@ -169,6 +170,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       nextKicker: "Découvrir la série suivante",
       bookCta: "Réserver votre shooting",
       backToCategory: "Retour à la catégorie",
+      back: "Retour",
     },
     categories: {
       evenementiel: {
@@ -293,25 +295,25 @@ export const dictionaries: Record<Locale, Dictionary> = {
           slug: "shooting-studio",
           title: "Shooting Studio",
           tagline: "Portrait, création ou maternité : une séance sur mesure dans un cadre professionnel.",
-          cta: "Découvrir l'offre",
+          cta: "Découvrir",
         },
         {
           slug: "shooting-evenement",
           title: "Shooting Événement",
           tagline: "Mariage, anniversaire, festival, soirée d'entreprise : votre événement raconté en images.",
-          cta: "Découvrir l'offre",
+          cta: "Découvrir",
         },
         {
           slug: "photobooth",
           title: "Spécial Photobooth",
           tagline: "Une animation photo live et déguisée qui rassemble vos invités toute la soirée.",
-          cta: "Découvrir l'offre",
+          cta: "Découvrir",
         },
         {
           slug: "location-studio",
           title: "Location Studio",
           tagline: "150 m² lumineux, entièrement équipé, à louer pour vos propres productions.",
-          cta: "Découvrir le studio",
+          cta: "Découvrir",
         },
       ],
       gift: {
@@ -456,6 +458,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       nextKicker: "Discover the next series",
       bookCta: "Book your shoot",
       backToCategory: "Back to category",
+      back: "Back",
     },
     categories: {
       evenementiel: {
@@ -580,25 +583,25 @@ export const dictionaries: Record<Locale, Dictionary> = {
           slug: "shooting-studio",
           title: "Studio Shoot",
           tagline: "Portrait, creative or maternity: a tailored session in a professional setting.",
-          cta: "Discover the offer",
+          cta: "Discover",
         },
         {
           slug: "shooting-evenement",
           title: "Event Shoot",
           tagline: "Wedding, birthday, festival, corporate party: your event told in images.",
-          cta: "Discover the offer",
+          cta: "Discover",
         },
         {
           slug: "photobooth",
           title: "Photo Booth Special",
           tagline: "A live, costume-filled photo animation that brings your guests together all night.",
-          cta: "Discover the offer",
+          cta: "Discover",
         },
         {
           slug: "location-studio",
           title: "Studio Rental",
           tagline: "150 m² of bright, fully equipped space to rent for your own productions.",
-          cta: "Discover the studio",
+          cta: "Discover",
         },
       ],
       gift: {

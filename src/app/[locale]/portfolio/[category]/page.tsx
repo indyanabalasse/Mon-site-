@@ -4,6 +4,7 @@ import { getDictionary, isLocale, defaultLocale, locales, type Locale } from "@/
 import { categorySlugs, getCategory, isSeriesGroup, type CategorySlug } from "@/data/portfolio";
 import Gallery from "@/components/Gallery";
 import MasonryNav from "@/components/MasonryNav";
+import BackLink from "@/components/BackLink";
 
 function isCategory(value: string): value is CategorySlug {
   return (categorySlugs as string[]).includes(value);
@@ -51,7 +52,8 @@ export default async function CategoryPage({
   const info = dict.categories[category];
 
   return (
-    <div className="mx-auto max-w-7xl px-6 pb-20">
+    <div className="mx-auto max-w-7xl px-6 pt-6 pb-20">
+      <BackLink href={`/${locale}/portfolio`} label={dict.gallery.back} />
       {data.series.length > 1 || isSeriesGroup(data.series[0]) ? (
         <MasonryNav
           items={data.series.map((series) => ({
