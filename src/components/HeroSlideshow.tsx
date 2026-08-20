@@ -1,15 +1,22 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image, { type StaticImageData } from "next/image";
+import Image from "next/image";
+import type { HeroImage } from "@/data/portfolio";
 
 const INTERVAL_MS = 6000;
+
+const POSITION_CLASS: Record<NonNullable<HeroImage["position"]>, string> = {
+  top: "object-top",
+  center: "object-center",
+  bottom: "object-bottom",
+};
 
 export default function HeroSlideshow({
   images,
   alt,
 }: {
-  images: StaticImageData[];
+  images: HeroImage[];
   alt: string;
 }) {
   const [active, setActive] = useState(0);
@@ -27,12 +34,12 @@ export default function HeroSlideshow({
       {images.map((img, i) => (
         <Image
           key={i}
-          src={img}
+          src={img.src}
           alt={alt}
           fill
           priority={i === 0}
           sizes="100vw"
-          className={`object-cover transition-opacity duration-[1500ms] ease-in-out ${
+          className={`object-cover ${POSITION_CLASS[img.position ?? "center"]} transition-opacity duration-[1500ms] ease-in-out ${
             i === active ? "opacity-100" : "opacity-0"
           }`}
         />

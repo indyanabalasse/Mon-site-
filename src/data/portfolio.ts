@@ -250,7 +250,17 @@ import pressKit02 from "@/images/portfolio/press-kit/02.png";
 import pressKit03 from "@/images/portfolio/press-kit/03.png";
 import pressKit04 from "@/images/portfolio/press-kit/04.png";
 
-export const heroImages: StaticImageData[] = [hero01, hero02, hero03];
+export type HeroImage = {
+  src: StaticImageData;
+  /** Vertical anchor for the crop on tall/narrow viewports. Defaults to "center". */
+  position?: "top" | "center" | "bottom";
+};
+
+export const heroImages: HeroImage[] = [
+  { src: hero01, position: "top" },
+  { src: hero02 },
+  { src: hero03 },
+];
 
 export type CategorySlug =
   | "evenementiel"

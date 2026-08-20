@@ -57,7 +57,7 @@ export default function MasonryNav({
   }
 
   return (
-    <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 [column-fill:_balance]">
+    <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 [column-fill:_balance]">
       {items.map((item) => (
         <Link
           key={item.href}

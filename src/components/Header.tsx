@@ -20,12 +20,12 @@ export default function Header({ locale }: { locale: Locale }) {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+      <div className="flex items-center justify-between px-6 py-5 sm:px-10">
         <Link
           href={`/${locale}`}
           className="wordmark font-serif text-lg sm:text-xl font-medium"
         >
-          INDYANASTUDIO
+          Indyana Balasse
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm tracking-wide uppercase">

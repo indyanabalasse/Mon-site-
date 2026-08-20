@@ -23,7 +23,6 @@ type Dictionary = {
     instagram: string;
   };
   home: {
-    quote: string;
     cta: string;
   };
   instagramBanner: {
@@ -97,9 +96,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
   fr: {
     nav: {
       home: "Accueil",
-      portfolio: "Portfolio",
+      portfolio: "Explore",
       studio: "Studio",
-      packaging: "Package",
+      packaging: "Booking",
       about: "À propos",
       contact: "Contact",
       themeToLight: "Passer en mode clair",
@@ -109,8 +108,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       instagram: "Instagram de INDYANASTUDIO",
     },
     home: {
-      quote: "Color your life !",
-      cta: "Découvrir le portfolio",
+      cta: "Explore",
     },
     instagramBanner: {
       title: "Suivez INDYANASTUDIO sur Instagram",
@@ -353,9 +351,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
   en: {
     nav: {
       home: "Home",
-      portfolio: "Portfolio",
+      portfolio: "Explore",
       studio: "Studio",
-      packaging: "Package",
+      packaging: "Booking",
       about: "About",
       contact: "Contact",
       themeToLight: "Switch to light mode",
@@ -365,8 +363,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       instagram: "INDYANASTUDIO on Instagram",
     },
     home: {
-      quote: "Color your life !",
-      cta: "Explore the portfolio",
+      cta: "Explore",
     },
     instagramBanner: {
       title: "Follow INDYANASTUDIO on Instagram",

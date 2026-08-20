@@ -29,7 +29,7 @@ export default async function HomePage({
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/30" />
         <div className="relative z-10 flex h-full flex-col items-center justify-end px-6 pb-20 text-center text-white">
           <h1 className="wordmark font-serif text-4xl sm:text-6xl font-light fade-in">
-            INDYANASTUDIO
+            COLOR YOUR LIFE
           </h1>
           <Link
             href={`/${locale}/portfolio`}
@@ -40,13 +40,7 @@ export default async function HomePage({
         </div>
       </section>
 
-      <section className="mx-auto max-w-3xl px-6 py-24 text-center">
-        <p className="wordmark font-serif italic text-2xl sm:text-3xl text-foreground/90">
-          {dict.home.quote}
-        </p>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6 pb-24">
+      <section className="w-full pt-16 pb-24">
         <MasonryNav items={tiles} />
       </section>
 

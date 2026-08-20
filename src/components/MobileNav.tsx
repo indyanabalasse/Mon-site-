@@ -36,7 +36,7 @@ export default function MobileNav({
     <div className="fixed inset-0 z-50 flex flex-col bg-background">
       <div className="flex items-center justify-between px-6 py-5 border-b border-border">
         <span className="wordmark font-serif text-lg font-medium">
-          INDYANASTUDIO
+          Indyana Balasse
         </span>
         <button
           onClick={() => setOpen(false)}
