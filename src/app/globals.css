@@ -57,11 +57,12 @@ body {
  *   - Primary (booking/conversion — book, quote, contact, buy, gift)
  *       → border border-foreground bg-foreground text-background,
  *         inverts on hover: hover:bg-transparent hover:text-foreground
- *       → copy is standardized to "Book now" everywhere on the site,
- *         even on French pages and quote-based offers — the one
- *         exception is the gift-a-shoot banner, which keeps its own
- *         wording since gifting is a different action, but is still
- *         styled primary
+ *       → copy is standardized to "Discutons de votre projet" / "Let's
+ *         talk about your project" everywhere on the site (a warmer,
+ *         less salesy alternative to "Book now") — the one exception
+ *         is the gift-a-shoot banner, which keeps its own wording
+ *         since gifting is a different action, but is still styled
+ *         primary
  *   - Secondary (browse/learn more/view examples)
  *       → border border-foreground, text inherits --foreground,
  *         inverts on hover: hover:bg-foreground hover:text-background

@@ -143,7 +143,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       home: "Accueil",
       portfolio: "Explore",
       studio: "Studio",
-      packaging: "Booking",
+      packaging: "Prestations",
       about: "À propos",
       contact: "Contact",
       themeToLight: "Passer en mode clair",
@@ -262,7 +262,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           "Sono",
           "Coin make-up",
         ],
-        cta: "Book now",
+        cta: "Discutons de votre projet",
       },
       amenities: {
         title: "Commodités",
@@ -282,11 +282,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
         ],
       },
       closing: {
-        cta: "Book now",
+        cta: "Discutons de votre projet",
       },
     },
     packaging: {
-      title: "Booking",
+      title: "Prestations",
       intro: "Quatre façons de travailler ensemble, une seule exigence : des images qui vous ressemblent vraiment. Trouvez l'offre qui correspond à votre projet.",
       offers: [
         {
@@ -325,7 +325,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       title: "Portrait, création, maternité",
       intro: "Séance en studio au 143 rue du Ham, à Uccle. Matériel et commodités inclus.",
       viewShootsCta: "Voir les shootings",
-      bookNowCta: "Book now",
+      bookNowCta: "Discutons de votre projet",
       packagesTitle: "Nos formules",
       packages: [
         {
@@ -359,7 +359,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ],
       ctaTitle: "Prêt(e) à réserver ?",
       ctaText: "Choisissez votre formule, on s'occupe du reste.",
-      ctaButton: "Book now",
+      ctaButton: "Discutons de votre projet",
     },
     offerEvenement: {
       kicker: "Shooting Événement",
@@ -375,7 +375,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       criteria: ["Durée et formule ajustables selon votre événement"],
       ctaTitle: "Parlons de votre événement",
       ctaText: "Racontez-moi votre projet, on construit la formule ensemble.",
-      ctaButton: "Book now",
+      ctaButton: "Discutons de votre projet",
     },
     offerPhotobooth: {
       kicker: "Spécial Photobooth",
@@ -391,7 +391,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       criteria: ["Idéal pour mariages, anniversaires, soirées d'entreprise"],
       ctaTitle: "Envie d'un Fun Booth à votre soirée ?",
       ctaText: "Parlons de votre événement pour composer l'animation idéale.",
-      ctaButton: "Book now",
+      ctaButton: "Discutons de votre projet",
     },
     about: {
       title: "Indyana Balasse",
@@ -430,7 +430,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       home: "Home",
       portfolio: "Explore",
       studio: "Studio",
-      packaging: "Booking",
+      packaging: "Services",
       about: "About",
       contact: "Contact",
       themeToLight: "Switch to light mode",
@@ -549,7 +549,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           "Sound system",
           "Make-up corner",
         ],
-        cta: "Book now",
+        cta: "Let's talk about your project",
       },
       amenities: {
         title: "Amenities",
@@ -569,11 +569,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
         ],
       },
       closing: {
-        cta: "Book now",
+        cta: "Let's talk about your project",
       },
     },
     packaging: {
-      title: "Booking",
+      title: "Services",
       intro: "Four ways to work together, one standard: images that truly look like you. Find the offer that fits your project.",
       offers: [
         {
@@ -612,7 +612,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       title: "Portrait, creative, maternity",
       intro: "Studio session at 143 rue du Ham, Uccle. Equipment and amenities included.",
       viewShootsCta: "View the shoots",
-      bookNowCta: "Book now",
+      bookNowCta: "Let's talk about your project",
       packagesTitle: "Our packages",
       packages: [
         {
@@ -646,7 +646,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ],
       ctaTitle: "Ready to book?",
       ctaText: "Pick your package, we'll take care of the rest.",
-      ctaButton: "Book now",
+      ctaButton: "Let's talk about your project",
     },
     offerEvenement: {
       kicker: "Event Shoot",
@@ -662,7 +662,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       criteria: ["Duration and package adjustable to your event"],
       ctaTitle: "Let's talk about your event",
       ctaText: "Tell me about your project and we'll build the right package together.",
-      ctaButton: "Book now",
+      ctaButton: "Let's talk about your project",
     },
     offerPhotobooth: {
       kicker: "Photo Booth Special",
@@ -678,7 +678,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       criteria: ["Perfect for weddings, birthdays, corporate parties"],
       ctaTitle: "Want a Fun Booth at your party?",
       ctaText: "Let's talk about your event to put together the ideal animation.",
-      ctaButton: "Book now",
+      ctaButton: "Let's talk about your project",
     },
     about: {
       title: "Indyana Balasse",

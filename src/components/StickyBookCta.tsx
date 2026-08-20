@@ -2,11 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import type { Locale } from "@/lib/i18n";
+import { getDictionary, type Locale } from "@/lib/i18n";
 
 export default function StickyBookCta({ locale }: { locale: Locale }) {
   const pathname = usePathname();
   if (pathname === `/${locale}/contact`) return null;
+
+  const dict = getDictionary(locale);
 
   return (
     <div
@@ -17,7 +19,7 @@ export default function StickyBookCta({ locale }: { locale: Locale }) {
         href={`/${locale}/contact`}
         className="block w-full border border-foreground bg-foreground px-8 py-3 text-center text-xs uppercase tracking-[0.2em] text-background transition-colors hover:bg-transparent hover:text-foreground"
       >
-        Book now
+        {dict.about.cta}
       </Link>
     </div>
   );
