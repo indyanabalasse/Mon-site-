@@ -7,7 +7,6 @@ import { MapPinIcon, PhoneIcon } from "@/components/icons";
 import TileSlideshow from "@/components/TileSlideshow";
 import heroImage from "@/images/Studio/PHOTO-2026-08-20-13-30-50.jpg";
 import lightingImage from "@/images/Studio/PHOTO-2026-08-13-11-25-37.jpg";
-import backdropImage from "@/images/Studio/PHOTO-2026-08-13-11-26-57.jpg";
 import makeupImage from "@/images/Studio/PHOTO-2026-08-13-11-24-52.jpg";
 import naturalLightImage from "@/images/Studio/PHOTO-2026-08-13-11-17-39.jpg";
 import gardenImage from "@/images/Studio/PHOTO-2026-08-13-11-26-12.jpg";
@@ -116,15 +115,12 @@ export default async function StudioPage({
         </div>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8">
+      <div className="grid grid-cols-2 gap-4 mt-8">
         <div className="relative aspect-square overflow-hidden">
-          <Image src={backdropImage} alt={studio.title} fill sizes="33vw" className="object-cover" />
+          <Image src={makeupImage} alt={studio.title} fill sizes="50vw" className="object-cover" />
         </div>
         <div className="relative aspect-square overflow-hidden">
-          <Image src={makeupImage} alt={studio.title} fill sizes="33vw" className="object-cover" />
-        </div>
-        <div className="relative aspect-square overflow-hidden">
-          <Image src={naturalLightImage} alt={studio.title} fill sizes="33vw" className="object-cover" />
+          <Image src={naturalLightImage} alt={studio.title} fill sizes="50vw" className="object-cover" />
         </div>
       </div>
 
