@@ -43,6 +43,7 @@ type Dictionary = {
   studio: {
     title: string;
     subtitle: string;
+    highlight: string;
     intro: string;
     equipment: { title: string; items: string[] };
     kitchen: { title: string; text: string };
@@ -199,6 +200,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
     studio: {
       title: "INDY Studio",
       subtitle: "Location professionnelle",
+      highlight:
+        "Pensé pour la photographie comme pour la vidéo, cet espace de 150 m² offre une hauteur sous plafond variant de 3 à 5 mètres — de quoi s'adapter à des besoins et des budgets différents.",
       intro:
         "Aménagé sous une charpente blanche, ce studio bénéficie d'un bel apport de lumière naturelle grâce à ses multiples fenêtres de toit. Mur en briques blanchies, volumes généreux et sol carrelé clair composent un décor épuré et intemporel, adapté à tout type de production : portrait, mode, beauté, packshot ou vidéo.",
       equipment: {
@@ -453,6 +456,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
     studio: {
       title: "INDY Studio",
       subtitle: "Professional location",
+      highlight:
+        "Designed for both photography and video, this 150 m² space offers a ceiling height ranging from 3 to 5 metres — adaptable to a variety of needs and budgets.",
       intro:
         "Set beneath a white timber roof structure, this studio enjoys lovely natural light through its multiple skylights. Whitewashed brick walls, generous volumes and a light tiled floor create a clean, timeless setting suited to any type of production: portrait, fashion, beauty, packshot or video.",
       equipment: {

@@ -75,7 +75,10 @@ export default async function StudioPage({
       </div>
 
       <div className="max-w-3xl mx-auto text-center mb-20">
-        <p className="leading-relaxed text-foreground/90">{studio.intro}</p>
+        <p className="wordmark font-serif text-xl sm:text-2xl font-light text-foreground">
+          {studio.highlight}
+        </p>
+        <p className="mt-6 leading-relaxed text-foreground/90">{studio.intro}</p>
       </div>
 
       <div className="grid gap-12 md:grid-cols-2 md:items-center">
