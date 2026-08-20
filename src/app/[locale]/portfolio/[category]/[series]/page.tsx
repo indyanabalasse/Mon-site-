@@ -69,12 +69,7 @@ export default async function SeriesPage({
   if (isSeriesGroup(seriesData)) {
     const subLabels = dict.subseries?.[category]?.[series] ?? {};
     return (
-      <div className="mx-auto max-w-7xl px-6 py-20">
-        <header className="max-w-2xl mx-auto text-center mb-14">
-          <p className="text-xs uppercase tracking-[0.2em] text-muted">{info.title}</p>
-          <h1 className="wordmark font-serif text-4xl font-light mt-2">{seriesLabel}</h1>
-        </header>
-
+      <div className="mx-auto max-w-7xl px-6 pb-20">
         <MasonryNav
           items={seriesData.subseries.map((sub) => ({
             href: `/${locale}/portfolio/${category}/${series}/${sub.slug}`,
@@ -88,12 +83,7 @@ export default async function SeriesPage({
   }
 
   return (
-    <div className="mx-auto max-w-7xl px-6 py-20">
-      <header className="max-w-2xl mx-auto text-center mb-14">
-        <p className="text-xs uppercase tracking-[0.2em] text-muted">{info.title}</p>
-        <h1 className="wordmark font-serif text-4xl font-light mt-2">{seriesLabel}</h1>
-      </header>
-
+    <div className="mx-auto max-w-7xl px-6 pb-20">
       <Gallery
         images={seriesData.images}
         altPrefix={seriesLabel}

@@ -37,7 +37,7 @@ export default async function PortfolioPage({
   }));
 
   return (
-    <div className="py-20">
+    <div className="pb-20">
       <div className="w-full">
         <MasonryNav items={tiles} />
       </div>

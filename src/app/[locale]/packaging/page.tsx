@@ -41,7 +41,7 @@ export default async function PackagingPage({
   const dict = getDictionary(locale);
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-12 sm:py-16 md:py-20">
+    <div className="mx-auto max-w-6xl px-6 pb-12 sm:pb-16 md:pb-20">
       <div className="grid gap-6 sm:grid-cols-2">
         {dict.packaging.offers.map((offer) => {
           const href =

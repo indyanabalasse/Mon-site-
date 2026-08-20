@@ -51,12 +51,7 @@ export default async function CategoryPage({
   const info = dict.categories[category];
 
   return (
-    <div className="mx-auto max-w-7xl px-6 py-20">
-      <header className="max-w-2xl mx-auto text-center mb-14">
-        <h1 className="wordmark font-serif text-4xl font-light">{info.title}</h1>
-        <p className="mt-4 text-muted">{info.description}</p>
-      </header>
-
+    <div className="mx-auto max-w-7xl px-6 pb-20">
       {data.series.length > 1 || isSeriesGroup(data.series[0]) ? (
         <MasonryNav
           items={data.series.map((series) => ({
