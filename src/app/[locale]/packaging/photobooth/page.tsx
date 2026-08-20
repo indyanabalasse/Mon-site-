@@ -1,6 +1,8 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getDictionary, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
+import { CONTACT_PHONE_HREF, SITE_NAME, SITE_URL } from "@/lib/site";
+import { pageMetadataBase } from "@/lib/metadata";
 import TileSlideshow from "@/components/TileSlideshow";
 import heroImage1 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7474.jpg";
 import heroImage2 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7503.jpg";
@@ -16,15 +18,25 @@ export async function generateMetadata({
   const { locale: rawLocale } = await params;
   const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
   const dict = getDictionary(locale);
-  const path = `/${locale}/packaging/photobooth`;
+  const base = pageMetadataBase({
+    path: "/packaging/photobooth",
+    locale,
+    title: dict.offerPhotobooth.title,
+    description: dict.offerPhotobooth.intro,
+  });
   return {
     title: `${dict.offerPhotobooth.title} — ${dict.packaging.title}`,
     description: dict.offerPhotobooth.intro,
-    alternates: { canonical: path },
+    ...base,
     openGraph: {
+      ...base.openGraph,
+      images: [{ url: heroImage1.src, width: heroImage1.width, height: heroImage1.height, alt: dict.offerPhotobooth.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
       title: dict.offerPhotobooth.title,
       description: dict.offerPhotobooth.intro,
-      url: path,
+      images: [heroImage1.src],
     },
   };
 }
@@ -39,8 +51,24 @@ export default async function PhotoboothPage({
   const dict = getDictionary(locale);
   const offer = dict.offerPhotobooth;
 
+  const path = `/${locale}/packaging/photobooth`;
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: locale === "fr" ? "Animation photobooth" : "Photo booth rental",
+    name: offer.title,
+    description: offer.intro,
+    url: `${SITE_URL}${path}`,
+    provider: { "@type": "LocalBusiness", name: SITE_NAME, telephone: CONTACT_PHONE_HREF },
+    areaServed: "BE",
+  };
+
   return (
     <div className="mx-auto max-w-4xl px-6 py-12 sm:py-16 md:py-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       <header className="max-w-2xl mx-auto text-center mb-16">
         <p className="text-xs uppercase tracking-[0.2em] text-muted">{offer.kicker}</p>
         <h1 className="wordmark font-serif text-4xl font-light mt-3">{offer.title}</h1>

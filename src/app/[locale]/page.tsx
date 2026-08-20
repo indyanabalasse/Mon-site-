@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getDictionary, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
 import { categories, heroImages } from "@/data/portfolio";
 import { INSTAGRAM_URL } from "@/lib/site";
@@ -5,6 +6,41 @@ import { InstagramIcon } from "@/components/icons";
 import HeroSlideshow from "@/components/HeroSlideshow";
 import MasonryNav from "@/components/MasonryNav";
 import Link from "next/link";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale: rawLocale } = await params;
+  const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
+  const isFr = locale === "fr";
+  const title = "INDYANASTUDIO — Indyana Balasse Photographie";
+  const description = isFr
+    ? "Portfolio photographique d'Indyana Balasse."
+    : "Photography portfolio of Indyana Balasse.";
+  return {
+    openGraph: {
+      title,
+      description,
+      url: `/${locale}`,
+      images: [
+        {
+          url: heroImages[0].src.src,
+          width: heroImages[0].src.width,
+          height: heroImages[0].src.height,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [heroImages[0].src.src],
+    },
+  };
+}
 
 export default async function HomePage({
   params,
@@ -50,14 +86,11 @@ export default async function HomePage({
           <h2 className="wordmark font-serif text-2xl sm:text-3xl mt-6">
             {dict.instagramBanner.title}
           </h2>
-          <p className="mt-4 max-w-lg text-white/80">
-            {dict.instagramBanner.text}
-          </p>
           <a
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-block border border-white px-8 py-3 text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-colors"
+            className="mt-6 inline-block border border-white px-8 py-3 text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-colors"
           >
             {dict.instagramBanner.cta}
           </a>

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getDictionary, isLocale, defaultLocale, locales, type Locale } from "@/lib/i18n";
 import { categorySlugs, getCategory, isSeriesGroup, type CategorySlug } from "@/data/portfolio";
+import { SITE_URL } from "@/lib/site";
+import { pageMetadataBase } from "@/lib/metadata";
 import Gallery from "@/components/Gallery";
 import MasonryNav from "@/components/MasonryNav";
 import BackLink from "@/components/BackLink";
@@ -26,12 +28,34 @@ export async function generateMetadata({
   const dict = getDictionary(locale);
   if (!isCategory(category)) return {};
   const info = dict.categories[category];
-  const path = `/${locale}/portfolio/${category}`;
+  const categoryData = getCategory(category);
+  const base = pageMetadataBase({
+    path: `/portfolio/${category}`,
+    locale,
+    title: info.title,
+    description: info.description,
+  });
+  const image = categoryData
+    ? [
+        {
+          url: categoryData.cover.src,
+          width: categoryData.cover.width,
+          height: categoryData.cover.height,
+          alt: info.title,
+        },
+      ]
+    : base.openGraph?.images;
   return {
     title: info.title,
     description: info.description,
-    alternates: { canonical: path },
-    openGraph: { title: info.title, description: info.description, url: path },
+    ...base,
+    openGraph: { ...base.openGraph, images: image },
+    twitter: {
+      card: "summary_large_image",
+      title: info.title,
+      description: info.description,
+      images: categoryData ? [categoryData.cover.src] : undefined,
+    },
   };
 }
 
@@ -51,9 +75,24 @@ export default async function CategoryPage({
 
   const info = dict.categories[category];
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: dict.nav.home, item: `${SITE_URL}/${locale}` },
+      { "@type": "ListItem", position: 2, name: dict.nav.portfolio, item: `${SITE_URL}/${locale}/portfolio` },
+      { "@type": "ListItem", position: 3, name: info.title, item: `${SITE_URL}/${locale}/portfolio/${category}` },
+    ],
+  };
+
   return (
     <div className="mx-auto max-w-7xl px-6 pt-6 pb-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <BackLink href={`/${locale}/portfolio`} label={dict.gallery.back} />
+      <h1 className="sr-only">{info.title}</h1>
       {data.series.length > 1 || isSeriesGroup(data.series[0]) ? (
         <MasonryNav
           variant="grid"

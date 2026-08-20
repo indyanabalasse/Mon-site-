@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getDictionary, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
+import { pageMetadataBase } from "@/lib/metadata";
 import studioImage from "@/images/Studio/PHOTO-2026-08-20-13-30-50.jpg";
 import shootingStudioImage from "@/images/booking/shooting-studio-cover.jpg";
 import evenementielImage from "@/images/portfolio/evenementiel/cover.jpg";
@@ -22,12 +23,33 @@ export async function generateMetadata({
   const { locale: rawLocale } = await params;
   const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
   const dict = getDictionary(locale);
-  const path = `/${locale}/packaging`;
+  const base = pageMetadataBase({
+    path: "/packaging",
+    locale,
+    title: dict.packaging.title,
+    description: dict.packaging.intro,
+  });
   return {
     title: dict.packaging.title,
     description: dict.packaging.intro,
-    alternates: { canonical: path },
-    openGraph: { title: dict.packaging.title, description: dict.packaging.intro, url: path },
+    ...base,
+    openGraph: {
+      ...base.openGraph,
+      images: [
+        {
+          url: studioImage.src,
+          width: studioImage.width,
+          height: studioImage.height,
+          alt: dict.packaging.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dict.packaging.title,
+      description: dict.packaging.intro,
+      images: [studioImage.src],
+    },
   };
 }
 
@@ -42,6 +64,7 @@ export default async function PackagingPage({
 
   return (
     <div className="mx-auto max-w-6xl px-6 pb-12 sm:pb-16 md:pb-20">
+      <h1 className="sr-only">{dict.packaging.title}</h1>
       <div className="grid gap-6 sm:grid-cols-2">
         {dict.packaging.offers.map((offer) => {
           const href =

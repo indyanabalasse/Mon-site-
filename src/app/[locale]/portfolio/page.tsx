@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
-import { categories } from "@/data/portfolio";
+import { categories, heroImages } from "@/data/portfolio";
+import { pageMetadataBase } from "@/lib/metadata";
 import MasonryNav from "@/components/MasonryNav";
 
 export async function generateMetadata({
@@ -11,12 +12,27 @@ export async function generateMetadata({
   const { locale: rawLocale } = await params;
   const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
   const dict = getDictionary(locale);
-  const path = `/${locale}/portfolio`;
+  const base = pageMetadataBase({
+    path: "/portfolio",
+    locale,
+    title: dict.portfolio.title,
+    description: dict.portfolio.intro,
+  });
+  const cover = heroImages[0].src;
   return {
     title: dict.portfolio.title,
     description: dict.portfolio.intro,
-    alternates: { canonical: path },
-    openGraph: { title: dict.portfolio.title, description: dict.portfolio.intro, url: path },
+    ...base,
+    openGraph: {
+      ...base.openGraph,
+      images: [{ url: cover.src, width: cover.width, height: cover.height, alt: dict.portfolio.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dict.portfolio.title,
+      description: dict.portfolio.intro,
+      images: [cover.src],
+    },
   };
 }
 
@@ -38,6 +54,7 @@ export default async function PortfolioPage({
 
   return (
     <div className="pb-20">
+      <h1 className="sr-only">{dict.portfolio.title}</h1>
       <div className="w-full">
         <MasonryNav items={tiles} />
       </div>

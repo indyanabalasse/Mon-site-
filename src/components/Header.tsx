@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useLayoutEffect, useRef, useState } from "react";
 import { getDictionary, type Locale } from "@/lib/i18n";
 import { INSTAGRAM_URL } from "@/lib/site";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
@@ -13,6 +14,9 @@ import { InstagramIcon } from "@/components/icons";
 export default function Header({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
   const pathname = usePathname();
+  const navRef = useRef<HTMLElement>(null);
+  const linkRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
+  const [indicator, setIndicator] = useState<{ left: number; width: number } | null>(null);
 
   const links = [
     { href: `/${locale}/portfolio`, label: dict.nav.portfolio },
@@ -21,6 +25,26 @@ export default function Header({ locale }: { locale: Locale }) {
     { href: `/${locale}/about`, label: dict.nav.about },
     { href: `/${locale}/contact`, label: dict.nav.contact },
   ];
+
+  const activeHref = links.find(
+    (link) => pathname === link.href || pathname.startsWith(`${link.href}/`)
+  )?.href;
+
+  useLayoutEffect(() => {
+    const measure = () => {
+      const activeEl = activeHref ? linkRefs.current[activeHref] : null;
+      if (activeEl && navRef.current) {
+        const navRect = navRef.current.getBoundingClientRect();
+        const linkRect = activeEl.getBoundingClientRect();
+        setIndicator({ left: linkRect.left - navRect.left, width: linkRect.width });
+      } else {
+        setIndicator(null);
+      }
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [activeHref]);
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
@@ -32,26 +56,33 @@ export default function Header({ locale }: { locale: Locale }) {
           Indyana Balasse
         </Link>
 
-        <nav className="hidden md:flex items-center gap-4 lg:gap-8 text-sm tracking-wide uppercase">
+        <nav
+          ref={navRef}
+          className="relative hidden md:flex items-center gap-4 lg:gap-8 text-sm tracking-wide uppercase"
+        >
           {links.map((link) => {
-            const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`);
+            const isActive = link.href === activeHref;
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`group relative pb-1 transition-colors ${
+                ref={(el) => {
+                  linkRefs.current[link.href] = el;
+                }}
+                className={`pb-1 transition-colors ${
                   isActive ? "text-foreground" : "text-muted hover:text-foreground"
                 }`}
               >
                 {link.label}
-                <span
-                  className={`absolute inset-x-0 bottom-0 h-px origin-center bg-foreground transition-transform duration-300 ease-out ${
-                    isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                  }`}
-                />
               </Link>
             );
           })}
+          {indicator && (
+            <span
+              className="absolute bottom-0 h-px bg-foreground transition-all duration-300 ease-out"
+              style={{ left: indicator.left, width: indicator.width }}
+            />
+          )}
           <a
             href={INSTAGRAM_URL}
             target="_blank"

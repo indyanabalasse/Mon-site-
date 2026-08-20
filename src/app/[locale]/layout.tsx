@@ -3,7 +3,16 @@ import { Cormorant_Garamond, Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { defaultLocale, isLocale, locales } from "@/lib/i18n";
-import { CONTACT_PHONE_HREF, INSTAGRAM_URL, SITE_NAME, SITE_URL } from "@/lib/site";
+import {
+  CONTACT_CITY,
+  CONTACT_COUNTRY,
+  CONTACT_PHONE_HREF,
+  CONTACT_POSTAL_CODE,
+  CONTACT_STREET,
+  INSTAGRAM_URL,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyBookCta from "@/components/StickyBookCta";
@@ -82,7 +91,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: ["/opengraph-image"],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: title }],
     },
     robots: {
       index: true,
@@ -112,15 +121,39 @@ export default async function LocaleLayout({
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Indyana Balasse",
-    alternateName: SITE_NAME,
-    url: SITE_URL,
-    image: `${SITE_URL}/opengraph-image`,
-    jobTitle: locale === "fr" ? "Photographe" : "Photographer",
-    address: { "@type": "PostalAddress", addressCountry: "BE" },
-    telephone: CONTACT_PHONE_HREF,
-    sameAs: [INSTAGRAM_URL],
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": `${SITE_URL}/#person`,
+        name: "Indyana Balasse",
+        alternateName: SITE_NAME,
+        url: SITE_URL,
+        image: `${SITE_URL}/opengraph-image`,
+        jobTitle: locale === "fr" ? "Photographe" : "Photographer",
+        telephone: CONTACT_PHONE_HREF,
+        sameAs: [INSTAGRAM_URL],
+        worksFor: { "@id": `${SITE_URL}/#business` },
+      },
+      {
+        "@type": ["LocalBusiness", "ProfessionalService"],
+        "@id": `${SITE_URL}/#business`,
+        name: SITE_NAME,
+        image: `${SITE_URL}/opengraph-image`,
+        url: SITE_URL,
+        telephone: CONTACT_PHONE_HREF,
+        priceRange: "€€",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: CONTACT_STREET,
+          addressLocality: CONTACT_CITY,
+          postalCode: CONTACT_POSTAL_CODE,
+          addressCountry: CONTACT_COUNTRY,
+        },
+        areaServed: { "@type": "Country", name: "Belgium" },
+        founder: { "@id": `${SITE_URL}/#person` },
+        sameAs: [INSTAGRAM_URL],
+      },
+    ],
   };
 
   return (

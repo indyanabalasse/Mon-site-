@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getDictionary, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
+import { pageMetadataBase } from "@/lib/metadata";
 import selfPortrait from "@/images/about/self-portrait.jpeg";
 
 export async function generateMetadata({
@@ -13,12 +14,26 @@ export async function generateMetadata({
   const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
   const dict = getDictionary(locale);
   const description = dict.about.paragraphs[0];
-  const path = `/${locale}/about`;
+  const base = pageMetadataBase({
+    path: "/about",
+    locale,
+    title: dict.about.title,
+    description,
+  });
   return {
     title: dict.about.title,
     description,
-    alternates: { canonical: path },
-    openGraph: { title: dict.about.title, description, url: path },
+    ...base,
+    openGraph: {
+      ...base.openGraph,
+      images: [{ url: selfPortrait.src, width: selfPortrait.width, height: selfPortrait.height, alt: dict.about.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dict.about.title,
+      description,
+      images: [selfPortrait.src],
+    },
   };
 }
 

@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getDictionary, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
 import { CONTACT_ADDRESS, CONTACT_MAPS_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF } from "@/lib/site";
+import { pageMetadataBase } from "@/lib/metadata";
 import { MapPinIcon, PhoneIcon } from "@/components/icons";
 import TileSlideshow from "@/components/TileSlideshow";
 import heroImage from "@/images/Studio/PHOTO-2026-08-20-13-30-50.jpg";
@@ -22,12 +23,26 @@ export async function generateMetadata({
   const { locale: rawLocale } = await params;
   const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
   const dict = getDictionary(locale);
-  const path = `/${locale}/studio`;
+  const base = pageMetadataBase({
+    path: "/studio",
+    locale,
+    title: dict.studio.title,
+    description: dict.studio.highlight,
+  });
   return {
     title: dict.studio.title,
     description: dict.studio.highlight,
-    alternates: { canonical: path },
-    openGraph: { title: dict.studio.title, description: dict.studio.highlight, url: path },
+    ...base,
+    openGraph: {
+      ...base.openGraph,
+      images: [{ url: heroImage.src, width: heroImage.width, height: heroImage.height, alt: dict.studio.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dict.studio.title,
+      description: dict.studio.highlight,
+      images: [heroImage.src],
+    },
   };
 }
 

@@ -2,6 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getDictionary, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
+import {
+  CONTACT_PHONE_HREF,
+  CONTACT_STREET,
+  CONTACT_CITY,
+  CONTACT_POSTAL_CODE,
+  CONTACT_COUNTRY,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/site";
+import { pageMetadataBase } from "@/lib/metadata";
 import heroImage from "@/images/Studio/PHOTO-2026-08-13-11-24-52.jpg";
 
 export async function generateMetadata({
@@ -12,12 +22,33 @@ export async function generateMetadata({
   const { locale: rawLocale } = await params;
   const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
   const dict = getDictionary(locale);
-  const path = `/${locale}/packaging/shooting-studio`;
+  const base = pageMetadataBase({
+    path: "/packaging/shooting-studio",
+    locale,
+    title: dict.offerStudio.title,
+    description: dict.offerStudio.intro,
+  });
   return {
     title: `${dict.offerStudio.title} — ${dict.packaging.title}`,
     description: dict.offerStudio.intro,
-    alternates: { canonical: path },
-    openGraph: { title: dict.offerStudio.title, description: dict.offerStudio.intro, url: path },
+    ...base,
+    openGraph: {
+      ...base.openGraph,
+      images: [
+        {
+          url: heroImage.src,
+          width: heroImage.width,
+          height: heroImage.height,
+          alt: dict.offerStudio.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dict.offerStudio.title,
+      description: dict.offerStudio.intro,
+      images: [heroImage.src],
+    },
   };
 }
 
@@ -31,8 +62,44 @@ export default async function ShootingStudioPage({
   const dict = getDictionary(locale);
   const offer = dict.offerStudio;
 
+  const path = `/${locale}/packaging/shooting-studio`;
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: locale === "fr" ? "Séance photo en studio" : "Studio photo session",
+    name: offer.title,
+    description: offer.intro,
+    url: `${SITE_URL}${path}`,
+    provider: {
+      "@type": "LocalBusiness",
+      name: SITE_NAME,
+      telephone: CONTACT_PHONE_HREF,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: CONTACT_STREET,
+        addressLocality: CONTACT_CITY,
+        postalCode: CONTACT_POSTAL_CODE,
+        addressCountry: CONTACT_COUNTRY,
+      },
+    },
+    areaServed: "BE",
+    offers: offer.packages.map((pkg) => ({
+      "@type": "Offer",
+      name: pkg.title,
+      price: pkg.price.replace(/[^0-9]/g, ""),
+      priceCurrency: "EUR",
+      availability: "https://schema.org/InStock",
+      url: `${SITE_URL}${path}`,
+      description: pkg.photos,
+    })),
+  };
+
   return (
     <div className="mx-auto max-w-4xl px-6 py-14">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       <div className="grid gap-10 md:grid-cols-2 md:items-center mb-14">
         <div className="relative aspect-[4/5] overflow-hidden order-1 md:order-none">
           <Image
