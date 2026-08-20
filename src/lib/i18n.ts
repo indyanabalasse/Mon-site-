@@ -271,7 +271,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         items: [
           {
             title: "Jardin",
-            text: "Idéal pour des prises de vue en extérieur.",
+            text: "Pour des prises de vue en extérieur.",
           },
           {
             title: "Cuisine",
