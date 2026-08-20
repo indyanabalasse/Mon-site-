@@ -32,7 +32,7 @@ export default function Header({ locale }: { locale: Locale }) {
           Indyana Balasse
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8 text-sm tracking-wide uppercase">
+        <nav className="hidden md:flex items-center gap-4 lg:gap-8 text-sm tracking-wide uppercase">
           {links.map((link) => {
             const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`);
             return (
@@ -63,9 +63,11 @@ export default function Header({ locale }: { locale: Locale }) {
           </a>
           <ThemeToggle locale={locale} />
           <LanguageSwitcher locale={locale} />
-          <FullscreenToggle
-            labels={{ enter: dict.nav.fullscreenEnter, exit: dict.nav.fullscreenExit }}
-          />
+          <div className="hidden lg:block">
+            <FullscreenToggle
+              labels={{ enter: dict.nav.fullscreenEnter, exit: dict.nav.fullscreenExit }}
+            />
+          </div>
         </nav>
 
         <MobileNav locale={locale} links={links} />

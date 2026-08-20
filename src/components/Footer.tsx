@@ -14,12 +14,12 @@ export default function Footer({ locale }: { locale: Locale }) {
   const year = 2026;
 
   return (
-    <footer className="border-t border-border">
+    <footer className="border-t border-border pb-20 md:pb-0">
       <div className="flex flex-col gap-4 px-6 py-5 text-xs uppercase tracking-wide text-muted sm:flex-row sm:items-center sm:justify-between sm:px-10">
         <span>
           © {year} INDYANASTUDIO — {dict.footer.rights}
         </span>
-        <div className="flex items-center gap-6">
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:flex-nowrap sm:justify-end sm:gap-6">
           <Link href={`/${locale}/contact`} className="hover:text-foreground transition-colors">
             {dict.nav.contact}
           </Link>

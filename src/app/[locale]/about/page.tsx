@@ -34,7 +34,7 @@ export default async function AboutPage({
   return (
     <div className="mx-auto max-w-6xl px-6 py-20">
       <div className="grid gap-12 md:grid-cols-2 md:items-center">
-        <div className="relative aspect-[4/5] overflow-hidden order-1 md:order-none">
+        <div className="relative aspect-[4/5] overflow-hidden order-first md:order-none">
           <Image
             src={selfPortrait}
             alt="INDYANASTUDIO"
@@ -52,7 +52,7 @@ export default async function AboutPage({
           ))}
           <Link
             href={`/${locale}/contact`}
-            className="mt-10 inline-block border border-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors"
+            className="mt-10 inline-block border border-foreground px-6 sm:px-8 py-3 text-xs uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors"
           >
             {dict.about.cta}
           </Link>

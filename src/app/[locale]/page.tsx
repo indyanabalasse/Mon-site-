@@ -45,7 +45,7 @@ export default async function HomePage({
       </section>
 
       <section className="border-t border-border bg-black text-white">
-        <div className="mx-auto max-w-3xl px-6 py-20 text-center flex flex-col items-center">
+        <div className="mx-auto max-w-3xl px-6 py-12 sm:py-20 text-center flex flex-col items-center">
           <InstagramIcon className="h-10 w-10" />
           <h2 className="wordmark font-serif text-2xl sm:text-3xl mt-6">
             {dict.instagramBanner.title}

@@ -117,7 +117,7 @@ export default async function StudioPage({
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-4 mt-8">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8">
         <div className="relative aspect-square overflow-hidden">
           <Image src={backdropImage} alt={studio.title} fill sizes="33vw" className="object-cover" />
         </div>

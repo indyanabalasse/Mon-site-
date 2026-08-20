@@ -41,7 +41,7 @@ export default async function PackagingPage({
   const dict = getDictionary(locale);
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-20">
+    <div className="mx-auto max-w-6xl px-6 py-12 sm:py-16 md:py-20">
       <header className="max-w-2xl mx-auto text-center mb-16">
         <h1 className="wordmark font-serif text-4xl font-light">{dict.packaging.title}</h1>
         <p className="mt-4 text-muted">{dict.packaging.intro}</p>
@@ -82,7 +82,7 @@ export default async function PackagingPage({
         })}
       </div>
 
-      <div className="mt-16 border border-border px-6 py-16 text-center">
+      <div className="mt-16 border border-border px-6 py-10 sm:py-12 md:py-16 text-center">
         <h2 className="wordmark font-serif text-2xl font-light">{dict.packaging.gift.title}</h2>
         <p className="mt-4 max-w-xl mx-auto text-muted">{dict.packaging.gift.text}</p>
         <Link

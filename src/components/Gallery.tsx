@@ -61,10 +61,10 @@ export default function Gallery({
       const a = i;
       const b = i + 1;
       items.push(
-        <div key={a} className="mb-4 flex gap-4 break-inside-avoid">
+        <div key={a} className="mb-4 flex flex-col sm:flex-row gap-4 break-inside-avoid">
           <button
             onClick={() => setActiveIndex(a)}
-            className="block w-1/2 focus:outline-none"
+            className="block w-full sm:w-1/2 focus:outline-none"
           >
             <Image
               src={images[a]}
@@ -76,7 +76,7 @@ export default function Gallery({
           </button>
           <button
             onClick={() => setActiveIndex(b)}
-            className="block w-1/2 focus:outline-none"
+            className="block w-full sm:w-1/2 focus:outline-none"
           >
             <Image
               src={images[b]}
@@ -125,7 +125,7 @@ export default function Gallery({
               close();
             }}
             aria-label="Fermer"
-            className="absolute top-6 right-6 text-white text-3xl leading-none"
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 p-3 text-white text-3xl leading-none"
           >
             ×
           </button>
@@ -135,7 +135,7 @@ export default function Gallery({
               showPrev();
             }}
             aria-label="Précédent"
-            className="absolute left-2 sm:left-6 text-white text-3xl px-2"
+            className="absolute left-2 sm:left-6 text-white text-3xl px-2 py-2"
           >
             ‹
           </button>
@@ -187,7 +187,7 @@ export default function Gallery({
               showNext();
             }}
             aria-label="Suivant"
-            className="absolute right-2 sm:right-6 text-white text-3xl px-2"
+            className="absolute right-2 sm:right-6 text-white text-3xl px-2 py-2"
           >
             ›
           </button>

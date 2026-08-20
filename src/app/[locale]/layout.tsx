@@ -6,6 +6,7 @@ import { defaultLocale, isLocale, locales } from "@/lib/i18n";
 import { CONTACT_PHONE_HREF, INSTAGRAM_URL, SITE_NAME, SITE_URL } from "@/lib/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import StickyBookCta from "@/components/StickyBookCta";
 
 const THEME_INIT_SCRIPT = `(function(){try{var s=localStorage.getItem('theme');var t=s==='light'||s==='dark'?s:(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.classList.add(t);document.documentElement.style.colorScheme=t;}catch(e){}})();`;
 
@@ -137,8 +138,9 @@ export default async function LocaleLayout({
       </head>
       <body className="min-h-full flex flex-col font-sans bg-background text-foreground">
         <Header locale={locale} />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 pb-20 md:pb-0">{children}</main>
         <Footer locale={locale} />
+        <StickyBookCta locale={locale} />
       </body>
     </html>
   );

@@ -36,7 +36,7 @@ export default async function ShootingEvenementPage({
   const offer = dict.offerEvenement;
 
   return (
-    <div className="mx-auto max-w-4xl px-6 py-20">
+    <div className="mx-auto max-w-4xl px-6 py-12 sm:py-16 md:py-20">
       <header className="max-w-2xl mx-auto text-center mb-16">
         <p className="text-xs uppercase tracking-[0.2em] text-muted">{offer.kicker}</p>
         <h1 className="wordmark font-serif text-4xl font-light mt-3">{offer.title}</h1>

@@ -75,7 +75,7 @@ export default function MobileNav({
             target="_blank"
             rel="noopener noreferrer"
             aria-label={dict.nav.instagram}
-            className="text-muted hover:text-foreground transition-colors"
+            className="p-2 -m-2 text-muted hover:text-foreground transition-colors"
           >
             <InstagramIcon className="h-5 w-5" />
           </a>
@@ -90,7 +90,7 @@ export default function MobileNav({
       <button
         onClick={() => setOpen(true)}
         aria-label="Menu"
-        className="flex flex-col gap-1.5 p-2"
+        className="flex flex-col gap-1.5 px-2 py-4"
       >
         <span className="block h-px w-6 bg-foreground" />
         <span className="block h-px w-6 bg-foreground" />
