@@ -213,7 +213,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           "Système son (sono)",
           "Coin make-up équipé d'un miroir lumineux, pour la préparation des modèles avant le shooting",
         ],
-        cta: "Réserver du matériel",
+        cta: "Réserver le studio",
       },
       kitchen: {
         title: "Espace cuisine",
@@ -471,7 +471,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           "Sound system",
           "Make-up corner with a lit mirror, for preparing models before the shoot",
         ],
-        cta: "Book equipment",
+        cta: "Book the studio",
       },
       kitchen: {
         title: "Kitchen area",
