@@ -55,12 +55,6 @@ export default async function ShootingEvenementPage({
 
       <div className="max-w-2xl mx-auto text-center mb-16">
         <p className="leading-relaxed text-muted">{offer.intro}</p>
-        <Link
-          href={`/${locale}/portfolio/evenementiel`}
-          className="mt-6 inline-block border border-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors"
-        >
-          {offer.viewSeriesCta}
-        </Link>
       </div>
 
       <div className="grid gap-12 sm:grid-cols-2 max-w-2xl mx-auto">
@@ -91,12 +85,20 @@ export default async function ShootingEvenementPage({
       <div className="mt-16 border-t border-border pt-16 text-center">
         <h2 className="wordmark font-serif text-2xl font-light">{offer.ctaTitle}</h2>
         <p className="mt-4 max-w-xl mx-auto text-muted">{offer.ctaText}</p>
-        <Link
-          href={`/${locale}/contact`}
-          className="mt-8 inline-block border border-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors"
-        >
-          {offer.ctaButton}
-        </Link>
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <Link
+            href={`/${locale}/portfolio/evenementiel`}
+            className="inline-block border border-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors"
+          >
+            {offer.viewSeriesCta}
+          </Link>
+          <Link
+            href={`/${locale}/contact`}
+            className="inline-block border border-foreground bg-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] text-background hover:bg-transparent hover:text-foreground transition-colors"
+          >
+            {offer.ctaButton}
+          </Link>
+        </div>
       </div>
     </div>
   );

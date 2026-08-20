@@ -103,6 +103,7 @@ type Dictionary = {
     kicker: string;
     title: string;
     intro: string;
+    viewSeriesCta: string;
     includesTitle: string;
     includes: string[];
     criteriaTitle: string;
@@ -379,6 +380,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       kicker: "Spécial Photobooth",
       title: "Une animation photo qui rassemble vos invités",
       intro: "Loin de la cabine fermée et des selfies figés, Fun Booth propose une expérience photo vivante, encadrée par un œil professionnel : un moment qui rassemble les invités autant qu'il immortalise la soirée.",
+      viewSeriesCta: "Voir mes photobooths",
       includesTitle: "Ce qui est inclus",
       includes: [
         "Animation photo live tout au long de l'événement",
@@ -665,6 +667,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       kicker: "Photo Booth Special",
       title: "A photo animation that brings your guests together",
       intro: "Far from the closed booth and stiff selfies, Fun Booth offers a living photo experience guided by a professional eye: a moment that brings guests together as much as it captures the night.",
+      viewSeriesCta: "View my photo booths",
       includesTitle: "What's included",
       includes: [
         "Live photo animation throughout the event",

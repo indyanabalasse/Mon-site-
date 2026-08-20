@@ -1,8 +1,12 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getDictionary, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
-import heroImage from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7474.jpg";
+import TileSlideshow from "@/components/TileSlideshow";
+import heroImage1 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7474.jpg";
+import heroImage2 from "@/images/portfolio/fun-photo-booth/Mariage 2/DSC_7503.jpg";
+import heroImage3 from "@/images/portfolio/fun-photo-booth/Mariage 1/cover.jpg";
+
+const heroImages = [heroImage1, heroImage2, heroImage3];
 
 export async function generateMetadata({
   params,
@@ -43,18 +47,17 @@ export default async function PhotoboothPage({
       </header>
 
       <div className="relative aspect-[16/9] overflow-hidden mb-16">
-        <Image
-          src={heroImage}
-          alt={offer.title}
-          fill
-          sizes="100vw"
-          className="object-cover"
-          priority
-        />
+        <TileSlideshow images={heroImages} alt={offer.title} sizes="100vw" fill />
       </div>
 
       <div className="max-w-2xl mx-auto text-center mb-16">
         <p className="leading-relaxed text-muted">{offer.intro}</p>
+        <Link
+          href={`/${locale}/portfolio/fun-photo-booth`}
+          className="mt-6 inline-block border border-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors"
+        >
+          {offer.viewSeriesCta}
+        </Link>
       </div>
 
       <div className="grid gap-12 sm:grid-cols-2 max-w-2xl mx-auto">
