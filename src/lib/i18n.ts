@@ -361,8 +361,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       intro: "Mariage, anniversaire, festival, soirée d'entreprise : je me glisse dans votre événement pour en capturer l'énergie et les instants qu'on ne rejoue jamais deux fois.",
       includesTitle: "Ce qui est inclus",
       includes: [
-        "Couverture photo d'une demi-journée ou d'une journée complète",
-        "Reportage complet de votre événement privé",
+        "Reportage complet de votre événement, en demi-journée ou journée complète",
         "Livraison de photos retouchées, prêtes à partager",
       ],
       criteriaTitle: "À savoir",
@@ -647,8 +646,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       intro: "Wedding, birthday, festival, corporate party: I slip into your event to capture its energy and the moments that only happen once.",
       includesTitle: "What's included",
       includes: [
-        "Half-day or full-day photo coverage",
-        "Full coverage of your private event",
+        "Full event coverage, half-day or full-day",
         "Retouched photos delivered, ready to share",
       ],
       criteriaTitle: "Good to know",
