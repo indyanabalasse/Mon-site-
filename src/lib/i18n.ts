@@ -75,6 +75,8 @@ type Dictionary = {
     title: string;
     intro: string;
     styles: { title: string; text: string }[];
+    journeyTitle: string;
+    journey: { title: string; text: string }[];
     criteria: string[];
     ctaTitle: string;
     ctaText: string;
@@ -324,6 +326,33 @@ export const dictionaries: Record<Locale, Dictionary> = {
         {
           title: "Femme enceinte",
           text: "Une séance dédiée à ce moment suspendu, tout en douceur. Matériel professionnel et retouches inclus.",
+        },
+      ],
+      journeyTitle: "Votre séance, étape par étape",
+      journey: [
+        {
+          title: "Rendez-vous découverte",
+          text: "Un premier échange pour comprendre votre projet et cerner précisément vos envies.",
+        },
+        {
+          title: "Direction artistique",
+          text: "Brainstorming et création d'un moodboard sur Pinterest, pour poser ensemble l'univers visuel de la séance.",
+        },
+        {
+          title: "Accueil sur le plateau",
+          text: "Le jour J, vous êtes accueilli(e) dans un cadre pensé pour vous mettre pleinement à l'aise.",
+        },
+        {
+          title: "Stylisme & maquillage",
+          text: "Un styliste et une maquilleuse sont mis à votre disposition pour préparer chaque détail avant l'objectif.",
+        },
+        {
+          title: "La séance",
+          text: "Le shooting démarre, porté par une direction claire et une confiance installée en amont.",
+        },
+        {
+          title: "Retouche photo",
+          text: "Une fois la séance terminée, chaque image est sublimée avec soin avant de vous être livrée.",
         },
       ],
       criteria: [
@@ -596,6 +625,33 @@ export const dictionaries: Record<Locale, Dictionary> = {
         {
           title: "Maternity",
           text: "A gentle session dedicated to this suspended moment. Professional equipment and retouching included.",
+        },
+      ],
+      journeyTitle: "Your session, step by step",
+      journey: [
+        {
+          title: "Discovery meeting",
+          text: "A first conversation to understand your project and pin down exactly what you're after.",
+        },
+        {
+          title: "Creative direction",
+          text: "Brainstorming and building a Pinterest moodboard together, to set the visual direction of the session.",
+        },
+        {
+          title: "Welcome on set",
+          text: "On the day, you're welcomed into a space designed to put you fully at ease.",
+        },
+        {
+          title: "Styling & make-up",
+          text: "A stylist and make-up artist are on hand to prepare every detail before the camera.",
+        },
+        {
+          title: "The shoot",
+          text: "The session begins, carried by a clear direction and the trust built beforehand.",
+        },
+        {
+          title: "Retouching",
+          text: "Once the session wraps, every image is carefully refined before it's delivered to you.",
         },
       ],
       criteria: [

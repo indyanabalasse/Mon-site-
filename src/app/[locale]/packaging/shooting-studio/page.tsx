@@ -62,6 +62,25 @@ export default async function ShootingStudioPage({
         ))}
       </div>
 
+      <div className="mt-20 pt-16 border-t border-border max-w-2xl mx-auto">
+        <h2 className="wordmark font-serif text-2xl font-light text-center mb-12">
+          {offer.journeyTitle}
+        </h2>
+        <ol className="space-y-8">
+          {offer.journey.map((step, i) => (
+            <li key={step.title} className="flex gap-6">
+              <span className="wordmark font-serif text-2xl text-muted shrink-0">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <div>
+                <h3 className="font-medium">{step.title}</h3>
+                <p className="mt-1 text-sm text-muted leading-relaxed">{step.text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+
       <ul className="mt-16 space-y-3 max-w-xl mx-auto">
         {offer.criteria.map((item) => (
           <li key={item} className="flex gap-3 text-sm text-muted leading-relaxed">
