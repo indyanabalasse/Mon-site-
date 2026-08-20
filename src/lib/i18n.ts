@@ -58,18 +58,51 @@ type Dictionary = {
   packaging: {
     title: string;
     intro: string;
+    offers: {
+      slug: string;
+      title: string;
+      tagline: string;
+      cta: string;
+    }[];
+    gift: {
+      title: string;
+      text: string;
+      cta: string;
+    };
+  };
+  offerStudio: {
+    kicker: string;
+    title: string;
+    intro: string;
+    styles: { title: string; text: string }[];
+    criteria: string[];
     ctaTitle: string;
     ctaText: string;
     ctaButton: string;
-    formulas: {
-      number: string;
-      category: string;
-      subcategory: string;
-      title: string;
-      price: string;
-      unit: string;
-      features: string[];
-    }[];
+  };
+  offerEvenement: {
+    kicker: string;
+    title: string;
+    intro: string;
+    includesTitle: string;
+    includes: string[];
+    criteriaTitle: string;
+    criteria: string[];
+    ctaTitle: string;
+    ctaText: string;
+    ctaButton: string;
+  };
+  offerPhotobooth: {
+    kicker: string;
+    title: string;
+    intro: string;
+    includesTitle: string;
+    includes: string[];
+    criteriaTitle: string;
+    criteria: string[];
+    ctaTitle: string;
+    ctaText: string;
+    ctaButton: string;
   };
   about: {
     title: string;
@@ -241,92 +274,101 @@ export const dictionaries: Record<Locale, Dictionary> = {
       },
     },
     packaging: {
-      title: "Formules & Tarifs",
-      intro: "Quatre façons de capturer votre image — du portrait épuré à l'événement privé, chaque séance est pensée, cadrée et retouchée avec soin.",
-      ctaTitle: "Réservons votre séance",
-      ctaText: "Disponibilités sur demande. Chaque formule peut être adaptée selon vos envies — écrivez-moi pour en discuter.",
-      ctaButton: "Me contacter",
-      formulas: [
+      title: "Nos prestations",
+      intro: "Quatre façons de travailler ensemble, une seule exigence : des images qui vous ressemblent vraiment. Trouvez l'offre qui correspond à votre projet.",
+      offers: [
         {
-          number: "N°01",
-          category: "Studio",
-          subcategory: "Essentielle",
-          title: "Formule Essentielle",
-          price: "200€",
-          unit: "Séance studio",
-          features: [
-            "Séance en studio",
-            "Matériel professionnel inclus",
-            "Retouches photo incluses",
-            "Remise de 10 photos en noir et blanc",
-          ],
+          slug: "shooting-studio",
+          title: "Shooting Studio",
+          tagline: "Portrait, création ou grossesse : une séance sur mesure dans un cadre professionnel.",
+          cta: "Découvrir l'offre",
         },
         {
-          number: "N°02",
-          category: "Studio",
-          subcategory: "Créative",
-          title: "Formule Créative",
-          price: "300€",
-          unit: "Séance studio",
-          features: [
-            "Séance en studio, mise en scène créative",
-            "Matériel professionnel inclus",
-            "Retouches photo incluses",
-            "Remise de 15 photos",
-          ],
+          slug: "shooting-evenement",
+          title: "Shooting Événement",
+          tagline: "Mariage, anniversaire, soirée d'entreprise : votre événement raconté en images.",
+          cta: "Découvrir l'offre",
         },
         {
-          number: "N°03",
-          category: "Studio",
-          subcategory: "Grossesse",
-          title: "Formule Femme Enceinte",
-          price: "400€",
-          unit: "Séance studio",
-          features: [
-            "Séance en studio dédiée grossesse",
-            "Matériel professionnel inclus",
-            "Retouches photo incluses",
-          ],
+          slug: "photobooth",
+          title: "Spécial Photobooth",
+          tagline: "Une animation photo live et déguisée qui rassemble vos invités toute la soirée.",
+          cta: "Découvrir l'offre",
         },
         {
-          number: "N°04",
-          category: "Extérieur",
-          subcategory: "Événement",
-          title: "Formule Événement Privé",
-          price: "400€",
-          unit: "Demi-journée",
-          features: [
-            "Couverture photo d'une demi-journée",
-            "Reportage de votre événement privé",
-          ],
-        },
-        {
-          number: "N°05",
-          category: "Studio",
-          subcategory: "Location",
+          slug: "location-studio",
           title: "Location Studio",
-          price: "Sur devis",
-          unit: "Tarif communiqué par e-mail",
-          features: [
-            "Mise à disposition du studio pour vos propres séances",
-            "Prise de rendez-vous sur demande",
-          ],
-        },
-        {
-          number: "N°06",
-          category: "Événementiel",
-          subcategory: "Animation",
-          title: "Fun Booth",
-          price: "Sur devis",
-          unit: "Tarif communiqué par e-mail",
-          features: [
-            "Animation photo live tout au long de l'événement",
-            "Décor sélectionné selon le thème de votre soirée",
-            "Déguisements et accessoires pour les invités",
-            "Idéal pour mariages, anniversaires, soirées d'entreprise",
-          ],
+          tagline: "150 m² lumineux, entièrement équipé, à louer pour vos propres productions.",
+          cta: "Découvrir le studio",
         },
       ],
+      gift: {
+        title: "Offrir un shooting",
+        text: "Le plus beau des cadeaux : un moment rien que pour soi, immortalisé avec soin. Écrivez-moi pour composer un bon cadeau sur mesure.",
+        cta: "Offrir un shooting",
+      },
+    },
+    offerStudio: {
+      kicker: "Shooting Studio",
+      title: "Une séance sur mesure, dans un cadre pensé pour vous",
+      intro: "Portrait, création artistique ou grossesse : chaque séance studio est une rencontre avant d'être une photo. On prend le temps de comprendre ce que vous voulez raconter, puis on le met en lumière.",
+      styles: [
+        {
+          title: "Essentielle",
+          text: "Une séance épurée en studio, pensée pour un portrait sincère. Matériel professionnel et retouches inclus, remise de 10 photos en noir et blanc.",
+        },
+        {
+          title: "Créative",
+          text: "Une mise en scène plus affirmée, pour des images qui sortent des codes. Matériel professionnel et retouches inclus, remise de 15 photos.",
+        },
+        {
+          title: "Femme enceinte",
+          text: "Une séance dédiée à ce moment suspendu, tout en douceur. Matériel professionnel et retouches inclus.",
+        },
+      ],
+      criteria: [
+        "Séance en studio, au 143 rue du Ham à Uccle",
+        "Matériel professionnel et retouches toujours inclus",
+        "Tarif communiqué sur devis, selon la formule choisie",
+      ],
+      ctaTitle: "Envie d'en discuter ?",
+      ctaText: "Chaque séance est unique : on l'ajuste ensemble selon vos envies.",
+      ctaButton: "Demander un devis",
+    },
+    offerEvenement: {
+      kicker: "Shooting Événement",
+      title: "Votre événement, raconté en images",
+      intro: "Mariage, anniversaire, soirée d'entreprise : je me glisse dans votre événement pour en capturer l'énergie et les instants qu'on ne rejoue jamais deux fois.",
+      includesTitle: "Ce qui est inclus",
+      includes: [
+        "Couverture photo d'une demi-journée",
+        "Reportage complet de votre événement privé",
+        "Livraison de photos retouchées, prêtes à partager",
+      ],
+      criteriaTitle: "À savoir",
+      criteria: [
+        "Idéal pour les mariages, anniversaires et soirées d'entreprise",
+        "Durée et formule ajustables selon votre événement",
+      ],
+      ctaTitle: "Parlons de votre événement",
+      ctaText: "Racontez-moi votre projet, on construit la formule ensemble.",
+      ctaButton: "Demander un devis",
+    },
+    offerPhotobooth: {
+      kicker: "Spécial Photobooth",
+      title: "Une animation photo qui rassemble vos invités",
+      intro: "Loin de la cabine fermée et des selfies figés, Fun Booth propose une expérience photo vivante, encadrée par un œil professionnel : un moment qui rassemble les invités autant qu'il immortalise la soirée.",
+      includesTitle: "Ce qui est inclus",
+      includes: [
+        "Animation photo live tout au long de l'événement",
+        "Décor sélectionné selon le thème de votre soirée",
+        "Déguisements et accessoires à disposition des invités",
+      ],
+      criteriaTitle: "À savoir",
+      criteria: ["Idéal pour mariages, anniversaires, soirées d'entreprise"],
+      ctaTitle: "Envie d'un Fun Booth à votre soirée ?",
+      ctaText: "Parlons de votre événement pour composer l'animation idéale.",
+      ctaButton: "Demander un devis",
     },
     about: {
       title: "À propos",
@@ -504,92 +546,101 @@ export const dictionaries: Record<Locale, Dictionary> = {
       },
     },
     packaging: {
-      title: "Packages & Rates",
-      intro: "Four ways to capture your image — from a clean portrait to a private event, every session is thoughtfully composed, framed and retouched.",
-      ctaTitle: "Let's book your session",
-      ctaText: "Availability on request. Every package can be tailored to your needs — get in touch to discuss.",
-      ctaButton: "Contact me",
-      formulas: [
+      title: "Our Services",
+      intro: "Four ways to work together, one standard: images that truly look like you. Find the offer that fits your project.",
+      offers: [
         {
-          number: "N°01",
-          category: "Studio",
-          subcategory: "Essential",
-          title: "Essential Package",
-          price: "€200",
-          unit: "Studio session",
-          features: [
-            "Studio session",
-            "Professional equipment included",
-            "Photo retouching included",
-            "10 black and white photos delivered",
-          ],
+          slug: "shooting-studio",
+          title: "Studio Shoot",
+          tagline: "Portrait, creative or maternity: a tailored session in a professional setting.",
+          cta: "Discover the offer",
         },
         {
-          number: "N°02",
-          category: "Studio",
-          subcategory: "Creative",
-          title: "Creative Package",
-          price: "€300",
-          unit: "Studio session",
-          features: [
-            "Studio session with creative staging",
-            "Professional equipment included",
-            "Photo retouching included",
-            "15 photos delivered",
-          ],
+          slug: "shooting-evenement",
+          title: "Event Shoot",
+          tagline: "Wedding, birthday, corporate party: your event told in images.",
+          cta: "Discover the offer",
         },
         {
-          number: "N°03",
-          category: "Studio",
-          subcategory: "Maternity",
-          title: "Maternity Package",
-          price: "€400",
-          unit: "Studio session",
-          features: [
-            "Studio session dedicated to maternity",
-            "Professional equipment included",
-            "Photo retouching included",
-          ],
+          slug: "photobooth",
+          title: "Photo Booth Special",
+          tagline: "A live, costume-filled photo animation that brings your guests together all night.",
+          cta: "Discover the offer",
         },
         {
-          number: "N°04",
-          category: "Outdoor",
-          subcategory: "Event",
-          title: "Private Event Package",
-          price: "€400",
-          unit: "Half day",
-          features: [
-            "Half-day photo coverage",
-            "Coverage of your private event",
-          ],
-        },
-        {
-          number: "N°05",
-          category: "Studio",
-          subcategory: "Rental",
+          slug: "location-studio",
           title: "Studio Rental",
-          price: "On request",
-          unit: "Rate sent by email",
-          features: [
-            "Studio made available for your own sessions",
-            "Booking on request",
-          ],
-        },
-        {
-          number: "N°06",
-          category: "Events",
-          subcategory: "Entertainment",
-          title: "Fun Booth",
-          price: "On request",
-          unit: "Rate sent by email",
-          features: [
-            "Live photo animation throughout the event",
-            "Backdrop chosen to match your event's theme",
-            "Costumes and accessories available for guests",
-            "Perfect for weddings, birthdays, corporate parties",
-          ],
+          tagline: "150 m² of bright, fully equipped space to rent for your own productions.",
+          cta: "Discover the studio",
         },
       ],
+      gift: {
+        title: "Gift a shoot",
+        text: "The most beautiful gift: a moment just for you, carefully captured. Get in touch to put together a tailor-made gift voucher.",
+        cta: "Gift a shoot",
+      },
+    },
+    offerStudio: {
+      kicker: "Studio Shoot",
+      title: "A tailored session, in a space designed for you",
+      intro: "Portrait, creative concept or maternity: every studio session is an encounter before it's a photo. We take the time to understand what you want to tell, then bring it to light.",
+      styles: [
+        {
+          title: "Essential",
+          text: "A clean studio session, built for a sincere portrait. Professional equipment and retouching included, 10 black and white photos delivered.",
+        },
+        {
+          title: "Creative",
+          text: "A bolder staging, for images that step outside the usual codes. Professional equipment and retouching included, 15 photos delivered.",
+        },
+        {
+          title: "Maternity",
+          text: "A gentle session dedicated to this suspended moment. Professional equipment and retouching included.",
+        },
+      ],
+      criteria: [
+        "Studio session at 143 rue du Ham, Uccle",
+        "Professional equipment and retouching always included",
+        "Rate quoted on request, depending on the package",
+      ],
+      ctaTitle: "Want to talk it through?",
+      ctaText: "Every session is unique: we shape it together around what you want.",
+      ctaButton: "Request a quote",
+    },
+    offerEvenement: {
+      kicker: "Event Shoot",
+      title: "Your event, told in images",
+      intro: "Wedding, birthday, corporate party: I slip into your event to capture its energy and the moments that only happen once.",
+      includesTitle: "What's included",
+      includes: [
+        "Half-day photo coverage",
+        "Full coverage of your private event",
+        "Retouched photos delivered, ready to share",
+      ],
+      criteriaTitle: "Good to know",
+      criteria: [
+        "Perfect for weddings, birthdays and corporate parties",
+        "Duration and package adjustable to your event",
+      ],
+      ctaTitle: "Let's talk about your event",
+      ctaText: "Tell me about your project and we'll build the right package together.",
+      ctaButton: "Request a quote",
+    },
+    offerPhotobooth: {
+      kicker: "Photo Booth Special",
+      title: "A photo animation that brings your guests together",
+      intro: "Far from the closed booth and stiff selfies, Fun Booth offers a living photo experience guided by a professional eye: a moment that brings guests together as much as it captures the night.",
+      includesTitle: "What's included",
+      includes: [
+        "Live photo animation throughout the event",
+        "Backdrop chosen to match your event's theme",
+        "Costumes and accessories available for guests",
+      ],
+      criteriaTitle: "Good to know",
+      criteria: ["Perfect for weddings, birthdays, corporate parties"],
+      ctaTitle: "Want a Fun Booth at your party?",
+      ctaText: "Let's talk about your event to put together the ideal animation.",
+      ctaButton: "Request a quote",
     },
     about: {
       title: "About",
