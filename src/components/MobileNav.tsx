@@ -3,6 +3,7 @@
 import { useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { getDictionary, type Locale } from "@/lib/i18n";
 import { INSTAGRAM_URL } from "@/lib/site";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
@@ -31,6 +32,7 @@ export default function MobileNav({
   const [open, setOpen] = useState(false);
   const mounted = useMounted();
   const dict = getDictionary(locale);
+  const pathname = usePathname();
 
   const panel = (
     <div className="fixed inset-0 z-50 flex flex-col bg-background">
@@ -47,11 +49,23 @@ export default function MobileNav({
         </button>
       </div>
       <nav className="flex flex-1 flex-col items-start justify-center gap-8 px-8 text-2xl font-serif">
-        {links.map((link) => (
-          <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>
-            {link.label}
-          </Link>
-        ))}
+        {links.map((link) => {
+          const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`);
+          return (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              className={
+                isActive
+                  ? "text-foreground border-b border-foreground pb-1"
+                  : "text-muted"
+              }
+            >
+              {link.label}
+            </Link>
+          );
+        })}
       </nav>
       <div className="px-8 pb-8 flex items-center justify-between">
         <LanguageSwitcher locale={locale} />

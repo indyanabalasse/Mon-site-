@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { getDictionary, type Locale } from "@/lib/i18n";
 import { INSTAGRAM_URL } from "@/lib/site";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
@@ -9,6 +12,7 @@ import { InstagramIcon } from "@/components/icons";
 
 export default function Header({ locale }: { locale: Locale }) {
   const dict = getDictionary(locale);
+  const pathname = usePathname();
 
   const links = [
     { href: `/${locale}/portfolio`, label: dict.nav.portfolio },
@@ -29,15 +33,22 @@ export default function Header({ locale }: { locale: Locale }) {
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm tracking-wide uppercase">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-muted hover:text-foreground transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {links.map((link) => {
+            const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={
+                  isActive
+                    ? "text-foreground border-b border-foreground pb-1 transition-colors"
+                    : "text-muted hover:text-foreground transition-colors"
+                }
+              >
+                {link.label}
+              </Link>
+            );
+          })}
           <a
             href={INSTAGRAM_URL}
             target="_blank"
