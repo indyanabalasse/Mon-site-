@@ -2,15 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getDictionary, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
-import {
-  CONTACT_PHONE_HREF,
-  CONTACT_STREET,
-  CONTACT_CITY,
-  CONTACT_POSTAL_CODE,
-  CONTACT_COUNTRY,
-  SITE_NAME,
-  SITE_URL,
-} from "@/lib/site";
+import { CONTACT_PHONE_HREF, SITE_NAME, SITE_URL } from "@/lib/site";
 import { pageMetadataBase } from "@/lib/metadata";
 import heroImage from "@/images/Studio/PHOTO-2026-08-13-11-24-52.jpg";
 
@@ -74,13 +66,6 @@ export default async function ShootingStudioPage({
       "@type": "LocalBusiness",
       name: SITE_NAME,
       telephone: CONTACT_PHONE_HREF,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: CONTACT_STREET,
-        addressLocality: CONTACT_CITY,
-        postalCode: CONTACT_POSTAL_CODE,
-        addressCountry: CONTACT_COUNTRY,
-      },
     },
     areaServed: "BE",
     offers: offer.packages.map((pkg) => ({

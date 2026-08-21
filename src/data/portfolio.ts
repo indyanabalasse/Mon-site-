@@ -26,8 +26,6 @@ import evenementielOpenAir04 from "@/images/portfolio/evenementiel/open-air/04.j
 import evenementielOpenAir05 from "@/images/portfolio/evenementiel/open-air/05.jpg";
 import evenementielOpenAir07 from "@/images/portfolio/evenementiel/open-air/07.jpg";
 import evenementielOpenAir08 from "@/images/portfolio/evenementiel/open-air/08.jpg";
-import evenementielOpenAir09 from "@/images/portfolio/evenementiel/open-air/09.jpg";
-import evenementielOpenAir10 from "@/images/portfolio/evenementiel/open-air/10.jpg";
 import evenementielOpenAir11 from "@/images/portfolio/evenementiel/open-air/11.jpg";
 import evenementielOpenAir12 from "@/images/portfolio/evenementiel/open-air/12.jpg";
 import evenementielFestivalCover from "@/images/portfolio/evenementiel/festival/cover.jpg";
@@ -442,7 +440,7 @@ export const categories: CategoryData[] = [
         images: [
           evenementielOpenAir01, evenementielOpenAir03, evenementielOpenAir04,
           evenementielOpenAir05, evenementielOpenAir07, evenementielOpenAir08,
-          evenementielOpenAir09, evenementielOpenAir10, evenementielOpenAir11, evenementielOpenAir12,
+          evenementielOpenAir11, evenementielOpenAir12,
         ],
       },
       {

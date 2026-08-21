@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getDictionary, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
-import { CONTACT_ADDRESS, CONTACT_MAPS_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF } from "@/lib/site";
+import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF } from "@/lib/site";
 import { pageMetadataBase } from "@/lib/metadata";
-import { MapPinIcon, PhoneIcon } from "@/components/icons";
+import { PhoneIcon } from "@/components/icons";
 import TileSlideshow from "@/components/TileSlideshow";
 import heroImage from "@/images/Studio/PHOTO-2026-08-20-13-30-50.jpg";
 import lightingImage from "@/images/Studio/PHOTO-2026-08-13-11-25-37.jpg";
@@ -61,15 +61,6 @@ export default async function StudioPage({
       <header className="max-w-2xl mx-auto text-center mb-16">
         <h1 className="wordmark font-serif text-4xl font-light">{studio.title}</h1>
         <div className="mt-4 flex flex-col items-center gap-2 text-muted">
-          <a
-            href={CONTACT_MAPS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 hover:text-foreground transition-colors"
-          >
-            <MapPinIcon className="h-4 w-4" />
-            {CONTACT_ADDRESS}
-          </a>
           <a
             href={`tel:${CONTACT_PHONE_HREF}`}
             className="flex items-center gap-2 hover:text-foreground transition-colors"

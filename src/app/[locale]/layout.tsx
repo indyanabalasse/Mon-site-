@@ -3,16 +3,7 @@ import { Cormorant_Garamond, Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { defaultLocale, isLocale, locales } from "@/lib/i18n";
-import {
-  CONTACT_CITY,
-  CONTACT_COUNTRY,
-  CONTACT_PHONE_HREF,
-  CONTACT_POSTAL_CODE,
-  CONTACT_STREET,
-  INSTAGRAM_URL,
-  SITE_NAME,
-  SITE_URL,
-} from "@/lib/site";
+import { CONTACT_PHONE_HREF, INSTAGRAM_URL, SITE_NAME, SITE_URL } from "@/lib/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyBookCta from "@/components/StickyBookCta";
@@ -142,13 +133,6 @@ export default async function LocaleLayout({
         url: SITE_URL,
         telephone: CONTACT_PHONE_HREF,
         priceRange: "€€",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: CONTACT_STREET,
-          addressLocality: CONTACT_CITY,
-          postalCode: CONTACT_POSTAL_CODE,
-          addressCountry: CONTACT_COUNTRY,
-        },
         areaServed: { "@type": "Country", name: "Belgium" },
         founder: { "@id": `${SITE_URL}/#person` },
         sameAs: [INSTAGRAM_URL],

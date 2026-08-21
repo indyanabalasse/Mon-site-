@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import Image, { type StaticImageData } from "next/image";
 
 const INTERVAL_MS = 6000;
+// The active photo fades out to black first, then the next one fades in —
+// never both visible at once, unlike a crossfade.
+const FADE_MS = 1200;
 
 export default function TileSlideshow({
   images,
@@ -18,11 +21,16 @@ export default function TileSlideshow({
   fill?: boolean;
 }) {
   const [active, setActive] = useState(0);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     if (images.length < 2) return;
     const id = setInterval(() => {
-      setActive((i) => (i + 1) % images.length);
+      setVisible(false);
+      setTimeout(() => {
+        setActive((i) => (i + 1) % images.length);
+        setVisible(true);
+      }, FADE_MS);
     }, INTERVAL_MS);
     return () => clearInterval(id);
   }, [images.length]);
@@ -43,9 +51,10 @@ export default function TileSlideshow({
           priority={i === 0}
           sizes={sizes}
           placeholder="blur"
-          className={`object-cover transition-opacity duration-[1500ms] ease-in-out ${
-            i === active ? "opacity-100" : "opacity-0"
+          className={`object-cover transition-opacity ease-in-out ${
+            i === active && visible ? "opacity-100" : "opacity-0"
           }`}
+          style={{ transitionDuration: `${FADE_MS}ms` }}
         />
       ))}
     </div>

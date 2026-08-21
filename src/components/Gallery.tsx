@@ -14,38 +14,57 @@ export type GalleryEndScreen = {
 };
 
 const AUTO_ADVANCE_MS = 4500;
-const FADE_MS = 1600;
+// Each direction of the fade-to-black: the current photo fades out to the
+// black backdrop first, then the next one fades in from black — never both
+// visible at once, unlike a crossfade.
+const FADE_MS = 900;
 // Kept well past FADE_MS so the zoom is still gently drifting, never visibly
 // finished, right up to the moment a photo fades out for the next one.
 const ZOOM_MS = 7000;
 
-function FadeLayer({
-  image,
-  alt,
-  isTop,
+function FadeToBlackImage({
+  images,
+  altPrefix,
+  activeIndex,
 }: {
-  image: StaticImageData;
-  alt: string;
-  isTop: boolean;
+  images: StaticImageData[];
+  altPrefix: string;
+  activeIndex: number;
 }) {
-  const [entered, setEntered] = useState(false);
+  const [displayedIndex, setDisplayedIndex] = useState(activeIndex);
+  const [visible, setVisible] = useState(false);
+  const prevActiveRef = useRef(activeIndex);
 
+  // Initial mount: fade in from black.
   useEffect(() => {
-    const id = requestAnimationFrame(() => setEntered(true));
+    const id = requestAnimationFrame(() => setVisible(true));
     return () => cancelAnimationFrame(id);
   }, []);
 
+  // Later navigations: fade the current photo out to black, then swap the
+  // source and fade the new one in, so the two are never blended together.
+  useEffect(() => {
+    if (activeIndex === prevActiveRef.current) return;
+    prevActiveRef.current = activeIndex;
+    setVisible(false);
+    const id = setTimeout(() => {
+      setDisplayedIndex(activeIndex);
+      requestAnimationFrame(() => setVisible(true));
+    }, FADE_MS);
+    return () => clearTimeout(id);
+  }, [activeIndex]);
+
   return (
     <Image
-      src={image}
-      alt={alt}
+      src={images[displayedIndex]}
+      alt={`${altPrefix} ${displayedIndex + 1}`}
       fill
       sizes="90vw"
-      className={`object-contain ${entered ? "opacity-100 scale-110" : "opacity-0 scale-100"}`}
+      className={`object-contain ${visible ? "opacity-100 scale-110" : "opacity-0 scale-100"}`}
       style={{
         transition: `opacity ${FADE_MS}ms ease-in-out, transform ${ZOOM_MS}ms ease-out`,
       }}
-      priority={isTop}
+      priority
     />
   );
 }
@@ -103,23 +122,6 @@ export default function Gallery({
     },
     [showNext, showPrev]
   );
-
-  // Crossfade layers: each navigation stacks a new fading-in image on top of
-  // the previous one, which is pruned once its fade-in finishes.
-  const [layers, setLayers] = useState<{ idx: number; key: number }[]>([]);
-  const layerKey = useRef(0);
-
-  useEffect(() => {
-    if (activeIndex === null || isEndCard) {
-      setLayers([]);
-      return;
-    }
-    setLayers((prev) => [...prev, { idx: activeIndex, key: layerKey.current++ }]);
-    const id = setTimeout(() => {
-      setLayers((prev) => prev.slice(-1));
-    }, FADE_MS);
-    return () => clearTimeout(id);
-  }, [activeIndex, isEndCard]);
 
   // Auto-advance to the next photo while the lightbox is open, pausing on
   // the end card so it doesn't navigate away from the CTA on its own.
@@ -266,14 +268,11 @@ export default function Gallery({
                 </div>
               </div>
             ) : (
-              layers.map((layer, i) => (
-                <FadeLayer
-                  key={layer.key}
-                  image={images[layer.idx]}
-                  alt={`${altPrefix} ${layer.idx + 1}`}
-                  isTop={i === layers.length - 1}
-                />
-              ))
+              <FadeToBlackImage
+                images={images}
+                altPrefix={altPrefix}
+                activeIndex={activeIndex ?? 0}
+              />
             )}
           </div>
           <button

@@ -1,13 +1,13 @@
 # INDYANASTUDIO
 
-> INDYANASTUDIO is the photography studio and business of Indyana Balasse, based in Uccle, Brussels, Belgium. Services: studio portrait, creative and maternity photo shoots, event and wedding photography, a live photobooth, and a 150 m2 photo/video studio for rent.
+> INDYANASTUDIO is the photography studio and business of Indyana Balasse, based in Belgium. Services: studio portrait, creative and maternity photo shoots, event and wedding photography, a live photobooth, and a 150 m2 photo/video studio for rent.
 
 ## Services
 
-- [Studio portrait shoots](https://www.indyanabalasse.com/fr/packaging/shooting-studio): Portrait, creative and maternity sessions at the Uccle studio. Half-day package, 5 delivered photos, from €350. Full-day package, 12 delivered photos, from €475. Styling and make-up add-ons available.
+- [Studio portrait shoots](https://www.indyanabalasse.com/fr/packaging/shooting-studio): Portrait, creative and maternity sessions at the studio. Half-day package, 5 delivered photos, from €350. Full-day package, 12 delivered photos, from €475. Styling and make-up add-ons available.
 - [Event photography](https://www.indyanabalasse.com/fr/packaging/shooting-evenement): Wedding, birthday, festival and corporate event coverage, half-day or full-day, edited photos delivered quickly.
 - [Fun Photo Booth](https://www.indyanabalasse.com/fr/packaging/photobooth): Live photobooth for weddings, birthdays and corporate parties. Indyana shoots guests in person throughout the event, with a themed set and costumes/props provided.
-- [Studio rental](https://www.indyanabalasse.com/fr/studio): 150 m2 studio with up to 5 m ceiling height at 143 rue du Ham, 1180 Uccle, Belgium. Includes a 3-meter backdrop or brick wall, adjustable natural light, a lighting kit (softbox, reflectors, flashes), tripods, Wi-Fi, sound system, make-up corner, garden, fully equipped kitchen and shower.
+- [Studio rental](https://www.indyanabalasse.com/fr/studio): 150 m2 studio with up to 5 m ceiling height. Includes a 3-meter backdrop or brick wall, adjustable natural light, a lighting kit (softbox, reflectors, flashes), tripods, Wi-Fi, sound system, make-up corner, garden, fully equipped kitchen and shower.
 - [All offers](https://www.indyanabalasse.com/fr/packaging): Overview of every booking option.
 
 ## Portfolio
@@ -24,4 +24,4 @@
 - [About Indyana Balasse](https://www.indyanabalasse.com/fr/about)
 - [Contact](https://www.indyanabalasse.com/fr/contact): Contact form, email, phone.
 
-Contact: indyana.balasse@gmail.com, +32 484 24 22 23. Studio address: 143 rue du Ham, 1180 Uccle, Belgium. Site available in French (default, /fr) and English (/en).
+Contact: indyana.balasse@gmail.com, +32 484 24 22 23. Site available in French (default, /fr) and English (/en).

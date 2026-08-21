@@ -336,7 +336,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     offerStudio: {
       kicker: "Shooting Studio",
       title: "Portrait, création, maternité",
-      intro: "Séance en studio au 143 rue du Ham, à Uccle. Matériel et commodités inclus.",
+      intro: "Séance en studio. Matériel et commodités inclus.",
       viewShootsCta: "Voir les shootings",
       bookNowCta: "Discutons de votre projet",
       packagesTitle: "Nos formules",
@@ -644,7 +644,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     offerStudio: {
       kicker: "Studio Shoot",
       title: "Portrait, creative, maternity",
-      intro: "Studio session at 143 rue du Ham, Uccle. Equipment and amenities included.",
+      intro: "Studio session. Equipment and amenities included.",
       viewShootsCta: "View the shoots",
       bookNowCta: "Let's talk about your project",
       packagesTitle: "Our packages",
