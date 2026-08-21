@@ -43,6 +43,14 @@ import evenementielFestivalLauraDegreef02 from "@/images/portfolio/evenementiel/
 import evenementielFestivalLauraDegreef03 from "@/images/portfolio/evenementiel/festival/laura-degreef/03.jpg";
 import evenementielFestivalLauraDegreef04 from "@/images/portfolio/evenementiel/festival/laura-degreef/04.jpg";
 import evenementielFestivalLauraDegreef05 from "@/images/portfolio/evenementiel/festival/laura-degreef/05.jpg";
+import evenementielFestivalLauraDegreef06 from "@/images/portfolio/evenementiel/festival/laura-degreef/DSC_8291.jpg";
+import evenementielFestivalLauraDegreef07 from "@/images/portfolio/evenementiel/festival/laura-degreef/DSC_8328.jpg";
+import evenementielFestivalLauraDegreef08 from "@/images/portfolio/evenementiel/festival/laura-degreef/DSC_8434.jpg";
+import evenementielFestivalLauraDegreef09 from "@/images/portfolio/evenementiel/festival/laura-degreef/DSC_8436.jpg";
+import evenementielFestivalLauraDegreef10 from "@/images/portfolio/evenementiel/festival/laura-degreef/DSC_8465.jpg";
+import evenementielFestivalLauraDegreef11 from "@/images/portfolio/evenementiel/festival/laura-degreef/DSC_8498.jpg";
+import evenementielFestivalLauraDegreef12 from "@/images/portfolio/evenementiel/festival/laura-degreef/DSC_8563.jpg";
+import evenementielFestivalLauraDegreef13 from "@/images/portfolio/evenementiel/festival/laura-degreef/DSC_8572.jpg";
 import evenementielAnniversaireCover from "@/images/portfolio/evenementiel/anniversaire/cover.jpg";
 import evenementielAnniversaire02 from "@/images/portfolio/evenementiel/anniversaire/02.jpg";
 import evenementielAnniversaire03 from "@/images/portfolio/evenementiel/anniversaire/03.jpg";
@@ -446,6 +454,9 @@ export const categories: CategoryData[] = [
           evenementielFestivalBambounou07, evenementielFestivalBambounou08,
           evenementielFestivalLauraDegreef01, evenementielFestivalLauraDegreef02, evenementielFestivalLauraDegreef03,
           evenementielFestivalLauraDegreef04, evenementielFestivalLauraDegreef05,
+          evenementielFestivalLauraDegreef06, evenementielFestivalLauraDegreef07, evenementielFestivalLauraDegreef08,
+          evenementielFestivalLauraDegreef09, evenementielFestivalLauraDegreef10, evenementielFestivalLauraDegreef11,
+          evenementielFestivalLauraDegreef12, evenementielFestivalLauraDegreef13,
         ],
       },
       {
