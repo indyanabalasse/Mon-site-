@@ -82,7 +82,6 @@ type Dictionary = {
     addonsLabel: string;
     addons: { title: string; text: string }[];
     ctaTitle: string;
-    ctaText: string;
     ctaButton: string;
   };
   offerEvenement: {
@@ -372,7 +371,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
       ],
       ctaTitle: "Prêt(e) à réserver ?",
-      ctaText: "Choisissez votre formule, on s'occupe du reste.",
       ctaButton: "Discutons de votre projet",
     },
     offerEvenement: {
@@ -681,7 +679,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
       ],
       ctaTitle: "Ready to book?",
-      ctaText: "Pick your package, we'll take care of the rest.",
       ctaButton: "Let's talk about your project",
     },
     offerEvenement: {
