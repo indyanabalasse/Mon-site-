@@ -1,14 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
-import {
-  CONTACT_ADDRESS,
-  CONTACT_EMAIL,
-  CONTACT_MAPS_URL,
-  CONTACT_PHONE_DISPLAY,
-  CONTACT_PHONE_HREF,
-} from "@/lib/site";
+import { CONTACT_EMAIL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF } from "@/lib/site";
 import { pageMetadataBase } from "@/lib/metadata";
-import { MapPinIcon } from "@/components/icons";
 import ContactForm from "@/components/ContactForm";
 
 export async function generateMetadata({
@@ -66,17 +59,6 @@ export default async function ContactPage({
         {dict.contact.phone}{" "}
         <a href={`tel:${CONTACT_PHONE_HREF}`} className="text-foreground underline underline-offset-4">
           {CONTACT_PHONE_DISPLAY}
-        </a>
-      </p>
-      <p className="mt-2 flex items-center justify-center gap-2 text-center text-sm text-muted">
-        <MapPinIcon className="h-4 w-4 shrink-0" />
-        <a
-          href={CONTACT_MAPS_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-foreground underline underline-offset-4"
-        >
-          {CONTACT_ADDRESS}
         </a>
       </p>
     </div>
