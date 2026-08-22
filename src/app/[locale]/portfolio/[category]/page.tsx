@@ -110,6 +110,7 @@ export default async function CategoryPage({
           pairAfter={data.series[0].pairAfter}
           endScreen={{
             nextKicker: dict.gallery.nextKicker,
+            viewSeriesCta: dict.gallery.viewSeriesCta,
             bookHref: `/${locale}/contact`,
             bookLabel: dict.gallery.bookCta,
             closeHref: `/${locale}/portfolio`,

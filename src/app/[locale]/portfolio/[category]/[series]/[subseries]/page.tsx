@@ -127,6 +127,7 @@ export default async function SubseriesPage({
         endScreen={{
           next: nextSubseries,
           nextKicker: dict.gallery.nextKicker,
+          viewSeriesCta: dict.gallery.viewSeriesCta,
           bookHref: `/${locale}/contact`,
           bookLabel: dict.gallery.bookCta,
           closeHref: `/${locale}/portfolio/${category}`,

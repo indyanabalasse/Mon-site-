@@ -36,6 +36,7 @@ type Dictionary = {
   };
   gallery: {
     nextKicker: string;
+    viewSeriesCta: string;
     bookCta: string;
     backToCategory: string;
     back: string;
@@ -183,6 +184,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     gallery: {
       nextKicker: "Découvrir la série suivante",
+      viewSeriesCta: "Voir la série",
       bookCta: "Réserver votre shooting",
       backToCategory: "Retour à la catégorie",
       back: "Retour",
@@ -491,6 +493,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     gallery: {
       nextKicker: "Discover the next series",
+      viewSeriesCta: "View the series",
       bookCta: "Book your shoot",
       backToCategory: "Back to category",
       back: "Back",

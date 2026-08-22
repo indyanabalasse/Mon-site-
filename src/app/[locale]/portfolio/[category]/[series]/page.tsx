@@ -143,6 +143,7 @@ export default async function SeriesPage({
               }
             : undefined,
           nextKicker: dict.gallery.nextKicker,
+          viewSeriesCta: dict.gallery.viewSeriesCta,
           bookHref: `/${locale}/contact`,
           bookLabel: dict.gallery.bookCta,
           closeHref: `/${locale}/portfolio/${category}`,

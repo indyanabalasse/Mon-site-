@@ -7,6 +7,7 @@ import Image, { type StaticImageData } from "next/image";
 export type GalleryEndScreen = {
   next?: { href: string; label: string };
   nextKicker: string;
+  viewSeriesCta: string;
   bookHref: string;
   bookLabel: string;
   closeHref: string;
@@ -245,19 +246,16 @@ export default function Gallery({
                       <p className="text-xs uppercase tracking-[0.2em] text-white/60">
                         {endScreen.nextKicker}
                       </p>
-                      <Link
-                        href={endScreen.next.href}
-                        className="wordmark font-serif text-2xl text-white mt-2 inline-block hover:opacity-80 transition-opacity"
-                      >
+                      <p className="wordmark font-serif text-2xl text-white mt-2">
                         {endScreen.next.label}
-                      </Link>
+                      </p>
                     </div>
                   )}
                   <Link
-                    href={endScreen.bookHref}
+                    href={endScreen.next ? endScreen.next.href : endScreen.bookHref}
                     className="inline-block border border-white px-8 py-3 text-xs uppercase tracking-[0.2em] text-white hover:bg-white hover:text-black transition-colors"
                   >
-                    {endScreen.bookLabel}
+                    {endScreen.next ? endScreen.viewSeriesCta : endScreen.bookLabel}
                   </Link>
                   <Link
                     href={endScreen.closeHref}
