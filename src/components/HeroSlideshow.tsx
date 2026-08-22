@@ -38,7 +38,7 @@ export default function HeroSlideshow({
   }, [images.length]);
 
   return (
-    <div className="absolute inset-0">
+    <div className="absolute inset-0 bg-black">
       {images.map((img, i) => (
         <Image
           key={i}

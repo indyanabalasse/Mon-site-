@@ -39,7 +39,7 @@ export default function TileSlideshow({
 
   return (
     <div
-      className={fill ? "relative w-full h-full" : "relative w-full"}
+      className={fill ? "relative w-full h-full bg-black" : "relative w-full bg-black"}
       style={fill ? undefined : { aspectRatio: `${first.width} / ${first.height}` }}
     >
       {images.map((img, i) => (
