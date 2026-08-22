@@ -325,8 +325,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
         {
           slug: "location-studio",
-          title: "Location Studio",
-          tagline: "Studio mis à disposition : choisissez votre formule, on s'occupe du reste.",
+          title: "Mise à disposition",
+          tagline: "",
         },
       ],
       gift: {
@@ -634,8 +634,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
         {
           slug: "location-studio",
-          title: "Studio Rental",
-          tagline: "Studio available to hire: choose your package, we take care of the rest.",
+          title: "Studio Availability",
+          tagline: "",
         },
       ],
       gift: {
