@@ -41,6 +41,7 @@ export default async function ContactConfirmedPage({
     <div className="mx-auto max-w-2xl px-6 py-20 text-center">
       <h1 className="wordmark font-serif text-4xl font-light">{dict.contact.confirmedTitle}</h1>
       <p className="mt-4 text-muted">{dict.contact.confirmedBody}</p>
+      <p className="mt-4 wordmark font-serif italic text-xl">{dict.contact.confirmedSignoff}</p>
       <Link
         href={`/${locale}`}
         className="mt-10 inline-block border border-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors"

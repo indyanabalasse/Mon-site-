@@ -138,6 +138,7 @@ type Dictionary = {
     confirmEmailCta: string;
     confirmedTitle: string;
     confirmedBody: string;
+    confirmedSignoff: string;
     expiredTitle: string;
     expiredBody: string;
     backToContact: string;
@@ -453,7 +454,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Cliquez sur le bouton ci-dessous pour que votre message soit transmis à Indyana Balasse. Si vous n'êtes pas à l'origine de cette demande, ignorez simplement cet email.",
       confirmEmailCta: "Confirmer mon message",
       confirmedTitle: "Message envoyé",
-      confirmedBody: "Merci, votre message a bien été transmis. Je vous réponds rapidement.",
+      confirmedBody:
+        "Merci d'avoir confirmé votre adresse, votre message est bien enregistré. Si vous avez coché la newsletter, vous recevrez bientôt de mes nouvelles. Je vous réponds sous 24 heures.",
+      confirmedSignoff: "Belle journée, et surtout... Color Your Life !",
       expiredTitle: "Lien invalide ou expiré",
       expiredBody: "Ce lien de confirmation n'est plus valable. Retournez sur la page contact pour envoyer un nouveau message.",
       backToContact: "Retour au contact",
@@ -774,7 +777,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Click the button below so your message is sent to Indyana Balasse. If you didn't request this, simply ignore this email.",
       confirmEmailCta: "Confirm my message",
       confirmedTitle: "Message sent",
-      confirmedBody: "Thank you, your message has been sent. I'll get back to you shortly.",
+      confirmedBody:
+        "Thank you for confirming your email, your message is safely registered. If you checked the newsletter box, you'll hear from me soon. I'll get back to you within 24 hours.",
+      confirmedSignoff: "Have a beautiful day, and above all... Color Your Life !",
       expiredTitle: "Invalid or expired link",
       expiredBody: "This confirmation link is no longer valid. Go back to the contact page to send a new message.",
       backToContact: "Back to contact",
