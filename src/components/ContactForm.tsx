@@ -21,6 +21,7 @@ export default function ContactForm({
     send: string;
     sending: string;
     success: string;
+    pendingConfirmation: string;
     error: string;
     followInstagram: string;
     followInstagramCta: string;
@@ -28,6 +29,7 @@ export default function ContactForm({
   };
 }) {
   const [status, setStatus] = useState<Status>("idle");
+  const [pending, setPending] = useState(false);
   const hasStartedRef = useRef(false);
 
   function onFormFocus() {
@@ -57,6 +59,8 @@ export default function ContactForm({
         body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error("request failed");
+      const result = await res.json().catch(() => ({ pending: false }));
+      setPending(Boolean(result.pending));
       setStatus("success");
       posthog.capture(ANALYTICS_EVENTS.CONTACT_FORM_SUBMITTED, { locale });
       form.reset();
@@ -79,7 +83,9 @@ export default function ContactForm({
   if (status === "success") {
     return (
       <div>
-        <p className="text-sm leading-relaxed">{labels.success}</p>
+        <p className="text-sm leading-relaxed">
+          {pending ? labels.pendingConfirmation : labels.success}
+        </p>
         <div className="mt-8 border border-border p-6 flex flex-col items-center text-center gap-4">
           <InstagramIcon className="h-6 w-6" />
           <p className="text-sm text-muted">{labels.followInstagram}</p>

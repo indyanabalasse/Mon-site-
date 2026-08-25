@@ -125,6 +125,7 @@ type Dictionary = {
     send: string;
     sending: string;
     success: string;
+    pendingConfirmation: string;
     error: string;
     directly: string;
     phone: string;
@@ -437,7 +438,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
       message: "Message",
       send: "Envoyer",
       sending: "Envoi en cours…",
-      success:
+      success: "Merci ! Votre message a bien été envoyé, je vous réponds rapidement.",
+      pendingConfirmation:
         "Presque terminé : vérifiez votre boîte mail et cliquez sur le lien de confirmation pour que votre message me soit transmis.",
       error: "Une erreur est survenue. Réessayez ou écrivez-moi directement.",
       directly: "Vous pouvez aussi m'écrire directement à",
@@ -757,7 +759,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
       message: "Message",
       send: "Send",
       sending: "Sending…",
-      success:
+      success: "Thank you! Your message has been sent, I'll get back to you shortly.",
+      pendingConfirmation:
         "Almost there: check your inbox and click the confirmation link so your message reaches me.",
       error: "Something went wrong. Please try again or email me directly.",
       directly: "You can also email me directly at",

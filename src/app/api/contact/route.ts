@@ -3,7 +3,7 @@ import { signContactToken } from "@/lib/contact/token";
 import { sendTransactionalEmail } from "@/lib/newsletter/resend";
 import { renderNewsletterEmail } from "@/lib/newsletter/template";
 import { defaultLocale, getDictionary, isLocale } from "@/lib/i18n";
-import { SITE_URL } from "@/lib/site";
+import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
 
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null);
@@ -32,6 +32,27 @@ export async function POST(request: Request) {
   const locale = isLocale(body.locale) ? body.locale : defaultLocale;
   const dict = getDictionary(locale);
 
+  // Resend's shared onboarding@resend.dev sender can only deliver to the
+  // account owner's own address (see NEWSLETTER_FROM in
+  // src/lib/newsletter/resend.ts), so a confirmation email to an arbitrary
+  // visitor would just fail until a domain is verified. Until then, fall
+  // back to sending the message straight through — same behavior as before
+  // this feature existed — instead of breaking the form for every visitor.
+  if (!process.env.NEWSLETTER_FROM) {
+    try {
+      await sendTransactionalEmail({
+        to: CONTACT_EMAIL,
+        replyTo: email,
+        subject: `Nouveau message de ${name} — indyanabalasse.com`,
+        text: `Nom: ${name}\nEmail: ${email}\n\n${message}`,
+      });
+    } catch (error) {
+      console.error("Contact: failed to send message", error);
+      return NextResponse.json({ error: "send_failed" }, { status: 502 });
+    }
+    return NextResponse.json({ ok: true, pending: false });
+  }
+
   // The message travels inside the signed token itself, so nothing is sent
   // to the site owner until the sender proves the address is real by
   // clicking the confirmation link — this is what stops fake addresses from
@@ -58,5 +79,5 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "send_failed" }, { status: 502 });
   }
 
-  return NextResponse.json({ ok: true });
+  return NextResponse.json({ ok: true, pending: true });
 }
