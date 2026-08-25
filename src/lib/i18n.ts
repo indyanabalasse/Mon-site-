@@ -131,6 +131,15 @@ type Dictionary = {
     followInstagram: string;
     followInstagramCta: string;
     newsletterOptIn: string;
+    confirmEmailSubject: string;
+    confirmEmailHeading: string;
+    confirmEmailBody: string;
+    confirmEmailCta: string;
+    confirmedTitle: string;
+    confirmedBody: string;
+    expiredTitle: string;
+    expiredBody: string;
+    backToContact: string;
   };
   footer: {
     rights: string;
@@ -428,13 +437,24 @@ export const dictionaries: Record<Locale, Dictionary> = {
       message: "Message",
       send: "Envoyer",
       sending: "Envoi en cours…",
-      success: "Merci ! Votre message a bien été envoyé, je vous réponds rapidement.",
+      success:
+        "Presque terminé : vérifiez votre boîte mail et cliquez sur le lien de confirmation pour que votre message me soit transmis.",
       error: "Une erreur est survenue. Réessayez ou écrivez-moi directement.",
       directly: "Vous pouvez aussi m'écrire directement à",
       phone: "Ou m'appeler au",
       followInstagram: "En attendant ma réponse, venez voir mes dernières photos sur Instagram @indyanastudio.",
       followInstagramCta: "Suivre @indyanastudio",
       newsletterOptIn: "M'inscrire aussi à la newsletter",
+      confirmEmailSubject: "Confirmez l'envoi de votre message",
+      confirmEmailHeading: "Confirmez votre message",
+      confirmEmailBody:
+        "Cliquez sur le bouton ci-dessous pour que votre message soit transmis à Indyana Balasse. Si vous n'êtes pas à l'origine de cette demande, ignorez simplement cet email.",
+      confirmEmailCta: "Confirmer mon message",
+      confirmedTitle: "Message envoyé",
+      confirmedBody: "Merci, votre message a bien été transmis. Je vous réponds rapidement.",
+      expiredTitle: "Lien invalide ou expiré",
+      expiredBody: "Ce lien de confirmation n'est plus valable. Retournez sur la page contact pour envoyer un nouveau message.",
+      backToContact: "Retour au contact",
     },
     footer: {
       rights: "Tous droits réservés.",
@@ -737,13 +757,24 @@ export const dictionaries: Record<Locale, Dictionary> = {
       message: "Message",
       send: "Send",
       sending: "Sending…",
-      success: "Thank you! Your message has been sent, I'll get back to you shortly.",
+      success:
+        "Almost there: check your inbox and click the confirmation link so your message reaches me.",
       error: "Something went wrong. Please try again or email me directly.",
       directly: "You can also email me directly at",
       phone: "Or call me at",
       followInstagram: "While you wait for my reply, come see my latest photos on Instagram @indyanastudio.",
       followInstagramCta: "Follow @indyanastudio",
       newsletterOptIn: "Also subscribe me to the newsletter",
+      confirmEmailSubject: "Confirm your message",
+      confirmEmailHeading: "Confirm your message",
+      confirmEmailBody:
+        "Click the button below so your message is sent to Indyana Balasse. If you didn't request this, simply ignore this email.",
+      confirmEmailCta: "Confirm my message",
+      confirmedTitle: "Message sent",
+      confirmedBody: "Thank you, your message has been sent. I'll get back to you shortly.",
+      expiredTitle: "Invalid or expired link",
+      expiredBody: "This confirmation link is no longer valid. Go back to the contact page to send a new message.",
+      backToContact: "Back to contact",
     },
     footer: {
       rights: "All rights reserved.",

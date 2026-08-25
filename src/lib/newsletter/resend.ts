@@ -145,11 +145,18 @@ export async function listContacts(): Promise<{ id: string; email: string; creat
   }));
 }
 
-/** Sends a single one-off email (confirm / unsubscribed notice), not a broadcast. */
+/**
+ * Sends a single one-off email (confirm / unsubscribed notice / contact
+ * notification), not a broadcast. Accepts either html or text (or both);
+ * replyTo is used for forwarded contact-form messages so replying from the
+ * inbox goes straight to the original sender.
+ */
 export async function sendTransactionalEmail(params: {
   to: string;
   subject: string;
-  html: string;
+  html?: string;
+  text?: string;
+  replyTo?: string;
 }): Promise<void> {
   const res = await resendFetch("/emails", {
     method: "POST",
@@ -157,7 +164,9 @@ export async function sendTransactionalEmail(params: {
       from: FROM_ADDRESS,
       to: [params.to],
       subject: params.subject,
-      html: params.html,
+      ...(params.html ? { html: params.html } : {}),
+      ...(params.text ? { text: params.text } : {}),
+      ...(params.replyTo ? { reply_to: params.replyTo } : {}),
     }),
   });
   await throwOnError(res, "send transactional email");

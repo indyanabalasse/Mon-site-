@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
-import { CONTACT_EMAIL } from "@/lib/site";
-
-const TO_EMAIL = CONTACT_EMAIL;
+import { signContactToken } from "@/lib/contact/token";
+import { sendTransactionalEmail } from "@/lib/newsletter/resend";
+import { renderNewsletterEmail } from "@/lib/newsletter/template";
+import { defaultLocale, getDictionary, isLocale } from "@/lib/i18n";
+import { SITE_URL } from "@/lib/site";
 
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null);
@@ -24,30 +26,35 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "not_configured" }, { status: 500 });
   }
 
-  const { name, email, message } = body as {
-    name: string;
-    email: string;
-    message: string;
-  };
+  const name = body.name.trim();
+  const email = body.email.trim();
+  const message = body.message.trim();
+  const locale = isLocale(body.locale) ? body.locale : defaultLocale;
+  const dict = getDictionary(locale);
 
-  const res = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from: "INDYANASTUDIO <onboarding@resend.dev>",
-      to: [TO_EMAIL],
-      reply_to: email,
-      subject: `Nouveau message de ${name} — indyanabalasse.com`,
-      text: `Nom: ${name}\nEmail: ${email}\n\n${message}`,
-    }),
-  });
+  // The message travels inside the signed token itself, so nothing is sent
+  // to the site owner until the sender proves the address is real by
+  // clicking the confirmation link — this is what stops fake addresses from
+  // reaching her inbox.
+  try {
+    const token = signContactToken({ name, email, message, locale });
+    const confirmUrl = `${SITE_URL}/api/contact/confirm?token=${token}`;
 
-  if (!res.ok) {
-    const detail = await res.text().catch(() => "");
-    console.error("Resend error", res.status, detail);
+    const html = renderNewsletterEmail({
+      locale,
+      heading: dict.contact.confirmEmailHeading,
+      bodyHtml: `<p style="margin:0;">${dict.contact.confirmEmailBody}</p>`,
+      ctaLabel: dict.contact.confirmEmailCta,
+      ctaHref: confirmUrl,
+    });
+
+    await sendTransactionalEmail({
+      to: email,
+      subject: dict.contact.confirmEmailSubject,
+      html,
+    });
+  } catch (error) {
+    console.error("Contact: failed to send confirmation email", error);
     return NextResponse.json({ error: "send_failed" }, { status: 502 });
   }
 
