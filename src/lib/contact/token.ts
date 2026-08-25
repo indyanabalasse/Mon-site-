@@ -15,6 +15,7 @@ type ContactTokenPayload = {
   email: string;
   message: string;
   locale: "fr" | "en";
+  subscribeNewsletter: boolean;
   expires: number;
 };
 
@@ -33,6 +34,7 @@ export function signContactToken(params: {
   email: string;
   message: string;
   locale: "fr" | "en";
+  subscribeNewsletter: boolean;
 }): string {
   const payload: ContactTokenPayload = {
     ...params,
@@ -44,7 +46,13 @@ export function signContactToken(params: {
 
 export function verifyContactToken(
   token: string
-): { name: string; email: string; message: string; locale: "fr" | "en" } | null {
+): {
+  name: string;
+  email: string;
+  message: string;
+  locale: "fr" | "en";
+  subscribeNewsletter: boolean;
+} | null {
   if (!token) return null;
 
   try {
@@ -78,6 +86,9 @@ export function verifyContactToken(
       email: decoded.email,
       message: decoded.message,
       locale: decoded.locale,
+      // Tokens signed before this field existed simply don't have it yet;
+      // treat those in-flight links (up to 48h old) as message-only.
+      subscribeNewsletter: decoded.subscribeNewsletter === true,
     };
   } catch {
     return null;

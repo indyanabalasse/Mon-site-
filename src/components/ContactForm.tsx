@@ -43,13 +43,13 @@ export default function ContactForm({
     setStatus("sending");
 
     const form = e.currentTarget;
-    const email = (form.elements.namedItem("email") as HTMLInputElement).value;
-    const subscribeToNewsletter = (form.elements.namedItem("newsletter") as HTMLInputElement).checked;
+    const subscribeNewsletter = (form.elements.namedItem("newsletter") as HTMLInputElement).checked;
     const data = {
       name: (form.elements.namedItem("name") as HTMLInputElement).value,
-      email,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
       locale,
+      subscribeNewsletter,
     };
 
     try {
@@ -64,17 +64,6 @@ export default function ContactForm({
       setStatus("success");
       posthog.capture(ANALYTICS_EVENTS.CONTACT_FORM_SUBMITTED, { locale });
       form.reset();
-
-      // Newsletter opt-in still goes through the double opt-in confirmation
-      // flow, so a failure here shouldn't affect the contact form's own
-      // success state.
-      if (subscribeToNewsletter) {
-        fetch("/api/newsletter/subscribe", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, locale }),
-        }).catch(() => {});
-      }
     } catch {
       setStatus("error");
     }

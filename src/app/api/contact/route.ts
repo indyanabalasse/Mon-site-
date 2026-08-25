@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { signContactToken } from "@/lib/contact/token";
+import { signNewsletterToken } from "@/lib/newsletter/token";
 import { sendTransactionalEmail } from "@/lib/newsletter/resend";
 import { renderNewsletterEmail } from "@/lib/newsletter/template";
 import { defaultLocale, getDictionary, isLocale } from "@/lib/i18n";
@@ -30,6 +31,7 @@ export async function POST(request: Request) {
   const email = body.email.trim();
   const message = body.message.trim();
   const locale = isLocale(body.locale) ? body.locale : defaultLocale;
+  const subscribeNewsletter = body.subscribeNewsletter === true;
   const dict = getDictionary(locale);
 
   // Resend's shared onboarding@resend.dev sender can only deliver to the
@@ -50,28 +52,60 @@ export async function POST(request: Request) {
       console.error("Contact: failed to send message", error);
       return NextResponse.json({ error: "send_failed" }, { status: 502 });
     }
+
+    // There's no confirmation step to piggyback the newsletter opt-in on in
+    // this fallback path, so send its own confirmation email same as before.
+    if (subscribeNewsletter) {
+      try {
+        const newsletterToken = signNewsletterToken(email, "confirm", locale);
+        const newsletterConfirmUrl = `${SITE_URL}/api/newsletter/confirm?token=${newsletterToken}`;
+        const newsletterHtml = renderNewsletterEmail({
+          locale,
+          heading: dict.newsletter.confirmEmailHeading,
+          bodyHtml: `<p style="margin:0;">${dict.newsletter.confirmEmailBody}</p>`,
+          ctaLabel: dict.newsletter.confirmEmailCta,
+          ctaHref: newsletterConfirmUrl,
+        });
+        await sendTransactionalEmail({
+          to: email,
+          subject: dict.newsletter.confirmEmailSubject,
+          html: newsletterHtml,
+        });
+      } catch (error) {
+        console.error("Contact: failed to send newsletter confirmation email", error);
+      }
+    }
+
     return NextResponse.json({ ok: true, pending: false });
   }
 
   // The message travels inside the signed token itself, so nothing is sent
   // to the site owner until the sender proves the address is real by
   // clicking the confirmation link — this is what stops fake addresses from
-  // reaching her inbox.
+  // reaching her inbox. The newsletter opt-in, if checked, rides along in
+  // the same token so one click confirms both instead of sending two
+  // separate emails with two separate links.
   try {
-    const token = signContactToken({ name, email, message, locale });
+    const token = signContactToken({ name, email, message, locale, subscribeNewsletter });
     const confirmUrl = `${SITE_URL}/api/contact/confirm?token=${token}`;
 
     const html = renderNewsletterEmail({
       locale,
-      heading: dict.contact.confirmEmailHeading,
-      bodyHtml: `<p style="margin:0;">${dict.contact.confirmEmailBody}</p>`,
-      ctaLabel: dict.contact.confirmEmailCta,
+      heading: subscribeNewsletter
+        ? dict.contact.confirmEmailHeadingWithNewsletter
+        : dict.contact.confirmEmailHeading,
+      bodyHtml: `<p style="margin:0;">${
+        subscribeNewsletter ? dict.contact.confirmEmailBodyWithNewsletter : dict.contact.confirmEmailBody
+      }</p>`,
+      ctaLabel: subscribeNewsletter ? dict.contact.confirmEmailCtaWithNewsletter : dict.contact.confirmEmailCta,
       ctaHref: confirmUrl,
     });
 
     await sendTransactionalEmail({
       to: email,
-      subject: dict.contact.confirmEmailSubject,
+      subject: subscribeNewsletter
+        ? dict.contact.confirmEmailSubjectWithNewsletter
+        : dict.contact.confirmEmailSubject,
       html,
     });
   } catch (error) {

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifyContactToken } from "@/lib/contact/token";
-import { sendTransactionalEmail } from "@/lib/newsletter/resend";
+import { sendTransactionalEmail, addConfirmedContact } from "@/lib/newsletter/resend";
 import { CONTACT_EMAIL } from "@/lib/site";
 import { defaultLocale } from "@/lib/i18n";
 
@@ -14,7 +14,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.redirect(new URL(`/${defaultLocale}/contact/expired`, request.url));
   }
 
-  const { name, email, message, locale } = payload;
+  const { name, email, message, locale, subscribeNewsletter } = payload;
 
   try {
     await sendTransactionalEmail({
@@ -26,6 +26,19 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     console.error("Contact confirm: failed to send notification", error);
     return NextResponse.redirect(new URL(`/${locale}/contact/expired`, request.url));
+  }
+
+  // The newsletter opt-in was folded into this same confirmation click (see
+  // src/app/api/contact/route.ts), so add the contact directly instead of
+  // sending a second confirmation email with its own link. The message above
+  // already reached her inbox, so a failure here shouldn't turn into an
+  // "expired" dead end for the visitor.
+  if (subscribeNewsletter) {
+    try {
+      await addConfirmedContact(email);
+    } catch (error) {
+      console.error("Contact confirm: failed to add newsletter contact", error);
+    }
   }
 
   return NextResponse.redirect(new URL(`/${locale}/contact/confirmed`, request.url));

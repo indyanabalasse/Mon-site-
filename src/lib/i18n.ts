@@ -136,6 +136,10 @@ type Dictionary = {
     confirmEmailHeading: string;
     confirmEmailBody: string;
     confirmEmailCta: string;
+    confirmEmailSubjectWithNewsletter: string;
+    confirmEmailHeadingWithNewsletter: string;
+    confirmEmailBodyWithNewsletter: string;
+    confirmEmailCtaWithNewsletter: string;
     confirmedTitle: string;
     confirmedBody: string;
     confirmedSignoff: string;
@@ -453,6 +457,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       confirmEmailBody:
         "Cliquez sur le bouton ci-dessous pour que votre message soit transmis à Indyana Balasse. Si vous n'êtes pas à l'origine de cette demande, ignorez simplement cet email.",
       confirmEmailCta: "Confirmer mon message",
+      confirmEmailSubjectWithNewsletter: "Confirmez votre message et votre inscription",
+      confirmEmailHeadingWithNewsletter: "Confirmez votre message et votre inscription",
+      confirmEmailBodyWithNewsletter:
+        "Cliquez sur le bouton ci-dessous pour confirmer l'envoi de votre message à Indyana Balasse et votre inscription à la newsletter, en un seul clic. Si vous n'êtes pas à l'origine de cette demande, ignorez simplement cet email.",
+      confirmEmailCtaWithNewsletter: "Confirmer mon message et mon inscription",
       confirmedTitle: "Message envoyé",
       confirmedBody:
         "Merci d'avoir confirmé votre adresse, votre message est bien enregistré. Si vous avez coché la newsletter, vous recevrez bientôt de mes nouvelles. Je vous réponds sous 24 heures.",
@@ -776,6 +785,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       confirmEmailBody:
         "Click the button below so your message is sent to Indyana Balasse. If you didn't request this, simply ignore this email.",
       confirmEmailCta: "Confirm my message",
+      confirmEmailSubjectWithNewsletter: "Confirm your message and subscription",
+      confirmEmailHeadingWithNewsletter: "Confirm your message and subscription",
+      confirmEmailBodyWithNewsletter:
+        "Click the button below to confirm your message to Indyana Balasse and your newsletter subscription, in one click. If you didn't request this, simply ignore this email.",
+      confirmEmailCtaWithNewsletter: "Confirm my message and subscription",
       confirmedTitle: "Message sent",
       confirmedBody:
         "Thank you for confirming your email, your message is safely registered. If you checked the newsletter box, you'll hear from me soon. I'll get back to you within 24 hours.",
