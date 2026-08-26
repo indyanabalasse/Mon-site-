@@ -70,15 +70,6 @@ export default async function ShootingStudioPage({
       telephone: CONTACT_PHONE_HREF,
     },
     areaServed: "BE",
-    offers: offer.packages.map((pkg) => ({
-      "@type": "Offer",
-      name: pkg.title,
-      price: pkg.price.replace(/[^0-9]/g, ""),
-      priceCurrency: "EUR",
-      availability: "https://schema.org/InStock",
-      url: `${SITE_URL}${path}`,
-      description: pkg.photos,
-    })),
   };
 
   return (
@@ -126,10 +117,10 @@ export default async function ShootingStudioPage({
           <h2 className="wordmark font-serif text-2xl font-light">{offer.packagesTitle}</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {offer.packages.map((pkg) => (
-              <div key={pkg.title} className="border border-border px-6 py-5 text-center">
-                <h3 className="wordmark font-serif text-lg font-light">{pkg.title}</h3>
-                <p className="mt-1 text-xs text-muted">{pkg.photos}</p>
-                <p className="wordmark font-serif text-2xl font-light mt-2">{pkg.price}</p>
+              <div key={pkg.title} className="border border-border px-6 py-8 text-center">
+                <h3 className="wordmark font-serif text-xl font-light">{pkg.title}</h3>
+                <div className="mx-auto mt-4 h-px w-8 bg-border" />
+                <p className="mt-4 text-xs uppercase tracking-[0.15em] text-muted">{pkg.photos}</p>
               </div>
             ))}
           </div>

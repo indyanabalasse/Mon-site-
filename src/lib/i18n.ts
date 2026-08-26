@@ -77,7 +77,7 @@ type Dictionary = {
     viewShootsCta: string;
     bookNowCta: string;
     packagesTitle: string;
-    packages: { title: string; photos: string; price: string }[];
+    packages: { title: string; photos: string }[];
     processLabel: string;
     process: string[];
     addonsLabel: string;
@@ -361,12 +361,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
         {
           title: "Demi-journée",
           photos: "5 photos livrées",
-          price: "350 €",
         },
         {
           title: "Journée complète",
           photos: "12 photos livrées",
-          price: "475 €",
         },
       ],
       processLabel: "Le déroulé",
@@ -689,12 +687,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
         {
           title: "Half day",
           photos: "5 photos delivered",
-          price: "€350",
         },
         {
           title: "Full day",
           photos: "12 photos delivered",
-          price: "€475",
         },
       ],
       processLabel: "How it works",
