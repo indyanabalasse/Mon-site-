@@ -26,11 +26,13 @@ export async function POST(request: Request) {
   }
 
   // Honeypot field: invisible to real visitors, so only bots fill it in.
-  // Pretend success so bots don't learn to leave it blank.
+  // A request missing these fields entirely didn't come from the real form
+  // (e.g. a bot posting straight to this endpoint), so treat that as
+  // suspect too rather than letting it through by default.
+  // Pretend success so bots don't learn what tripped the check.
   const honeypot = typeof body.company === "string" ? body.company.trim() : "";
-  const startedAt = typeof body.startedAt === "number" ? body.startedAt : 0;
-  const elapsedMs = startedAt ? Date.now() - startedAt : Infinity;
-  if (honeypot || elapsedMs < MIN_SUBMIT_MS) {
+  const elapsedMs = typeof body.startedAt === "number" ? Date.now() - body.startedAt : null;
+  if (honeypot || elapsedMs === null || elapsedMs < MIN_SUBMIT_MS) {
     return NextResponse.json({ ok: true, pending: false });
   }
 
