@@ -25,14 +25,24 @@ export default function TileSlideshow({
 
   useEffect(() => {
     if (images.length < 2) return;
-    const id = setInterval(() => {
-      setVisible(false);
-      setTimeout(() => {
-        setActive((i) => (i + 1) % images.length);
-        setVisible(true);
-      }, FADE_MS);
-    }, INTERVAL_MS);
-    return () => clearInterval(id);
+
+    let timeoutId: ReturnType<typeof setTimeout>;
+    // Each tile starts its own clock at a random phase (instead of a fixed
+    // interval from mount) so tiles on the same page don't all switch photos
+    // in lockstep.
+    function scheduleNext(delay: number) {
+      timeoutId = setTimeout(() => {
+        setVisible(false);
+        setTimeout(() => {
+          setActive((i) => (i + 1) % images.length);
+          setVisible(true);
+        }, FADE_MS);
+        scheduleNext(INTERVAL_MS);
+      }, delay);
+    }
+    scheduleNext(Math.random() * INTERVAL_MS);
+
+    return () => clearTimeout(timeoutId);
   }, [images.length]);
 
   const first = images[0];
