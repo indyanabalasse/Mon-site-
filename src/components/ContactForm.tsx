@@ -31,6 +31,7 @@ export default function ContactForm({
   const [status, setStatus] = useState<Status>("idle");
   const [pending, setPending] = useState(false);
   const hasStartedRef = useRef(false);
+  const startTimeRef = useRef(Date.now());
 
   function onFormFocus() {
     if (hasStartedRef.current) return;
@@ -50,6 +51,8 @@ export default function ContactForm({
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
       locale,
       subscribeNewsletter,
+      company: (form.elements.namedItem("company") as HTMLInputElement).value,
+      startedAt: startTimeRef.current,
     };
 
     try {
@@ -93,6 +96,16 @@ export default function ContactForm({
 
   return (
     <form onSubmit={onSubmit} onFocus={onFormFocus} className="space-y-6">
+      <div className="absolute -left-[9999px] w-px h-px overflow-hidden" aria-hidden="true">
+        <label htmlFor="company">Company</label>
+        <input
+          id="company"
+          name="company"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
       <div>
         <label htmlFor="name" className="block text-xs uppercase tracking-[0.2em] text-muted mb-2">
           {labels.name}

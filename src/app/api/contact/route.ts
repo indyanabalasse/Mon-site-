@@ -6,6 +6,10 @@ import { renderNewsletterEmail } from "@/lib/newsletter/template";
 import { defaultLocale, getDictionary, isLocale } from "@/lib/i18n";
 import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
 
+// Real visitors take at least a few seconds to fill the form; bots submit
+// near-instantly, so this catches the ones that skip the honeypot below.
+const MIN_SUBMIT_MS = 3000;
+
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null);
 
@@ -19,6 +23,15 @@ export async function POST(request: Request) {
     !body.message.trim()
   ) {
     return NextResponse.json({ error: "invalid_payload" }, { status: 400 });
+  }
+
+  // Honeypot field: invisible to real visitors, so only bots fill it in.
+  // Pretend success so bots don't learn to leave it blank.
+  const honeypot = typeof body.company === "string" ? body.company.trim() : "";
+  const startedAt = typeof body.startedAt === "number" ? body.startedAt : 0;
+  const elapsedMs = startedAt ? Date.now() - startedAt : Infinity;
+  if (honeypot || elapsedMs < MIN_SUBMIT_MS) {
+    return NextResponse.json({ ok: true, pending: false });
   }
 
   const apiKey = process.env.RESEND_API_KEY;
