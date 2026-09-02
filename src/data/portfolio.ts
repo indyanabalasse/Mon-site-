@@ -320,6 +320,7 @@ export const categories: CategoryData[] = [
   {
     slug: "corporate",
     cover: corporateCover,
+    coverImages: [corporateCover, corporateMaVieCover, corporateEsgLogicCover],
     series: [
       {
         slug: "ma-vie",
@@ -418,6 +419,7 @@ export const categories: CategoryData[] = [
   {
     slug: "famille",
     cover: familleCover,
+    coverImages: [familleCover, familleFemmeEnceinteStudioCover, familleFemmeEnceinteExterieurCover],
     series: [
       {
         slug: "femme-enceinte",
@@ -447,6 +449,10 @@ export const categories: CategoryData[] = [
   {
     slug: "evenementiel",
     cover: evenementielCover,
+    coverImages: [
+      evenementielCover, evenementielConcertCover, evenementielOpenAirCover,
+      evenementielFestivalCover, evenementielAnniversaireCover,
+    ],
     series: [
       {
         slug: "concert",
@@ -505,6 +511,7 @@ export const categories: CategoryData[] = [
   {
     slug: "press-kit",
     cover: pressKitCover,
+    coverImages: [pressKitCover, pressKit01, pressKit02],
     series: [
       {
         slug: "press-kit",
@@ -516,6 +523,7 @@ export const categories: CategoryData[] = [
   {
     slug: "fun-photo-booth",
     cover: funPhotoBoothMariage1Cover,
+    coverImages: [funPhotoBoothMariage1Cover, funPhotoBoothMariage2Cover],
     series: [
       {
         slug: "mariage-1",
@@ -546,6 +554,7 @@ export const categories: CategoryData[] = [
   {
     slug: "sante",
     cover: santeCover,
+    coverImages: [santeCover, santeKineCover],
     series: [
       {
         slug: "kine",
@@ -560,6 +569,7 @@ export const categories: CategoryData[] = [
   {
     slug: "my-mood",
     cover: portraitMyMoodCover,
+    coverImages: [portraitMyMoodCover, portraitMyMood08, portraitMyMood13],
     series: [
       {
         slug: "my-mood",
