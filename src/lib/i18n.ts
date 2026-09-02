@@ -280,6 +280,12 @@ export const dictionaries: Record<Locale, Dictionary> = {
           "shoot-2": "Shoot 2",
         },
       },
+      famille: {
+        "femme-enceinte": {
+          studio: "Studio",
+          exterieur: "Extérieur",
+        },
+      },
     },
     studio: {
       title: "INDY Studio",
@@ -604,6 +610,12 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "laura-degreef": {
           "shoot-1": "Shoot 1",
           "shoot-2": "Shoot 2",
+        },
+      },
+      famille: {
+        "femme-enceinte": {
+          studio: "Studio",
+          exterieur: "Outdoor",
         },
       },
     },

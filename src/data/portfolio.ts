@@ -1,6 +1,5 @@
 import type { StaticImageData } from "next/image";
 
-import hero01 from "@/images/hero/01.jpg";
 import hero02 from "@/images/hero/02.jpg";
 import hero03 from "@/images/hero/03.jpg";
 
@@ -204,10 +203,18 @@ import santeKine04 from "@/images/portfolio/sante/kine/04.jpg";
 import santeKine05 from "@/images/portfolio/sante/kine/05.jpg";
 import santeKine06 from "@/images/portfolio/sante/kine/06.jpg";
 import familleCover from "@/images/portfolio/famille/cover.jpg";
-import familleFemmeEnceinteCover from "@/images/portfolio/famille/femme-enceinte/cover.jpg";
-import familleFemmeEnceinte01 from "@/images/portfolio/famille/femme-enceinte/01.jpg";
-import familleFemmeEnceinte02 from "@/images/portfolio/famille/femme-enceinte/02.jpg";
-import familleFemmeEnceinte03 from "@/images/portfolio/famille/femme-enceinte/03.jpg";
+import familleFemmeEnceinteStudioCover from "@/images/portfolio/famille/femme-enceinte/studio serie/cover.jpg";
+import familleFemmeEnceinteStudio01 from "@/images/portfolio/famille/femme-enceinte/studio serie/01.jpg";
+import familleFemmeEnceinteStudio02 from "@/images/portfolio/famille/femme-enceinte/studio serie/02.jpg";
+import familleFemmeEnceinteStudio03 from "@/images/portfolio/famille/femme-enceinte/studio serie/03.jpg";
+import familleFemmeEnceinteExterieurCover from "@/images/portfolio/famille/femme-enceinte/Exterieur serie/cover serie exterieur.jpg";
+import familleFemmeEnceinteExterieur01 from "@/images/portfolio/famille/femme-enceinte/Exterieur serie/DSC_5128.jpg";
+import familleFemmeEnceinteExterieur02 from "@/images/portfolio/famille/femme-enceinte/Exterieur serie/DSC_5166.jpg";
+import familleFemmeEnceinteExterieur03 from "@/images/portfolio/famille/femme-enceinte/Exterieur serie/DSC_5185.jpg";
+import familleFemmeEnceinteExterieur04 from "@/images/portfolio/famille/femme-enceinte/Exterieur serie/DSC_5237.jpg";
+import familleFemmeEnceinteExterieur05 from "@/images/portfolio/famille/femme-enceinte/Exterieur serie/DSC_5459.jpg";
+import familleFemmeEnceinteExterieur06 from "@/images/portfolio/famille/femme-enceinte/Exterieur serie/DSC_5481.jpg";
+import familleFemmeEnceinteExterieur07 from "@/images/portfolio/famille/femme-enceinte/Exterieur serie/DSC_5573.jpg";
 import funPhotoBoothMariage1Cover from "@/images/portfolio/fun-photo-booth/Mariage 1/cover.jpg";
 import funPhotoBoothMariage101 from "@/images/portfolio/fun-photo-booth/Mariage 1/01.jpg";
 import funPhotoBoothMariage102 from "@/images/portfolio/fun-photo-booth/Mariage 1/02.jpg";
@@ -263,7 +270,6 @@ export type HeroImage = {
 };
 
 export const heroImages: HeroImage[] = [
-  { src: hero01, position: "top" },
   { src: hero02 },
   { src: hero03 },
 ];
@@ -291,6 +297,8 @@ export type Series = {
 export type SeriesGroup = {
   slug: string;
   cover: StaticImageData;
+  /** Additional covers to crossfade through on the series tile, alongside `cover`. */
+  coverImages?: StaticImageData[];
   subseries: Series[];
 };
 
@@ -413,9 +421,25 @@ export const categories: CategoryData[] = [
     series: [
       {
         slug: "femme-enceinte",
-        cover: familleFemmeEnceinteCover,
-        images: [
-          familleFemmeEnceinte01, familleFemmeEnceinte02, familleFemmeEnceinte03,
+        cover: familleFemmeEnceinteStudioCover,
+        coverImages: [familleFemmeEnceinteStudioCover, familleFemmeEnceinteExterieurCover],
+        subseries: [
+          {
+            slug: "studio",
+            cover: familleFemmeEnceinteStudioCover,
+            images: [
+              familleFemmeEnceinteStudio01, familleFemmeEnceinteStudio02, familleFemmeEnceinteStudio03,
+            ],
+          },
+          {
+            slug: "exterieur",
+            cover: familleFemmeEnceinteExterieurCover,
+            images: [
+              familleFemmeEnceinteExterieur01, familleFemmeEnceinteExterieur02, familleFemmeEnceinteExterieur03,
+              familleFemmeEnceinteExterieur04, familleFemmeEnceinteExterieur05, familleFemmeEnceinteExterieur06,
+              familleFemmeEnceinteExterieur07,
+            ],
+          },
         ],
       },
     ],
