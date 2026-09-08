@@ -4,24 +4,28 @@
 
 ## Services
 
-- [Studio portrait shoots](https://www.indyanabalasse.com/fr/packaging/shooting-studio): Portrait, creative and maternity sessions at the studio. Half-day package, 5 delivered photos, from €350. Full-day package, 12 delivered photos, from €475. Styling and make-up add-ons available.
-- [Event photography](https://www.indyanabalasse.com/fr/packaging/shooting-evenement): Wedding, birthday, festival and corporate event coverage, half-day or full-day, edited photos delivered quickly.
-- [Fun Photo Booth](https://www.indyanabalasse.com/fr/packaging/photobooth): Live photobooth for weddings, birthdays and corporate parties. Indyana shoots guests in person throughout the event, with a themed set and costumes/props provided.
-- [Studio rental](https://www.indyanabalasse.com/fr/studio): 150 m2 studio with up to 5 m ceiling height. Includes a 3-meter backdrop or brick wall, adjustable natural light, a lighting kit (softbox, reflectors, flashes), tripods, Wi-Fi, sound system, make-up corner, garden, fully equipped kitchen and shower.
-- [All offers](https://www.indyanabalasse.com/fr/packaging): Overview of every booking option.
+- [Studio portrait shoots](https://www.indyanabalasse.com/en/packaging/shooting-studio): Portrait, creative and maternity sessions at the studio. Half-day package, 5 delivered photos, from €350. Full-day package, 12 delivered photos, from €475. Styling and make-up add-ons available.
+- [Event photography](https://www.indyanabalasse.com/en/packaging/shooting-evenement): Wedding, birthday, festival and corporate event coverage, half-day or full-day, edited photos delivered quickly.
+- [Fun Photo Booth](https://www.indyanabalasse.com/en/packaging/photobooth): Live photobooth for weddings, birthdays and corporate parties. Indyana shoots guests in person throughout the event, with a themed set and costumes/props provided.
+- [Studio rental](https://www.indyanabalasse.com/en/studio): 150 m2 studio with up to 5 m ceiling height. Includes a 3-meter backdrop or brick wall, adjustable natural light, a lighting kit (softbox, reflectors, flashes), tripods, Wi-Fi, sound system, make-up corner, garden, fully equipped kitchen and shower.
+- [All offers](https://www.indyanabalasse.com/en/packaging): Overview of every booking option.
 
 ## Portfolio
 
-- [Portrait](https://www.indyanabalasse.com/fr/portfolio/portrait): Artistic and conceptual portrait photography.
-- [Evenementiel](https://www.indyanabalasse.com/fr/portfolio/evenementiel): Concerts, open airs and festival photography.
-- [Corporate](https://www.indyanabalasse.com/fr/portfolio/corporate): Corporate team and professional portrait photography.
-- [Sante](https://www.indyanabalasse.com/fr/portfolio/sante): Sports training and physiotherapy photography.
-- [Famille](https://www.indyanabalasse.com/fr/portfolio/famille): Family and maternity photography.
-- [Fun Photo Booth](https://www.indyanabalasse.com/fr/portfolio/fun-photo-booth): Wedding photobooth galleries.
+- [Portrait](https://www.indyanabalasse.com/en/portfolio/portrait): Artistic and conceptual portrait photography.
+- [Evenementiel](https://www.indyanabalasse.com/en/portfolio/evenementiel): Concerts, open airs and festival photography.
+- [Corporate](https://www.indyanabalasse.com/en/portfolio/corporate): Corporate team and professional portrait photography.
+- [Sante](https://www.indyanabalasse.com/en/portfolio/sante): Sports training and physiotherapy photography.
+- [Famille](https://www.indyanabalasse.com/en/portfolio/famille): Family and maternity photography.
+- [Fun Photo Booth](https://www.indyanabalasse.com/en/portfolio/fun-photo-booth): Wedding photobooth galleries.
 
 ## About & contact
 
-- [About Indyana Balasse](https://www.indyanabalasse.com/fr/about)
-- [Contact](https://www.indyanabalasse.com/fr/contact): Contact form, email, phone.
+- [About Indyana Balasse](https://www.indyanabalasse.com/en/about)
+- [Contact](https://www.indyanabalasse.com/en/contact): Contact form, email, phone.
 
-Contact: indyana.balasse@gmail.com, +32 484 24 22 23. Site available in French (default, /fr) and English (/en).
+Contact: indyana.balasse@gmail.com, +32 484 24 22 23. Site available in French (default, /fr) and English (/en); the French URLs are the same paths under /fr.
+
+## Service area
+
+INDYANASTUDIO covers the Brussels-Capital Region and the province of Walloon Brabant, including Brussels, Ixelles, Uccle, Schaerbeek, Anderlecht, Waterloo, Wavre, Nivelles, Ottignies-Louvain-la-Neuve, Braine-l'Alleud, Rixensart and La Hulpe. Shoots on location across that area; the 150 m2 rental studio is a fixed venue.

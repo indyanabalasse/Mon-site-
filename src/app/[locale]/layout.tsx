@@ -3,7 +3,15 @@ import { Cormorant_Garamond, Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { defaultLocale, isLocale, locales } from "@/lib/i18n";
-import { CONTACT_PHONE_HREF, INSTAGRAM_URL, SITE_NAME, SITE_URL } from "@/lib/site";
+import {
+  CONTACT_EMAIL,
+  CONTACT_PHONE_HREF,
+  INSTAGRAM_URL,
+  SERVICE_AREA_CITIES,
+  SERVICE_AREA_REGIONS,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyBookCta from "@/components/StickyBookCta";
@@ -43,23 +51,6 @@ export async function generateMetadata({
       template: "%s — INDYANASTUDIO",
     },
     description,
-    keywords: isFr
-      ? [
-          "photographe Belgique",
-          "photographe portrait",
-          "photographie noir et blanc",
-          "photographe scène électronique",
-          "INDYANASTUDIO",
-          "Indyana Balasse",
-        ]
-      : [
-          "Belgium photographer",
-          "portrait photographer",
-          "black and white photography",
-          "electronic scene photographer",
-          "INDYANASTUDIO",
-          "Indyana Balasse",
-        ],
     authors: [{ name: "Indyana Balasse" }],
     creator: "Indyana Balasse",
     metadataBase: new URL(SITE_URL),
@@ -75,6 +66,7 @@ export async function generateMetadata({
       url: `/${locale}`,
       siteName: SITE_NAME,
       locale: isFr ? "fr_FR" : "en_US",
+      alternateLocale: isFr ? ["en_US"] : ["fr_FR"],
       type: "website",
       images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: title }],
     },
@@ -122,6 +114,7 @@ export default async function LocaleLayout({
         image: `${SITE_URL}/opengraph-image`,
         jobTitle: locale === "fr" ? "Photographe" : "Photographer",
         telephone: CONTACT_PHONE_HREF,
+        email: CONTACT_EMAIL,
         sameAs: [INSTAGRAM_URL],
         worksFor: { "@id": `${SITE_URL}/#business` },
       },
@@ -132,8 +125,27 @@ export default async function LocaleLayout({
         image: `${SITE_URL}/opengraph-image`,
         url: SITE_URL,
         telephone: CONTACT_PHONE_HREF,
+        email: CONTACT_EMAIL,
         priceRange: "€€",
-        areaServed: { "@type": "Country", name: "Belgium" },
+        // Établissement « zone desservie » : pas d'adresse publiée, donc areaServed
+        // porte seul le signal local. « Country: Belgium » couvrait 11 millions
+        // d'habitants et ne pesait sur aucune requête géolocalisée.
+        areaServed: [
+          ...SERVICE_AREA_REGIONS.map((name) => ({
+            "@type": "AdministrativeArea",
+            name,
+          })),
+          ...SERVICE_AREA_CITIES.map((name) => ({ "@type": "City", name })),
+        ],
+        serviceArea: {
+          "@type": "GeoCircle",
+          geoMidpoint: {
+            "@type": "GeoCoordinates",
+            latitude: 50.8503,
+            longitude: 4.3517,
+          },
+          geoRadius: 40000,
+        },
         founder: { "@id": `${SITE_URL}/#person` },
         sameAs: [INSTAGRAM_URL],
       },
