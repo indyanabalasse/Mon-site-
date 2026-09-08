@@ -149,6 +149,7 @@ type Dictionary = {
   };
   footer: {
     rights: string;
+    terms: string;
   };
   newsletter: {
     heading: string;
@@ -476,6 +477,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     footer: {
       rights: "Tous droits réservés.",
+      terms: "Conditions générales",
     },
     newsletter: {
       heading: "La newsletter",
@@ -808,6 +810,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     footer: {
       rights: "All rights reserved.",
+      terms: "Terms and conditions",
     },
     newsletter: {
       heading: "The newsletter",

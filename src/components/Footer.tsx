@@ -25,6 +25,14 @@ export default function Footer({ locale }: { locale: Locale }) {
         <span className="text-[10px] text-center">
           © {year} INDYANASTUDIO — {dict.footer.rights}
         </span>
+        <a
+          href="/conditions-generales.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-foreground transition-colors"
+        >
+          {dict.footer.terms}
+        </a>
       </div>
 
       <div className="hidden px-10 py-5 text-xs uppercase tracking-wide text-muted md:flex md:items-center md:justify-between">
@@ -56,6 +64,14 @@ export default function Footer({ locale }: { locale: Locale }) {
             className="hover:text-foreground transition-colors normal-case tracking-normal"
           >
             {CONTACT_PHONE_DISPLAY}
+          </a>
+          <a
+            href="/conditions-generales.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground transition-colors"
+          >
+            {dict.footer.terms}
           </a>
         </div>
       </div>
