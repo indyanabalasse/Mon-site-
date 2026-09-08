@@ -7,6 +7,8 @@ export type MasonryTile = {
   cover: StaticImageData;
   covers?: StaticImageData[];
   label: string;
+  /** Texte alternatif descriptif ; le libellé seul ("Portrait") n'a aucune valeur en recherche d'images. */
+  imageAlt?: string;
   showLabel?: boolean;
 };
 
@@ -47,11 +49,11 @@ export default function MasonryNav({
             className="group relative block aspect-square overflow-hidden"
           >
             {item.covers && item.covers.length > 1 ? (
-              <TileSlideshow images={item.covers} alt={item.label} sizes={GRID_SIZES} fill />
+              <TileSlideshow images={item.covers} alt={item.imageAlt ?? item.label} sizes={GRID_SIZES} fill />
             ) : (
               <Image
                 src={item.cover}
-                alt={item.label}
+                alt={item.imageAlt ?? item.label}
                 fill
                 sizes={GRID_SIZES}
                 className="object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
@@ -61,9 +63,9 @@ export default function MasonryNav({
             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
             {item.showLabel !== false && (
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="wordmark font-serif text-lg sm:text-2xl text-white text-center px-4">
+                <h2 className="wordmark font-serif text-lg sm:text-2xl text-white text-center px-4">
                   {item.label}
-                </span>
+                </h2>
               </div>
             )}
           </Link>
@@ -84,12 +86,12 @@ export default function MasonryNav({
         >
           {item.covers && item.covers.length > 1 ? (
             <div className="transition-transform duration-1000 ease-out group-hover:scale-110">
-              <TileSlideshow images={item.covers} alt={item.label} sizes={TILE_SIZES} />
+              <TileSlideshow images={item.covers} alt={item.imageAlt ?? item.label} sizes={TILE_SIZES} />
             </div>
           ) : (
             <Image
               src={item.cover}
-              alt={item.label}
+              alt={item.imageAlt ?? item.label}
               sizes={TILE_SIZES}
               className="w-full h-auto object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
               placeholder="blur"
@@ -98,9 +100,9 @@ export default function MasonryNav({
           <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
           {item.showLabel !== false && (
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="wordmark font-serif text-2xl sm:text-3xl text-white text-center px-4">
+              <h2 className="wordmark font-serif text-2xl sm:text-3xl text-white text-center px-4">
                 {item.label}
-              </span>
+              </h2>
             </div>
           )}
         </Link>

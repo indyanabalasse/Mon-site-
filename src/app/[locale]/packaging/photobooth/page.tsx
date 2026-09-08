@@ -23,21 +23,12 @@ export async function generateMetadata({
     locale,
     title: dict.offerPhotobooth.title,
     description: dict.offerPhotobooth.intro,
+    image: heroImage1.src,
   });
   return {
     title: `${dict.offerPhotobooth.title} — ${dict.packaging.title}`,
     description: dict.offerPhotobooth.intro,
     ...base,
-    openGraph: {
-      ...base.openGraph,
-      images: [{ url: heroImage1.src, width: heroImage1.width, height: heroImage1.height, alt: dict.offerPhotobooth.title }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: dict.offerPhotobooth.title,
-      description: dict.offerPhotobooth.intro,
-      images: [heroImage1.src],
-    },
   };
 }
 

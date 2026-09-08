@@ -5,7 +5,6 @@ import { getDictionary, isLocale, defaultLocale, type Locale } from "@/lib/i18n"
 import { CONTACT_PHONE_HREF, SITE_NAME, SITE_URL } from "@/lib/site";
 import { pageMetadataBase } from "@/lib/metadata";
 import heroImage from "@/images/Studio/PHOTO-2026-08-13-11-24-52.jpg";
-import packagesImage from "@/images/Studio/PHOTO-2026-08-13-11-24-16.jpg";
 import addonsImage from "@/images/Studio/PHOTO-2026-08-13-11-28-08.jpg";
 
 export async function generateMetadata({
@@ -21,28 +20,12 @@ export async function generateMetadata({
     locale,
     title: dict.offerStudio.title,
     description: dict.offerStudio.intro,
+    image: heroImage.src,
   });
   return {
     title: `${dict.offerStudio.title} — ${dict.packaging.title}`,
     description: dict.offerStudio.intro,
     ...base,
-    openGraph: {
-      ...base.openGraph,
-      images: [
-        {
-          url: heroImage.src,
-          width: heroImage.width,
-          height: heroImage.height,
-          alt: dict.offerStudio.title,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: dict.offerStudio.title,
-      description: dict.offerStudio.intro,
-      images: [heroImage.src],
-    },
   };
 }
 
@@ -113,40 +96,6 @@ export default async function ShootingStudioPage({
       </div>
 
       <div className="grid gap-12 md:grid-cols-2 md:items-center">
-        <div>
-          <h2 className="wordmark font-serif text-2xl font-light">{offer.packagesTitle}</h2>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            {offer.packages.map((pkg) => (
-              <div key={pkg.title} className="border border-border px-6 py-8 text-center">
-                <h3 className="wordmark font-serif text-xl font-light">{pkg.title}</h3>
-                <div className="mx-auto mt-4 h-px w-8 bg-border" />
-                <p className="mt-4 text-xs uppercase tracking-[0.15em] text-muted">{pkg.photos}</p>
-              </div>
-            ))}
-          </div>
-          <p className="mt-6 text-xs text-muted leading-relaxed">
-            <span className="uppercase tracking-[0.15em]">{offer.processLabel} : </span>
-            {offer.process.join(" · ")}
-          </p>
-          <Link
-            href={`/${locale}/contact`}
-            className="mt-8 hidden md:inline-block border border-foreground bg-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] text-background hover:bg-transparent hover:text-foreground transition-colors"
-          >
-            {offer.bookNowCta}
-          </Link>
-        </div>
-        <div className="relative aspect-[4/5] overflow-hidden">
-          <Image
-            src={packagesImage}
-            alt={offer.packagesTitle}
-            fill
-            sizes="(min-width: 768px) 50vw, 100vw"
-            className="object-cover"
-          />
-        </div>
-      </div>
-
-      <div className="grid gap-12 md:grid-cols-2 md:items-center mt-20 pt-16 border-t border-border">
         <div className="relative aspect-[4/5] overflow-hidden order-1 md:order-none">
           <Image
             src={addonsImage}

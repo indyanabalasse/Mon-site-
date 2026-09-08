@@ -28,28 +28,12 @@ export async function generateMetadata({
     locale,
     title: dict.packaging.title,
     description: dict.packaging.intro,
+    image: studioImage.src,
   });
   return {
     title: dict.packaging.title,
     description: dict.packaging.intro,
     ...base,
-    openGraph: {
-      ...base.openGraph,
-      images: [
-        {
-          url: studioImage.src,
-          width: studioImage.width,
-          height: studioImage.height,
-          alt: dict.packaging.title,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: dict.packaging.title,
-      description: dict.packaging.intro,
-      images: [studioImage.src],
-    },
   };
 }
 

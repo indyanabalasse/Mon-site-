@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getDictionary, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
 import { categories, heroImages } from "@/data/portfolio";
 import { INSTAGRAM_URL } from "@/lib/site";
+import { pageMetadataBase, tileAlt } from "@/lib/metadata";
 import { InstagramIcon } from "@/components/icons";
 import HeroSlideshow from "@/components/HeroSlideshow";
 import MasonryNav from "@/components/MasonryNav";
@@ -21,25 +22,13 @@ export async function generateMetadata({
     ? "Portfolio photographique d'Indyana Balasse."
     : "Photography portfolio of Indyana Balasse.";
   return {
-    openGraph: {
+    ...pageMetadataBase({
+      path: "",
+      locale,
       title,
       description,
-      url: `/${locale}`,
-      images: [
-        {
-          url: heroImages[0].src.src,
-          width: heroImages[0].src.width,
-          height: heroImages[0].src.height,
-          alt: title,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [heroImages[0].src.src],
-    },
+      image: heroImages[0].src.src,
+    }),
   };
 }
 
@@ -57,6 +46,10 @@ export default async function HomePage({
     cover: category.cover,
     covers: category.coverImages,
     label: dict.categories[category.slug].title,
+    imageAlt: tileAlt(
+      dict.categories[category.slug].title,
+      dict.categories[category.slug].description
+    ),
   }));
 
   return (

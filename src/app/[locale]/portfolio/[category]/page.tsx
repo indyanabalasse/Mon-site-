@@ -34,28 +34,12 @@ export async function generateMetadata({
     locale,
     title: info.title,
     description: info.description,
+    image: categoryData?.cover.src,
   });
-  const image = categoryData
-    ? [
-        {
-          url: categoryData.cover.src,
-          width: categoryData.cover.width,
-          height: categoryData.cover.height,
-          alt: info.title,
-        },
-      ]
-    : base.openGraph?.images;
   return {
     title: info.title,
     description: info.description,
     ...base,
-    openGraph: { ...base.openGraph, images: image },
-    twitter: {
-      card: "summary_large_image",
-      title: info.title,
-      description: info.description,
-      images: categoryData ? [categoryData.cover.src] : undefined,
-    },
   };
 }
 

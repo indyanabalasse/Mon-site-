@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary, isLocale, defaultLocale, type Locale } from "@/lib/i18n";
 import { categories, heroImages } from "@/data/portfolio";
-import { pageMetadataBase } from "@/lib/metadata";
+import { pageMetadataBase, tileAlt } from "@/lib/metadata";
 import MasonryNav from "@/components/MasonryNav";
 
 export async function generateMetadata({
@@ -17,22 +17,12 @@ export async function generateMetadata({
     locale,
     title: dict.portfolio.title,
     description: dict.portfolio.intro,
+    image: heroImages[0].src.src,
   });
-  const cover = heroImages[0].src;
   return {
     title: dict.portfolio.title,
     description: dict.portfolio.intro,
     ...base,
-    openGraph: {
-      ...base.openGraph,
-      images: [{ url: cover.src, width: cover.width, height: cover.height, alt: dict.portfolio.title }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: dict.portfolio.title,
-      description: dict.portfolio.intro,
-      images: [cover.src],
-    },
   };
 }
 
@@ -50,6 +40,10 @@ export default async function PortfolioPage({
     cover: category.cover,
     covers: category.coverImages,
     label: dict.categories[category.slug].title,
+    imageAlt: tileAlt(
+      dict.categories[category.slug].title,
+      dict.categories[category.slug].description
+    ),
   }));
 
   return (

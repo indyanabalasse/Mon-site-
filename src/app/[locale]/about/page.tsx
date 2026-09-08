@@ -19,21 +19,12 @@ export async function generateMetadata({
     locale,
     title: dict.about.title,
     description,
+    image: selfPortrait.src,
   });
   return {
     title: dict.about.title,
     description,
     ...base,
-    openGraph: {
-      ...base.openGraph,
-      images: [{ url: selfPortrait.src, width: selfPortrait.width, height: selfPortrait.height, alt: dict.about.title }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: dict.about.title,
-      description,
-      images: [selfPortrait.src],
-    },
   };
 }
 

@@ -19,28 +19,12 @@ export async function generateMetadata({
     locale,
     title: dict.offerEvenement.title,
     description: dict.offerEvenement.intro,
+    image: heroImage.src,
   });
   return {
     title: `${dict.offerEvenement.title} — ${dict.packaging.title}`,
     description: dict.offerEvenement.intro,
     ...base,
-    openGraph: {
-      ...base.openGraph,
-      images: [
-        {
-          url: heroImage.src,
-          width: heroImage.width,
-          height: heroImage.height,
-          alt: dict.offerEvenement.title,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: dict.offerEvenement.title,
-      description: dict.offerEvenement.intro,
-      images: [heroImage.src],
-    },
   };
 }
 
