@@ -46,8 +46,8 @@ export async function generateMetadata({
     ? "INDYANASTUDIO, photographe corporate à Bruxelles"
     : "INDYANASTUDIO, corporate photographer in Brussels";
   const description = isFr
-    ? "Photographe corporate à Bruxelles et en Brabant wallon : portraits d'équipe, portraits professionnels, événements d'entreprise et portrait artistique. Devis sous 48h."
-    : "Corporate photographer in Brussels and Walloon Brabant: team portraits, professional headshots, company events and artistic portraits. Quote within 48h.";
+    ? "Photographe corporate à Bruxelles et en Brabant wallon : portraits d'équipe, portraits professionnels, événements d'entreprise et portrait artistique. Devis sous 24h."
+    : "Corporate photographer in Brussels and Walloon Brabant: team portraits, professional headshots, company events and artistic portraits. Quote within 24h.";
 
   return {
     title: {

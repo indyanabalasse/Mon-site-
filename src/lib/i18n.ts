@@ -262,7 +262,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         pitch: {
           heading: "Photographe corporate à Bruxelles et en Belgique",
           metaDescription:
-            "Photographe corporate à Bruxelles et en Brabant wallon : portraits d'équipe, portraits professionnels, événements d'entreprise et press kit. Devis sous 48h.",
+            "Photographe corporate à Bruxelles et en Brabant wallon : portraits d'équipe, portraits professionnels, événements d'entreprise et press kit. Devis sous 24h.",
           paragraphs: [
             "Vos équipes méritent mieux qu'un portrait gris sur fond blanc. Je photographie les entreprises qui veulent une image à leur hauteur : portraits professionnels pour le site et LinkedIn, photos d'équipe, reportage dans vos bureaux et couverture de vos événements.",
             "Une séance s'organise en une demi-journée, chez vous ou dans mon studio, sans bloquer l'agenda de vos collaborateurs. Vous repartez avec des images prêtes à l'emploi pour votre site, votre rapport annuel, vos réseaux sociaux et vos recrutements.",
@@ -283,7 +283,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Déplacement à Bruxelles, en Brabant wallon et partout en Wallonie",
             "Séance dans vos locaux ou dans mon studio de 150 m²",
             "Images retouchées et livrées prêtes pour le web et l'impression",
-            "Devis gratuit, réponse sous 48h",
+            "Devis gratuit, réponse sous 24h",
           ],
           ctaTitle: "Un projet pour votre entreprise ?",
           ctaText:
@@ -511,7 +511,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Sport et santé",
         "Autre",
       ],
-      responseTime: "Réponse sous 48h. Devis gratuit et sans engagement.",
+      responseTime: "Réponse sous 24h. Devis gratuit et sans engagement.",
       send: "Envoyer",
       sending: "Envoi en cours…",
       success: "Merci ! Votre message a bien été envoyé, je vous réponds rapidement.",
@@ -638,7 +638,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         pitch: {
           heading: "Corporate photographer in Brussels and Belgium",
           metaDescription:
-            "Corporate photographer in Brussels and Walloon Brabant: team portraits, professional headshots, company events and press kits. Quote within 48h.",
+            "Corporate photographer in Brussels and Walloon Brabant: team portraits, professional headshots, company events and press kits. Quote within 24h.",
           paragraphs: [
             "Your teams deserve better than a grey headshot on a white background. I photograph companies that want an image worthy of them: professional portraits for your website and LinkedIn, team photos, reportage in your offices and coverage of your events.",
             "A session takes half a day, at your place or in my studio, without blocking your people's calendars. You leave with images ready to use on your website, in your annual report, on social media and in your recruitment materials.",
@@ -659,7 +659,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Travelling to Brussels, Walloon Brabant and across Wallonia",
             "Session in your offices or in my 150 m² studio",
             "Retouched images delivered ready for web and print",
-            "Free quote, answer within 48h",
+            "Free quote, answer within 24h",
           ],
           ctaTitle: "A project for your company?",
           ctaText:
@@ -887,7 +887,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Sport and health",
         "Other",
       ],
-      responseTime: "Answer within 48h. Free quote, no commitment.",
+      responseTime: "Answer within 24h. Free quote, no commitment.",
       send: "Send",
       sending: "Sending…",
       success: "Thank you! Your message has been sent, I'll get back to you shortly.",
