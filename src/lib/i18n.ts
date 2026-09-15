@@ -27,6 +27,7 @@ type Dictionary = {
     portfolio: string;
     studio: string;
     packaging: string;
+    business: string;
     about: string;
     contact: string;
     themeToLight: string;
@@ -130,6 +131,23 @@ type Dictionary = {
     ctaText: string;
     ctaButton: string;
   };
+  business: {
+    heading: string;
+    metaDescription: string;
+    intro: string[];
+    servicesTitle: string;
+    services: { title: string; text: string }[];
+    pricingTitle: string;
+    pricingNote: string;
+    pricing: { label: string; detail: string; price: string }[];
+    processTitle: string;
+    process: string[];
+    faqTitle: string;
+    faq: { q: string; a: string }[];
+    ctaTitle: string;
+    ctaText: string;
+    ctaLabel: string;
+  };
   about: {
     title: string;
     paragraphs: string[];
@@ -201,6 +219,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       portfolio: "Explore",
       studio: "Studio",
       packaging: "Prestations",
+      business: "Entreprises",
       about: "À propos",
       contact: "Contact",
       themeToLight: "Passer en mode clair",
@@ -481,6 +500,102 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ctaText: "Parlons de votre événement pour composer l'animation idéale.",
       ctaButton: "Discutons de votre projet",
     },
+    business: {
+      heading: "Photographe d'entreprise à Bruxelles et en Wallonie",
+      metaDescription:
+        "Portraits d'équipe, portraits professionnels et couverture d'événements d'entreprise à Bruxelles et en Wallonie. À partir de 600 € la demi-journée, devis sous 24h.",
+      intro: [
+        "Vos photos d'équipe datent, vos portraits LinkedIn ont été pris au téléphone et votre site tourne avec des images de banque. Pendant ce temps, vos candidats et vos clients se font une idée de vous à partir de ces images.",
+        "Je photographie les entreprises qui veulent une image à leur hauteur : portraits professionnels, photos d'équipe, reportage dans vos bureaux et couverture de vos événements. Le tout en une demi-journée, sans bloquer l'agenda de vos collaborateurs.",
+      ],
+      servicesTitle: "Ce que je couvre",
+      services: [
+        {
+          title: "Portraits professionnels",
+          text: "Des portraits individuels cohérents entre eux, pour votre site, vos profils LinkedIn et vos supports commerciaux.",
+        },
+        {
+          title: "Photos d'équipe",
+          text: "L'équipe entière ou service par service, chez vous ou au studio, avec une vraie direction pour que personne ne se fige.",
+        },
+        {
+          title: "Reportage d'entreprise",
+          text: "Vos locaux, vos métiers et votre quotidien de travail, de quoi alimenter votre site, vos réseaux et vos recrutements toute l'année.",
+        },
+        {
+          title: "Événements d'entreprise",
+          text: "Séminaires, soirées, lancements et conférences, couverts discrètement du début à la fin.",
+        },
+        {
+          title: "Press kit dirigeants",
+          text: "Un jeu d'images prêt pour la presse, vos interventions et vos publications.",
+        },
+        {
+          title: "Photo booth",
+          text: "Le studio mobile installé chez vous pour vos soirées et vos salons. Vos invités repartent avec leur photo.",
+        },
+      ],
+      pricingTitle: "Tarifs",
+      pricingNote:
+        "Chaque prix est un point de départ. Le devis final dépend du nombre de personnes, du lieu et du nombre d'images. Tout se discute.",
+      pricing: [
+        {
+          label: "Reportage corporate, demi-journée sur site",
+          detail: "Matériel inclus",
+          price: "à partir de 600 €",
+        },
+        {
+          label: "Portraits professionnels en studio",
+          detail: "Une personne, 10 photos retouchées",
+          price: "à partir de 300 €",
+        },
+        {
+          label: "Séance en extérieur",
+          detail: "Dans vos locaux ou en ville",
+          price: "80 € / heure",
+        },
+        {
+          label: "Location du studio, demi-journée",
+          detail: "Studio de 150 m² entièrement équipé",
+          price: "350 €",
+        },
+        {
+          label: "Assistant plateau",
+          detail: "En option sur toutes les prestations",
+          price: "+ 50 €",
+        },
+      ],
+      processTitle: "Comment ça se passe",
+      process: [
+        "Vous m'écrivez ce dont vous avez besoin, le nombre de personnes et vos dates.",
+        "Je reviens vers vous sous 24h avec une proposition et un tarif ferme.",
+        "Je viens photographier, chez vous ou au studio, en une demi-journée.",
+        "Vous recevez vos images retouchées, prêtes pour le web et l'impression.",
+      ],
+      faqTitle: "Les questions qu'on me pose",
+      faq: [
+        {
+          q: "Vous vous déplacez où ?",
+          a: "Bruxelles, le Brabant wallon et toute la Wallonie. Au-delà, écrivez-moi, on en discute.",
+        },
+        {
+          q: "Est-ce que ça va perturber le travail de l'équipe ?",
+          a: "Non. Je travaille vite et en lumière naturelle autant que possible. Pour des portraits, comptez quelques minutes par personne.",
+        },
+        {
+          q: "Quand est-ce que je reçois les photos ?",
+          a: "Le délai dépend du volume et il est écrit noir sur blanc dans le devis. Si vous avez une échéance serrée, dites-le dès le départ et on s'organise.",
+        },
+        {
+          q: "Comment se passe la facturation ?",
+          a: "Devis écrit avant la séance, facture après. Rien ne démarre sans votre accord sur le prix.",
+        },
+      ],
+      ctaTitle: "Parlons de votre projet",
+      ctaText:
+        "Dites-moi ce dont vous avez besoin, le nombre de personnes à photographier et vos dates. Réponse sous 24h, devis gratuit et sans engagement.",
+      ctaLabel: "Demander un devis entreprise",
+    },
     about: {
       title: "Indyana Balasse",
       paragraphs: [
@@ -577,6 +692,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       portfolio: "Explore",
       studio: "Studio",
       packaging: "Services",
+      business: "Business",
       about: "About",
       contact: "Contact",
       themeToLight: "Switch to light mode",
@@ -856,6 +972,102 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ctaTitle: "Want a Fun Booth at your party?",
       ctaText: "Let's talk about your event to put together the ideal animation.",
       ctaButton: "Let's talk about your project",
+    },
+    business: {
+      heading: "Corporate photographer in Brussels and Wallonia",
+      metaDescription:
+        "Team portraits, professional headshots and company event coverage in Brussels and Wallonia. From 600 € for a half day, quote within 24h.",
+      intro: [
+        "Your team photos are years old, your LinkedIn portraits were taken on a phone and your website runs on stock images. Meanwhile, your candidates and your clients are forming an opinion of you from exactly those pictures.",
+        "I photograph companies that want an image worthy of them: professional portraits, team photos, reportage in your offices and coverage of your events. All in half a day, without blocking your people's calendars.",
+      ],
+      servicesTitle: "What I cover",
+      services: [
+        {
+          title: "Professional portraits",
+          text: "Individual portraits that work as a set, for your website, your LinkedIn profiles and your sales material.",
+        },
+        {
+          title: "Team photos",
+          text: "The whole team or department by department, at your place or in the studio, with real direction so nobody freezes.",
+        },
+        {
+          title: "Company reportage",
+          text: "Your offices, your trades and your working day, enough material to feed your website, your socials and your hiring all year.",
+        },
+        {
+          title: "Company events",
+          text: "Seminars, parties, launches and conferences, covered discreetly from start to finish.",
+        },
+        {
+          title: "Leadership press kit",
+          text: "A set of images ready for the press, your talks and your publications.",
+        },
+        {
+          title: "Photo booth",
+          text: "The mobile studio set up at your place for your parties and trade shows. Your guests leave with their photo.",
+        },
+      ],
+      pricingTitle: "Prices",
+      pricingNote:
+        "Every price is a starting point. The final quote depends on the number of people, the location and the number of images. Everything is negotiable.",
+      pricing: [
+        {
+          label: "Corporate reportage, half day on site",
+          detail: "Equipment included",
+          price: "from 600 €",
+        },
+        {
+          label: "Professional portraits in studio",
+          detail: "One person, 10 retouched photos",
+          price: "from 300 €",
+        },
+        {
+          label: "Outdoor session",
+          detail: "At your offices or in town",
+          price: "80 € / hour",
+        },
+        {
+          label: "Studio rental, half day",
+          detail: "Fully equipped 150 m² studio",
+          price: "350 €",
+        },
+        {
+          label: "Set assistant",
+          detail: "Optional on every service",
+          price: "+ 50 €",
+        },
+      ],
+      processTitle: "How it works",
+      process: [
+        "You tell me what you need, how many people and your dates.",
+        "I come back within 24h with a proposal and a firm price.",
+        "I come and photograph, at your place or in the studio, in half a day.",
+        "You receive your retouched images, ready for web and print.",
+      ],
+      faqTitle: "The questions I get asked",
+      faq: [
+        {
+          q: "Where do you travel?",
+          a: "Brussels, Walloon Brabant and all of Wallonia. Beyond that, write to me and we'll discuss it.",
+        },
+        {
+          q: "Will it disrupt the team's work?",
+          a: "No. I work fast and in natural light as much as possible. For portraits, count a few minutes per person.",
+        },
+        {
+          q: "When do I get the photos?",
+          a: "The turnaround depends on the volume and it is written into the quote. If you have a tight deadline, say so from the start and we'll plan around it.",
+        },
+        {
+          q: "How does billing work?",
+          a: "Written quote before the session, invoice after. Nothing starts without your agreement on the price.",
+        },
+      ],
+      ctaTitle: "Let's talk about your project",
+      ctaText:
+        "Tell me what you need, how many people are to be photographed and your dates. Answer within 24h, free quote, no commitment.",
+      ctaLabel: "Request a business quote",
     },
     about: {
       title: "Indyana Balasse",

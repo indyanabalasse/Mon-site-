@@ -22,6 +22,7 @@ export default function Header({ locale }: { locale: Locale }) {
     { href: `/${locale}/portfolio`, label: dict.nav.portfolio },
     { href: `/${locale}/studio`, label: dict.nav.studio },
     { href: `/${locale}/packaging`, label: dict.nav.packaging },
+    { href: `/${locale}/entreprises`, label: dict.nav.business },
     { href: `/${locale}/about`, label: dict.nav.about },
     { href: `/${locale}/contact`, label: dict.nav.contact },
   ];
@@ -58,7 +59,7 @@ export default function Header({ locale }: { locale: Locale }) {
 
         <nav
           ref={navRef}
-          className="relative hidden md:flex items-center gap-4 lg:gap-8 text-sm tracking-wide uppercase"
+          className="relative hidden lg:flex items-center gap-4 xl:gap-8 text-sm tracking-wide uppercase"
         >
           {links.map((link) => {
             const isActive = link.href === activeHref;
@@ -94,7 +95,7 @@ export default function Header({ locale }: { locale: Locale }) {
           </a>
           <ThemeToggle locale={locale} />
           <LanguageSwitcher locale={locale} />
-          <div className="hidden lg:block">
+          <div className="hidden xl:block">
             <FullscreenToggle
               labels={{ enter: dict.nav.fullscreenEnter, exit: dict.nav.fullscreenExit }}
             />

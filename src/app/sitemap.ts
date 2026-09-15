@@ -11,6 +11,7 @@ const routes = [
   "/packaging/shooting-studio",
   "/packaging/shooting-evenement",
   "/packaging/photobooth",
+  "/entreprises",
   "/about",
   "/contact",
   ...categories.flatMap((category) => [
