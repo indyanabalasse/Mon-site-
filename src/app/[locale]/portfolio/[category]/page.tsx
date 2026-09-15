@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDictionary, isLocale, defaultLocale, locales, type Locale } from "@/lib/i18n";
 import { categorySlugs, getCategory, isSeriesGroup, type CategorySlug } from "@/data/portfolio";
@@ -29,16 +30,20 @@ export async function generateMetadata({
   if (!isCategory(category)) return {};
   const info = dict.categories[category];
   const categoryData = getCategory(category);
+  // Une catégorie qui porte un argumentaire commercial se présente aux moteurs
+  // par ses mots-clés de recherche, pas par son seul nom de rubrique.
+  const title = info.pitch?.heading ?? info.title;
+  const description = info.pitch?.metaDescription ?? info.description;
   const base = pageMetadataBase({
     path: `/portfolio/${category}`,
     locale,
-    title: info.title,
-    description: info.description,
+    title,
+    description,
     image: categoryData?.cover.src,
   });
   return {
-    title: info.title,
-    description: info.description,
+    title,
+    description,
     ...base,
   };
 }
@@ -58,6 +63,7 @@ export default async function CategoryPage({
   if (!data) notFound();
 
   const info = dict.categories[category];
+  const pitch = info.pitch;
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -76,7 +82,18 @@ export default async function CategoryPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <BackLink href={`/${locale}/portfolio`} label={dict.gallery.back} />
-      <h1 className="sr-only">{info.title}</h1>
+      {pitch ? (
+        <header className="mx-auto max-w-3xl pt-8 pb-12 sm:pt-12 sm:pb-16 text-center">
+          <h1 className="wordmark font-serif text-3xl sm:text-4xl font-light">{pitch.heading}</h1>
+          {pitch.paragraphs.map((paragraph) => (
+            <p key={paragraph} className="mt-5 text-left sm:text-center leading-relaxed text-muted">
+              {paragraph}
+            </p>
+          ))}
+        </header>
+      ) : (
+        <h1 className="sr-only">{info.title}</h1>
+      )}
       {data.series.length > 1 || isSeriesGroup(data.series[0]) ? (
         <MasonryNav
           variant="grid"
@@ -101,6 +118,41 @@ export default async function CategoryPage({
             closeLabel: dict.gallery.backToCategory,
           }}
         />
+      )}
+
+      {pitch && (
+        <div className="mx-auto max-w-3xl">
+          <section className="mt-16">
+            <h2 className="text-xs uppercase tracking-[0.2em] text-muted">{pitch.referencesTitle}</h2>
+            <dl className="mt-6 space-y-5">
+              {pitch.references.map((reference) => (
+                <div key={reference.name}>
+                  <dt className="wordmark font-serif text-xl font-light">{reference.name}</dt>
+                  <dd className="mt-1 leading-relaxed text-muted">{reference.text}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+
+          <ul className="mt-12 grid gap-3 sm:grid-cols-2">
+            {pitch.trust.map((item) => (
+              <li key={item} className="border-l border-border pl-4 text-sm leading-relaxed text-muted">
+                {item}
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-16 border border-border px-6 py-10 sm:py-12 text-center">
+            <h2 className="wordmark font-serif text-2xl font-light">{pitch.ctaTitle}</h2>
+            <p className="mt-4 max-w-xl mx-auto text-muted">{pitch.ctaText}</p>
+            <Link
+              href={`/${locale}/contact`}
+              className="mt-8 inline-block border border-foreground bg-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] text-background hover:bg-transparent hover:text-foreground transition-colors"
+            >
+              {pitch.ctaLabel}
+            </Link>
+          </div>
+        </div>
       )}
     </div>
   );

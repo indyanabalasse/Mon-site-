@@ -39,6 +39,9 @@ yarn-error.log*
 # local tooling
 .claude/
 
+# documents de travail internes (depot public : ne jamais publier)
+MARKETING-AUDIT.md
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

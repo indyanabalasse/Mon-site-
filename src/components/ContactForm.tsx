@@ -18,6 +18,10 @@ export default function ContactForm({
     name: string;
     email: string;
     message: string;
+    projectType: string;
+    projectTypePlaceholder: string;
+    projectTypeOptions: string[];
+    responseTime: string;
     send: string;
     sending: string;
     success: string;
@@ -45,10 +49,14 @@ export default function ContactForm({
 
     const form = e.currentTarget;
     const subscribeNewsletter = (form.elements.namedItem("newsletter") as HTMLInputElement).checked;
+    const projectType = (form.elements.namedItem("projectType") as HTMLSelectElement).value;
+    const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
     const data = {
       name: (form.elements.namedItem("name") as HTMLInputElement).value,
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
-      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+      // Le type de projet voyage dans le message : il arrive ainsi en tête du mail
+      // sans toucher au jeton signé qui transporte la demande jusqu'à la confirmation.
+      message: `${labels.projectType}: ${projectType}\n\n${message}`,
       locale,
       subscribeNewsletter,
       company: (form.elements.namedItem("company") as HTMLInputElement).value,
@@ -131,6 +139,27 @@ export default function ContactForm({
         />
       </div>
       <div>
+        <label htmlFor="projectType" className="block text-xs uppercase tracking-[0.2em] text-muted mb-2">
+          {labels.projectType}
+        </label>
+        <select
+          id="projectType"
+          name="projectType"
+          required
+          defaultValue=""
+          className="w-full border-b border-border bg-transparent py-2 focus:outline-none focus:border-foreground transition-colors"
+        >
+          <option value="" disabled>
+            {labels.projectTypePlaceholder}
+          </option>
+          {labels.projectTypeOptions.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div>
         <label htmlFor="message" className="block text-xs uppercase tracking-[0.2em] text-muted mb-2">
           {labels.message}
         </label>
@@ -155,13 +184,16 @@ export default function ContactForm({
 
       {status === "error" && <p className="text-sm text-danger">{labels.error}</p>}
 
-      <button
-        type="submit"
-        disabled={status === "sending"}
-        className="border border-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors disabled:opacity-50"
-      >
-        {status === "sending" ? labels.sending : labels.send}
-      </button>
+      <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+        <button
+          type="submit"
+          disabled={status === "sending"}
+          className="border border-foreground px-8 py-3 text-xs uppercase tracking-[0.2em] hover:bg-foreground hover:text-background transition-colors disabled:opacity-50"
+        >
+          {status === "sending" ? labels.sending : labels.send}
+        </button>
+        <p className="text-sm text-muted">{labels.responseTime}</p>
+      </div>
     </form>
   );
 }

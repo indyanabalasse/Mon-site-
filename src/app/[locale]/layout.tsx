@@ -40,10 +40,14 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const isFr = locale === "fr";
-  const title = "INDYANASTUDIO — Indyana Balasse Photographie";
+  // Le titre porte le métier et la ville : « INDYANASTUDIO » seul ne répond à
+  // aucune recherche de quelqu'un qui cherche un photographe sans la connaître.
+  const title = isFr
+    ? "INDYANASTUDIO, photographe corporate à Bruxelles"
+    : "INDYANASTUDIO, corporate photographer in Brussels";
   const description = isFr
-    ? "Portfolio photographique d'Indyana Balasse : portraits noir et blanc et scène électronique. Studio basé en Belgique."
-    : "Photography portfolio of Indyana Balasse: black and white portraits and the electronic music scene. Studio based in Belgium.";
+    ? "Photographe corporate à Bruxelles et en Brabant wallon : portraits d'équipe, portraits professionnels, événements d'entreprise et portrait artistique. Devis sous 48h."
+    : "Corporate photographer in Brussels and Walloon Brabant: team portraits, professional headshots, company events and artistic portraits. Quote within 48h.";
 
   return {
     title: {

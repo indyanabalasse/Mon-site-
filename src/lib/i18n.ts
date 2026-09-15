@@ -8,6 +8,19 @@ export function isLocale(value: string): value is Locale {
   return (locales as readonly string[]).includes(value);
 }
 
+type CategoryPitch = {
+  /** Titre visible de la page, et balise title : c'est lui qui porte les mots-clés de recherche. */
+  heading: string;
+  metaDescription: string;
+  paragraphs: string[];
+  referencesTitle: string;
+  references: { name: string; text: string }[];
+  trust: string[];
+  ctaTitle: string;
+  ctaText: string;
+  ctaLabel: string;
+};
+
 type Dictionary = {
   nav: {
     home: string;
@@ -43,7 +56,13 @@ type Dictionary = {
   };
   categories: Record<
     CategorySlug,
-    { title: string; description: string; series: Record<string, string> }
+    {
+      title: string;
+      description: string;
+      series: Record<string, string>;
+      /** Argumentaire commercial affiché au-dessus et en dessous des visuels d'une catégorie. */
+      pitch?: CategoryPitch;
+    }
   >;
   subseries?: Partial<Record<CategorySlug, Record<string, Record<string, string>>>>;
   studio: {
@@ -122,6 +141,10 @@ type Dictionary = {
     name: string;
     email: string;
     message: string;
+    projectType: string;
+    projectTypePlaceholder: string;
+    projectTypeOptions: string[];
+    responseTime: string;
     send: string;
     sending: string;
     success: string;
@@ -235,6 +258,37 @@ export const dictionaries: Record<Locale, Dictionary> = {
         series: {
           "ma-vie": "Ma Vie",
           "esg-logic": "ESG Logic",
+        },
+        pitch: {
+          heading: "Photographe corporate à Bruxelles et en Belgique",
+          metaDescription:
+            "Photographe corporate à Bruxelles et en Brabant wallon : portraits d'équipe, portraits professionnels, événements d'entreprise et press kit. Devis sous 48h.",
+          paragraphs: [
+            "Vos équipes méritent mieux qu'un portrait gris sur fond blanc. Je photographie les entreprises qui veulent une image à leur hauteur : portraits professionnels pour le site et LinkedIn, photos d'équipe, reportage dans vos bureaux et couverture de vos événements.",
+            "Une séance s'organise en une demi-journée, chez vous ou dans mon studio, sans bloquer l'agenda de vos collaborateurs. Vous repartez avec des images prêtes à l'emploi pour votre site, votre rapport annuel, vos réseaux sociaux et vos recrutements.",
+            "Ce qui change avec moi : de la couleur, de la lumière naturelle et des visages détendus. C'est toute la différence entre une photo d'identité et une image qui donne envie de vous rejoindre.",
+          ],
+          referencesTitle: "Ils m'ont déjà fait confiance",
+          references: [
+            {
+              name: "Ma Vie",
+              text: "Reportage dans leurs bureaux : réunions, échanges et moments de travail saisis en lumière naturelle.",
+            },
+            {
+              name: "ESG Logic",
+              text: "Photo d'équipe et scènes de collaboration, pour une image collective qui reste vivante.",
+            },
+          ],
+          trust: [
+            "Déplacement à Bruxelles, en Brabant wallon et partout en Wallonie",
+            "Séance dans vos locaux ou dans mon studio de 150 m²",
+            "Images retouchées et livrées prêtes pour le web et l'impression",
+            "Devis gratuit, réponse sous 48h",
+          ],
+          ctaTitle: "Un projet pour votre entreprise ?",
+          ctaText:
+            "Dites-moi ce dont vous avez besoin, le nombre de personnes à photographier et vos dates. Je reviens vers vous avec une proposition et un tarif.",
+          ctaLabel: "Demander un devis entreprise",
         },
       },
       sante: {
@@ -446,6 +500,18 @@ export const dictionaries: Record<Locale, Dictionary> = {
       name: "Nom",
       email: "Email",
       message: "Message",
+      projectType: "Type de projet",
+      projectTypePlaceholder: "Choisissez",
+      projectTypeOptions: [
+        "Entreprise",
+        "Portrait",
+        "Famille",
+        "Événementiel",
+        "Photo booth",
+        "Sport et santé",
+        "Autre",
+      ],
+      responseTime: "Réponse sous 48h. Devis gratuit et sans engagement.",
       send: "Envoyer",
       sending: "Envoi en cours…",
       success: "Merci ! Votre message a bien été envoyé, je vous réponds rapidement.",
@@ -568,6 +634,37 @@ export const dictionaries: Record<Locale, Dictionary> = {
         series: {
           "ma-vie": "Ma Vie",
           "esg-logic": "ESG Logic",
+        },
+        pitch: {
+          heading: "Corporate photographer in Brussels and Belgium",
+          metaDescription:
+            "Corporate photographer in Brussels and Walloon Brabant: team portraits, professional headshots, company events and press kits. Quote within 48h.",
+          paragraphs: [
+            "Your teams deserve better than a grey headshot on a white background. I photograph companies that want an image worthy of them: professional portraits for your website and LinkedIn, team photos, reportage in your offices and coverage of your events.",
+            "A session takes half a day, at your place or in my studio, without blocking your people's calendars. You leave with images ready to use on your website, in your annual report, on social media and in your recruitment materials.",
+            "What changes with me: colour, natural light and relaxed faces. That is the whole difference between an ID photo and an image that makes people want to join you.",
+          ],
+          referencesTitle: "They already trusted me",
+          references: [
+            {
+              name: "Ma Vie",
+              text: "Reportage in their offices: meetings, conversations and working moments caught in natural light.",
+            },
+            {
+              name: "ESG Logic",
+              text: "Team photo and collaboration scenes, for a group image that still feels alive.",
+            },
+          ],
+          trust: [
+            "Travelling to Brussels, Walloon Brabant and across Wallonia",
+            "Session in your offices or in my 150 m² studio",
+            "Retouched images delivered ready for web and print",
+            "Free quote, answer within 48h",
+          ],
+          ctaTitle: "A project for your company?",
+          ctaText:
+            "Tell me what you need, how many people are to be photographed and your dates. I come back to you with a proposal and a price.",
+          ctaLabel: "Request a business quote",
         },
       },
       sante: {
@@ -779,6 +876,18 @@ export const dictionaries: Record<Locale, Dictionary> = {
       name: "Name",
       email: "Email",
       message: "Message",
+      projectType: "Project type",
+      projectTypePlaceholder: "Choose",
+      projectTypeOptions: [
+        "Business",
+        "Portrait",
+        "Family",
+        "Event",
+        "Photo booth",
+        "Sport and health",
+        "Other",
+      ],
+      responseTime: "Answer within 48h. Free quote, no commitment.",
       send: "Send",
       sending: "Sending…",
       success: "Thank you! Your message has been sent, I'll get back to you shortly.",
