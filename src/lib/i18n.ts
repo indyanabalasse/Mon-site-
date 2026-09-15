@@ -137,9 +137,6 @@ type Dictionary = {
     intro: string[];
     servicesTitle: string;
     services: { title: string; text: string }[];
-    pricingTitle: string;
-    pricingNote: string;
-    pricing: { label: string; detail: string; price: string }[];
     processTitle: string;
     process: string[];
     faqTitle: string;
@@ -503,7 +500,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     business: {
       heading: "Photographe d'entreprise à Bruxelles et en Wallonie",
       metaDescription:
-        "Portraits d'équipe, portraits professionnels et couverture d'événements d'entreprise à Bruxelles et en Wallonie. À partir de 600 € la demi-journée, devis sous 24h.",
+        "Portraits d'équipe, portraits professionnels et couverture d'événements d'entreprise à Bruxelles et en Wallonie. Devis gratuit sous 24h.",
       intro: [
         "Vos photos d'équipe datent, vos portraits LinkedIn ont été pris au téléphone et votre site tourne avec des images de banque. Pendant ce temps, vos candidats et vos clients se font une idée de vous à partir de ces images.",
         "Je photographie les entreprises qui veulent une image à leur hauteur : portraits professionnels, photos d'équipe, reportage dans vos bureaux et couverture de vos événements. Le tout en une demi-journée, sans bloquer l'agenda de vos collaborateurs.",
@@ -533,36 +530,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
         {
           title: "Photo booth",
           text: "Le studio mobile installé chez vous pour vos soirées et vos salons. Vos invités repartent avec leur photo.",
-        },
-      ],
-      pricingTitle: "Tarifs",
-      pricingNote:
-        "Chaque prix est un point de départ. Le devis final dépend du nombre de personnes, du lieu et du nombre d'images. Tout se discute.",
-      pricing: [
-        {
-          label: "Reportage corporate, demi-journée sur site",
-          detail: "Matériel inclus",
-          price: "à partir de 600 €",
-        },
-        {
-          label: "Portraits professionnels en studio",
-          detail: "Une personne, 10 photos retouchées",
-          price: "à partir de 300 €",
-        },
-        {
-          label: "Séance en extérieur",
-          detail: "Dans vos locaux ou en ville",
-          price: "80 € / heure",
-        },
-        {
-          label: "Location du studio, demi-journée",
-          detail: "Studio de 150 m² entièrement équipé",
-          price: "350 €",
-        },
-        {
-          label: "Assistant plateau",
-          detail: "En option sur toutes les prestations",
-          price: "+ 50 €",
         },
       ],
       processTitle: "Comment ça se passe",
@@ -976,7 +943,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     business: {
       heading: "Corporate photographer in Brussels and Wallonia",
       metaDescription:
-        "Team portraits, professional headshots and company event coverage in Brussels and Wallonia. From 600 € for a half day, quote within 24h.",
+        "Team portraits, professional headshots and company event coverage in Brussels and Wallonia. Free quote within 24h.",
       intro: [
         "Your team photos are years old, your LinkedIn portraits were taken on a phone and your website runs on stock images. Meanwhile, your candidates and your clients are forming an opinion of you from exactly those pictures.",
         "I photograph companies that want an image worthy of them: professional portraits, team photos, reportage in your offices and coverage of your events. All in half a day, without blocking your people's calendars.",
@@ -1006,36 +973,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
         {
           title: "Photo booth",
           text: "The mobile studio set up at your place for your parties and trade shows. Your guests leave with their photo.",
-        },
-      ],
-      pricingTitle: "Prices",
-      pricingNote:
-        "Every price is a starting point. The final quote depends on the number of people, the location and the number of images. Everything is negotiable.",
-      pricing: [
-        {
-          label: "Corporate reportage, half day on site",
-          detail: "Equipment included",
-          price: "from 600 €",
-        },
-        {
-          label: "Professional portraits in studio",
-          detail: "One person, 10 retouched photos",
-          price: "from 300 €",
-        },
-        {
-          label: "Outdoor session",
-          detail: "At your offices or in town",
-          price: "80 € / hour",
-        },
-        {
-          label: "Studio rental, half day",
-          detail: "Fully equipped 150 m² studio",
-          price: "350 €",
-        },
-        {
-          label: "Set assistant",
-          detail: "Optional on every service",
-          price: "+ 50 €",
         },
       ],
       processTitle: "How it works",

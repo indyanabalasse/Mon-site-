@@ -87,25 +87,6 @@ export default async function BusinessPage({
       </section>
 
       <section className="mt-20">
-        <h2 className="text-xs uppercase tracking-[0.2em] text-muted">{page.pricingTitle}</h2>
-        <dl className="mt-8">
-          {page.pricing.map((item) => (
-            <div
-              key={item.label}
-              className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-b border-border py-4"
-            >
-              <dt>
-                <span className="block">{item.label}</span>
-                <span className="block text-sm text-muted">{item.detail}</span>
-              </dt>
-              <dd className="text-sm uppercase tracking-[0.15em]">{item.price}</dd>
-            </div>
-          ))}
-        </dl>
-        <p className="mt-6 text-sm leading-relaxed text-muted">{page.pricingNote}</p>
-      </section>
-
-      <section className="mt-20">
         <h2 className="text-xs uppercase tracking-[0.2em] text-muted">{page.processTitle}</h2>
         <ol className="mt-8 space-y-5">
           {page.process.map((step, index) => (
