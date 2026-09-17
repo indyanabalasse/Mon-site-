@@ -54,7 +54,7 @@ Je m'appelle Indyana Balasse. J'ai grandi dans un studio photo et j'y ai trouvé
 Ce que je fais pour vous :
 
 - Portraits professionnels cohérents entre eux, pour votre site, vos profils LinkedIn et vos supports commerciaux
-- Photos d'équipe, au complet ou service par service, chez vous ou dans mon studio de 150 m2
+- Photos d'équipe, au complet ou service par service, chez vous ou dans mon studio de 150 m²
 - Reportage d'entreprise : vos locaux, vos métiers, votre quotidien de travail, de quoi alimenter votre site, vos réseaux et vos recrutements toute l'année
 - Événements : séminaires, soirées, lancements et conférences, couverts discrètement du début à la fin
 - Press kit dirigeants, prêt pour la presse et vos interventions
@@ -85,7 +85,7 @@ Description :
 
 Photographie d'entreprise à Bruxelles, en Brabant wallon et partout en Wallonie : portraits professionnels, photos d'équipe, reportage dans vos locaux, couverture d'événements, press kit dirigeants et photo booth animé.
 
-Séance en une demi-journée, chez vous ou dans mon studio de 150 m2. Devis ferme sous 24h, images retouchées prêtes pour le web et l'impression.
+Séance en une demi-journée, chez vous ou dans mon studio de 150 m². Devis ferme sous 24h, images retouchées prêtes pour le web et l'impression.
 
 ---
 
