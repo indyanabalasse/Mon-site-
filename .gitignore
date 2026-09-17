@@ -48,5 +48,4 @@ next-env.d.ts
 dev.sh
 
 # grille tarifaire envoyee sur demande, jamais publiee
-Tarifs-INDYANASTUDIO.pdf
-Tarifs-INDYANASTUDIO-detaille.md
+Tarifs-INDYANASTUDIO*
