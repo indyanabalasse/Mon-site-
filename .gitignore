@@ -49,3 +49,6 @@ dev.sh
 
 # grille tarifaire envoyee sur demande, jamais publiee
 Tarifs-INDYANASTUDIO*
+
+# devis clients remplis, jamais publies (depot public)
+Devis-*
