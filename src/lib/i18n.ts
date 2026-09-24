@@ -542,7 +542,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Devis gratuit, réponse sous 24h",
       ],
       ctaTitle: "Un projet pour votre entreprise ?",
-      ctaText: "Décrivez ce dont vous avez besoin, le nombre de personnes et vos dates. Je vous propose un tarif sous 24h.",
+      ctaText: "",
       ctaButton: "Demander un devis entreprise",
     },
     business: {
@@ -1015,7 +1015,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Free quote, answer within 24h",
       ],
       ctaTitle: "A project for your company?",
-      ctaText: "Tell me what you need, how many people and your dates. I'll send you a quote within 24h.",
+      ctaText: "",
       ctaButton: "Request a business quote",
     },
     business: {
