@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing Master Plan - INDYANASTUDIO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 60px 50px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-size: 1.1em;
+            color: #666;
+        }
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95em;
+            color: #999;
+            margin-top: 20px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+        h3 {
+            font-size: 1.3em;
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        .problem {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .solution {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .timeline {
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        .timeline-item {
+            margin-bottom: 20px;
+        }
+        .timeline-date {
+            font-weight: bold;
+            color: #2196F3;
+            font-size: 1.1em;
+        }
+        .timeline-content {
+            margin-top: 8px;
+            color: #555;
+        }
+        .action-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .action-list li {
+            padding-left: 30px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .action-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .highlight {
+            background: #fff9e6;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        .highlight strong {
+            color: #d97706;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: #2c3e50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .cta {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 30px 0;
+            text-align: center;
+            font-size: 1.1em;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #ecf0f1;
+            color: #999;
+            font-size: 0.9em;
+        }
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; padding: 40px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 MASTER PLAN</h1>
+            <p>Automation Marketing & Rapport Hebdomadaire</p>
+            <div class="meta">
+                <span>Pour : Indyana Balasse — INDYANASTUDIO</span>
+                <span>Septembre 2026</span>
+            </div>
+        </div>
+
+        <section>
+            <h2>Les 3 Problèmes Que Nous Résolvons</h2>
+
+            <div class="problem">
+                <h3>❌ Problème 1 : Pas de Mémoire</h3>
+                <p><strong>Aujourd'hui :</strong> Votre site ne se souvient de rien. Impossible de savoir si un conseil a marché, impossible de comparer une semaine à l'autre.</p>
+            </div>
+            <div class="solution">
+                <h3>✅ Solution : Base de Données + Rapport Intelligent</h3>
+                <p>Une base de données Postgres qui se souvient de chaque demande, chaque conseil, chaque résultat. Un rapport automatique chaque lundi matin qui vous dit : « Voici ce qui a marché, voici ce qui coince, voici les 3 actions à faire cette semaine. »</p>
+            </div>
+
+            <div class="problem">
+                <h3>❌ Problème 2 : Email Paralysé</h3>
+                <p><strong>Aujourd'hui :</strong> L'expéditeur par défaut de Resend ne livre qu'à votre propre email. Tous les vrais abonnés reçoivent une erreur 403. Votre programme d'email est à l'arrêt.</p>
+            </div>
+            <div class="solution">
+                <h3>✅ Solution : Email de Nouveau Opérationnel</h3>
+                <p>3 heures de travail pour réparer : ajouter DMARC, vérifier le domaine sur Resend, configurer les bons en-têtes. Après ça, les emails partent normalement.</p>
+            </div>
+
+            <div class="problem">
+                <h3>❌ Problème 3 : Pas de Guide Clair</h3>
+                <p><strong>Aujourd'hui :</strong> Vos pages d'offres n'affichent aucun prix. Les boutons de contact ne s'affichent pas sur mobile. Les images ne sont pas optimisées. Vous perdez des clients avant qu'ils ne vous contactent.</p>
+            </div>
+            <div class="solution">
+                <h3>✅ Solution : 3 Changements Immédiats</h3>
+                <ul class="action-list">
+                    <li>Afficher vos prix (grille portrait/famille, « à partir de » mariage/photobooth)</li>
+                    <li>Rendre les boutons de contact visibles sur mobile</li>
+                    <li>Optimiser les images pour les téléphones</li>
+                </ul>
+                <p><strong>Impact estimé :</strong> +30 % de demandes en 2 semaines, sans aucun coût.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Ce Que Vous Recevez</h2>
+            <p>Un plan complet de 15 000 lignes couvrant :</p>
+            <table>
+                <tr>
+                    <th>Domaine</th>
+                    <th>Contenu</th>
+                    <th>Prêt à</th>
+                </tr>
+                <tr>
+                    <td><strong>Mesure</strong></td>
+                    <td>Comment tracer ce qui fonctionne, 30 règles diagnostiques</td>
+                    <td>Copier-coller</td>
+                </tr>
+                <tr>
+                    <td><strong>CRM Client</strong></td>
+                    <td>Base de données, cycle de vie du client, 9 signaux d'alerte</td>
+                    <td>Lancer sur serveur</td>
+                </tr>
+                <tr>
+                    <td><strong>Email</strong></td>
+                    <td>Newsletter, séquences automatiques, 4 façons de capturer des emails</td>
+                    <td>Copier textes</td>
+                </tr>
+                <tr>
+                    <td><strong>41 Conseils CRO</strong></td>
+                    <td>Actions concrètes sur votre site (prix, boutons, images, etc.)</td>
+                    <td>Appliquer immédiatement</td>
+                </tr>
+                <tr>
+                    <td><strong>27 Automatisations</strong></td>
+                    <td>Workflows pour n8n : de la demande de contact à l'avis Google</td>
+                    <td>Implémenter en n8n</td>
+                </tr>
+                <tr>
+                    <td><strong>SEO Local</strong></td>
+                    <td>Pages à créer, Google Business Profile, plan 90 jours</td>
+                    <td>Suivre plan</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>La Feuille de Route</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">🗓️ Octobre 2026 — Semaine 1</div>
+                    <div class="timeline-content">
+                        <strong>Email Réparé (3 heures)</strong><br>
+                        DMARC + domaine vérifié + NEWSLETTER_FROM → les emails partent normalement
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">🗓️ Octobre 2026 — Semaines 2-3</div>
+                    <div class="timeline-content">
+                        <strong>Serveur Opérationnel (20 heures)</strong><br>
+                        Louer un petit serveur (15 €/mois), installer la base de données
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">🗓️ Octobre 2026 — Semaine 4</div>
+                    <div class="timeline-content">
+                        <strong>Premier Rapport Hebdo (35 heures)</strong><br>
+                        Construire le rapport automatique : chaque lundi matin à 7h, vous recevez vos 3 actions + les chiffres
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">🗓️ Novembre-Décembre 2026</div>
+                    <div class="timeline-content">
+                        <strong>CRM + Automations Essentielles</strong><br>
+                        Pipeline visible dans Twenty, demandes de contact qualifiées, workflow demande d'avis Google
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">🗓️ 2027</div>
+                    <div class="timeline-content">
+                        <strong>Évolutions Progressives</strong><br>
+                        Email maîtrisé, bons cadeaux automatisés, réactivation anciens clients
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Les Chiffres</h2>
+
+            <div class="highlight">
+                <p><strong>💰 Coût Mensuel :</strong> ~15–21 € (serveur à Nuremberg)</p>
+                <p><strong>⏱️ Votre Temps :</strong> ~2–3 heures/mois en régime établi (sauvegardes, mises à jour)</p>
+                <p><strong>👨‍💻 Travail Initial :</strong> ~25–35 jours de développement sur 18 mois (phasé, vous lancez progressivement)</p>
+            </div>
+
+            <h3>Impacts Attendus</h3>
+            <ul class="action-list">
+                <li><strong>Semaines 1-2 :</strong> Email redevient actif, vous pouvez relancer vos abonnés</li>
+                <li><strong>Semaines 2-3 :</strong> Afficher les prix + boutons mobiles = +30 % demandes de contact</li>
+                <li><strong>Semaine 4 :</strong> Rapport intelligent qui vous dit quoi faire chaque lundi</li>
+                <li><strong>Mois 2-3 :</strong> CRM visible, demandes qualifiées automatiquement, avis Google en hausse</li>
+                <li><strong>Mois 6+ :</strong> Boucle complète : acquisition → qualification → préparation → livraison → avis → réachat</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Prochaines Étapes</h2>
+
+            <div class="cta">
+                <p><strong>Êtes-vous prête pour octobre 2026 ?</strong></p>
+                <p style="margin-top: 15px; font-size: 0.95em;">Répondez à deux questions courtes et on commence :</p>
+            </div>
+
+            <h3>Question 1 : « Sport et santé »</h3>
+            <p>Votre formulaire de contact propose cette option, mais elle n'existe nulle part dans vos offres. C'est un résidu à nettoyer. D'accord ?</p>
+
+            <h3>Question 2 : Priorités</h3>
+            <p>Le plan propose 5 phases sur 18 mois. Voulez-vous les phases telles quelles, ou en accélérer certaines (par exemple lancer le CRM + email en même temps que le rapport) ?</p>
+        </section>
+
+        <div class="footer">
+            <p>📁 <strong>Tous les fichiers sont sur GitHub :</strong> indyanabalasse/Mon-site-</p>
+            <p>Généré par une équipe d'agents marketing spécialisés | Septembre 2026</p>
+        </div>
+    </div>
+</body>
+</html>
