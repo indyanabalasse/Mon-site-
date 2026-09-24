@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { renderBusinessAcknowledgment } from "@/lib/newsletter/business-templates";
 import { signContactToken } from "@/lib/contact/token";
 import { signNewsletterToken } from "@/lib/newsletter/token";
 import { sendTransactionalEmail } from "@/lib/newsletter/resend";
@@ -104,24 +105,31 @@ export async function POST(request: Request) {
     const token = signContactToken({ name, email, message, locale, subscribeNewsletter });
     const confirmUrl = `${SITE_URL}/api/contact/confirm?token=${token}`;
 
-    const html = renderNewsletterEmail({
-      locale,
-      heading: subscribeNewsletter
-        ? dict.contact.confirmEmailHeadingWithNewsletter
-        : dict.contact.confirmEmailHeading,
-      bodyHtml: `<p style="margin:0;">${
-        subscribeNewsletter ? dict.contact.confirmEmailBodyWithNewsletter : dict.contact.confirmEmailBody
-      }</p>`,
-      ctaLabel: subscribeNewsletter ? dict.contact.confirmEmailCtaWithNewsletter : dict.contact.confirmEmailCta,
-      ctaHref: confirmUrl,
-    });
+    // Use a specialized template for business inquiries
+    const isBusinessRequest = body.message?.includes("Entreprise") || false;
+    const emailContent = isBusinessRequest
+      ? renderBusinessAcknowledgment({ locale, name, confirmUrl })
+      : {
+          subject: subscribeNewsletter
+            ? dict.contact.confirmEmailSubjectWithNewsletter
+            : dict.contact.confirmEmailSubject,
+          html: renderNewsletterEmail({
+            locale,
+            heading: subscribeNewsletter
+              ? dict.contact.confirmEmailHeadingWithNewsletter
+              : dict.contact.confirmEmailHeading,
+            bodyHtml: `<p style="margin:0;">${
+              subscribeNewsletter ? dict.contact.confirmEmailBodyWithNewsletter : dict.contact.confirmEmailBody
+            }</p>`,
+            ctaLabel: subscribeNewsletter ? dict.contact.confirmEmailCtaWithNewsletter : dict.contact.confirmEmailCta,
+            ctaHref: confirmUrl,
+          }),
+        };
 
     await sendTransactionalEmail({
       to: email,
-      subject: subscribeNewsletter
-        ? dict.contact.confirmEmailSubjectWithNewsletter
-        : dict.contact.confirmEmailSubject,
-      html,
+      subject: emailContent.subject,
+      html: emailContent.html,
     });
   } catch (error) {
     console.error("Contact: failed to send confirmation email", error);

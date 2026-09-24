@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { renderBusinessNextSteps } from "@/lib/newsletter/business-templates";
 import { verifyContactToken } from "@/lib/contact/token";
 import { sendTransactionalEmail, addConfirmedContact } from "@/lib/newsletter/resend";
 import { CONTACT_EMAIL } from "@/lib/site";
@@ -38,6 +39,22 @@ export async function GET(request: NextRequest) {
       await addConfirmedContact(email);
     } catch (error) {
       console.error("Contact confirm: failed to add newsletter contact", error);
+    }
+  }
+
+  // Send business-specific follow-up if this was a company inquiry
+  const isBusinessRequest = message?.includes("Entreprise") || false;
+  if (isBusinessRequest) {
+    try {
+      const businessEmail = renderBusinessNextSteps({ locale, name });
+      await sendTransactionalEmail({
+        to: email,
+        subject: businessEmail.subject,
+        html: businessEmail.html,
+      });
+    } catch (error) {
+      console.error("Contact confirm: failed to send business follow-up", error);
+      // Don't fail the confirmation, just log and continue
     }
   }
 
