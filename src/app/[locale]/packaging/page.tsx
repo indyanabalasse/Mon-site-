@@ -7,11 +7,13 @@ import studioImage from "@/images/Studio/PHOTO-2026-08-20-13-30-50.jpg";
 import shootingStudioImage from "@/images/booking/shooting-studio-cover.jpg";
 import evenementielImage from "@/images/portfolio/evenementiel/cover.jpg";
 import photoboothImage from "@/images/portfolio/fun-photo-booth/Mariage 1/cover.jpg";
+import corporateImage from "@/images/portfolio/corporate/esg-logic/01.jpg";
 
 const OFFER_IMAGES: Record<string, typeof studioImage> = {
   "shooting-studio": shootingStudioImage,
   "shooting-evenement": evenementielImage,
   photobooth: photoboothImage,
+  entreprise: corporateImage,
   "location-studio": studioImage,
 };
 
