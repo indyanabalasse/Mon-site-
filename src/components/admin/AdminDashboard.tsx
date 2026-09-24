@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import type { DashboardData } from "@/lib/posthog-query";
 import OverviewStats from "./OverviewStats";
+import BusinessFunnel from "./BusinessFunnel";
 import TopContentChart from "./TopContentChart";
 import TopPaths from "./TopPaths";
 import TrendChart from "./TrendChart";
@@ -104,6 +105,11 @@ export default function AdminDashboard({
         aria-busy={isRefetching}
       >
         <OverviewStats overview={data.overview} />
+        <BusinessFunnel
+          business={data.business}
+          requestsByType={data.requestsByType}
+          downloads={data.downloads}
+        />
         <TopContentChart items={data.topContent} />
         <TopPaths paths={data.topPaths} />
 

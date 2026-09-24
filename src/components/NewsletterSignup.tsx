@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import posthog from "posthog-js";
 import { getDictionary, type Locale } from "@/lib/i18n";
+import { ANALYTICS_EVENTS } from "@/lib/analytics-events";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -25,6 +27,10 @@ export default function NewsletterSignup({ locale }: { locale: Locale }) {
       });
       if (!res.ok) throw new Error("request failed");
       setStatus("success");
+      posthog.capture(ANALYTICS_EVENTS.NEWSLETTER_SIGNUP_SUBMITTED, {
+        locale,
+        path: window.location.pathname,
+      });
       form.reset();
     } catch {
       setStatus("error");

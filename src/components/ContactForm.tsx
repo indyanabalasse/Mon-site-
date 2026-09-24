@@ -5,7 +5,7 @@ import posthog from "posthog-js";
 import type { Locale } from "@/lib/i18n";
 import { INSTAGRAM_URL } from "@/lib/site";
 import { InstagramIcon } from "@/components/icons";
-import { ANALYTICS_EVENTS } from "@/lib/analytics-events";
+import { ANALYTICS_EVENTS, type ProjectType } from "@/lib/analytics-events";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -20,7 +20,7 @@ export default function ContactForm({
     message: string;
     projectType: string;
     projectTypePlaceholder: string;
-    projectTypeOptions: string[];
+    projectTypeOptions: { value: ProjectType; label: string }[];
     responseTime: string;
     send: string;
     sending: string;
@@ -50,13 +50,15 @@ export default function ContactForm({
     const form = e.currentTarget;
     const subscribeNewsletter = (form.elements.namedItem("newsletter") as HTMLInputElement).checked;
     const projectType = (form.elements.namedItem("projectType") as HTMLSelectElement).value;
+    const projectTypeLabel =
+      labels.projectTypeOptions.find((option) => option.value === projectType)?.label ?? projectType;
     const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
     const data = {
       name: (form.elements.namedItem("name") as HTMLInputElement).value,
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       // Le type de projet voyage dans le message : il arrive ainsi en tête du mail
       // sans toucher au jeton signé qui transporte la demande jusqu'à la confirmation.
-      message: `${labels.projectType}: ${projectType}\n\n${message}`,
+      message: `${labels.projectType}: ${projectTypeLabel}\n\n${message}`,
       locale,
       subscribeNewsletter,
       company: (form.elements.namedItem("company") as HTMLInputElement).value,
@@ -73,7 +75,11 @@ export default function ContactForm({
       const result = await res.json().catch(() => ({ pending: false }));
       setPending(Boolean(result.pending));
       setStatus("success");
-      posthog.capture(ANALYTICS_EVENTS.CONTACT_FORM_SUBMITTED, { locale });
+      posthog.capture(ANALYTICS_EVENTS.CONTACT_FORM_SUBMITTED, {
+        locale,
+        project_type: projectType,
+        newsletter_opt_in: subscribeNewsletter,
+      });
       form.reset();
     } catch {
       setStatus("error");
@@ -153,8 +159,8 @@ export default function ContactForm({
             {labels.projectTypePlaceholder}
           </option>
           {labels.projectTypeOptions.map((option) => (
-            <option key={option} value={option}>
-              {option}
+            <option key={option.value} value={option.value}>
+              {option.label}
             </option>
           ))}
         </select>

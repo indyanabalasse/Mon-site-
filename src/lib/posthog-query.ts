@@ -1,5 +1,5 @@
 import { getDictionary } from "@/lib/i18n";
-import { ANALYTICS_EVENTS } from "@/lib/analytics-events";
+import { ANALYTICS_EVENTS, PROJECT_TYPES, type ProjectType } from "@/lib/analytics-events";
 
 /**
  * Server-only client for PostHog's HogQL Query API, plus the specific
@@ -60,12 +60,24 @@ function parsePathname(pathname: string): PathParts {
   return { locale, section, category, series };
 }
 
+/** Pages written for companies: the Entreprises page and the Corporate portfolio. */
+function isBusinessPath(parts: PathParts): boolean {
+  return parts.section === "entreprises" || (parts.section === "portfolio" && parts.category === "corporate");
+}
+
+function projectTypeLabel(value: string | null): string {
+  const option = getDictionary("fr").contact.projectTypeOptions.find((o) => o.value === value);
+  // Requests sent before the form reported its project type have none.
+  return option?.label ?? "Non précisé";
+}
+
 const PAGE_LABELS_FR: Record<string, string> = {
   "": "Accueil",
   portfolio: "Portfolio",
   packaging: "Formules & Tarifs",
   about: "À propos",
   contact: "Contact",
+  entreprises: "Entreprises",
 };
 
 function titleCase(slug: string): string {
@@ -104,11 +116,18 @@ export type DashboardData = {
   topPaths: { label: string; sessions: number }[];
   acquisition: { label: string; sessions: number }[];
   trend: { day: string; pageviews: number; visitors: number }[];
+  business: {
+    sessions: number; // sessions that viewed the Entreprises page or the Corporate portfolio
+    ctaClicks: number; // clicks towards /contact made from those pages
+    requests: number; // contact requests submitted with project type "business"
+  };
+  requestsByType: { label: string; requests: number }[];
+  downloads: { label: string; downloads: number }[];
   sampled: boolean;
 };
 
 export async function getDashboardData(periodDays: number): Promise<DashboardData> {
-  const [counts, rawPageviews, eventCounts] = await Promise.all([
+  const [counts, rawPageviews, eventCounts, conversionRows] = await Promise.all([
     runHogQL(
       `SELECT count(), count(DISTINCT person_id), count(DISTINCT properties.$session_id)
        FROM events
@@ -127,6 +146,13 @@ export async function getDashboardData(periodDays: number): Promise<DashboardDat
        WHERE event IN ('${ANALYTICS_EVENTS.CONTACT_FORM_SUBMITTED}', '${ANALYTICS_EVENTS.CONTACT_FORM_STARTED}', '${ANALYTICS_EVENTS.INSTAGRAM_CLICK}')
          AND timestamp >= now() - INTERVAL ${periodDays} DAY
        GROUP BY event`
+    ),
+    runHogQL(
+      `SELECT event, properties.project_type, properties.path, properties.file, count()
+       FROM events
+       WHERE event IN ('${ANALYTICS_EVENTS.CONTACT_FORM_SUBMITTED}', '${ANALYTICS_EVENTS.CONTACT_CTA_CLICK}', '${ANALYTICS_EVENTS.DOCUMENT_DOWNLOAD}')
+         AND timestamp >= now() - INTERVAL ${periodDays} DAY
+       GROUP BY event, properties.project_type, properties.path, properties.file`
     ),
   ]);
 
@@ -234,6 +260,34 @@ export async function getDashboardData(periodDays: number): Promise<DashboardDat
 
   const sessionCount = totalSessions ? Number(totalSessions) : sessions.size;
 
+  // --- Business funnel: company pages → click towards a quote → "Entreprise" request ---
+  let businessSessions = 0;
+  for (const sessionRows of sessions.values()) {
+    if (sessionRows.some((r) => isBusinessPath(parsePathname(r.pathname)))) businessSessions += 1;
+  }
+
+  let businessCtaClicks = 0;
+  const requestsByTypeMap = new Map<string, number>();
+  const downloadsMap = new Map<string, number>();
+  for (const [event, projectType, path, file, c] of conversionRows) {
+    const n = Number(c);
+    if (event === ANALYTICS_EVENTS.CONTACT_CTA_CLICK) {
+      if (isBusinessPath(parsePathname(String(path ?? "")))) businessCtaClicks += n;
+    } else if (event === ANALYTICS_EVENTS.CONTACT_FORM_SUBMITTED) {
+      const type = PROJECT_TYPES.includes(projectType as ProjectType) ? String(projectType) : null;
+      const label = projectTypeLabel(type);
+      requestsByTypeMap.set(label, (requestsByTypeMap.get(label) ?? 0) + n);
+    } else if (event === ANALYTICS_EVENTS.DOCUMENT_DOWNLOAD && file) {
+      downloadsMap.set(String(file), (downloadsMap.get(String(file)) ?? 0) + n);
+    }
+  }
+  const requestsByType = [...requestsByTypeMap.entries()]
+    .map(([label, requests]) => ({ label, requests }))
+    .sort((a, b) => b.requests - a.requests);
+  const downloads = [...downloadsMap.entries()]
+    .map(([label, count]) => ({ label, downloads: count }))
+    .sort((a, b) => b.downloads - a.downloads);
+
   return {
     periodDays,
     overview: {
@@ -250,6 +304,13 @@ export async function getDashboardData(periodDays: number): Promise<DashboardDat
     topPaths,
     acquisition,
     trend,
+    business: {
+      sessions: businessSessions,
+      ctaClicks: businessCtaClicks,
+      requests: requestsByTypeMap.get(projectTypeLabel("business")) ?? 0,
+    },
+    requestsByType,
+    downloads,
     sampled: rows.length >= RAW_EVENT_LIMIT,
   };
 }

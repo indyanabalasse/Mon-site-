@@ -1,4 +1,5 @@
 import type { CategorySlug } from "@/data/portfolio";
+import type { ProjectType } from "@/lib/analytics-events";
 
 export const locales = ["fr", "en"] as const;
 export type Locale = (typeof locales)[number];
@@ -158,7 +159,7 @@ type Dictionary = {
     message: string;
     projectType: string;
     projectTypePlaceholder: string;
-    projectTypeOptions: string[];
+    projectTypeOptions: { value: ProjectType; label: string }[];
     responseTime: string;
     send: string;
     sending: string;
@@ -585,13 +586,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
       projectType: "Type de projet",
       projectTypePlaceholder: "Choisissez",
       projectTypeOptions: [
-        "Entreprise",
-        "Portrait",
-        "Famille",
-        "Événementiel",
-        "Photo booth",
-        "Sport et santé",
-        "Autre",
+        { value: "business", label: "Entreprise" },
+        { value: "portrait", label: "Portrait" },
+        { value: "family", label: "Famille" },
+        { value: "event", label: "Événementiel" },
+        { value: "photobooth", label: "Photo booth" },
+        { value: "sport_health", label: "Sport et santé" },
+        { value: "other", label: "Autre" },
       ],
       responseTime: "Réponse sous 24h. Devis gratuit et sans engagement.",
       send: "Envoyer",
@@ -1028,13 +1029,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
       projectType: "Project type",
       projectTypePlaceholder: "Choose",
       projectTypeOptions: [
-        "Business",
-        "Portrait",
-        "Family",
-        "Event",
-        "Photo booth",
-        "Sport and health",
-        "Other",
+        { value: "business", label: "Business" },
+        { value: "portrait", label: "Portrait" },
+        { value: "family", label: "Family" },
+        { value: "event", label: "Event" },
+        { value: "photobooth", label: "Photo booth" },
+        { value: "sport_health", label: "Sport and health" },
+        { value: "other", label: "Other" },
       ],
       responseTime: "Answer within 24h. Free quote, no commitment.",
       send: "Send",
