@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getDictionary, isLocale, defaultLocale, locales, type Locale } from "@/lib/i18n";
 import { pageMetadataBase } from "@/lib/metadata";
 import { SITE_URL } from "@/lib/site";
-import corporateCover from "@/images/portfolio/corporate/esg-logic/cover.jpg";
+import corporateCover from "@/images/portfolio/corporate/esg-logic/01.jpg";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));

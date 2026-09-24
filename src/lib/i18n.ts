@@ -132,6 +132,18 @@ type Dictionary = {
     ctaText: string;
     ctaButton: string;
   };
+  offerEntreprise: {
+    kicker: string;
+    title: string;
+    intro: string;
+    servicesTitle: string;
+    services: { title: string; text: string }[];
+    benefitsTitle: string;
+    benefits: string[];
+    ctaTitle: string;
+    ctaText: string;
+    ctaButton: string;
+  };
   business: {
     heading: string;
     metaDescription: string;
@@ -417,6 +429,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
           tagline: "",
         },
         {
+          slug: "entreprise",
+          title: "Entreprise",
+          tagline: "Portraits, équipes, événements",
+        },
+        {
           slug: "location-studio",
           title: "Mise à disposition",
           tagline: "",
@@ -497,6 +514,36 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ctaTitle: "Envie d'un Fun Booth à votre soirée ?",
       ctaText: "Parlons de votre événement pour composer l'animation idéale.",
       ctaButton: "Discutons de votre projet",
+    },
+    offerEntreprise: {
+      kicker: "Photographie d'entreprise",
+      title: "Portraits, équipes, événements",
+      intro: "Vos collaborateurs et vos événements méritent mieux qu'une photo grise sur fond blanc. De la couleur, de la lumière naturelle et des visages détendus.",
+      servicesTitle: "Ce que je propose",
+      services: [
+        {
+          title: "Portraits professionnels",
+          text: "Portraits individuels cohérents pour votre site, LinkedIn et vos supports commerciaux.",
+        },
+        {
+          title: "Photos d'équipe",
+          text: "L'équipe entière ou par département, avec une vraie direction pour capturer votre dynamique.",
+        },
+        {
+          title: "Reportage d'entreprise",
+          text: "Vos locaux et votre quotidien de travail, à utiliser sur votre site et vos réseaux sociaux.",
+        },
+      ],
+      benefitsTitle: "Pourquoi faire appel à moi",
+      benefits: [
+        "Déplacement à Bruxelles, Brabant wallon et Wallonie",
+        "Séance dans vos locaux ou au studio (150 m²)",
+        "Images retouchées livrées prêtes pour le web",
+        "Devis gratuit, réponse sous 24h",
+      ],
+      ctaTitle: "Un projet pour votre entreprise ?",
+      ctaText: "Décrivez ce dont vous avez besoin, le nombre de personnes et vos dates. Je vous propose un tarif sous 24h.",
+      ctaButton: "Demander un devis entreprise",
     },
     business: {
       heading: "Photographe d'entreprise à Bruxelles et en Wallonie",
@@ -940,6 +987,36 @@ export const dictionaries: Record<Locale, Dictionary> = {
       ctaTitle: "Want a Fun Booth at your party?",
       ctaText: "Let's talk about your event to put together the ideal animation.",
       ctaButton: "Let's talk about your project",
+    },
+    offerEntreprise: {
+      kicker: "Corporate photography",
+      title: "Portraits, teams, events",
+      intro: "Your employees and your events deserve better than a grey shot on a white background. Colour, natural light and relaxed faces.",
+      servicesTitle: "What I offer",
+      services: [
+        {
+          title: "Professional portraits",
+          text: "Consistent individual portraits for your website, LinkedIn and marketing materials.",
+        },
+        {
+          title: "Team photos",
+          text: "The whole team or by department, with real direction to capture your dynamic.",
+        },
+        {
+          title: "Company reportage",
+          text: "Your spaces and working day, ready to use on your website and social media.",
+        },
+      ],
+      benefitsTitle: "Why work with me",
+      benefits: [
+        "Travel to Brussels, Walloon Brabant and Wallonia",
+        "Session at your offices or at the studio (150 m²)",
+        "Retouched images delivered ready for web",
+        "Free quote, answer within 24h",
+      ],
+      ctaTitle: "A project for your company?",
+      ctaText: "Tell me what you need, how many people and your dates. I'll send you a quote within 24h.",
+      ctaButton: "Request a business quote",
     },
     business: {
       heading: "Corporate photographer in Brussels and Wallonia",
