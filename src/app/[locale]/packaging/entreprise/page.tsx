@@ -86,31 +86,6 @@ export default async function EntrepriseOfferPage({
         />
       </div>
 
-      {/* Services */}
-      <section className="mb-24">
-        <h2 className="text-xs uppercase tracking-[0.2em] text-muted mb-10">{offer.servicesTitle}</h2>
-        <div className="grid gap-8 md:grid-cols-3">
-          {offer.services.map((service) => (
-            <div key={service.title}>
-              <h3 className="wordmark font-serif text-lg font-light">{service.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted">{service.text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Benefits */}
-      <section className="mb-24 border-y border-border py-16">
-        <h2 className="text-xs uppercase tracking-[0.2em] text-muted mb-10">{offer.benefitsTitle}</h2>
-        <ul className="grid gap-6 md:grid-cols-2 max-w-3xl">
-          {offer.benefits.map((benefit) => (
-            <li key={benefit} className="flex gap-4 items-start">
-              <span className="text-lg leading-none text-foreground mt-0.5">+</span>
-              <span className="text-sm leading-relaxed text-muted">{benefit}</span>
-            </li>
-          ))}
-        </ul>
-      </section>
 
       {/* CTA Section */}
       <div className="max-w-3xl mx-auto text-center">
