@@ -46,7 +46,7 @@ export default async function PhotoboothPage({
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: locale === "fr" ? "Animation photobooth" : "Photo booth rental",
+    serviceType: { fr: "Animation photobooth", en: "Photo booth rental", nl: "Photobooth-animatie" }[locale],
     name: offer.title,
     description: offer.intro,
     url: `${SITE_URL}${path}`,

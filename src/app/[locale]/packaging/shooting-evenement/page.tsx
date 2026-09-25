@@ -42,7 +42,7 @@ export default async function ShootingEvenementPage({
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: locale === "fr" ? "Reportage photo événementiel" : "Event photography",
+    serviceType: { fr: "Reportage photo événementiel", en: "Event photography", nl: "Evenementenfotografie" }[locale],
     name: offer.title,
     description: offer.intro,
     url: `${SITE_URL}${path}`,

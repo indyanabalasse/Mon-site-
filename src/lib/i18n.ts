@@ -1,7 +1,7 @@
 import type { CategorySlug } from "@/data/portfolio";
 import type { ProjectType } from "@/lib/analytics-events";
 
-export const locales = ["fr", "en"] as const;
+export const locales = ["fr", "en", "nl"] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "fr";
 
@@ -38,6 +38,10 @@ type Dictionary = {
     instagram: string;
   };
   home: {
+    tagline: string;
+    heroTitle: string;
+    metaTitle: string;
+    metaDescription: string;
     cta: string;
   };
   instagramBanner: {
@@ -135,28 +139,20 @@ type Dictionary = {
   offerEntreprise: {
     kicker: string;
     title: string;
+    metaTitle: string;
+    metaDescription: string;
     intro: string;
     servicesTitle: string;
     services: { title: string; text: string }[];
     benefitsTitle: string;
     benefits: string[];
-    ctaTitle: string;
-    ctaText: string;
-    ctaButton: string;
-  };
-  business: {
-    heading: string;
-    metaDescription: string;
-    intro: string[];
-    servicesTitle: string;
-    services: { title: string; text: string }[];
     processTitle: string;
     process: string[];
     faqTitle: string;
     faq: { q: string; a: string }[];
     ctaTitle: string;
     ctaText: string;
-    ctaLabel: string;
+    ctaButton: string;
   };
   about: {
     title: string;
@@ -239,6 +235,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       instagram: "Instagram de INDYANASTUDIO",
     },
     home: {
+      tagline: "Color Your Life !",
+      heroTitle: "Photographe corporate, portrait & événementiel à Bruxelles",
+      metaTitle: "INDYANASTUDIO — Photographe corporate & portrait à Bruxelles",
+      metaDescription:
+        "Photographe à Bruxelles et en Brabant wallon : portraits corporate, portraits professionnels, événementiel et famille. Devis gratuit sous 24h.",
       cta: "Explore",
     },
     instagramBanner: {
@@ -517,42 +518,12 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     offerEntreprise: {
       kicker: "Photographie d'entreprise",
-      title: "Portraits, équipes, événements",
-      intro: "Vos collaborateurs et vos événements méritent mieux qu'une photo grise sur fond blanc. De la couleur, de la lumière naturelle et des visages détendus.",
-      servicesTitle: "Ce que je propose",
-      services: [
-        {
-          title: "Portraits professionnels",
-          text: "Portraits individuels cohérents pour votre site, LinkedIn et vos supports commerciaux.",
-        },
-        {
-          title: "Photos d'équipe",
-          text: "L'équipe entière ou par département, avec une vraie direction pour capturer votre dynamique.",
-        },
-        {
-          title: "Reportage d'entreprise",
-          text: "Vos locaux et votre quotidien de travail, à utiliser sur votre site et vos réseaux sociaux.",
-        },
-      ],
-      benefitsTitle: "Pourquoi faire appel à moi",
-      benefits: [
-        "Déplacement à Bruxelles, Brabant wallon et Wallonie",
-        "Séance dans vos locaux ou au studio (150 m²)",
-        "Images retouchées livrées prêtes pour le web",
-        "Devis gratuit, réponse sous 24h",
-      ],
-      ctaTitle: "Un projet pour votre entreprise ?",
-      ctaText: "",
-      ctaButton: "Demander un devis entreprise",
-    },
-    business: {
-      heading: "Photographe d'entreprise à Bruxelles et en Wallonie",
+      title: "Photographe d'entreprise à Bruxelles et en Wallonie",
+      metaTitle: "Photographe corporate à Bruxelles — Portraits, équipes, événements",
       metaDescription:
         "Portraits d'équipe, portraits professionnels et couverture d'événements d'entreprise à Bruxelles et en Wallonie. Devis gratuit sous 24h.",
-      intro: [
-        "Vos photos d'équipe datent, vos portraits LinkedIn ont été pris au téléphone et votre site tourne avec des images de banque. Pendant ce temps, vos candidats et vos clients se font une idée de vous à partir de ces images.",
-        "Je photographie les entreprises qui veulent une image à leur hauteur : portraits professionnels, photos d'équipe, reportage dans vos bureaux et couverture de vos événements. Le tout en une demi-journée, sans bloquer l'agenda de vos collaborateurs.",
-      ],
+      intro:
+        "Vos photos d'équipe datent, vos portraits LinkedIn ont été pris au téléphone et votre site tourne avec des images de banque. Je photographie les entreprises qui veulent une image à leur hauteur : portraits professionnels, photos d'équipe, reportage dans vos bureaux et couverture de vos événements. Le tout en une demi-journée, sans bloquer l'agenda de vos collaborateurs.",
       servicesTitle: "Ce que je couvre",
       services: [
         {
@@ -580,6 +551,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
           text: "Le studio mobile installé chez vous pour vos soirées et vos salons. Vos invités repartent avec leur photo.",
         },
       ],
+      benefitsTitle: "Pourquoi faire appel à moi",
+      benefits: [
+        "Déplacement à Bruxelles, Brabant wallon et Wallonie",
+        "Séance dans vos locaux ou au studio (150 m²)",
+        "Images retouchées livrées prêtes pour le web",
+        "Devis gratuit, réponse sous 24h",
+      ],
       processTitle: "Comment ça se passe",
       process: [
         "Vous m'écrivez ce dont vous avez besoin, le nombre de personnes et vos dates.",
@@ -606,10 +584,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
           a: "Devis écrit avant la séance, facture après. Rien ne démarre sans votre accord sur le prix.",
         },
       ],
-      ctaTitle: "Parlons de votre projet",
+      ctaTitle: "Un projet pour votre entreprise ?",
       ctaText:
         "Dites-moi ce dont vous avez besoin, le nombre de personnes à photographier et vos dates. Réponse sous 24h, devis gratuit et sans engagement.",
-      ctaLabel: "Demander un devis entreprise",
+      ctaButton: "Demander un devis entreprise",
     },
     about: {
       title: "Indyana Balasse",
@@ -717,6 +695,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       instagram: "INDYANASTUDIO on Instagram",
     },
     home: {
+      tagline: "Color Your Life !",
+      heroTitle: "Corporate, portrait & event photographer in Brussels",
+      metaTitle: "INDYANASTUDIO — Corporate & portrait photographer in Brussels",
+      metaDescription:
+        "Photographer in Brussels and Walloon Brabant: corporate portraits, professional headshots, events and family sessions. Free quote within 24h.",
       cta: "Explore",
     },
     instagramBanner: {
@@ -990,42 +973,12 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     offerEntreprise: {
       kicker: "Corporate photography",
-      title: "Portraits, teams, events",
-      intro: "Your employees and your events deserve better than a grey shot on a white background. Colour, natural light and relaxed faces.",
-      servicesTitle: "What I offer",
-      services: [
-        {
-          title: "Professional portraits",
-          text: "Consistent individual portraits for your website, LinkedIn and marketing materials.",
-        },
-        {
-          title: "Team photos",
-          text: "The whole team or by department, with real direction to capture your dynamic.",
-        },
-        {
-          title: "Company reportage",
-          text: "Your spaces and working day, ready to use on your website and social media.",
-        },
-      ],
-      benefitsTitle: "Why work with me",
-      benefits: [
-        "Travel to Brussels, Walloon Brabant and Wallonia",
-        "Session at your offices or at the studio (150 m²)",
-        "Retouched images delivered ready for web",
-        "Free quote, answer within 24h",
-      ],
-      ctaTitle: "A project for your company?",
-      ctaText: "",
-      ctaButton: "Request a business quote",
-    },
-    business: {
-      heading: "Corporate photographer in Brussels and Wallonia",
+      title: "Corporate photographer in Brussels and Wallonia",
+      metaTitle: "Corporate photographer in Brussels — Portraits, teams, events",
       metaDescription:
         "Team portraits, professional headshots and company event coverage in Brussels and Wallonia. Free quote within 24h.",
-      intro: [
-        "Your team photos are years old, your LinkedIn portraits were taken on a phone and your website runs on stock images. Meanwhile, your candidates and your clients are forming an opinion of you from exactly those pictures.",
-        "I photograph companies that want an image worthy of them: professional portraits, team photos, reportage in your offices and coverage of your events. All in half a day, without blocking your people's calendars.",
-      ],
+      intro:
+        "Your team photos are years old, your LinkedIn portraits were taken on a phone and your website runs on stock images. I photograph companies that want an image worthy of them: professional portraits, team photos, reportage in your offices and coverage of your events. All in half a day, without blocking your people's calendars.",
       servicesTitle: "What I cover",
       services: [
         {
@@ -1053,6 +1006,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
           text: "The mobile studio set up at your place for your parties and trade shows. Your guests leave with their photo.",
         },
       ],
+      benefitsTitle: "Why work with me",
+      benefits: [
+        "Travel to Brussels, Walloon Brabant and Wallonia",
+        "Session at your offices or at the studio (150 m²)",
+        "Retouched images delivered ready for web",
+        "Free quote, answer within 24h",
+      ],
       processTitle: "How it works",
       process: [
         "You tell me what you need, how many people and your dates.",
@@ -1079,10 +1039,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
           a: "Written quote before the session, invoice after. Nothing starts without your agreement on the price.",
         },
       ],
-      ctaTitle: "Let's talk about your project",
+      ctaTitle: "A project for your company?",
       ctaText:
         "Tell me what you need, how many people are to be photographed and your dates. Answer within 24h, free quote, no commitment.",
-      ctaLabel: "Request a business quote",
+      ctaButton: "Request a business quote",
     },
     about: {
       title: "Indyana Balasse",
@@ -1170,6 +1130,464 @@ export const dictionaries: Record<Locale, Dictionary> = {
       confirmEmailBody:
         "Click the button below to confirm your subscription to the INDYANASTUDIO newsletter. If you didn't request this, just ignore this email.",
       confirmEmailCta: "Confirm my subscription",
+    },
+  },
+  nl: {
+    nav: {
+      home: "Home",
+      portfolio: "Ontdek",
+      studio: "Studio",
+      packaging: "Diensten",
+      business: "Bedrijven",
+      about: "Over mij",
+      contact: "Contact",
+      themeToLight: "Overschakelen naar lichte modus",
+      themeToDark: "Overschakelen naar donkere modus",
+      fullscreenEnter: "Volledig scherm",
+      fullscreenExit: "Volledig scherm sluiten",
+      instagram: "Instagram van INDYANASTUDIO",
+    },
+    home: {
+      tagline: "Color Your Life !",
+      heroTitle: "Corporate, portret- & evenementenfotograaf in Brussel",
+      metaTitle: "INDYANASTUDIO — Corporate & portretfotograaf in Brussel",
+      metaDescription:
+        "Fotograaf in Brussel en Waals-Brabant: corporate portretten, professionele profielfoto's, evenementen en gezinsreportages. Gratis offerte binnen 24u.",
+      cta: "Ontdek",
+    },
+    instagramBanner: {
+      title: "Volg mij achter de schermen op mijn Insta",
+      cta: "Volg @indyanastudio",
+    },
+    portfolio: {
+      title: "Portfolio",
+      intro: "Drie werelden, één zelfde eis: de authenticiteit van het moment vastleggen.",
+      viewSeries: "Bekijk de reeks",
+    },
+    gallery: {
+      nextKicker: "Ontdek de volgende reeks",
+      viewSeriesCta: "Bekijk de reeks",
+      bookCta: "Boek uw shoot",
+      backToCategory: "Terug naar categorie",
+      back: "Terug",
+    },
+    categories: {
+      evenementiel: {
+        title: "Evenementen",
+        description: "Concerten, podia en festivals — ondergedompeld in de energie van live optredens.",
+        series: {
+          concert: "Concert",
+          "open-air": "Open Air",
+          festival: "Festival",
+          anniversaire: "Verjaardag",
+        },
+      },
+      portrait: {
+        title: "Portret",
+        description: "Artistieke en conceptuele portretten, tussen licht, textuur en emotie.",
+        series: {
+          "laura-degreef": "Laura Degreef",
+          wolfgang: "Wolfgang",
+          herton: "Herton",
+          arty: "Arty",
+          "my-mood": "INDY LAB",
+          "didier-vdb": "Didier VDB",
+          esphan: "Esphan",
+        },
+      },
+      corporate: {
+        title: "Corporate",
+        description: "Bedrijfsfotografie: teams, evenementen en professionele portretten.",
+        series: {
+          "ma-vie": "Ma Vie",
+          "esg-logic": "ESG Logic",
+        },
+        pitch: {
+          heading: "Corporate fotograaf in Brussel en België",
+          metaDescription:
+            "Corporate fotograaf in Brussel en Waals-Brabant: teamportretten, professionele profielfoto's, bedrijfsevenementen en press kit. Offerte binnen 24u.",
+          paragraphs: [
+            "Uw teams verdienen beter dan een grijze pasfoto op een witte achtergrond. Ik fotografeer bedrijven die een beeld willen dat hen waardig is: professionele portretten voor uw website en LinkedIn, teamfoto's, reportages op kantoor en verslag van uw evenementen.",
+            "Een sessie duurt een halve dag, bij u of in mijn studio, zonder de agenda van uw medewerkers te blokkeren. U vertrekt met beelden die klaar zijn voor uw website, uw jaarverslag, uw sociale media en uw wervingscampagnes.",
+            "Wat bij mij anders is: kleur, natuurlijk licht en ontspannen gezichten. Dat is het hele verschil tussen een identiteitsfoto en een beeld dat mensen doet verlangen om bij u te komen werken.",
+          ],
+          referencesTitle: "Ze vertrouwden mij al",
+          references: [
+            {
+              name: "Ma Vie",
+              text: "Reportage op kantoor: vergaderingen, gesprekken en werkmomenten vastgelegd in natuurlijk licht.",
+            },
+            {
+              name: "ESG Logic",
+              text: "Teamfoto en samenwerkingsscènes, voor een collectief beeld dat levendig blijft.",
+            },
+          ],
+          trust: [
+            "Verplaatsing naar Brussel, Waals-Brabant en heel Wallonië",
+            "Sessie op uw locatie of in mijn studio van 150 m²",
+            "Bewerkte beelden, geleverd klaar voor web en print",
+            "Gratis offerte, antwoord binnen 24u",
+          ],
+          ctaTitle: "Een project voor uw bedrijf?",
+          ctaText:
+            "Laat me weten wat u nodig heeft, hoeveel personen gefotografeerd moeten worden en uw data. Ik kom terug met een voorstel en een prijs.",
+          ctaLabel: "Bedrijfsofferte aanvragen",
+        },
+      },
+      sante: {
+        title: "Gezondheid",
+        description: "Training, fysieke voorbereiding en sportkinesitherapie in actie.",
+        series: {
+          kine: "Kinesitherapie",
+        },
+      },
+      famille: {
+        title: "Gezin",
+        description: "Gezinsmomenten, tussen tederheid en authenticiteit.",
+        series: {
+          "femme-enceinte": "Zwangere vrouw",
+        },
+      },
+      "my-mood": {
+        title: "INDY LAB",
+        description: "Persoonlijk en creatief universum, tussen experiment en emotie.",
+        series: {
+          "my-mood": "INDY LAB",
+        },
+      },
+      "fun-photo-booth": {
+        title: "Fun Photo Booth",
+        description: "Een photobooth zoals geen ander: ik neem zelf de foto's, live, doorheen uw hele evenement. Het decor wordt vooraf gekozen in lijn met het thema van uw avond, en elke gast kan een verkleding of accessoire kiezen voor een spontane en speelse toets. Ver van de gesloten cabine en de stijve selfies biedt Fun Booth een levendige foto-ervaring, begeleid door een professioneel oog — een moment dat gasten samenbrengt en tegelijk de avond vastlegt.",
+        series: {
+          "mariage-1": "Huwelijk J & A",
+          "mariage-2": "Huwelijk J & M",
+        },
+      },
+      "press-kit": {
+        title: "Press Kit",
+        description: "Promotionele beelden voor evenementen en feesten.",
+        series: {
+          "press-kit": "Press Kit",
+        },
+      },
+    },
+    subseries: {
+      portrait: {
+        "laura-degreef": {
+          "shoot-1": "Shoot 1",
+          "shoot-2": "Shoot 2",
+        },
+      },
+      famille: {
+        "femme-enceinte": {
+          studio: "Studio",
+          exterieur: "Buiten",
+        },
+      },
+    },
+    studio: {
+      title: "INDY Studio",
+      highlight:
+        "Ontworpen voor zowel fotografie als video, biedt deze unieke ruimte van 150 m² tot 5 meter plafondhoogte om al uw creatieve ideeën tot leven te brengen. De flexibiliteit past zich aan uiteenlopende behoeften en budgetten aan, ongeacht uw project.",
+      equipment: {
+        title: "Ter beschikking gestelde uitrusting",
+        items: [
+          "Studioachtergrond van drie meter of bakstenen muur, wit papier en diverse kleuren",
+          "Instelbaar natuurlijk licht",
+          "Verlichtingskit: softbox, reflectoren, flitsers, statieven op wieltjes",
+          "Foto-/videostatieven",
+          "Wifi",
+          "Geluidsinstallatie",
+          "Make-uphoek",
+        ],
+        cta: "Laten we over uw project praten",
+      },
+      amenities: {
+        title: "Voorzieningen",
+        items: [
+          {
+            title: "Tuin",
+            text: "Voor buitenopnames.",
+          },
+          {
+            title: "Keuken",
+            text: "Volledig uitgerust, met eetruimte.",
+          },
+          {
+            title: "Sanitair",
+            text: "Toilet en douche.",
+          },
+        ],
+      },
+      closing: {
+        cta: "Laten we over uw project praten",
+      },
+    },
+    packaging: {
+      title: "Diensten",
+      intro: "Vier manieren om samen te werken, één zelfde eis: beelden die echt op u lijken. Vind de formule die bij uw project past.",
+      offers: [
+        {
+          slug: "shooting-studio",
+          title: "Studioshoot",
+          tagline: "",
+        },
+        {
+          slug: "shooting-evenement",
+          title: "Evenementshoot",
+          tagline: "",
+        },
+        {
+          slug: "photobooth",
+          title: "Special Photobooth",
+          tagline: "",
+        },
+        {
+          slug: "entreprise",
+          title: "Bedrijven",
+          tagline: "Portretten, teams, evenementen",
+        },
+        {
+          slug: "location-studio",
+          title: "Studioverhuur",
+          tagline: "",
+        },
+      ],
+      gift: {
+        title: "Een shoot cadeau doen",
+        text: "Het mooiste cadeau: een moment helemaal voor jezelf, met zorg vastgelegd. Schrijf me om een cadeaubon op maat samen te stellen.",
+        cta: "Een shoot cadeau doen",
+      },
+    },
+    offerStudio: {
+      kicker: "Studioshoot",
+      title: "Fotosessie",
+      intro: "Sessie in de studio. Materiaal en voorzieningen inbegrepen.",
+      viewShootsCta: "Bekijk de shoots",
+      bookNowCta: "Laten we over uw project praten",
+      packagesTitle: "Onze formules",
+      packages: [
+        {
+          title: "Halve dag",
+          photos: "5 foto's geleverd",
+        },
+        {
+          title: "Volledige dag",
+          photos: "12 foto's geleverd",
+        },
+      ],
+      processLabel: "Het verloop",
+      process: [
+        "Briefing & artistieke richting",
+        "Opstelling studio & licht",
+        "De opnames",
+        "Postproductie",
+      ],
+      addonsLabel: "In optie",
+      addons: [
+        {
+          title: "Styling",
+          text: "De ideale outfit samenstellen vóór de sessie.",
+        },
+        {
+          title: "Make-up",
+          text: "Huid en look voorbereid voor de lens.",
+        },
+      ],
+      ctaTitle: "Klaar om te boeken?",
+      ctaButton: "Laten we over uw project praten",
+    },
+    offerEvenement: {
+      kicker: "Evenementshoot",
+      title: "Huwelijk, verjaardag, festival, bedrijf",
+      intro: "Fotoreportage van uw evenement, van begin tot einde.",
+      viewSeriesCta: "Bekijk mijn evenementen",
+      includesTitle: "Wat is inbegrepen",
+      includes: [
+        "Dekking van een halve dag of volledige dag",
+        "Bewerkte foto's, snel geleverd",
+      ],
+      criteriaTitle: "Goed om weten",
+      criteria: ["Duur en formule aanpasbaar aan uw evenement"],
+      ctaTitle: "Laten we over uw evenement praten",
+      ctaText: "Vertel me over uw project, we stellen samen de formule op.",
+      ctaButton: "Laten we over uw project praten",
+    },
+    offerPhotobooth: {
+      kicker: "Special Photobooth",
+      title: "Live foto-animatie",
+      intro: "Begeleid door een professional, van begin tot einde van uw avond.",
+      viewSeriesCta: "Bekijk mijn photobooths",
+      includesTitle: "Wat is inbegrepen",
+      includes: [
+        "Decor gekozen volgens het thema van uw avond",
+        "Verkleedkleren en accessoires ter beschikking van de gasten",
+      ],
+      criteriaTitle: "Goed om weten",
+      criteria: ["Ideaal voor huwelijken, verjaardagen, bedrijfsfeesten"],
+      ctaTitle: "Zin in een Fun Booth op uw feest?",
+      ctaText: "Laten we over uw evenement praten om de ideale animatie samen te stellen.",
+      ctaButton: "Laten we over uw project praten",
+    },
+    offerEntreprise: {
+      kicker: "Bedrijfsfotografie",
+      title: "Corporate fotograaf in Brussel en Wallonië",
+      metaTitle: "Corporate fotograaf in Brussel — Portretten, teams, evenementen",
+      metaDescription:
+        "Teamportretten, professionele profielfoto's en verslag van bedrijfsevenementen in Brussel en Wallonië. Gratis offerte binnen 24u.",
+      intro:
+        "Uw teamfoto's zijn verouderd, uw LinkedIn-portret is met de telefoon genomen en uw website draait op stockbeelden. Ik fotografeer bedrijven die een beeld willen dat hen waardig is: professionele portretten, teamfoto's, reportages op kantoor en verslag van uw evenementen. Dit alles in een halve dag, zonder de agenda van uw medewerkers te blokkeren.",
+      servicesTitle: "Wat ik aanbied",
+      services: [
+        {
+          title: "Professionele portretten",
+          text: "Onderling consistente individuele portretten, voor uw website, uw LinkedIn-profielen en uw commerciële materiaal.",
+        },
+        {
+          title: "Teamfoto's",
+          text: "Het volledige team of per afdeling, bij u of in de studio, met echte regie zodat niemand verstijft.",
+        },
+        {
+          title: "Bedrijfsreportage",
+          text: "Uw kantoren, uw vakgebieden en uw dagelijkse werking, genoeg materiaal om uw website, uw sociale media en uw wervingen het hele jaar te voeden.",
+        },
+        {
+          title: "Bedrijfsevenementen",
+          text: "Seminaries, feesten, lanceringen en conferenties, discreet gedekt van begin tot einde.",
+        },
+        {
+          title: "Press kit voor leidinggevenden",
+          text: "Een set beelden klaar voor de pers, uw tussenkomsten en uw publicaties.",
+        },
+        {
+          title: "Photo booth",
+          text: "De mobiele studio bij u geïnstalleerd voor uw feesten en beurzen. Uw gasten vertrekken met hun foto.",
+        },
+      ],
+      benefitsTitle: "Waarom voor mij kiezen",
+      benefits: [
+        "Verplaatsing naar Brussel, Waals-Brabant en Wallonië",
+        "Sessie op uw locatie of in de studio (150 m²)",
+        "Bewerkte beelden, geleverd klaar voor het web",
+        "Gratis offerte, antwoord binnen 24u",
+      ],
+      processTitle: "Hoe het verloopt",
+      process: [
+        "U schrijft me wat u nodig heeft, hoeveel personen en uw data.",
+        "Ik antwoord binnen 24u met een voorstel en een vaste prijs.",
+        "Ik kom fotograferen, bij u of in de studio, in een halve dag.",
+        "U ontvangt uw bewerkte beelden, klaar voor web en druk.",
+      ],
+      faqTitle: "Vaak gestelde vragen",
+      faq: [
+        {
+          q: "Waar verplaatst u zich naartoe?",
+          a: "Brussel, Waals-Brabant en heel Wallonië. Verder weg? Schrijf me, dan bekijken we het samen.",
+        },
+        {
+          q: "Verstoort dit het werk van het team?",
+          a: "Nee. Ik werk snel en zoveel mogelijk met natuurlijk licht. Voor portretten reken ik enkele minuten per persoon.",
+        },
+        {
+          q: "Wanneer ontvang ik de foto's?",
+          a: "De termijn hangt af van het volume en staat zwart op wit in de offerte. Heeft u een strakke deadline, zeg het dan meteen, dan organiseren we ons.",
+        },
+        {
+          q: "Hoe verloopt de facturatie?",
+          a: "Offerte voor de sessie, factuur erna. Niets start zonder uw akkoord over de prijs.",
+        },
+      ],
+      ctaTitle: "Een project voor uw bedrijf?",
+      ctaText:
+        "Laat me weten wat u nodig heeft, hoeveel personen gefotografeerd moeten worden en uw data. Antwoord binnen 24u, gratis offerte, vrijblijvend.",
+      ctaButton: "Bedrijfsofferte aanvragen",
+    },
+    about: {
+      title: "Indyana Balasse",
+      paragraphs: [
+        "Achter elk beeld schuilt een ontmoeting. Een foto begint nooit bij de ontspanknop. Ze begint veel vroeger. In een blik, een gesprek, een lach. Daar begint alles.",
+        "Ik ben opgegroeid in een fotostudio. Maar ik heb mijn eigen licht gevonden. Mijn vader is fotograaf. Ik groeide op tussen toestellen, decors en creativiteit. Ik behield de kwaliteitseis, maar bouwde een wereld die van mij is: vrijer, kleurrijker, soms buiten de gebaande paden.",
+        "Voor ik over fotografie praat, probeer ik de persoon voor mij te begrijpen. Mijn doel is eenvoudig: je het toestel doen vergeten. Een ruimte creëren waarin je volledig jezelf kan zijn, zonder rol te spelen. En vaak is het dan dat de beelden echt worden.",
+        "Ik hou van het creëren van werelden. Soms minimalistisch, soms gedurfd. Maar altijd bedacht om iets oprechts te vertellen…",
+        "Portret, corporate, zwangerschap, boek, festival of meeslepende photobooth: wat telt, is de emotie die blijft.",
+        "Als ik je maar één ding kon nalaten, zou het niet enkel mooie foto's zijn. Het zou de herinnering zijn aan een moment waarop je je volledig jezelf voelde. Want uiteindelijk is de foto slechts een voorwendsel. Wat mij interesseert, zijn de mensen.",
+        "En nu, laten we jouw verhaal vertellen. Heb je een idee, een verlangen of een gevoel, laten we het samen schrijven.",
+      ],
+      cta: "Laten we over uw project praten",
+    },
+    contact: {
+      title: "Contact",
+      intro: "Een project, een sessie, een vraag? Schrijf me.",
+      name: "Naam",
+      email: "E-mail",
+      message: "Bericht",
+      projectType: "Type project",
+      projectTypePlaceholder: "Kies",
+      projectTypeOptions: [
+        { value: "business", label: "Bedrijf" },
+        { value: "portrait", label: "Portret" },
+        { value: "family", label: "Gezin" },
+        { value: "event", label: "Evenement" },
+        { value: "photobooth", label: "Photo booth" },
+        { value: "sport_health", label: "Sport en gezondheid" },
+        { value: "other", label: "Anders" },
+      ],
+      responseTime: "Antwoord binnen 24u. Gratis en vrijblijvende offerte.",
+      send: "Verzenden",
+      sending: "Bezig met verzenden…",
+      success: "Bedankt! Uw bericht is goed verzonden, ik antwoord u snel.",
+      pendingConfirmation:
+        "Bijna klaar: controleer uw mailbox en klik op de bevestigingslink zodat uw bericht mij bereikt.",
+      error: "Er is een fout opgetreden. Probeer opnieuw of schrijf me rechtstreeks.",
+      directly: "U kan me ook rechtstreeks schrijven op",
+      phone: "Of me bellen op",
+      followInstagram: "In afwachting van mijn antwoord, kom mijn laatste foto's bekijken op Instagram @indyanastudio.",
+      followInstagramCta: "Volg @indyanastudio",
+      newsletterOptIn: "Mij ook inschrijven voor de nieuwsbrief",
+      confirmEmailSubject: "Bevestig de verzending van uw bericht",
+      confirmEmailHeading: "Bevestig uw bericht",
+      confirmEmailBody:
+        "Klik op de knop hieronder zodat uw bericht wordt doorgestuurd naar Indyana Balasse. Als u niet aan de oorsprong van deze aanvraag ligt, negeer dan gewoon deze e-mail.",
+      confirmEmailCta: "Mijn bericht bevestigen",
+      confirmEmailSubjectWithNewsletter: "Bevestig uw bericht en uw inschrijving",
+      confirmEmailHeadingWithNewsletter: "Bevestig uw bericht en uw inschrijving",
+      confirmEmailBodyWithNewsletter:
+        "Klik op de knop hieronder om in één klik uw bericht aan Indyana Balasse en uw inschrijving voor de nieuwsbrief te bevestigen. Als u niet aan de oorsprong van deze aanvraag ligt, negeer dan gewoon deze e-mail.",
+      confirmEmailCtaWithNewsletter: "Mijn bericht en inschrijving bevestigen",
+      confirmedTitle: "Bericht verzonden",
+      confirmedBody:
+        "Bedankt om uw adres te bevestigen, uw bericht is goed geregistreerd. Indien u de nieuwsbrief aanvinkte, hoort u binnenkort van mij. Ik antwoord u binnen 24 uur.",
+      confirmedSignoff: "Fijne dag nog, en vooral... Color Your Life !",
+      expiredTitle: "Ongeldige of verlopen link",
+      expiredBody: "Deze bevestigingslink is niet meer geldig. Ga terug naar de contactpagina om een nieuw bericht te sturen.",
+      backToContact: "Terug naar contact",
+    },
+    footer: {
+      rights: "Alle rechten voorbehouden.",
+      terms: "Algemene voorwaarden",
+    },
+    newsletter: {
+      heading: "De nieuwsbrief",
+      intro:
+        "Af en toe een woordje over een nieuwe reeks, een shoot of nieuws van de studio. Meer niet.",
+      emailPlaceholder: "Uw e-mail",
+      submitCta: "Inschrijven",
+      consent:
+        "Door u in te schrijven, gaat u ermee akkoord af en toe nieuws van INDYANASTUDIO te ontvangen. U kan zich op elk moment uitschrijven via de link in elke e-mail.",
+      successMessage:
+        "Bijna klaar: controleer uw mailbox en klik op de bevestigingslink om uw inschrijving te voltooien.",
+      alreadySubscribedOrGenericSuccess:
+        "Als dit adres nog niet is ingeschreven, is er zojuist een bevestigingsmail naar u verzonden.",
+      errorMessage: "Er is een fout opgetreden. Probeer het over enkele ogenblikken opnieuw.",
+      confirmedTitle: "Inschrijving bevestigd",
+      confirmedBody: "Uw adres is geregistreerd. U hoort af en toe nieuws van INDYANASTUDIO.",
+      unsubscribedTitle: "Uitgeschreven",
+      unsubscribedBody: "Uw adres is verwijderd van de lijst. U ontvangt geen e-mails meer van INDYANASTUDIO.",
+      confirmEmailSubject: "Bevestig uw inschrijving voor de nieuwsbrief",
+      confirmEmailHeading: "Bevestig uw inschrijving",
+      confirmEmailBody:
+        "Klik op de knop hieronder om uw inschrijving voor de nieuwsbrief van INDYANASTUDIO te bevestigen. Als u niet aan de oorsprong van deze aanvraag ligt, negeer dan gewoon deze e-mail.",
+      confirmEmailCta: "Mijn inschrijving bevestigen",
     },
   },
 };

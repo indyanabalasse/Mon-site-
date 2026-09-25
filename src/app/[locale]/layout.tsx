@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
-import { defaultLocale, isLocale, locales } from "@/lib/i18n";
+import { defaultLocale, isLocale, locales, type Locale } from "@/lib/i18n";
 import {
   CONTACT_EMAIL,
   CONTACT_PHONE_HREF,
@@ -17,6 +17,36 @@ import Footer from "@/components/Footer";
 import StickyBookCta from "@/components/StickyBookCta";
 
 const THEME_INIT_SCRIPT = `(function(){try{var s=localStorage.getItem('theme');var t=s==='light'||s==='dark'?s:(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.classList.add(t);document.documentElement.style.colorScheme=t;}catch(e){}})();`;
+
+const OG_LOCALE_CODE: Record<Locale, string> = {
+  fr: "fr_FR",
+  en: "en_US",
+  nl: "nl_BE",
+};
+
+const SITE_TITLE: Record<Locale, string> = {
+  fr: "INDYANASTUDIO, photographe corporate à Bruxelles",
+  en: "INDYANASTUDIO, corporate photographer in Brussels",
+  nl: "INDYANASTUDIO, corporate fotograaf in Brussel",
+};
+
+const SITE_DESCRIPTION: Record<Locale, string> = {
+  fr: "Photographe corporate à Bruxelles et en Brabant wallon : portraits d'équipe, portraits professionnels, événements d'entreprise et portrait artistique. Devis sous 24h.",
+  en: "Corporate photographer in Brussels and Walloon Brabant: team portraits, professional headshots, company events and artistic portraits. Quote within 24h.",
+  nl: "Corporate fotograaf in Brussel en Waals-Brabant: teamportretten, professionele profielfoto's, bedrijfsevenementen en artistieke portretten. Offerte binnen 24u.",
+};
+
+const PORTFOLIO_DESCRIPTION: Record<Locale, string> = {
+  fr: "Portfolio photographique d'Indyana Balasse.",
+  en: "Photography portfolio of Indyana Balasse.",
+  nl: "Fotografieportfolio van Indyana Balasse.",
+};
+
+const JOB_TITLE: Record<Locale, string> = {
+  fr: "Photographe",
+  en: "Photographer",
+  nl: "Fotograaf",
+};
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -38,16 +68,12 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const { locale } = await params;
-  const isFr = locale === "fr";
+  const { locale: rawLocale } = await params;
+  const locale: Locale = isLocale(rawLocale) ? rawLocale : defaultLocale;
   // Le titre porte le métier et la ville : « INDYANASTUDIO » seul ne répond à
   // aucune recherche de quelqu'un qui cherche un photographe sans la connaître.
-  const title = isFr
-    ? "INDYANASTUDIO, photographe corporate à Bruxelles"
-    : "INDYANASTUDIO, corporate photographer in Brussels";
-  const description = isFr
-    ? "Photographe corporate à Bruxelles et en Brabant wallon : portraits d'équipe, portraits professionnels, événements d'entreprise et portrait artistique. Devis sous 24h."
-    : "Corporate photographer in Brussels and Walloon Brabant: team portraits, professional headshots, company events and artistic portraits. Quote within 24h.";
+  const title = SITE_TITLE[locale];
+  const description = SITE_DESCRIPTION[locale];
 
   return {
     title: {
@@ -60,17 +86,18 @@ export async function generateMetadata({
     metadataBase: new URL(SITE_URL),
     alternates: {
       canonical: `/${locale}`,
-      languages: { fr: "/fr", en: "/en", "x-default": "/fr" },
+      languages: {
+        ...Object.fromEntries(locales.map((l) => [l, `/${l}`])),
+        "x-default": "/fr",
+      },
     },
     openGraph: {
       title,
-      description: isFr
-        ? "Portfolio photographique d'Indyana Balasse."
-        : "Photography portfolio of Indyana Balasse.",
+      description: PORTFOLIO_DESCRIPTION[locale],
       url: `/${locale}`,
       siteName: SITE_NAME,
-      locale: isFr ? "fr_FR" : "en_US",
-      alternateLocale: isFr ? ["en_US"] : ["fr_FR"],
+      locale: OG_LOCALE_CODE[locale],
+      alternateLocale: locales.filter((l) => l !== locale).map((l) => OG_LOCALE_CODE[l]),
       type: "website",
       images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: title }],
     },
@@ -116,7 +143,7 @@ export default async function LocaleLayout({
         alternateName: SITE_NAME,
         url: SITE_URL,
         image: `${SITE_URL}/opengraph-image`,
-        jobTitle: locale === "fr" ? "Photographe" : "Photographer",
+        jobTitle: JOB_TITLE[locale],
         telephone: CONTACT_PHONE_HREF,
         email: CONTACT_EMAIL,
         sameAs: [INSTAGRAM_URL],

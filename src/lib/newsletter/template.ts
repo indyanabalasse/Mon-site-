@@ -5,6 +5,7 @@ import {
   INSTAGRAM_URL,
   SITE_URL,
 } from "@/lib/site";
+import type { Locale } from "@/lib/i18n";
 
 /**
  * Renders a complete, standalone newsletter email HTML document.
@@ -24,8 +25,20 @@ const COLOR_MUTED = "#6b6b6b";
 
 const CONTENT_WIDTH = 560;
 
+const ROLE_BY_LOCALE: Record<Locale, string> = {
+  fr: "Photographe",
+  en: "Photographer",
+  nl: "Fotograaf",
+};
+
+const UNSUBSCRIBE_BY_LOCALE: Record<Locale, string> = {
+  fr: "Se désabonner",
+  en: "Unsubscribe",
+  nl: "Uitschrijven",
+};
+
 export function renderNewsletterEmail(params: {
-  locale: "fr" | "en";
+  locale: Locale;
   preheader?: string;
   /** Small uppercase label above the heading, e.g. the series' category. */
   kicker?: string;
@@ -51,7 +64,7 @@ export function renderNewsletterEmail(params: {
     unsubscribeUrl,
   } = params;
   const showCta = Boolean(ctaLabel && ctaHref);
-  const role = locale === "fr" ? "Photographe" : "Photographer";
+  const role = ROLE_BY_LOCALE[locale];
 
   return `<!doctype html>
 <html lang="${locale}">
@@ -165,7 +178,7 @@ export function renderNewsletterEmail(params: {
               <td style="padding-top:24px; text-align:center;">
                 <p style="margin:0; font-family:${SANS_STACK}; font-size:11px; color:${COLOR_MUTED};">
                   <a href="${escapeAttribute(unsubscribeUrl)}" style="color:${COLOR_MUTED}; text-decoration:underline;">${
-                    locale === "fr" ? "Se désabonner" : "Unsubscribe"
+                    UNSUBSCRIBE_BY_LOCALE[locale]
                   }</a>
                 </p>
               </td>

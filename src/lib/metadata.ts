@@ -4,8 +4,14 @@ import { SITE_NAME } from "@/lib/site";
 
 const OG_SIZE = { width: 1200, height: 630 };
 
+const OG_LOCALE: Record<Locale, string> = {
+  fr: "fr_FR",
+  en: "en_US",
+  nl: "nl_BE",
+};
+
 function ogLocale(locale: Locale) {
-  return locale === "fr" ? "fr_FR" : "en_US";
+  return OG_LOCALE[locale];
 }
 
 /**

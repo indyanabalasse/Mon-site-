@@ -43,7 +43,7 @@ export default async function ShootingStudioPage({
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: locale === "fr" ? "Séance photo en studio" : "Studio photo session",
+    serviceType: { fr: "Séance photo en studio", en: "Studio photo session", nl: "Fotosessie in studio" }[locale],
     name: offer.title,
     description: offer.intro,
     url: `${SITE_URL}${path}`,
