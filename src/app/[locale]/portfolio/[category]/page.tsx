@@ -82,18 +82,7 @@ export default async function CategoryPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <BackLink href={`/${locale}/portfolio`} label={dict.gallery.back} />
-      {pitch ? (
-        <header className="mx-auto max-w-3xl pt-8 pb-12 sm:pt-12 sm:pb-16 text-center">
-          <h1 className="wordmark font-serif text-3xl sm:text-4xl font-light">{pitch.heading}</h1>
-          {pitch.paragraphs.map((paragraph) => (
-            <p key={paragraph} className="mt-5 text-left sm:text-center leading-relaxed text-muted">
-              {paragraph}
-            </p>
-          ))}
-        </header>
-      ) : (
-        <h1 className="sr-only">{info.title}</h1>
-      )}
+      <h1 className="sr-only">{pitch?.heading ?? info.title}</h1>
       {data.series.length > 1 || isSeriesGroup(data.series[0]) ? (
         <MasonryNav
           variant="grid"
